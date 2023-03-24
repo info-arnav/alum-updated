@@ -1,0 +1,33 @@
+{
+  "short_name": "Alum",
+  "name": "Alum - NSUT Alumni Web Portal",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "250x193"
+    },
+    {
+      "src": "/logo-background.png",
+      "type": "image/png",
+      "sizes": "250x250"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "background_color": "white",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "white",
+  "shortcuts": [
+    {
+      "name": "Alum",
+      "short_name": "Alum",
+      "description": "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+      "url": "/",
+      "icons": [{ "src": "/logo-background.png", "sizes": "250x250" }]
+    }
+  ],
+  "description": "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+  "screenshots": []
+}
