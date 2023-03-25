@@ -20,3 +20,14 @@
     margin-top: 53px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .banner {
+    align-items: center;
+    justify-content: center;
+  }
+  .banner .content {
+    margin: 0px;
+    bottom: calc(25%);
+  }
+}
