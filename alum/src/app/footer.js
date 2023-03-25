@@ -36,7 +36,9 @@ export default function Footer() {
             ["Register", "/register"],
             ["Privacy Policy", "/privacy-policy"],
           ].map((e) => (
-            <Link href={e[1]}>{e[0]}</Link>
+            <Link href={e[0]} key={e[1].toLowerCase()}>
+              {e[0]}
+            </Link>
           ))}
         </div>
       </div>
