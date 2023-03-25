@@ -4,17 +4,19 @@
   }
 }
 
-@media screen and (max-width: 400px) {
-  .logo {
-    display: none !important;
-  }
-  .nav-links {
-    justify-content: center;
+@media screen and (max-width: 480px) {
+  .nav-sub-links.small {
+    display: none;
   }
 }
 
-@media screen and (max-width: 345px) {
-  .nav-sub-links.small {
-    display: none;
+@media screen and (max-width: 800px) {
+  footer {
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  footer .section-title {
+    margin-top: 53px;
   }
 }
