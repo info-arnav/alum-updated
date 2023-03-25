@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Pending({ path }) {
   return (
     <div className="nav-links">
