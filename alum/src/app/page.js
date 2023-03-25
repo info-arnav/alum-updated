@@ -1,3 +1,9 @@
+import LoggedIn from "./loggedIn";
+
 export default function Home() {
-  return <main>Alum</main>;
+  return (
+    <main>
+      <div className="banner"></div>
+    </main>
+  );
 }

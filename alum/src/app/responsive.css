@@ -1,0 +1,20 @@
+@media screen and (max-width: 890px) {
+  .nav-title {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    display: none !important;
+  }
+  .nav-links {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .nav-sub-links.small {
+    display: none;
+  }
+}
