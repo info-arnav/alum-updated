@@ -1,6 +1,6 @@
 import Link from "next/link";
-import "./home.css";
+import "./login.css";
 
 export default function Home() {
-  return <main>Home page</main>;
+  return <main>Login page</main>;
 }

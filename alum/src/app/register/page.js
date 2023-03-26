@@ -1,6 +1,6 @@
 import Link from "next/link";
-import "./home.css";
+import "./register.css";
 
 export default function Home() {
-  return <main>Home page</main>;
+  return <main>Register page</main>;
 }
