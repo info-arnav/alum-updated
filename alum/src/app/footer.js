@@ -8,7 +8,21 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
-  const sendMessage = async () => {};
+  const [loading, setLoading] = useState(false);
+  const sendMessage = async () => {
+    setError("");
+    setLoading(true);
+    await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({ email: email, message: message }),
+    }).then((e) => {
+      let data = e.json();
+      setMessage("");
+      setEmail("");
+      setError("Message Sent");
+      setLoading(false);
+    });
+  };
   return (
     <footer>
       <div className="small">
@@ -59,7 +73,9 @@ export default function Footer() {
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
         {error && <div className="error">{error}</div>}
-        <button onClick={sendMessage}>Send Message</button>
+        <button onClick={sendMessage} disabled={loading}>
+          {loading ? "Loading....." : "Send Message"}
+        </button>
       </div>
     </footer>
   );
