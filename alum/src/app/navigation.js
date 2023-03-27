@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Admin from "./components/admin";
 import Alumni from "./components/alumni";
@@ -12,14 +13,18 @@ export default function Navigation({ data }) {
   let path = usePathname().toLowerCase();
   return (
     <nav>
-      <Image
-        className="logo"
-        src="/logo.png"
-        width={30}
-        height={30}
-        alt="Logo of the Alum portal"
-      ></Image>
-      <div className="nav-title">ALUM</div>
+      <Link href="/" className="nav-image-link">
+        <Image
+          className="logo"
+          src="/logo.png"
+          width={30}
+          height={30}
+          alt="Logo of the Alum portal"
+        ></Image>
+      </Link>
+      <Link href="/">
+        <div className="nav-title">ALUM</div>
+      </Link>
       {data.loggedIn ? (
         data.data.verified ? (
           data.data.type == "student" ? (

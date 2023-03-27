@@ -9,19 +9,27 @@ export default function Footer() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const sendMessage = async () => {
+  const sendMessage = async (e) => {
+    e.preventDefault();
     setError("");
     setLoading(true);
-    await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify({ email: email, message: message }),
-    }).then((e) => {
-      let data = e.json();
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({ email: email, message: message }),
+      }).then((e) => {
+        let data = e.json();
+        setMessage("");
+        setEmail("");
+        setError("Message Sent");
+        setLoading(false);
+      });
+    } catch {
       setMessage("");
       setEmail("");
-      setError("Message Sent");
+      setError("Some error occured");
       setLoading(false);
-    });
+    }
   };
   return (
     <footer>
@@ -58,24 +66,28 @@ export default function Footer() {
       </div>
       <div className="large">
         <div className="section-title">Contact</div>
-        <input
-          className="footer-email"
-          placeholder="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-        <textarea
-          className="footer-message"
-          type="text"
-          placeholder="Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-        {error && <div className="error">{error}</div>}
-        <button onClick={sendMessage} disabled={loading}>
-          {loading ? "Loading....." : "Send Message"}
-        </button>
+        <form onSubmit={sendMessage}>
+          <input
+            className="footer-email"
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          ></input>
+          <textarea
+            className="footer-message"
+            type="text"
+            placeholder="Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
+          {error && <div className="error">{error}</div>}
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending....." : "Send Message"}
+          </button>
+        </form>
       </div>
     </footer>
   );

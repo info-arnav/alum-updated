@@ -1,9 +1,9 @@
 export const metadata = {
   title: "Register",
-  description: "Register here to be able to get access to the site Alum",
+  description: "Register here to be able to get access to the site Alum.",
   openGraph: {
     title: "Register",
-    description: "Register here to be able to get access to the site Alum",
+    description: "Register here to be able to get access to the site Alum.",
     url: `${process.env.LINK}register`,
     siteName: "Alum",
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     title: "Register",
-    description: "Register here to be able to get access to the site Alum",
+    description: "Register here to be able to get access to the site Alum.",
     images: [`${process.env.LINK}logo.png`],
   },
 };

@@ -1,5 +1,6 @@
 export default async function contact(req, res) {
   let body = JSON.parse(req.body);
+  body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   const data = await fetch(process.env.GRAPHQL_URI, {
     method: "POST",
     headers: {

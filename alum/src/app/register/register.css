@@ -1,0 +1,86 @@
+.register {
+  background-color: rgb(255, 183, 0);
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  background-color: white;
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 70%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 400px;
+  border-radius: 20px;
+}
+
+form {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  border: solid black;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form button {
+  margin-top: 20px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: aqua;
+  border: none;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options * {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border: solid black;
+  cursor: pointer;
+}
+
+.options .right {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.options .left {
+  border-radius: 0px 20px 20px 0px;
+}
+
+.options .active {
+  background-color: black;
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 35px;
+}

@@ -1,0 +1,48 @@
+.banner {
+  background-image: url("../../public/banner.webp");
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.685);
+  height: 80%;
+  width: 100%;
+  margin-right: 50px;
+  max-width: 800px;
+  border-radius: 0px 20px 20px 0px;
+  color: white;
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner-overlay .title {
+  font-weight: bold;
+  font-size: 53px;
+  margin-bottom: 25px;
+}
+
+.banner-overlay .description {
+  font-size: 13.5px;
+  margin-bottom: 25px;
+}
+
+.banner-overlay .button {
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13.5px;
+  border: none;
+  background-color: aqua;
+  color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+}
