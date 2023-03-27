@@ -28,14 +28,14 @@ export default function Navigation({ data }) {
       {data.loggedIn ? (
         data.data.verified ? (
           data.data.type == "student" ? (
-            <Student></Student>
+            <Student path={path}></Student>
           ) : data.data.type == "alumni" ? (
-            <Alumni></Alumni>
+            <Alumni path={path}></Alumni>
           ) : (
-            <Admin></Admin>
+            <Admin path={path}></Admin>
           )
         ) : (
-          <Pending></Pending>
+          <Pending path={path}></Pending>
         )
       ) : (
         <LoggedOut path={path}></LoggedOut>

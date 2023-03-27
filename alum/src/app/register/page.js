@@ -4,6 +4,7 @@ import Compressor from "compressorjs";
 import Link from "next/link";
 import { useState } from "react";
 import "./register.css";
+import Cookies from "universal-cookie";
 
 export default function Register() {
   const [image, setImage] = useState("");
@@ -108,6 +109,8 @@ export default function Register() {
               setLoading(false);
               setError(e.message);
             } else {
+              let cookies = new Cookies();
+              cookies.set("User", e.key);
               setLoading("");
               setError("Registered");
             }

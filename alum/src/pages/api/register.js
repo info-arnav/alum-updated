@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import * as Realm from "realm-web";
 
 export default async function contact(req, res) {
@@ -55,7 +56,18 @@ export default async function contact(req, res) {
           }).then((e) => e.json());
 
           user.error = false;
-          res.json(user);
+          res.json({
+            error: false,
+            key: jwt.sign(
+              {
+                password: body.password,
+                email: body.email,
+                type: body.type,
+                verified: body.verified,
+              },
+              process.env.SECRET
+            ),
+          });
         });
       } catch {
         res.json({ error: true, message: "Some Error Occured" });

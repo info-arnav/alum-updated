@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
-        <Navigation data={{ loggedIn: false }}></Navigation>
+        <Navigation data={status}></Navigation>
         <main>{children}</main>
         <Footer></Footer>
       </body>
