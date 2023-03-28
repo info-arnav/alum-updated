@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export default async function contact(req, res) {
+export default async function login(req, res) {
   let body = JSON.parse(req.body);
   body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   try {

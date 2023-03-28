@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import * as Realm from "realm-web";
 
-export default async function contact(req, res) {
+export default async function register(req, res) {
   let body = JSON.parse(req.body);
   body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   const app = Realm.getApp(process.env.APP_ID);

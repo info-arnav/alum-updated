@@ -1,4 +1,4 @@
-export default async function contact(req, res) {
+export default async function verifyOTP(req, res) {
   let body = JSON.parse(req.body);
   body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   try {
