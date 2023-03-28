@@ -19,7 +19,6 @@ export default async function contact(req, res) {
       `,
     }),
   }).then((e) => e.json());
-  data.status = true;
   if (data.data.registeration == null) {
     data.error = false;
     let transporter = nodemailer.createTransport({

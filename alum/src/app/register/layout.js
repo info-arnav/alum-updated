@@ -1,3 +1,6 @@
+import { redirect } from "next/navigation";
+import LoggedIn from "../loggedIn";
+
 export const metadata = {
   title: "Register",
   description: "Register here to be able to get access to the site Alum.",
@@ -31,5 +34,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return <>{children}</>;
+  const status = LoggedIn();
+  if (status.loggedIn) {
+    redirect("/");
+  } else {
+    return <>{children}</>;
+  }
 }

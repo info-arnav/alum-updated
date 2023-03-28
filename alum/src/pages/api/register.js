@@ -26,50 +26,56 @@ export default async function contact(req, res) {
     }).then((e) => e.json());
     data.status = true;
     if (data.data.otp.otp == body.otp) {
-      try {
-        bcrypt.hash(body.password, 10, async function (err, hash) {
-          await app.emailPasswordAuth.registerUser({
-            email: body.email,
-            password: hash,
-          });
+      const hash = jwt.sign(body.password, process.env.SECRET);
 
-          const credentials = Realm.Credentials.emailPassword(body.email, hash);
+      await app.emailPasswordAuth.registerUser({
+        email: body.email,
+        password: hash,
+      });
 
-          await app.logIn(credentials);
+      const credentials = Realm.Credentials.emailPassword(body.email, hash);
 
-          const user = await fetch(process.env.GRAPHQL_URI, {
-            method: "POST",
-            headers: {
-              email: body.email,
-              password: hash,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              query: `
+      await app.logIn(credentials);
+      let verified;
+      let type;
+      if (body.email[1] == "nsut.ac.in") {
+        verified = "true";
+        type = "student";
+      } else {
+        verified = "false";
+        type = "alumni";
+      }
+      let registeredUser = await fetch(process.env.GRAPHQL_URI, {
+        method: "POST",
+        headers: {
+          email: body.email,
+          password: hash,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
             mutation{
-              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}",type:"${body.type}",files:"${body.files}",verified:"${body.verified}"}) {
+              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}",type:"${type}",files:"${body.files}",verified:"${verified}"}) {
                 email
               }
             }
             `,
-            }),
-          }).then((e) => e.json());
-
-          user.error = false;
-          res.json({
-            error: false,
-            key: jwt.sign(
-              {
-                password: body.password,
-                email: body.email,
-                type: body.type,
-                verified: body.verified,
-              },
-              process.env.SECRET
-            ),
-          });
+        }),
+      }).then((e) => e.json());
+      if (registeredUser.data.insertOneRegisteration.email == body.email) {
+        res.json({
+          error: false,
+          key: jwt.sign(
+            {
+              password: hash,
+              email: body.email,
+              type: body.type,
+              verified: body.verified,
+            },
+            process.env.SECRET
+          ),
         });
-      } catch {
+      } else {
         res.json({ error: true, message: "Some Error Occured" });
       }
     } else {
