@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./about.css";
 
-export default function Home() {
+export default function About() {
   return <main>About page</main>;
 }
