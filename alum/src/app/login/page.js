@@ -24,7 +24,10 @@ export default function Home() {
         setLoading(false);
       } else {
         let cookies = new Cookies();
-        cookies.set("User", data.key);
+        cookies.set("User", data.key, {
+          secure: true,
+          sameSite: "lax",
+        });
         setLoading("");
       }
     } catch {

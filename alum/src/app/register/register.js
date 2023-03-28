@@ -37,7 +37,10 @@ export default function Register({ type, otp, email }) {
               setError(e.message);
             } else {
               let cookies = new Cookies();
-              cookies.set("User", e.key);
+              cookies.set("User", e.key, {
+                secure: true,
+                sameSite: "lax",
+              });
               setLoading("");
             }
           });
