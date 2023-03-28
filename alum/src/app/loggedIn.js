@@ -1,14 +1,20 @@
 import { cookies } from "next/headers";
-import jwt from "jsonwebtoken";
+import CryptoJS from "crypto-js";
 
 export default function LoggedIn() {
   const cookieStore = cookies();
   try {
-    const payload = jwt.verify(
+    const data = CryptoJS.AES.decrypt(
       cookieStore.get("User").value,
       process.env.SECRET
     );
-    return { loggedIn: true, data: payload };
+    const middleData = data.toString(CryptoJS.enc.Utf8);
+    const payload = JSON.parse(middleData);
+    if (payload) {
+      return { loggedIn: true, data: payload };
+    } else {
+      return { loggedIn: false };
+    }
   } catch {
     return { loggedIn: false };
   }

@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import CryptoJS from "crypto-js";
 import * as Realm from "realm-web";
 
 export default async function register(req, res) {
@@ -67,15 +67,15 @@ export default async function register(req, res) {
         if (registeredUser.data.insertOneRegisteration.email == body.email) {
           res.json({
             error: false,
-            key: jwt.sign(
-              {
+            key: CryptoJS.AES.encrypt(
+              JSON.stringify({
                 password: body.password,
                 email: body.email,
                 type: body.type,
                 verified: body.verified,
-              },
+              }),
               process.env.SECRET
-            ),
+            ).toString(),
           });
         } else {
           res.json({ error: true, message: "Some Error Occured" });

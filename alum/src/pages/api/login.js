@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import CryptoJS from "crypto-js";
 
 export default async function login(req, res) {
   let body = JSON.parse(req.body);
@@ -30,15 +30,15 @@ export default async function login(req, res) {
       } else {
         res.json({
           error: false,
-          key: jwt.sign(
-            {
+          key: CryptoJS.AES.encrypt(
+            JSON.stringify({
               password: body.password,
               email: body.email,
               type: data.data.registeration.type,
               verified: data.data.registeration.verified,
-            },
+            }),
             process.env.SECRET
-          ),
+          ).toString(),
         });
       }
     });
