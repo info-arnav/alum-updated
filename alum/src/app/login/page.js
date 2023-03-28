@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { useState } from "react";
+import Cookies from "universal-cookie";
 import "./login.css";
 
 export default function Home() {
@@ -22,8 +23,9 @@ export default function Home() {
         setError(data.message);
         setLoading(false);
       } else {
-        setLoading(false);
-        redirect("/");
+        let cookies = new Cookies();
+        cookies.set("User", data.key);
+        setLoading("");
       }
     } catch {
       setLoading(false);
@@ -48,7 +50,7 @@ export default function Home() {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
           {error && error}
-          <button type="submit">
+          <button type="submit" disabled={loading}>
             {loading ? "Logging you in...." : "Login"}
           </button>
         </form>
