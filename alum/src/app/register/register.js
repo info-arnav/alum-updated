@@ -3,6 +3,7 @@
 import Compressor from "compressorjs";
 import { useState } from "react";
 import Cookies from "universal-cookie";
+import Router from "next/router";
 
 export default function Register({ type, otp, email }) {
   const [image, setImage] = useState("");
@@ -41,6 +42,7 @@ export default function Register({ type, otp, email }) {
                 secure: true,
                 sameSite: "lax",
               });
+              Router.reload("/");
               setLoading("");
             }
           });
