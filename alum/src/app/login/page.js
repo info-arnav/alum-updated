@@ -13,26 +13,21 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     setError("");
-    try {
-      let data = await fetch("/api/login", {
-        method: "POST",
-        body: JSON.stringify({ email: email, password: password }),
-      }).then((e) => e.json());
-      if (data.error) {
-        setError(data.message);
-        setLoading(false);
-      } else {
-        let cookies = new Cookies();
-        cookies.set("User", data.key, {
-          secure: true,
-          sameSite: "lax",
-        });
-        window.reload();
-        setLoading("");
-      }
-    } catch {
+    let data = await fetch("/api/login", {
+      method: "POST",
+      body: JSON.stringify({ email: email, password: password }),
+    }).then((e) => e.json());
+    if (data.error) {
+      setError(data.message);
       setLoading(false);
-      setError("Some error occured");
+    } else {
+      let cookies = new Cookies();
+      cookies.set("User", data.key, {
+        secure: true,
+        sameSite: "lax",
+      });
+      location.reload();
+      setLoading("");
     }
   };
   return (
