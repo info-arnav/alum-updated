@@ -1,9 +1,7 @@
 "use client";
 
-import { redirect } from "next/navigation";
 import { useState } from "react";
 import Cookies from "universal-cookie";
-import Router from "next/router";
 import "./login.css";
 
 export default function Login() {
@@ -29,7 +27,7 @@ export default function Login() {
           secure: true,
           sameSite: "lax",
         });
-        Router.reload("/");
+        window.reload();
         setLoading("");
       }
     } catch {
