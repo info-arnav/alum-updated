@@ -260,3 +260,7 @@ footer button {
 footer button:hover {
   background-color: rgb(23, 216, 216);
 }
+
+.empty {
+  min-height: calc(100vh - 60px);
+}

@@ -36,7 +36,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
-    redirect("/");
+    return <div className="empty">{redirect("/")}</div>;
   } else {
     return <>{children}</>;
   }
