@@ -28,11 +28,17 @@ export default async function login(req, res) {
       if (data.error) {
         res.json({ error: true, message: "Invalid Credentials" });
       } else {
+        res.setHeader(
+          "Set-Cookie",
+          `User=${CryptoJS.AES.encrypt(
+            body.password,
+            process.env.SECRET
+          )}; HttpOnly; Secure; SameSite=lax`
+        );
         res.json({
           error: false,
           key: CryptoJS.AES.encrypt(
             JSON.stringify({
-              password: body.password,
               email: body.email,
               type: data.data.registeration.type,
               verified: data.data.registeration.verified,

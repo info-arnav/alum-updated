@@ -65,11 +65,17 @@ export default async function register(req, res) {
           }),
         }).then((e) => e.json());
         if (registeredUser.data.insertOneRegisteration.email == body.email) {
+          res.setHeader(
+            "Set-Cookie",
+            `User=${CryptoJS.AES.encrypt(
+              body.password,
+              process.env.SECRET
+            )}; HttpOnly; Secure; SameSite=lax`
+          );
           res.json({
             error: false,
             key: CryptoJS.AES.encrypt(
               JSON.stringify({
-                password: body.password,
                 email: body.email,
                 type: body.type,
                 verified: body.verified,
