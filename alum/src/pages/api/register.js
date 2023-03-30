@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import CryptoJS from "crypto-js";
+const crypto = require("crypto");
 import * as Realm from "realm-web";
 
 export default async function register(req, res) {
@@ -27,20 +28,25 @@ export default async function register(req, res) {
     data.status = true;
     if (data.data.otp.otp == body.otp) {
       bcrypt.hash(body.password, 10, async function (err, hash) {
+        let apiKey = crypto
+          .randomBytes(Math.ceil(32 / 2))
+          .toString("hex")
+          .slice(0, 32);
+
         await app.emailPasswordAuth.registerUser({
           email: body.email,
-          password: body.password,
+          password: apiKey,
         });
 
-        const credentials = Realm.Credentials.emailPassword(
-          body.email,
-          body.password
-        );
+        const credentials = Realm.Credentials.emailPassword(body.email, apiKey);
 
         await app.logIn(credentials);
         let verified;
         let type;
-        if (body.email.split("@")[1] == "nsut.ac.in") {
+        if (
+          body.email.split("@")[1] == "nsut.ac.in" &&
+          body.type == "student"
+        ) {
           verified = "true";
           type = "student";
         } else {
@@ -51,13 +57,13 @@ export default async function register(req, res) {
           method: "POST",
           headers: {
             email: body.email,
-            password: body.password,
+            password: apiKey,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
             query: `
             mutation{
-              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}",type:"${type}",files:"${body.files}",verified:"${verified}"}) {
+              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}", api:"${apiKey}" ,type:"${type}",files:"${body.files}",verified:"${verified}"}) {
                 email
               }
             }
@@ -68,7 +74,7 @@ export default async function register(req, res) {
           res.setHeader(
             "Set-Cookie",
             `User=${CryptoJS.AES.encrypt(
-              body.password,
+              apiKey,
               process.env.SECRET
             )}; HttpOnly; Secure; SameSite=lax`
           );

@@ -5,49 +5,79 @@ export default async function login(req, res) {
   let body = JSON.parse(req.body);
   body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   try {
-    bcrypt.hash(body.password, 10, async function (err, hash) {
-      const data = await fetch(process.env.GRAPHQL_URI, {
-        method: "POST",
-        headers: {
-          email: body.email,
-          password: body.password,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: `
+    const userData = await fetch(process.env.GRAPHQL_URI, {
+      method: "POST",
+      headers: {
+        apikey: process.env.GRAPHQL_API,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+          query{
+              registeration(query: {email:"${body.email}"}) {
+                email
+                password
+              }
+            }
+        `,
+      }),
+    }).then((e) => e.json());
+    if (userData.data.registeration == null) {
+      res.json({ error: true, message: "Invalid Credentials" });
+    } else {
+      bcrypt.compare(
+        body.password,
+        userData.data.registeration.password,
+        async function (err, hash) {
+          if (hash) {
+            const data = await fetch(process.env.GRAPHQL_URI, {
+              method: "POST",
+              headers: {
+                apikey: process.env.GRAPHQL_API,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                query: `
         query{
           registeration(query:{email:"${body.email}"}) {
             email
             type
             verified
+            api
           }
         }
       `,
-        }),
-      }).then((e) => e.json());
-      if (data.error) {
-        res.json({ error: true, message: "Invalid Credentials" });
-      } else {
-        res.setHeader(
-          "Set-Cookie",
-          `User=${CryptoJS.AES.encrypt(
-            body.password,
-            process.env.SECRET
-          )}; HttpOnly; Secure; SameSite=lax`
-        );
-        res.json({
-          error: false,
-          key: CryptoJS.AES.encrypt(
-            JSON.stringify({
-              email: body.email,
-              type: data.data.registeration.type,
-              verified: data.data.registeration.verified,
-            }),
-            process.env.SECRET
-          ).toString(),
-        });
-      }
-    });
+              }),
+            }).then((e) => e.json());
+            if (data.error) {
+              res.json({ error: true, message: "Invalid Credentials" });
+            } else {
+              console.log(data.data.registeration.api);
+              res.setHeader(
+                "Set-Cookie",
+                `User=${CryptoJS.AES.encrypt(
+                  data.data.registeration.api,
+                  process.env.SECRET
+                )}; HttpOnly; Secure; SameSite=lax`
+              );
+              res.json({
+                error: false,
+                key: CryptoJS.AES.encrypt(
+                  JSON.stringify({
+                    email: body.email,
+                    type: data.data.registeration.type,
+                    verified: data.data.registeration.verified,
+                  }),
+                  process.env.SECRET
+                ).toString(),
+              });
+            }
+          } else {
+            res.json({ error: true, message: "Invalid Credentials" });
+          }
+        }
+      );
+    }
   } catch {
     res.json({ error: true, message: "Some Error Occured" });
   }
