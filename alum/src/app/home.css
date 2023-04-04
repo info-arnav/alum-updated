@@ -6,6 +6,37 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+}
+
+.content-container {
+  margin: 10px;
+  width: 100%;
+  max-width: 350px;
+  background-color: rgba(255, 255, 255, 0.493);
+  border-radius: 60px;
+  border: none;
+  text-align: center;
+  padding: 53px;
+  margin-bottom: 30px;
+}
+
+.content-container .title {
+  font-weight: 800;
+  margin: 20px;
+  font-size: 53px;
+}
+
+.content-container .content {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.content-container .button {
+  margin: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 60px;
+  padding: 10px;
 }
