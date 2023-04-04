@@ -1,3 +1,17 @@
+"use client";
+
+import Logout from "../logout";
+
 export default function Student({ path }) {
-  return <div></div>;
+  return (
+    <div>
+      <button
+        onClick={(e) => {
+          Logout();
+        }}
+      >
+        <div>Logout</div>
+      </button>
+    </div>
+  );
 }

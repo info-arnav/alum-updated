@@ -1,7 +1,7 @@
 .banner {
   background-image: url("../../public/banner.webp");
   width: 100%;
-  height: calc(100vh - 50px);
+  min-height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -39,4 +39,5 @@
   background-color: black;
   border-radius: 60px;
   padding: 10px;
+  font-weight: bold;
 }

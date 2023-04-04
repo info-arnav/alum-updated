@@ -32,6 +32,7 @@ export default function Login() {
   };
   return (
     <main className="login">
+      <main className="overlay"></main>
       <div className="container">
         <div className="title">Login</div>
         <form onSubmit={handleSubmit}>

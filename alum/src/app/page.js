@@ -8,7 +8,9 @@ export default function Home() {
         <div className="content-container">
           <div className="title">ALUM</div>
           <div className="content">The NSUT Networking Site</div>
-          <div className="button">REGISTER</div>
+          <Link href="/register">
+            <div className="button">REGISTER NOW</div>
+          </Link>
         </div>
       </div>
     </main>
