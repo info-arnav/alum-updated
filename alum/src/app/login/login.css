@@ -66,6 +66,7 @@ form button {
   background-color: aqua;
   border: none;
   cursor: pointer;
+  color: black;
   font-weight: bold;
 }
 
@@ -74,6 +75,7 @@ form button:hover {
   width: 90%;
   padding: 10px;
   border-radius: 20px;
+  color: black;
   background-color: rgb(22, 223, 223);
   border: none;
   cursor: pointer;
