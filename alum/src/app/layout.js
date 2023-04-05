@@ -11,7 +11,7 @@ export const metadata = {
     template: "%s | Alum",
   },
   description:
-    "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+    "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
   generator: "Alum",
   applicationName: "Alum",
   referrer: "origin-when-cross-origin",
@@ -22,7 +22,7 @@ export const metadata = {
       template: "%s | Alum",
     },
     description:
-      "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+      "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     url: process.env.LINK,
     siteName: "Alum",
     images: [
@@ -30,13 +30,13 @@ export const metadata = {
         url: `${process.env.LINK}logo-background.png`,
         width: 250,
         height: 250,
-        alt: "Logo of the site Alum",
+        alt: "Alum - NSUT Alumni Network Logo",
       },
       {
         url: `${process.env.LINK}logo.png`,
         width: 250,
         height: 193,
-        alt: "Logo of the site Alum",
+        alt: "Alum - NSUT Alumni Network Logo",
       },
     ],
     locale: "en-US",
@@ -60,7 +60,7 @@ export const metadata = {
       template: "%s | Alum",
     },
     description:
-      "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+      "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     // siteId: "1467726470533754880",
     // creator: "@alum",
     // creatorId: "1467726470533754880",

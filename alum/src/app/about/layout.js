@@ -1,11 +1,11 @@
 export const metadata = {
   title: "About",
   description:
-    "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+    "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
   openGraph: {
     title: "About",
     description:
-      "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+      "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     url: `${process.env.LINK}about`,
     siteName: "Alum",
     images: [
@@ -13,13 +13,13 @@ export const metadata = {
         url: `${process.env.LINK}logo-background.png`,
         width: 250,
         height: 250,
-        alt: "Logo of the site Alum",
+        alt: "Alum - NSUT Alumni Network Logo",
       },
       {
         url: `${process.env.LINK}logo.png`,
         width: 250,
         height: 193,
-        alt: "Logo of the site Alum",
+        alt: "Alum - NSUT Alumni Network Logo",
       },
     ],
     locale: "en-US",
@@ -28,7 +28,7 @@ export const metadata = {
   twitter: {
     title: "About",
     description:
-      "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+      "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     images: [`${process.env.LINK}logo.png`],
   },
 };

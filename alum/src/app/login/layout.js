@@ -4,11 +4,11 @@ import LoggedIn from "../loggedIn";
 export const metadata = {
   title: "Login",
   description:
-    "Login here to get access to all the features of the Alum application.",
+    "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
   openGraph: {
     title: "Login",
     description:
-      "Login here to get access to all the features of the Alum application.",
+      "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
     url: `${process.env.LINK}login`,
     siteName: "Alum",
     images: [
@@ -16,13 +16,13 @@ export const metadata = {
         url: `${process.env.LINK}logo-background.png`,
         width: 250,
         height: 250,
-        alt: "Logo of the site Alum",
+        alt: "Alum - NSUT Alumni Network Logo",
       },
       {
         url: `${process.env.LINK}logo.png`,
         width: 250,
         height: 193,
-        alt: "Logo of the site Alum",
+        alt: "Alum - NSUT Alumni Network Logo",
       },
     ],
     locale: "en-US",
@@ -31,7 +31,7 @@ export const metadata = {
   twitter: {
     title: "Login",
     description:
-      "Login here to get access to all the features of the Alum application.",
+      "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
     images: [`${process.env.LINK}logo.png`],
   },
 };
