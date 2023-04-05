@@ -65,8 +65,8 @@ export const metadata = {
     // creator: "@alum",
     // creatorId: "1467726470533754880",
     images: [
-      `${process.env.LINK}logo.png`,
       `${process.env.LINK}logo-background.png`,
+      `${process.env.LINK}logo.png`,
     ],
   },
 };

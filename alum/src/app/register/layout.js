@@ -33,8 +33,8 @@ export const metadata = {
     description:
       "Join Alum, the NSUT community platform, by registering as a student or alumnus. Create an account to access networking opportunities, job offers, internships, mentorship, and more.",
     images: [
-      `${process.env.LINK}logo.png`,
       `${process.env.LINK}logo-background.png`,
+      `${process.env.LINK}logo.png`,
     ],
   },
 };

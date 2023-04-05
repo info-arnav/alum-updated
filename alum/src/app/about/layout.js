@@ -30,8 +30,8 @@ export const metadata = {
     description:
       "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     images: [
-      `${process.env.LINK}logo.png`,
       `${process.env.LINK}logo-background.png`,
+      `${process.env.LINK}logo.png`,
     ],
   },
 };

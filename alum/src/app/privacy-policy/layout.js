@@ -30,8 +30,8 @@ export const metadata = {
     description:
       "Review Alum's Privacy Policy to understand how we collect, use, and protect your personal information while providing a secure platform for NSUT alumni and students to connect, collaborate, and access opportunities.",
     images: [
-      `${process.env.LINK}logo.png`,
       `${process.env.LINK}logo-background.png`,
+      `${process.env.LINK}logo.png`,
     ],
   },
 };
