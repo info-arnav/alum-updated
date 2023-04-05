@@ -34,10 +34,5 @@ export const metadata = {
 };
 
 export default function PrivacyLayout({ children }) {
-  const status = LoggedIn();
-  if (status.loggedIn) {
-    return <div className="empty">{redirect("/")}</div>;
-  } else {
-    return <>{children}</>;
-  }
+  return <>{children}</>;
 }
