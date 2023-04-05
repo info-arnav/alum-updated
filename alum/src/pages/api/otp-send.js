@@ -26,7 +26,7 @@ export default async function sendOTP(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "admin@itsdope.in",
+        user: "admin@alumninet.in",
         pass: process.env.MAIL_PASSWORD,
       },
     });
@@ -36,7 +36,7 @@ export default async function sendOTP(req, res) {
     try {
       await transporter
         .sendMail({
-          from: `"Alum" <admin@itsdope.in>`,
+          from: `"Alum" <admin@alumninet.in>`,
           to: body.email,
           subject: "OTP for Alum Registeration",
           text: `Your OTP is ${OTP}`,

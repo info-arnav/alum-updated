@@ -36,7 +36,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function LoginLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
     return <div className="empty">{redirect("/")}</div>;
