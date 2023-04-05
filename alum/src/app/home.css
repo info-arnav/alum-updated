@@ -10,30 +10,46 @@
   justify-content: center;
 }
 .home-page .content-container {
-  margin: 10px;
+  margin: 15px;
   width: 100%;
-  max-width: 350px;
-  background-color: rgba(255, 255, 255, 0.493);
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.444);
   border-radius: 60px;
   border: none;
   text-align: center;
-  padding: 53px;
-  margin-bottom: 30px;
+  padding: 28px;
 }
 .home-page .content-container .title {
   font-weight: 800;
   margin: 20px;
   font-size: 53px;
+  color: white;
 }
 .home-page .content-container .content {
   font-weight: bold;
   font-size: 18px;
+  color: white;
 }
 .home-page .content-container .button {
   margin: 20px;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   border-radius: 60px;
   padding: 10px;
   font-weight: bold;
+}
+
+.home-page .content-container .button:hover {
+  margin: 20px;
+  color: black;
+  background-color: rgb(198, 198, 198);
+  border-radius: 60px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.home-page .block {
+  background-color: rgb(226, 226, 226);
+  min-height: calc(100vh - 60px);
+  width: 100%;
 }
