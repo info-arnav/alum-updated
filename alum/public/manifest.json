@@ -23,11 +23,17 @@
     {
       "name": "Alum",
       "short_name": "Alum",
-      "description": "Alum is NSUT's Aumni web portal to connect the students and alumni.",
+      "description": "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
       "url": "/",
       "icons": [{ "src": "/logo-background.png", "sizes": "250x250" }]
     }
   ],
-  "description": "Alum is NSUT's Aumni web portal to connect the students and alumni.",
-  "screenshots": []
+  "description": "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
+  "screenshots": [],
+  "sameAs": [
+    "https://twitter.com/alumninet_in",
+    "https://www.instagram.com/alumninet_in/",
+    "https://www.facebook.com/people/alumninet_in/100091574651564/",
+    "https://www.linkedin.com/company/alumninet-in/"
+  ]
 }

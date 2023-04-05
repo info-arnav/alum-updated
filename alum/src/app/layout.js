@@ -61,9 +61,9 @@ export const metadata = {
     },
     description:
       "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
-    // siteId: "1467726470533754880",
-    // creator: "@alum",
-    // creatorId: "1467726470533754880",
+    siteId: "1643623396696006658",
+    creator: "@alumninet_in",
+    creatorId: "1643623396696006658",
     images: [
       `${process.env.LINK}logo-background.png`,
       `${process.env.LINK}logo.png`,
