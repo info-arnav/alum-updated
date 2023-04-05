@@ -42,7 +42,7 @@ nav {
   margin-left: 10px;
   font-size: 24px;
   margin-right: 10px;
-  display: block !important;
+  display: block;
 }
 
 .nav-links {
