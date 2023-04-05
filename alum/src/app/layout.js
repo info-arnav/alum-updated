@@ -64,7 +64,10 @@ export const metadata = {
     // siteId: "1467726470533754880",
     // creator: "@alum",
     // creatorId: "1467726470533754880",
-    images: [`${process.env.LINK}logo.png`],
+    images: [
+      `${process.env.LINK}logo.png`,
+      `${process.env.LINK}logo-background.png`,
+    ],
   },
 };
 

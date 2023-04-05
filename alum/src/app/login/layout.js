@@ -32,7 +32,10 @@ export const metadata = {
     title: "Login",
     description:
       "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
-    images: [`${process.env.LINK}logo.png`],
+    images: [
+      `${process.env.LINK}logo.png`,
+      `${process.env.LINK}logo-background.png`,
+    ],
   },
 };
 
