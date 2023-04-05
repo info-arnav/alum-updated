@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /api/
+Disallow: /profile/
+Disallow: /search/
+Disallow: /recruitment/
+Disallow: /funding/
+Disallow: /events/
+Disallow: /requests/
+Disallow: /offers/
+Disallow: /startups/
+
+Sitemap: https://nsut.alumninet.in/sitemap.xml
