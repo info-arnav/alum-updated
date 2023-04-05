@@ -3,16 +3,18 @@ import "./home.css";
 
 export default function Home() {
   return (
-    <main>
-      <div className="banner">
-        <div className="content-container">
-          <div className="title">ALUM</div>
-          <div className="content">The NSUT Networking Site</div>
-          <Link href="/register">
-            <div className="button">REGISTER NOW</div>
-          </Link>
+    <div className="home-page">
+      <main>
+        <div className="banner">
+          <div className="content-container">
+            <div className="title">ALUM</div>
+            <div className="content">The NSUT Networking Site</div>
+            <Link href="/register">
+              <div className="button">REGISTER NOW</div>
+            </Link>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

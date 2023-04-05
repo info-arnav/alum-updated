@@ -1,4 +1,4 @@
-.banner {
+.home-page .banner {
   background-image: url("../../public/banner.webp");
   width: 100%;
   min-height: calc(100vh - 60px);
@@ -9,8 +9,7 @@
   align-items: flex-end;
   justify-content: center;
 }
-
-.content-container {
+.home-page .content-container {
   margin: 10px;
   width: 100%;
   max-width: 350px;
@@ -21,19 +20,16 @@
   padding: 53px;
   margin-bottom: 30px;
 }
-
-.content-container .title {
+.home-page .content-container .title {
   font-weight: 800;
   margin: 20px;
   font-size: 53px;
 }
-
-.content-container .content {
+.home-page .content-container .content {
   font-weight: bold;
   font-size: 18px;
 }
-
-.content-container .button {
+.home-page .content-container .button {
   margin: 20px;
   color: white;
   background-color: black;

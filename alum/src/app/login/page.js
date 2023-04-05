@@ -31,29 +31,31 @@ export default function Login() {
     }
   };
   return (
-    <main className="login">
-      <main className="overlay"></main>
-      <div className="container">
-        <div className="title">Login</div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          {error && error}
-          <button type="submit" disabled={loading}>
-            {loading ? "Logging you in...." : "Login"}
-          </button>
-        </form>
-      </div>
-    </main>
+    <div className="login-page">
+      <main className="login">
+        <main className="overlay"></main>
+        <div className="container">
+          <div className="title">Login</div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            {error && error}
+            <button type="submit" disabled={loading}>
+              {loading ? "Logging you in...." : "Login"}
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
   );
 }

@@ -1,11 +1,10 @@
-.main-container {
+.privacy-page .main-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.container {
+.privacy-page .container {
   padding-top: 35px;
   padding-bottom: 35px;
   width: 100%;
@@ -17,22 +16,19 @@
   text-align: center;
   max-width: 900px;
 }
-
-.title {
+.privacy-page .title {
   font-weight: bold;
   font-size: 35px;
   max-width: 700px;
 }
-
-.date {
+.privacy-page .date {
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 35px;
   font-size: 16px;
   max-width: 700px;
 }
-
-.content {
+.privacy-page .content {
   font-size: 18px;
   max-width: 700px;
 }
