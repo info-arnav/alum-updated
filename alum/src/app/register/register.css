@@ -1,7 +1,7 @@
 .register-page .register {
   background-image: url("../../../public/login.webp");
   width: 100%;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,14 +11,11 @@
   flex-direction: column;
   position: relative;
 }
+
 .register-page .register * {
   z-index: 10;
 }
-.register-page .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+
 .register-page .container {
   background-color: white;
   box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.25);

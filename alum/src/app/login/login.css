@@ -1,7 +1,7 @@
 .login-page .login {
   background-image: url("../../../public/login.webp");
   width: 100%;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
