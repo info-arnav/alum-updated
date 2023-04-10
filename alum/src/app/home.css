@@ -53,3 +53,97 @@
   min-height: calc(100vh - 60px);
   width: 100%;
 }
+
+.home-page .background {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.home-page .background img {
+  margin-top: 50px;
+}
+
+.home-page .background .title {
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.home-page .background .message {
+  margin-bottom: 10px;
+}
+
+.home-page .background .type {
+  margin-bottom: 50px;
+}
+
+.home-page .background.nomargin .type {
+  margin-bottom: 10px;
+}
+
+.home-page .background .docs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-page .background .docs img {
+  margin: 10px;
+}
+
+.home-page .background button {
+  background-color: aqua;
+  color: black;
+  border: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.home-page .background input {
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid black;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.home-page .background .image-error {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: solid black;
+  border-radius: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.home-page .background .loading {
+  width: 200px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}

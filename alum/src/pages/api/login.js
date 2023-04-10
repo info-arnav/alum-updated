@@ -52,7 +52,6 @@ export default async function login(req, res) {
             if (data.error) {
               res.json({ error: true, message: "Invalid Credentials" });
             } else {
-              console.log(data.data.registeration.api);
               res.setHeader(
                 "Set-Cookie",
                 `User=${CryptoJS.AES.encrypt(

@@ -84,7 +84,7 @@ export default async function register(req, res) {
               JSON.stringify({
                 email: body.email,
                 type: body.type,
-                verified: body.verified,
+                verified: data.data.registeration.verified,
               }),
               process.env.SECRET
             ).toString(),

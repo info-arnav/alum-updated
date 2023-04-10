@@ -1,21 +1,30 @@
-import Link from "next/link";
 import "./home.css";
+import Admin from "./home/admin";
+import Alumni from "./home/alumni";
+import LoggedOut from "./home/loggedOut";
+import Pending from "./home/pending";
+import Student from "./home/student";
+import LoggedIn from "./loggedIn";
 
 export default function Home() {
+  const status = LoggedIn();
   return (
     <div className="home-page">
-      <main>
-        <div className="banner">
-          <div className="content-container">
-            <div className="title">ALUM</div>
-            <div className="content">The NSUT Networking Site</div>
-            <Link href="/register">
-              <div className="button">REGISTER NOW</div>
-            </Link>
-          </div>
-        </div>
-        <div className="block"></div>
-      </main>
+      {status.loggedIn ? (
+        status.data.verified ? (
+          status.data.type == "student" ? (
+            <Student></Student>
+          ) : status.data.type == "alumni" ? (
+            <Alumni></Alumni>
+          ) : (
+            <Admin></Admin>
+          )
+        ) : (
+          <Pending data={status}></Pending>
+        )
+      ) : (
+        <LoggedOut></LoggedOut>
+      )}
     </div>
   );
 }

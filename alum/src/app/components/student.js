@@ -4,8 +4,10 @@ import Logout from "../logout";
 
 export default function Student({ path }) {
   return (
-    <div>
+    <div className="nav-links">
       <button
+        href="/login"
+        className={`nav-sub-button`}
         onClick={(e) => {
           Logout();
         }}
