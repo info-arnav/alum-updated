@@ -41,7 +41,7 @@ export default function Register({ type, otp, email }) {
                 secure: true,
                 sameSite: "lax",
               });
-              location.reload();
+              location.replace("/");
               setLoading("");
             }
           });

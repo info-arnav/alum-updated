@@ -26,7 +26,7 @@ export default function Login() {
         secure: true,
         sameSite: "lax",
       });
-      location.reload();
+      location.replace("/");
       setLoading("");
     }
   };
