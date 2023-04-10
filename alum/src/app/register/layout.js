@@ -42,7 +42,12 @@ export const metadata = {
 export default function RegisterLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
-    return <div className="empty">{redirect("/")}</div>;
+    return (
+      <>
+        <div className="empty"></div>
+        {redirect("/")}
+      </>
+    );
   } else {
     return <>{children}</>;
   }
