@@ -6,7 +6,7 @@ import * as Realm from "realm-web";
 export default async function register(req, res) {
   let body = JSON.parse(req.body);
   body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
-  const app = new Realm.App({ id: process.env.APP_ID });
+  const app = Realm.getApp(process.env.APP_ID);
   try {
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
@@ -84,7 +84,7 @@ export default async function register(req, res) {
               JSON.stringify({
                 email: body.email,
                 type: body.type,
-                verified: data.data.registeration.verified,
+                verified: verified,
               }),
               process.env.SECRET
             ).toString(),
