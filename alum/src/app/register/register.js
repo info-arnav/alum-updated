@@ -82,6 +82,7 @@ export default function Register({ type, otp, email }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <input value={email} type="email" disabled></input>
       <input
         type="password"
         value={password}

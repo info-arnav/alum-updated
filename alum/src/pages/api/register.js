@@ -63,7 +63,7 @@ export default async function register(req, res) {
           body: JSON.stringify({
             query: `
             mutation{
-              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}", api:"${apiKey}" ,type:"${type}",files:"${body.files}",verified:"${verified}"}) {
+              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}", api:"${apiKey}" ,type:"${type}",files:"${body.files}",verified:"${verified}", applications:"[]", honors:"[]", projects:"[]", education:"[]",occupation:"[]"}) {
                 email
               }
             }
