@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Docs from "./docs";
 
-export default async function Pending({ data }) {
+export default function Pending({ data }) {
   return (
     <main className="background nomargin">
       <Image src="/logo.png" width={200} height={200}></Image>

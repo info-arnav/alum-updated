@@ -10,8 +10,8 @@ export default function LoggedIn() {
     );
     const middleData = data.toString(CryptoJS.enc.Utf8);
     const payload = JSON.parse(middleData);
-    payload.verified = Boolean(payload.verified == "true");
     if (payload) {
+      payload.verified = Boolean(payload.verified == "true");
       return { loggedIn: true, data: payload };
     } else {
       return { loggedIn: false };

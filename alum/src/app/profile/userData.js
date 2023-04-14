@@ -68,22 +68,28 @@ export default function UserData({ data, link }) {
           <br></br>
           {userData.bio || "Bio Not Provided"}
           <br></br>
-          {userData.occupation.map((e) => (
-            <>Some occupation Data</>
-          ))}
+          {userData.occupation.map((e) => {
+            <div key={userData.occupation.indexOf(e)}>
+              Some occupation Data
+            </div>;
+          })}
           <br></br>
-          {userData.education.map((e) => (
-            <>Some Educational Data</>
-          ))}
-          {userData.projects.map((e) => (
-            <>Some projects Data</>
-          ))}
-          {userData.honors.map((e) => (
-            <>Some honors Data</>
-          ))}
-          {userData.applications.map((e) => (
-            <>Some applications Data</>
-          ))}
+          {userData.education.map((e) => {
+            <div key={userData.education.indexOf(e)}>
+              Some Educational Data
+            </div>;
+          })}
+          {userData.projects.map((e) => {
+            <div key={userData.projects.indexOf(e)}>Some projects Data</div>;
+          })}
+          {userData.honors.map((e) => {
+            <div key={userData.honors.indexOf(e)}>Some honors Data</div>;
+          })}
+          {userData.applications.map((e) => {
+            <div key={userData.applications.indexOf(e)}>
+              Some applications Data
+            </div>;
+          })}
           <EditProfile
             data={UserData}
             link={link}
