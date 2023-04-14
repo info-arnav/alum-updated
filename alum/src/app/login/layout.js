@@ -42,10 +42,12 @@ export const metadata = {
 export default function LoginLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
-    <>
-      <div className="empty"></div>
-      {redirect("/")}
-    </>;
+    return (
+      <>
+        <div className="empty"></div>
+        {redirect("/")}
+      </>
+    );
   } else {
     return <>{children}</>;
   }
