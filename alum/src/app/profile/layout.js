@@ -44,9 +44,11 @@ export default function ProfileLayout({ children }) {
   if (status.loggedIn) {
     return <>{children}</>;
   } else {
-    <>
-      <div className="empty"></div>
-      {redirect("/")}
-    </>;
+    return (
+      <>
+        <div className="empty"></div>
+        {redirect("/")}
+      </>
+    );
   }
 }

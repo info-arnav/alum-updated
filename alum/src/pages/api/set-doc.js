@@ -1,4 +1,3 @@
-import bcrypt from "bcrypt";
 import CryptoJS from "crypto-js";
 import cookie from "cookie";
 

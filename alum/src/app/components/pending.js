@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import Logout from "../logout";
 
 export default function Pending({ path }) {

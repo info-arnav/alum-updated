@@ -20,14 +20,14 @@ export default async function Image(req, res) {
       }),
     }).then((e) => e.json());
     if (data.data.image != null) {
-      var img = Buffer.from(data.data.image.image.split(",")[1], "base64");
+      let img = Buffer.from(data.data.image.image.split(",")[1], "base64");
       res.writeHead(200, {
         "Content-Type": "image",
         "Content-Length": img.length,
       });
       res.end(img);
     } else {
-      var img = Buffer.from(image.data.split(",")[1], "base64");
+      let img = Buffer.from(image.data.split(",")[1], "base64");
       res.writeHead(200, {
         "Content-Type": "image",
         "Content-Length": img.length,
@@ -35,7 +35,7 @@ export default async function Image(req, res) {
       res.end(img);
     }
   } catch {
-    var img = Buffer.from(image.data.split(",")[1], "base64");
+    let img = Buffer.from(image.data.split(",")[1], "base64");
     res.writeHead(200, {
       "Content-Type": "image",
       "Content-Length": img.length,

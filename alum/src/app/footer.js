@@ -18,7 +18,6 @@ export default function Footer() {
         method: "POST",
         body: JSON.stringify({ email: email, message: message }),
       }).then((e) => {
-        let data = e.json();
         setMessage("");
         setEmail("");
         setError("Message Sent");
