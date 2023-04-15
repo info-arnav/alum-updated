@@ -9,5 +9,3 @@ export default function Profile() {
     </div>
   );
 }
-
-//We will be parsing string and updated them each time

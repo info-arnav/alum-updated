@@ -56,9 +56,16 @@ export default function UserData({ data, link }) {
     <>
       {loading ? (
         <>Loading....</>
+      ) : error ? (
+        <>Some error occured while loading your data</>
       ) : (
         <>
-          <img src={`${link}api/image/${data.data.email}`}></img>
+          <img
+            src={`${link}api/image/${data.data.email}`}
+            width={100}
+            height={100}
+            alt="This is a profile picture"
+          ></img>
           <br></br>
           {userData.name || "Name Not Provided"}
           <br></br>
@@ -68,8 +75,14 @@ export default function UserData({ data, link }) {
           <br></br>
           {userData.bio || "Bio Not Provided"}
           <br></br>
+          <EditProfile
+            data={UserData}
+            link={link}
+            email={data.data.email}
+          ></EditProfile>
+          <br></br>
           {userData.occupation.map((e) => {
-            return <div key={e.index}>Some occupation Data</div>;
+            return <div key={e.index}>Edit delete Some occupation Data</div>;
           })}
           <br></br>
           {userData.education.map((e) => {
@@ -84,11 +97,6 @@ export default function UserData({ data, link }) {
           {userData.applications.map((e) => {
             return <div key={e.index}>Some applications Data</div>;
           })}
-          <EditProfile
-            data={UserData}
-            link={link}
-            email={data.data.email}
-          ></EditProfile>
         </>
       )}
     </>

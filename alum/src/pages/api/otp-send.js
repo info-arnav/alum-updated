@@ -1,8 +1,8 @@
 import nodemailer from "nodemailer";
+import QueryString from "./query-string";
 
 export default async function sendOTP(req, res) {
   let body = JSON.parse(req.body);
-  body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   const data = await fetch(process.env.GRAPHQL_URI, {
     method: "POST",
     headers: {
@@ -12,7 +12,7 @@ export default async function sendOTP(req, res) {
     body: JSON.stringify({
       query: `
         query{
-            registeration(query: {email:"${body.email}"}) {
+            registeration(query: ${QueryString({ email: body.email })}) {
               email
             }
           }
@@ -52,7 +52,7 @@ export default async function sendOTP(req, res) {
             body: JSON.stringify({
               query: `
               query{
-                otp(query: {email:"${body.email}"}) {
+                otp(query: ${QueryString({ email: body.email })}) {
                   email
                 }
               }
@@ -69,7 +69,10 @@ export default async function sendOTP(req, res) {
               body: JSON.stringify({
                 query: `
                 mutation{
-                    insertOneOtp(data:{otp:"${OTP}", email:"${body.email}"}){
+                    insertOneOtp(data:${QueryString({
+                      email: body.email,
+                      otp: OTP,
+                    })}){
                         otp
                     }
                   }
@@ -90,7 +93,9 @@ export default async function sendOTP(req, res) {
               body: JSON.stringify({
                 query: `
                 mutation{
-                    updateOneOtp(set:{otp:"${OTP}"}, query:{email:"${body.email}"}) {
+                    updateOneOtp(set:${QueryString({
+                      otp: OTP,
+                    })}, query:${QueryString({ email: body.email })}) {
                       _id
                       email
                       otp

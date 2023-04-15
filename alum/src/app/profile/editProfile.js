@@ -1,12 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function EditProfile({ data, link, email }) {
-  useEffect(() => {});
+  const [show, setShow] = useState(false);
+  const handleUpdate = async () => {};
   return (
     <>
-      <input value={`${link}api/image/${email}`}></input>
+      <button onClick={() => setShow(true)}>Edit Profile</button>
+      <br></br>
+      {show && (
+        <>
+          <button onClick={handleUpdate}>Update</button>
+          <button onClick={() => setShow(false)}>Close</button>
+        </>
+      )}
     </>
   );
 }

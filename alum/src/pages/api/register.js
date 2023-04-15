@@ -2,10 +2,10 @@ import bcrypt from "bcrypt";
 import CryptoJS from "crypto-js";
 const crypto = require("crypto");
 import * as Realm from "realm-web";
+import QueryString from "./query-string";
 
 export default async function register(req, res) {
   let body = JSON.parse(req.body);
-  body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   const app = Realm.getApp(process.env.APP_ID);
   try {
     const data = await fetch(process.env.GRAPHQL_URI, {
@@ -17,7 +17,7 @@ export default async function register(req, res) {
       body: JSON.stringify({
         query: `
       query{
-        otp(query: {email:"${body.email}"}) {
+        otp(query: ${QueryString({ email: body.email })}) {
           email
           otp
         }
@@ -63,7 +63,19 @@ export default async function register(req, res) {
           body: JSON.stringify({
             query: `
             mutation{
-              insertOneRegisteration(data:{email:"${body.email}",password:"${hash}", api:"${apiKey}" ,type:"${type}",files:"${body.files}",verified:"${verified}", applications:"[]", honors:"[]", projects:"[]", education:"[]",occupation:"[]"}) {
+              insertOneRegisteration(data:${QueryString({
+                email: body.email,
+                password: hash,
+                api: apiKey,
+                type: type,
+                files: body.files,
+                verified: verified,
+                applications: "[]",
+                honors: "[]",
+                projects: "[]",
+                education: "[]",
+                occupation: "[]",
+              })}) {
                 email
               }
             }

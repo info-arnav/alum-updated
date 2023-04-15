@@ -1,6 +1,7 @@
+import QueryString from "./query-string";
+
 export default async function verifyOTP(req, res) {
   let body = JSON.parse(req.body);
-  body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   try {
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
@@ -11,7 +12,7 @@ export default async function verifyOTP(req, res) {
       body: JSON.stringify({
         query: `
       query{
-        otp(query: {email:"${body.email}"}) {
+        otp(query: ${QueryString({ email: body.email })}) {
           email
           otp
         }

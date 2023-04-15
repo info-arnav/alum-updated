@@ -1,9 +1,9 @@
 import bcrypt from "bcrypt";
 import CryptoJS from "crypto-js";
+import QueryString from "./query-string";
 
 export default async function login(req, res) {
   let body = JSON.parse(req.body);
-  body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   try {
     const userData = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
@@ -14,7 +14,7 @@ export default async function login(req, res) {
       body: JSON.stringify({
         query: `
           query{
-              registeration(query: {email:"${body.email}"}) {
+              registeration(query: ${QueryString({ email: body.email })}) {
                 email
                 password
               }
@@ -39,7 +39,7 @@ export default async function login(req, res) {
               body: JSON.stringify({
                 query: `
         query{
-          registeration(query:{email:"${body.email}"}) {
+          registeration(query:${QueryString({ email: body.email })}) {
             email
             type
             verified

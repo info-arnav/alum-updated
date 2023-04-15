@@ -1,9 +1,9 @@
 import CryptoJS from "crypto-js";
 import cookie from "cookie";
+import QueryString from "./query-string";
 
 export default async function login(req, res) {
   let body = JSON.parse(req.body);
-  body.email = body.email.replaceAll('"', "'").replaceAll("\n", " ");
   const cookies = cookie.parse(req.headers.cookie || "");
   try {
     const mid_password = CryptoJS.AES.decrypt(cookies.User, process.env.SECRET);
@@ -18,7 +18,7 @@ export default async function login(req, res) {
       body: JSON.stringify({
         query: `
 query{
-  registeration(query:{email:"${body.email}"}) {
+  registeration(query:${QueryString({ email: body.email })}) {
     files
   }
 }

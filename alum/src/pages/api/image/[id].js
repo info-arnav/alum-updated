@@ -1,3 +1,4 @@
+import QueryString from "../query-string";
 import image from "./image";
 
 export default async function Image(req, res) {
@@ -12,7 +13,7 @@ export default async function Image(req, res) {
       body: JSON.stringify({
         query: `
       query{
-      image(query:{email:"${id}"}) {
+      image(query:${QueryString({ email: id })}) {
       image
       }
       }
