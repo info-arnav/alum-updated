@@ -11,6 +11,8 @@ export default function UserProfile({ data, link }) {
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(true);
   const [error, setError] = useState(false);
+  const [show, setShow] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     const getDoc = async () => {
       const res = await fetch(`/api/get-user-info`, {
@@ -30,7 +32,7 @@ export default function UserProfile({ data, link }) {
           [res.data.projects, "projects"],
           [res.data.honors, "honors"],
           [res.data.applications, "applications"],
-        ].map((e) => {
+        ].forEach((e) => {
           try {
             res.data[e[1]] = JSON.parse(e[0]);
           } catch {
@@ -39,11 +41,11 @@ export default function UserProfile({ data, link }) {
         });
         setUserData(res.data);
         setLoading(false);
-        setLoading(false);
       }
     };
     getDoc();
-  }, []);
+  }, [refresh]);
+  useEffect(() => {}, [show, userData]);
   return (
     <>
       {loading ? (
@@ -57,12 +59,24 @@ export default function UserProfile({ data, link }) {
             link={link}
             email={data.data.email}
           ></Profile>
-          <EditProfile
+          <button onClick={() => setShow(true)}>Edit Profile</button>
+          {show && (
+            <EditProfile
+              data={userData}
+              link={link}
+              email={data.data.email}
+              setShow={setShow}
+              setRefresh={setRefresh}
+              refresh={refresh}
+              setData={setUserData}
+            ></EditProfile>
+          )}
+          <Portfolio
             data={userData}
-            link={link}
             email={data.data.email}
-          ></EditProfile>
-          <Portfolio data={userData}></Portfolio>
+            setRefresh={setRefresh}
+            refresh={refresh}
+          ></Portfolio>
         </>
       )}
     </>
