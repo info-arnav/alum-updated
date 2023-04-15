@@ -19,7 +19,7 @@ export default function EditProfile({
   const [bio, setBio] = useState(data.bio);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const secondUpdate = async (e) => {
+  const secondUpdate = async () => {
     const res = await fetch(`/api/update-profile`, {
       method: "POST",
       body: JSON.stringify({
@@ -101,7 +101,7 @@ export default function EditProfile({
   };
   return (
     <>
-      <form action={handleUpdate}>
+      <form onSubmit={handleUpdate}>
         <img
           src={image}
           alt="The profile picture"
