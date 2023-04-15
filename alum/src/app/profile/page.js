@@ -1,11 +1,11 @@
 import LoggedIn from "../loggedIn";
-import UserData from "./userData";
+import UserProfile from "./userProfile";
 
 export default function Profile() {
   const data = LoggedIn();
   return (
     <div className="profile-page">
-      <UserData data={data} link={process.env.LINK}></UserData>
+      <UserProfile data={data} link={process.env.LINK}></UserProfile>
     </div>
   );
 }
