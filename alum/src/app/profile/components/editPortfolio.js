@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 
-export default function AddItem({
+export default function EditPortfolio({
   email,
   data,
   setRefresh,
   refresh,
   show,
   type,
+  edit,
 }) {
   const [error, setError] = useState(false);
   const [position, setPosition] = useState("");
