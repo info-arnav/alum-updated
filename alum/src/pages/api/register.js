@@ -69,7 +69,6 @@ export default async function register(req, res) {
                 api: apiKey,
                 type: type,
                 files: body.files,
-                verified: verified,
                 applications: "[]",
                 honors: "[]",
                 projects: "[]",
@@ -82,6 +81,25 @@ export default async function register(req, res) {
             `,
           }),
         }).then((e) => e.json());
+        await fetch(process.env.GRAPHQL_URI, {
+          method: "POST",
+          headers: {
+            email: body.email,
+            password: apiKey,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: `
+            mutation{
+              updateOneRegisteration(data:${QueryString({
+                verified: verified,
+              })}) {
+                email
+              }
+            }
+            `,
+          }),
+        });
         if (registeredUser.data.insertOneRegisteration.email == body.email) {
           res.setHeader(
             "Set-Cookie",
