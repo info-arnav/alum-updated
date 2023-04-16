@@ -84,8 +84,7 @@ export default async function register(req, res) {
         await fetch(process.env.GRAPHQL_URI, {
           method: "POST",
           headers: {
-            email: body.email,
-            password: apiKey,
+            apikey: process.env.GRAPHQL_API,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
