@@ -40,7 +40,7 @@ export default async function register(req, res) {
 
         const credentials = Realm.Credentials.emailPassword(body.email, apiKey);
 
-        await app.logIn(credentials);
+        const userId = await app.logIn(credentials);
         let verified;
         let type;
         if (
@@ -94,6 +94,7 @@ export default async function register(req, res) {
                 email: body.email,
               })},set:${QueryString({
               verified: verified,
+              user_id: userId.id,
             })}) {
                 email
               }
