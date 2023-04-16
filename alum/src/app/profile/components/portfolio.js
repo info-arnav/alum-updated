@@ -5,6 +5,7 @@ import Occupation from "./occupation";
 
 export default function Portfolio({ data, email, setRefresh, refresh }) {
   const [showOccupation, setShowOccupation] = useState(false);
+  const handleSubmit = async () => {};
   useEffect(() => {}, [showOccupation]);
   return (
     <>
@@ -19,24 +20,24 @@ export default function Portfolio({ data, email, setRefresh, refresh }) {
         ></Occupation>
       )}
       {[
-        [data.occupation],
-        [data.education],
-        [data.projects],
-        [data.honors],
-        [data.applications],
+        [data.occupation, "occupation"],
+        [data.education, "education"],
+        [data.projects, "projects"],
+        [data.honors, "honors"],
+        [data.applications, "applications"],
       ].map((e) => {
         return (
-          <>
-            {e[0].map((e) => {
+          <div key={e[1]}>
+            {e[0].map((f) => {
               return (
-                <div key={data.occupation.indexOf(e)}>
-                  <button>Delete</button>
+                <div>
+                  <button onClick={() => {}}>Delete</button>
                   <button>Edit</button>
-                  {e.position}
+                  {f.position}
                 </div>
               );
             })}
-          </>
+          </div>
         );
       })}
     </>
