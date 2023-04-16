@@ -11,6 +11,7 @@ export default function EditPortfolio({
   type,
   edit,
   location,
+  setData,
 }) {
   const [error, setError] = useState(false);
   const [position, setPosition] = useState(
@@ -61,6 +62,7 @@ export default function EditPortfolio({
       setError(true);
       setLoading(false);
     } else {
+      setData(data);
       setRefresh(!refresh);
       setLoading(false);
       show(false);

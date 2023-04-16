@@ -11,6 +11,7 @@ export default function Modal({
   type,
   edit,
   location,
+  setData,
 }) {
   const [show, setShow] = useState(false);
   useEffect(() => {}, [show]);
@@ -26,6 +27,7 @@ export default function Modal({
           show={setShow}
           type={type}
           edit={edit}
+          setData={setData}
           location={location}
         ></EditPortfolio>
       )}

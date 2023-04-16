@@ -76,6 +76,7 @@ export default function UserProfile({ data, link }) {
             email={data.data.email}
             setRefresh={setRefresh}
             refresh={refresh}
+            setData={setUserData}
           ></Portfolio>
         </>
       )}
