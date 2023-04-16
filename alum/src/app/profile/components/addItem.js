@@ -33,7 +33,7 @@ export default function AddItem({
       email: email,
     };
     bodyData[type] = updatedData;
-    const res = await fetch(`/api/add-item-to-portfolio`, {
+    const res = await fetch(`/api/edit-portfolio-item`, {
       method: "POST",
       body: JSON.stringify(bodyData),
       cache: "no-cache",

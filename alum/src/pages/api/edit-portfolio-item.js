@@ -2,7 +2,7 @@ import QueryString from "./query-string";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
 
-export default async function addItemToPortfolio(req, res) {
+export default async function editPortfolioItem(req, res) {
   let body = JSON.parse(req.body);
   let email = body.email;
   delete body.email;

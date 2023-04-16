@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import AddItem from "./addItem";
-import Occupation from "./addItem";
 
 export default function Portfolio({ data, email, setRefresh, refresh }) {
   const [showOccupation, setShowOccupation] = useState(false);
