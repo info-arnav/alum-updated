@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 
-export default function Occupation({ email, data, setRefresh, refresh, show }) {
+export default function AddItem({
+  email,
+  data,
+  setRefresh,
+  refresh,
+  show,
+  type,
+}) {
   const [error, setError] = useState(false);
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
@@ -13,21 +20,22 @@ export default function Occupation({ email, data, setRefresh, refresh, show }) {
     e.preventDefault();
     setError(false);
     setLoading(true);
-    let newOccupation = data.occupation;
-    newOccupation.push({
+    let updatedData = data[type];
+    updatedData.push({
       position: position,
       company: company,
       description: description,
       duration: duration,
     });
-    data.occupation = newOccupation;
-    newOccupation = JSON.stringify(newOccupation);
-    const res = await fetch(`/api/add-occupation`, {
+    data[type] = updatedData;
+    updatedData = JSON.stringify(updatedData);
+    let bodyData = {
+      email: email,
+    };
+    bodyData[type] = updatedData;
+    const res = await fetch(`/api/add-item-to-portfolio`, {
       method: "POST",
-      body: JSON.stringify({
-        email: email,
-        occupation: newOccupation,
-      }),
+      body: JSON.stringify(bodyData),
       cache: "no-cache",
     }).then((e) => e.json());
     if (res.error) {
