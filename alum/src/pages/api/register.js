@@ -91,9 +91,11 @@ export default async function register(req, res) {
           body: JSON.stringify({
             query: `
             mutation{
-              updateOneRegisteration(data:${QueryString({
-                verified: verified,
-              })}) {
+              updateOneRegisteration(query:${QueryString({
+                email: body.email,
+              })},set:${QueryString({
+              verified: verified,
+            })}) {
                 email
               }
             }
