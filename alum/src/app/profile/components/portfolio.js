@@ -24,9 +24,17 @@ export default function Portfolio({ data, email, setRefresh, refresh }) {
             ></Modal>
             {e[0].map((f) => {
               return (
-                <div>
+                <div key={e[0].indexOf(f)}>
                   <button onClick={() => {}}>Delete</button>
-                  <button>Edit</button>
+                  <Modal
+                    email={email}
+                    data={data}
+                    setRefresh={setRefresh}
+                    refresh={refresh}
+                    type={[e[1]]}
+                    edit={true}
+                    location={e[0].indexOf(f)}
+                  ></Modal>
                   {f.position}
                 </div>
               );

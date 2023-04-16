@@ -10,12 +10,13 @@ export default function Modal({
   refresh,
   type,
   edit,
+  location,
 }) {
   const [show, setShow] = useState(false);
   useEffect(() => {}, [show]);
   return (
     <>
-      <button onClick={() => setShow(true)}>Add new</button>
+      <button onClick={() => setShow(true)}>{edit ? "Edit" : "Add new"}</button>
       {show && (
         <EditPortfolio
           email={email}
@@ -25,6 +26,7 @@ export default function Modal({
           show={setShow}
           type={type}
           edit={edit}
+          location={location}
         ></EditPortfolio>
       )}
     </>

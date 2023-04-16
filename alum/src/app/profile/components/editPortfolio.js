@@ -10,24 +10,42 @@ export default function EditPortfolio({
   show,
   type,
   edit,
+  location,
 }) {
   const [error, setError] = useState(false);
-  const [position, setPosition] = useState("");
-  const [company, setCompany] = useState("");
-  const [description, setDescription] = useState("");
-  const [duration, setDuration] = useState("");
+  const [position, setPosition] = useState(
+    edit ? data[type][location].position : ""
+  );
+  const [company, setCompany] = useState(
+    edit ? data[type][location].company : ""
+  );
+  const [description, setDescription] = useState(
+    edit ? data[type][location].description : ""
+  );
+  const [duration, setDuration] = useState(
+    edit ? data[type][location].duration : ""
+  );
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false);
     setLoading(true);
     let updatedData = data[type];
-    updatedData.push({
-      position: position,
-      company: company,
-      description: description,
-      duration: duration,
-    });
+    if (edit) {
+      updatedData[location] = {
+        position: position,
+        company: company,
+        description: description,
+        duration: duration,
+      };
+    } else {
+      updatedData.push({
+        position: position,
+        company: company,
+        description: description,
+        duration: duration,
+      });
+    }
     data[type] = updatedData;
     updatedData = JSON.stringify(updatedData);
     let bodyData = {
@@ -73,7 +91,7 @@ export default function EditPortfolio({
         ></input>
         {error && "Some error occured"}
         <button action="submit" disabled={loading}>
-          Add Occupation
+          {edit ? "Edit" : "Add"}
         </button>
       </form>
       <button onClick={() => show(false)}>Close</button>
