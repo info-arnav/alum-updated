@@ -471,7 +471,7 @@ footer button:hover {
 /* Register Page */
 
 .register-page .register {
-  background-image: url("../../../public/login.webp");
+  background-image: url("../../public/login.webp");
   width: 100%;
   min-height: calc(100vh - 60px);
   background-repeat: no-repeat;
@@ -574,7 +574,7 @@ footer button:hover {
 /* Login Page */
 
 .login-page .login {
-  background-image: url("../../../public/login.webp");
+  background-image: url("../../public/login.webp");
   width: 100%;
   min-height: calc(100vh - 60px);
   background-repeat: no-repeat;
