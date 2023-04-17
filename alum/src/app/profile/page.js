@@ -1,6 +1,5 @@
 import LoggedIn from "../loggedIn";
 import UserProfile from "./userProfile";
-import "./profile.css";
 
 export default function Profile() {
   const data = LoggedIn();

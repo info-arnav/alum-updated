@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Dropdown from "./dropdown";
-import "./privacy.css";
 
 export default function Privacy() {
   return (

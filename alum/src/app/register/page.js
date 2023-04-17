@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import "./register.css";
 import SendOTP from "./sendOTP";
 
 export default function Register() {

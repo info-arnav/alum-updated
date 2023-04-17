@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Cookies from "universal-cookie";
-import "./login.css";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);

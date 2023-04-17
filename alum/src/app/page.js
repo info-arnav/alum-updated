@@ -1,4 +1,3 @@
-import "./home.css";
 import Admin from "./home/admin";
 import Alumni from "./home/alumni";
 import LoggedOut from "./home/loggedOut";

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import "./dropdown.css";
 export default function Dropdown({ title, content }) {
   const [show, setShow] = useState(false);
   return (
