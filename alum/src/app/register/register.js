@@ -108,7 +108,11 @@ export default function Register({ type, otp, email }) {
             onChange={imageHandler}
             required
           ></input>
-          <img src={image} style={{ width: "100%" }}></img>
+          <img
+            src={image}
+            style={{ width: "100%" }}
+            alt="Verification document uploaded by user"
+          ></img>
         </>
       )}
       {error && error}

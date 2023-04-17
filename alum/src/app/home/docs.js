@@ -93,7 +93,11 @@ export default function Docs({ data }) {
       ) : error ? (
         <div className="image-error">Some error occured</div>
       ) : (
-        <img src={doc} width={200}></img>
+        <img
+          src={doc}
+          width={200}
+          alt="Verification document uploaded by user"
+        ></img>
       )}
       <br></br>
       <input
@@ -103,7 +107,13 @@ export default function Docs({ data }) {
         required
       ></input>
       <br></br>
-      {image && <img src={image} width={200}></img>}
+      {image && (
+        <img
+          src={image}
+          width={200}
+          alt="Verification document uploaded by user"
+        ></img>
+      )}
       <br></br>
       {imageError}
       {updated && "Updated"}
