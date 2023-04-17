@@ -11,6 +11,7 @@ export default function Docs({ data }) {
   const [image, setImage] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [updated, setUpdated] = useState("");
+  const [errorData, setErrorData] = useState("");
   const base64Converter = (file) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
@@ -58,6 +59,7 @@ export default function Docs({ data }) {
         setProcessing(false);
       } else {
         setDoc(res.data);
+        setErrorData(res.error_data);
         setImage("");
         setImageError(false);
         setUpdated(true);
@@ -81,6 +83,7 @@ export default function Docs({ data }) {
         setLoading(false);
       } else {
         setDoc(res.data);
+        setErrorData(res.error_data);
         setLoading(false);
       }
     };
@@ -93,11 +96,14 @@ export default function Docs({ data }) {
       ) : error ? (
         <div className="image-error">Some error occured</div>
       ) : (
-        <img
-          src={doc}
-          width={200}
-          alt="Verification document uploaded by user"
-        ></img>
+        <>
+          <img
+            src={doc}
+            width={200}
+            alt="Verification document uploaded by user"
+          ></img>
+          {errorData}
+        </>
       )}
       <br></br>
       <input

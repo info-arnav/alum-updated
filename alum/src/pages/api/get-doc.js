@@ -20,6 +20,7 @@ export default async function login(req, res) {
 query{
   registeration(query:${QueryString({ email: body.email })}) {
     files
+    error
   }
 }
 `,
@@ -28,6 +29,7 @@ query{
     res.json({
       error: false,
       data: data.data.registeration.files,
+      error_data: data.data.registeration.error,
     });
   } catch {
     res.json({ error: true, message: "Some Error Occured" });

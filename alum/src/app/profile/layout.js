@@ -43,7 +43,12 @@ export default function ProfileLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
     if (status.data.verified) {
-      return <>{children}</>;
+      if (status.data.type != "admin") {
+        return <>{children}</>;
+      }
+      {
+        return <Empty link="/"></Empty>;
+      }
     } else {
       return <Empty link="/"></Empty>;
     }

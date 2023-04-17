@@ -20,8 +20,10 @@ export default async function login(req, res) {
         mutation{
           updateOneRegisteration(set:${QueryString({
             files: body.files,
+            error: "",
           })}, query:${QueryString({ email: body.email })}) {
             files
+            error
           }
         }
 `,
@@ -30,6 +32,7 @@ export default async function login(req, res) {
     res.json({
       error: false,
       data: data.data.updateOneRegisteration.files,
+      error_data: data.data.updateOneRegisteration.error,
     });
   } catch {
     res.json({ error: true, message: "Some Error Occured" });
