@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
 export const metadata = {
@@ -42,13 +43,12 @@ export const metadata = {
 export default function ProfileLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
-    return <>{children}</>;
+    if (status.data.verified) {
+      return <>{children}</>;
+    } else {
+      return <Empty link="/"></Empty>;
+    }
   } else {
-    return (
-      <>
-        <div className="empty"></div>
-        {redirect("/")}
-      </>
-    );
+    return <Empty link="/login"></Empty>;
   }
 }

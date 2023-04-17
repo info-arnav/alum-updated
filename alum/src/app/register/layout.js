@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
 export const metadata = {
@@ -44,8 +45,7 @@ export default function RegisterLayout({ children }) {
   if (status.loggedIn) {
     return (
       <>
-        <div className="empty"></div>
-        {redirect("/")}
+        <Empty link="/"></Empty>
       </>
     );
   } else {

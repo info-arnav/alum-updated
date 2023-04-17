@@ -67,7 +67,6 @@ export default async function register(req, res) {
                 email: body.email,
                 password: hash,
                 api: apiKey,
-                type: type,
                 files: body.files,
                 applications: "[]",
                 honors: "[]",
@@ -94,6 +93,7 @@ export default async function register(req, res) {
                 email: body.email,
               })},set:${QueryString({
               verified: verified,
+              type: type,
               user_id: userId.id,
             })}) {
                 email
