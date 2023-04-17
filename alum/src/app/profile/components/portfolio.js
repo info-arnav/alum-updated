@@ -17,7 +17,6 @@ export default function Portfolio({
         [data.education, "education"],
         [data.projects, "projects"],
         [data.honors, "honors"],
-        [data.applications, "applications"],
       ].map((e) => {
         return (
           <div key={e[1]}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import arrayBuilder from "./arrayBuilder";
 import EditPortfolio from "./editPortfolio";
 
 export default function Modal({
@@ -29,6 +30,7 @@ export default function Modal({
           edit={edit}
           setData={setData}
           location={location}
+          placeholder={arrayBuilder(type)}
         ></EditPortfolio>
       )}
     </>

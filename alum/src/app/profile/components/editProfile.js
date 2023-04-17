@@ -116,9 +116,21 @@ export default function EditProfile({
           id="hidden_click"
           hidden
         ></input>
-        <input value={name} onChange={(e) => setName(e.target.value)}></input>
-        <input value={batch} onChange={(e) => setBatch(e.target.value)}></input>
-        <input value={bio} onChange={(e) => setBio(e.target.value)}></input>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+        ></input>
+        <input
+          value={batch}
+          onChange={(e) => setBatch(e.target.value)}
+          placeholder="Batch"
+        ></input>
+        <textarea
+          value={bio}
+          onChange={(e) => setBio(e.target.value)}
+          placeholder="Bio"
+        ></textarea>
         {error && error}
         <button onClick={handleUpdate} type="submit" disabled={loading}>
           Update

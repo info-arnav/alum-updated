@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
