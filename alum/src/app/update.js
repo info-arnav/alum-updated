@@ -14,7 +14,12 @@ export default function Update({ email, oldData }) {
       cookies.remove("User");
       location.reload();
     } else {
-      if (data.newData != oldData) {
+      oldData.verified = `${oldData.verified}`;
+      if (
+        (data.newData.email != oldData.email) |
+        (data.newData.verified != oldData.verified) |
+        (data.newData.type != oldData.type)
+      ) {
         cookies.set("User", data.key, {
           secure: true,
           sameSite: "lax",
