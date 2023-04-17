@@ -20,6 +20,7 @@ export default function Portfolio({
       ].map((e) => {
         return (
           <div key={e[1]}>
+            {e[1].toUpperCase()}
             <Modal
               email={email}
               data={data}
