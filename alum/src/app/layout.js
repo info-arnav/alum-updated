@@ -3,6 +3,7 @@ import "./responsive.css";
 import LoggedIn from "./loggedIn";
 import Navigation from "./navigation";
 import Footer from "./footer";
+import Update from "./update";
 
 export const metadata = {
   manifest: `${process.env.LINK}manifest.json`,
@@ -78,6 +79,7 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <Navigation data={status}></Navigation>
+        <Update email={status.data.email} oldData={status.data}></Update>
         <main>{children}</main>
         <Footer></Footer>
       </body>
