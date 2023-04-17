@@ -8,5 +8,5 @@ export default function Empty({ link }) {
   useEffect(() => {
     router.push(link);
   });
-  return <div className="empty"></div>;
+  return <div className="empty">Redirecting</div>;
 }
