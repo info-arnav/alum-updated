@@ -1,5 +1,4 @@
 import "./globals.css";
-import "./responsive.css";
 import LoggedIn from "./loggedIn";
 import Navigation from "./navigation";
 import Footer from "./footer";
