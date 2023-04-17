@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Profile from "./components/profile";
 import EditProfile from "./components/editProfile";
 import Portfolio from "./components/portfolio";
-import Loading from "../loading";
+import Loading from "./loading";
 import Error from "../error";
 
 export default function UserProfile({ data, link }) {
