@@ -14,11 +14,9 @@ export default function EditPortfolio({
   setData,
 }) {
   const [error, setError] = useState(false);
-  const [position, setPosition] = useState(
-    edit ? data[type][location].position : ""
-  );
-  const [company, setCompany] = useState(
-    edit ? data[type][location].company : ""
+  const [title, setTitle] = useState(edit ? data[type][location].title : "");
+  const [subTitle, setSubTitle] = useState(
+    edit ? data[type][location].subTitle : ""
   );
   const [description, setDescription] = useState(
     edit ? data[type][location].description : ""
@@ -34,15 +32,15 @@ export default function EditPortfolio({
     let updatedData = data[type];
     if (edit) {
       updatedData[location] = {
-        position: position,
-        company: company,
+        title: title,
+        subTitle: subTitle,
         description: description,
         duration: duration,
       };
     } else {
       updatedData.push({
-        position: position,
-        company: company,
+        title: title,
+        subTitle: subTitle,
         description: description,
         duration: duration,
       });
@@ -73,13 +71,13 @@ export default function EditPortfolio({
       <form onSubmit={handleSubmit}>
         <input
           required
-          value={position}
-          onChange={(e) => setPosition(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         ></input>
         <input
           required
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
+          value={subTitle}
+          onChange={(e) => setSubTitle(e.target.value)}
         ></input>
         <input
           required

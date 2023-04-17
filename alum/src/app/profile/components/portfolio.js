@@ -52,7 +52,7 @@ export default function Portfolio({
                     location={e[0].indexOf(f)}
                     setData={setData}
                   ></Modal>
-                  {f.position}
+                  {f.title},{f.subTitle},{f.description},{f.duration}
                 </div>
               );
             })}
