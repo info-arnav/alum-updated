@@ -73,6 +73,7 @@ export default async function register(req, res) {
                 projects: "[]",
                 education: "[]",
                 occupation: "[]",
+                error: "",
               })}) {
                 email
               }
