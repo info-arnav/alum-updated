@@ -44,10 +44,6 @@ Now, you can access the application at `http://localhost:3000/`.
 - User-level access control with GraphQL and MongoDB
 - Password hashing with bcrypt
 
-## Contributing
-
-Contributions are always welcome! Please read the [CONTRIBUTING](CONTRIBUTING.md) guidelines before making any contributions.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](license.md)
