@@ -1,0 +1,34 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+alum/node_modules
+alum/.pnp
+alum/.pnp.js
+
+# testing
+alum/coverage
+
+# next.js
+alum/.next/
+alum/out/
+
+# production
+alum/build
+
+# misc
+alum/.DS_Store
+alum/*.pem
+
+# debug
+alum/npm-debug.log*
+alum/yarn-debug.log*
+alum/yarn-error.log*
+alum/.pnpm-debug.log*
+
+# local env files
+alum/.env*.local
+
+# vercel
+alum/.vercel
+
+alum/mongodb-realm
