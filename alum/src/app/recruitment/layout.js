@@ -1,13 +1,17 @@
 import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
-const status = LoggedIn();
-
-let description = (status.data.type = "student"
-  ? "Effortlessly manage your recruitment posts on Alum, the NSUT alumni portal. Create, edit, or delete job opportunities, and monitor their status to streamline your hiring process and attract top talent."
-  : "Explore exciting job opportunities on Alum, the NSUT alumni portal. Browse and apply for positions posted by esteemed alumni, and kickstart your career with valuable connections in your professional network.");
+const statusFunction = async function () {
+  return LoggedIn();
+};
 
 export async function metadata() {
+  const status = statusFunction();
+  let description = status.LoggedIn
+    ? status.data.type == "student"
+      ? "Effortlessly manage your recruitment posts on Alum, the NSUT alumni portal. Create, edit, or delete job opportunities, and monitor their status to streamline your hiring process and attract top talent."
+      : "Explore exciting job opportunities on Alum, the NSUT alumni portal. Browse and apply for positions posted by esteemed alumni, and kickstart your career with valuable connections in your professional network."
+    : "Unlock your career potential with Alum, the NSUT alumni portal. Log in to explore job opportunities posted by alumni, apply for positions, and connect with professionals to boost your career growth and network.";
   return {
     title: "View Recruitments",
     description: description,
@@ -45,6 +49,7 @@ export async function metadata() {
 }
 
 export default function RecruitmentPage({ children }) {
+  const status = statusFunction();
   if (!status.loggedIn) {
     return (
       <>
