@@ -1,14 +1,18 @@
 import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
+const status = LoggedIn();
+
+let description = (status.data.type = "student"
+  ? "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally."
+  : "Looking for a platform where NSUT alumni can easily manage their job recruitment requests? Check out our recruitment page on Alum, the alumni portal on NSUT! Here, alumni can view, edit, and delete all of their recruitment requests, as well as monitor their status. Join Alum today and take control of your career opportunities as an NSUT alumnus.");
+
 export const metadata = {
-  title: "View Recruitment",
-  description:
-    "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally.",
+  title: "View Recruitments",
+  description: description,
   openGraph: {
-    title: "View Recruitment",
-    description:
-      "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally.",
+    title: "View Recruitments",
+    description: description,
     url: `${process.env.LINK}recruitment`,
     siteName: "Alum",
     images: [
@@ -29,9 +33,8 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "View Recruitment",
-    description:
-      "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally.",
+    title: "View Recruitments",
+    description: description,
     images: [
       `${process.env.LINK}logo-background.png`,
       `${process.env.LINK}logo.png`,
@@ -40,7 +43,6 @@ export const metadata = {
 };
 
 export default function RecruitmentPage({ children }) {
-  const status = LoggedIn();
   if (!status.loggedIn) {
     return (
       <>
@@ -48,7 +50,7 @@ export default function RecruitmentPage({ children }) {
       </>
     );
   } else {
-    if (status.data.type == "student") {
+    if (status.data.type == "student" || status.data.type == "alumni") {
       return <>{children}</>;
     } else {
       return (
