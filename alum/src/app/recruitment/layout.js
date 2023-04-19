@@ -2,14 +2,14 @@ import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
 export const metadata = {
-  title: "Login",
+  title: "View Recruitment",
   description:
-    "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
+    "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally.",
   openGraph: {
-    title: "Login",
+    title: "View Recruitment",
     description:
-      "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
-    url: `${process.env.LINK}login`,
+      "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally.",
+    url: `${process.env.LINK}recruitment`,
     siteName: "Alum",
     images: [
       {
@@ -29,9 +29,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Login",
+    title: "View Recruitment",
     description:
-      "Log in to your Alum account to connect with NSUT students and alumni, explore networking opportunities, find job offers, internships, and engage in mentorship within the NSUT community.",
+      "Explore inspiring stories of NSUT alumni who have made remarkable strides in their careers. Learn about their recruitment journeys, companies they've joined, and how they've utilized their NSUT education to excel professionally.",
     images: [
       `${process.env.LINK}logo-background.png`,
       `${process.env.LINK}logo.png`,
@@ -41,13 +41,21 @@ export const metadata = {
 
 export default function RecruitmentPage({ children }) {
   const status = LoggedIn();
-  if (status.loggedIn) {
+  if (!status.loggedIn) {
     return (
       <>
         <Empty link="/"></Empty>
       </>
     );
   } else {
-    return <>{children}</>;
+    if (status.data.type == "student") {
+      return <>{children}</>;
+    } else {
+      return (
+        <>
+          <Empty link="/"></Empty>
+        </>
+      );
+    }
   }
 }
