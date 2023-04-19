@@ -36,6 +36,13 @@ Now, you can access the application at `http://localhost:3000/`.
 - Users can participate in forums and discussions
 - Notifications and updates for college events and activities
 
+## Features in Progress Currently
+
+- Student and Alumni Recruitment Page
+- New Recruitment Creation
+- Recruitment Status and Application viewing
+- Recruitment Edit, Delete and Retreat Options
+
 ## Security Protocols
 
 - API key generation and encryption
