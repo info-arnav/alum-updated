@@ -16,7 +16,7 @@ export default function Home() {
           ) : status.data.type == "alumni" ? (
             <Alumni></Alumni>
           ) : (
-            <Admin></Admin>
+            <Admin data={status}></Admin>
           )
         ) : (
           <Pending data={status}></Pending>
