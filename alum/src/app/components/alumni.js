@@ -7,6 +7,7 @@ export default function Alumni({ path }) {
       {[
         ["Home", "/"],
         ["Profile", "/profile"],
+        ["Recruitments", "/recruitment"],
       ].map((e) => {
         return (
           <div

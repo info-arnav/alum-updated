@@ -9,6 +9,7 @@ export default function Student({ path }) {
       {[
         ["Home", "/"],
         ["Profile", "/profile"],
+        ["Recruitments", "/recruitment"],
       ].map((e) => {
         return (
           <div
