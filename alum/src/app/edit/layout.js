@@ -2,14 +2,14 @@ import Empty from "@/app/empty";
 import LoggedIn from "@/app/loggedIn";
 
 export const metadata = {
-  title: "Create Recruitment",
+  title: "Edit Recruitment",
   description:
-    "Are you an NSUT alum looking to recruit fellow graduates? Share your job openings and internship opportunities on our platform, fostering professional connections and enabling the growth of the NSUT alumni network.",
+    "Efficiently manage your recruitment posts on Alum, the NSUT alumni portal. Edit and update job opportunities to attract the right talent and ensure a seamless hiring experience.",
   openGraph: {
-    title: "Create Reruitment",
+    title: "Edit Reruitment",
     description:
-      "Are you an NSUT alum looking to recruit fellow graduates? Share your job openings and internship opportunities on our platform, fostering professional connections and enabling the growth of the NSUT alumni network.",
-    url: `${process.env.LINK}create`,
+      "Efficiently manage your recruitment posts on Alum, the NSUT alumni portal. Edit and update job opportunities to attract the right talent and ensure a seamless hiring experience.",
+    url: `${process.env.LINK}edit`,
     siteName: "Alum",
     images: [
       {
@@ -29,9 +29,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Create Reruitment",
+    title: "Edit Reruitment",
     description:
-      "Are you an NSUT alum looking to recruit fellow graduates? Share your job openings and internship opportunities on our platform, fostering professional connections and enabling the growth of the NSUT alumni network.",
+      "Efficiently manage your recruitment posts on Alum, the NSUT alumni portal. Edit and update job opportunities to attract the right talent and ensure a seamless hiring experience.",
     images: [
       `${process.env.LINK}logo-background.png`,
       `${process.env.LINK}logo.png`,
