@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Requests from "./requests";
 
 export default function Admin({ data }) {
