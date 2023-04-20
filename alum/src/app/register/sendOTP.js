@@ -65,7 +65,9 @@ export default function SendOTP({ type }) {
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) =>
+              setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
+            }
             placeholder={type == "student" ? "NSUT Email ID" : "Email Id"}
           ></input>
           {error && error}

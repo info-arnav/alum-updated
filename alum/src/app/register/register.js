@@ -12,43 +12,50 @@ export default function Register({ type, otp, email }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const pattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     setLoading(true);
     setError("");
-    if (password != confirmPassword) {
-      setLoading(false);
-      setError("Password dont match");
-    } else {
-      try {
-        await fetch("/api/register", {
-          method: "POST",
-          body: JSON.stringify({
-            email: email,
-            otp: otp.toString(),
-            password: password,
-            files: image,
-            type: type,
-            verified: type == "student",
-          }),
-        })
-          .then((e) => e.json())
-          .then((e) => {
-            if (e.error) {
-              setLoading(false);
-              setError(e.message);
-            } else {
-              let cookies = new Cookies();
-              cookies.set("User", e.key, {
-                secure: true,
-                sameSite: "lax",
-              });
-              location.replace("/");
-              setLoading("");
-            }
-          });
-      } catch {
+    if (pattern.test(password)) {
+      if (password != confirmPassword) {
         setLoading(false);
-        setError("Some error occured");
+        setError("Password dont match");
+      } else {
+        try {
+          await fetch("/api/register", {
+            method: "POST",
+            body: JSON.stringify({
+              email: email,
+              otp: otp.toString(),
+              password: password,
+              files: image,
+              type: type,
+              verified: type == "student",
+            }),
+          })
+            .then((e) => e.json())
+            .then((e) => {
+              if (e.error) {
+                setLoading(false);
+                setError(e.message);
+              } else {
+                let cookies = new Cookies();
+                cookies.set("User", e.key, {
+                  secure: true,
+                  sameSite: "lax",
+                });
+                location.replace("/");
+                setLoading("");
+              }
+            });
+        } catch {
+          setLoading(false);
+          setError("Some error occured");
+        }
       }
+    } else {
+      setLoading(false);
+      setError("Please enter the password in the provided format");
     }
   };
   const base64Converter = (file) => {
@@ -84,13 +91,18 @@ export default function Register({ type, otp, email }) {
     <form onSubmit={handleSubmit}>
       <input value={email} type="email" disabled></input>
       <input
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
         required
       ></input>
+      Your password must be at least 8 characters long, include one uppercase
+      letter, one lowercase letter, one number, one special character (e.g. @,
+      $, !, %, *, ?, &), and not contain spaces.
       <input
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
