@@ -40,7 +40,7 @@ export default function DataFetch({ email }) {
           <Modal type="new"></Modal>
           {data.map((e) => {
             return (
-              <>
+              <div key={e._id}>
                 <Modal
                   type="edit"
                   data={e}
@@ -62,7 +62,7 @@ export default function DataFetch({ email }) {
                 ></Delete>
                 {e.title}, {e.description}
                 <br></br>
-              </>
+              </div>
             );
           })}
         </>
