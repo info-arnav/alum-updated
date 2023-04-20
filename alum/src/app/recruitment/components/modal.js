@@ -10,6 +10,7 @@ export default function Modal({ type, data, email }) {
     type == "edit" ? data.description : ""
   );
   const [link, setLink] = useState(type == "edit" ? data.link : "");
+  const handleSubmit = async () => {};
   return (
     <>
       <button onClick={() => setShow(true)}>
@@ -17,7 +18,7 @@ export default function Modal({ type, data, email }) {
       </button>
       {show && (
         <>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -34,7 +35,7 @@ export default function Modal({ type, data, email }) {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             ></input>
-            <button>Save Changed</button>
+            <button type="submit">Save Changed</button>
           </form>
           <button onClick={() => setShow(false)}>Close</button>
         </>
