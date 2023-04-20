@@ -1,4 +1,7 @@
 "use client";
+
+import { useState } from "react";
+
 export default function Delete({
   updater,
   position,
@@ -8,7 +11,9 @@ export default function Delete({
   index,
   email,
 }) {
+  const [disabled, setDisabled] = useState(false);
   const deleteData = async () => {
+    setDisabled(true);
     data.splice(position, 1);
     await fetch("/api/delete-recruitment", {
       method: "POST",
@@ -18,7 +23,12 @@ export default function Delete({
       }),
     }).then((e) => e.json());
     updater(data);
+    setDisabled(false);
     update(!refresh);
   };
-  return <button onClick={deleteData}>Delete</button>;
+  return (
+    <button onClick={deleteData} disabled={disabled}>
+      Delete
+    </button>
+  );
 }
