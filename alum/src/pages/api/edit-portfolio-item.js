@@ -31,6 +31,6 @@ export default async function editPortfolioItem(req, res) {
     }).then((e) => e.json());
     res.json({ error: false, data: data });
   } catch {
-    res.json({ error: true, message: "Already Registered" });
+    res.json({ error: true, message: "Some error occured" });
   }
 }

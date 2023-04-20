@@ -2,9 +2,8 @@ import QueryString from "./query-string";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
 
-export default async function addOccupation(req, res) {
+export default async function createRecruitment(req, res) {
   let body = JSON.parse(req.body);
-
   const cookies = cookie.parse(req.headers.cookie || "");
   try {
     const mid_password = CryptoJS.AES.decrypt(cookies.User, process.env.SECRET);
@@ -19,13 +18,7 @@ export default async function addOccupation(req, res) {
       body: JSON.stringify({
         query: `
             mutation{
-                updateOneRegisteration(query: ${QueryString({
-                  email: body.email,
-                })}, set: ${QueryString({
-          bio: body.bio,
-          name: body.name,
-          batch: body.batch,
-        })}) {
+                insertOneRecruitment(data: ${QueryString(body)}) {
                   email
                 }
               }

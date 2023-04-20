@@ -2,9 +2,10 @@ import QueryString from "./query-string";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
 
-export default async function addOccupation(req, res) {
+export default async function findRecruitment(req, res) {
   let body = JSON.parse(req.body);
-
+  let email = body.email;
+  delete body.email;
   const cookies = cookie.parse(req.headers.cookie || "");
   try {
     const mid_password = CryptoJS.AES.decrypt(cookies.User, process.env.SECRET);
@@ -12,27 +13,27 @@ export default async function addOccupation(req, res) {
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
-        email: body.email,
+        email: email,
         password: password,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         query: `
-            mutation{
-                updateOneRegisteration(query: ${QueryString({
-                  email: body.email,
-                })}, set: ${QueryString({
-          bio: body.bio,
-          name: body.name,
-          batch: body.batch,
-        })}) {
+            {
+                recruitments(query: ${QueryString(body)}) {
+                  title
+                  description
+                  company
                   email
+                  link
+                  _id
+                  description
                 }
               }
           `,
       }),
     }).then((e) => e.json());
-    res.json({ error: false, data: data });
+    res.json({ error: false, data: data.data.recruitments });
   } catch {
     res.json({ error: true, message: "Some error occured" });
   }

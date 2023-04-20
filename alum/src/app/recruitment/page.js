@@ -1,3 +1,7 @@
+import LoggedIn from "../loggedIn";
+import DataFetch from "./dataFetch";
+
 export default function Recruitment() {
-  return <>Recruitment</>;
+  const data = LoggedIn();
+  return <DataFetch email={data.data.email}></DataFetch>;
 }
