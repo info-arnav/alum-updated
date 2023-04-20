@@ -13,7 +13,7 @@ export default function Register({ type, otp, email }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const pattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$/;
     setLoading(true);
     setError("");
     if (pattern.test(password)) {
@@ -91,7 +91,7 @@ export default function Register({ type, otp, email }) {
     <form onSubmit={handleSubmit}>
       <input value={email} type="email" disabled></input>
       <input
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -99,10 +99,10 @@ export default function Register({ type, otp, email }) {
         required
       ></input>
       Your password must be at least 8 characters long, include one uppercase
-      letter, one lowercase letter, one number, one special character (e.g. @,
-      $, !, %, *, ?, &), and not contain spaces.
+      letter, one lowercase letter, one number, one special character (choose
+      from - #,@, $, !, %, *, ?, &), and not contain spaces.
       <input
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
