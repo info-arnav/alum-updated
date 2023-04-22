@@ -60,6 +60,10 @@ export default function Requests({ status }) {
             return (
               <div key={data.indexOf(e)}>
                 {e.email}
+                <img
+                  src={e.files}
+                  alt="Verification document uploaded by User"
+                ></img>
                 <button
                   onClick={() => {
                     process("approve", data.indexOf(e), e.email);

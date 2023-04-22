@@ -5,6 +5,7 @@ import Modal from "./components/modal";
 import Loading from "../home/loading";
 import Error from "../error";
 import Delete from "./components/delete";
+import Link from "next/link";
 
 export default function DataFetch({ email }) {
   const [loading, setLoading] = useState(true);
@@ -39,9 +40,9 @@ export default function DataFetch({ email }) {
         <>
           {data.map((e) => {
             return (
-              <div key={e._id}>
-                {e.title}, {e.description}
-              </div>
+              <Link key={e._id} href={`/view/post/${e._id}`}>
+                {e.title},{e.company}, {e.description}
+              </Link>
             );
           })}
         </>
