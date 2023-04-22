@@ -1,7 +1,12 @@
 import LoggedIn from "../loggedIn";
 import DataFetch from "./dataFetch";
+import FetchRecruitments from "./fetchRecruitments";
 
 export default function Recruitment() {
   const data = LoggedIn();
-  return <DataFetch email={data.data.email}></DataFetch>;
+  if (data.data.type == "alumni") {
+    return <DataFetch email={data.data.email}></DataFetch>;
+  } else {
+    return <FetchRecruitments></FetchRecruitments>;
+  }
 }

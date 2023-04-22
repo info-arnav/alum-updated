@@ -129,7 +129,7 @@ export default function EditProfile({
         <textarea
           value={bio}
           onChange={(e) => setBio(e.target.value)}
-          placeholder="Bio"
+          placeholder="Bio, we suggest mentioning some of your skills here"
         ></textarea>
         {error && error}
         <button onClick={handleUpdate} type="submit" disabled={loading}>

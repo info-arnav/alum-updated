@@ -88,18 +88,25 @@ export default function Modal({
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              placeholder="Position"
+              required
             ></input>
             <input
               value={company}
               onChange={(e) => setCompany(e.target.value)}
+              placeholder="Company"
+              required
             ></input>
-            <input
+            <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-            ></input>
+              placeholder="Descrption"
+              required
+            ></textarea>
             <input
               value={link}
               onChange={(e) => setLink(e.target.value)}
+              placeholder="Website link if any"
             ></input>
             <button type="submit" disabled={loading}>
               Save Changes
