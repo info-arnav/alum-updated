@@ -2,15 +2,81 @@
 
 import { useState } from "react";
 
-export default function Modal({ type, data, email }) {
+export default function Modal({
+  type,
+  data,
+  email,
+  mainData,
+  updater,
+  update,
+  refresh,
+  position,
+}) {
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState(type == "edit" ? data.title : "");
   const [company, setCompany] = useState(type == "edit" ? data.company : "");
   const [description, setDescription] = useState(
     type == "edit" ? data.description : ""
   );
+  const [loading, setLoading] = useState(false);
   const [link, setLink] = useState(type == "edit" ? data.link : "");
-  const handleSubmit = async () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (type == "edit") {
+      await fetch("/api/edit-recruitments", {
+        method: "POST",
+        body: JSON.stringify({
+          id: data._id,
+          email: email,
+          title: title,
+          company: company,
+          description: description,
+          link: link,
+        }),
+      }).then((e) => e.json());
+      mainData[position] = {
+        title: title,
+        company: company,
+        description: description,
+        link: link,
+      };
+      updater(mainData);
+      update(!refresh);
+      setTitle("");
+      setCompany("");
+      setDescription("");
+      setLink("");
+      setShow(false);
+      setLoading(false);
+    } else {
+      await fetch("/api/create-recruitment", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          title: title,
+          company: company,
+          description: description,
+          link: link,
+        }),
+      }).then((e) => e.json());
+      mainData.push({
+        email: email,
+        title: title,
+        company: company,
+        description: description,
+        link: link,
+      });
+      updater(mainData);
+      update(!refresh);
+      setTitle("");
+      setCompany("");
+      setDescription("");
+      setLink("");
+      setShow(false);
+      setLoading(false);
+    }
+  };
   return (
     <>
       <button onClick={() => setShow(true)}>
@@ -35,7 +101,9 @@ export default function Modal({ type, data, email }) {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             ></input>
-            <button type="submit">Save Changed</button>
+            <button type="submit" disabled={loading}>
+              Save Changes
+            </button>
           </form>
           <button onClick={() => setShow(false)}>Close</button>
         </>

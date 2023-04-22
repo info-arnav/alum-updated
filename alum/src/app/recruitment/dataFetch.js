@@ -37,7 +37,14 @@ export default function DataFetch({ email }) {
         <Error></Error>
       ) : (
         <>
-          <Modal type="new"></Modal>
+          <Modal
+            type="new"
+            mainData={data}
+            email={email}
+            updater={setData}
+            refresh={refresh}
+            update={setRefresh}
+          ></Modal>
           {data.map((e) => {
             return (
               <div key={e._id}>

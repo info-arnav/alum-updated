@@ -4,6 +4,10 @@ import CryptoJS from "crypto-js";
 
 export default async function editRecruitment(req, res) {
   let body = JSON.parse(req.body);
+  const email = body.email;
+  const id = body.id;
+  delete body.email;
+  delete body.id;
   const cookies = cookie.parse(req.headers.cookie || "");
   try {
     const mid_password = CryptoJS.AES.decrypt(cookies.User, process.env.SECRET);
@@ -19,7 +23,7 @@ export default async function editRecruitment(req, res) {
         query: `
             mutation{
                 updateOneRecruitment(query: ${QueryString({
-                  email: email,
+                  _id: id,
                 })}, set: ${QueryString(body)}) {
                   _id
                 }

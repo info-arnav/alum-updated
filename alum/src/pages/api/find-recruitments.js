@@ -4,8 +4,6 @@ import CryptoJS from "crypto-js";
 
 export default async function findRecruitment(req, res) {
   let body = JSON.parse(req.body);
-  let email = body.email;
-  delete body.email;
   const cookies = cookie.parse(req.headers.cookie || "");
   try {
     const mid_password = CryptoJS.AES.decrypt(cookies.User, process.env.SECRET);
@@ -13,7 +11,7 @@ export default async function findRecruitment(req, res) {
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
-        email: email,
+        email: body.email,
         password: password,
         "Content-Type": "application/json",
       },
