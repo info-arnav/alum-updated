@@ -7,6 +7,6 @@ export default function Recruitment() {
   if (data.data.type == "alumni") {
     return <DataFetch email={data.data.email}></DataFetch>;
   } else {
-    return <FetchRecruitments></FetchRecruitments>;
+    return <FetchRecruitments email={data.data.email}></FetchRecruitments>;
   }
 }

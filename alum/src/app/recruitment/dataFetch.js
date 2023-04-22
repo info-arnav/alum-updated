@@ -15,6 +15,7 @@ export default function DataFetch({ email }) {
     const fetchedData = await fetch("/api/find-recruitments", {
       method: "POST",
       body: JSON.stringify({
+        auth_email: email,
         email: email,
       }),
     }).then((e) => e.json());
