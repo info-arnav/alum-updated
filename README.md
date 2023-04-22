@@ -38,10 +38,9 @@ Now, you can access the application at `http://localhost:3000/`.
 
 ## Features in Progress Currently
 
-- Student and Alumni Recruitment Page
-- New Recruitment Creation
-- Recruitment Status and Application viewing
-- Recruitment Edit, Delete and Retreat Options
+- Student and Recruitment Page
+- Recruitment Status viewing
+- Recruitment Retreat Option
 
 ## Security Protocols
 
