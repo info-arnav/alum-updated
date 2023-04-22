@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Profile from "./components/profile";
 import EditProfile from "./components/editProfile";
 import Portfolio from "./components/portfolio";
-import Loading from "./loading";
 import Error from "../error";
+import Loading from "../home/loading";
 
 export default function UserProfile({ data, link }) {
   const [loading, setLoading] = useState(true);
