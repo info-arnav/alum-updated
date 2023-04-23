@@ -23,5 +23,9 @@
     "realm": "^11.7.0",
     "realm-web": "^2.0.0",
     "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.0",
+    "@types/react": "18.0.38"
   }
 }
