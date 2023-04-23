@@ -2,7 +2,7 @@ export default function Profile({ data, email, link }) {
   return (
     <>
       <img
-        src={`${link}api/image/${email}`}
+        src={`${link}api/image/${data._id}`}
         width={100}
         height={100}
         alt="The profile picture"

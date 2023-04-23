@@ -11,14 +11,16 @@ export default async function login(req, res) {
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
-        email: body.email,
+        email: body.auth_email,
         password: password,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         query: `
 query{
-  registeration(query:${QueryString({ email: body.email })}) {
+  registeration(query:${QueryString(
+    body.email ? { email: body.email } : { _id: body.id }
+  )}) {
     batch,
     bio,
     branch,
@@ -28,7 +30,8 @@ query{
     projects,
     honors,
     portfolio,
-    applications
+    applications,
+    _id
   }
 }
 `,

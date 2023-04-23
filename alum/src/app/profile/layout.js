@@ -45,8 +45,7 @@ export default function ProfileLayout({ children }) {
     if (status.data.verified) {
       if (status.data.type != "admin") {
         return <>{children}</>;
-      }
-      {
+      } else {
         return <Empty link="/"></Empty>;
       }
     } else {

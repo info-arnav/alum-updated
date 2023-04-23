@@ -13,7 +13,7 @@ export default async function Image(req, res) {
       body: JSON.stringify({
         query: `
       query{
-      image(query:${QueryString({ email: id })}) {
+      image(query:${QueryString({ id: id })}) {
       image
       }
       }

@@ -13,7 +13,7 @@ export default function EditProfile({
   setData,
 }) {
   const [name, setName] = useState(data.name);
-  const [image, setImage] = useState(`${link}api/image/${email}`);
+  const [image, setImage] = useState(`${link}api/image/${data._id}`);
   const [changed, setChanged] = useState(false);
   const [batch, setBatch] = useState(data.batch);
   const [bio, setBio] = useState(data.bio);
@@ -36,7 +36,7 @@ export default function EditProfile({
     } else {
       document.getElementById(
         "profile_image_refreshed"
-      ).src = `${link}api/image/${email}?updated&&t=${new Date().getTime()}`;
+      ).src = `${link}api/image/${data._id}?updated&&t=${new Date().getTime()}`;
       data.name = name;
       data.bio = bio;
       data.batch = batch;
@@ -56,6 +56,7 @@ export default function EditProfile({
         method: "POST",
         body: JSON.stringify({
           email: email,
+          id: data._id,
           image: image,
         }),
         cache: "no-cache",

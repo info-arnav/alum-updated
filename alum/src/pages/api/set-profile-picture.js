@@ -18,8 +18,8 @@ export default async function setProfilePicture(req, res) {
       body: JSON.stringify({
         query: `
           query{
-              image(query: ${QueryString({ email: body.email })}) {
-                email
+              image(query: ${QueryString({ id: body.id })}) {
+                id
               }
             }
         `,
@@ -37,10 +37,10 @@ export default async function setProfilePicture(req, res) {
           query: `
           mutation{
             insertOneImage(data:${QueryString({
-              email: body.email,
+              id: body.id,
               image: body.image,
             })}){
-                otp
+                id
             }
           }
       `,
@@ -63,8 +63,8 @@ export default async function setProfilePicture(req, res) {
         mutation{
           updateOneImage(set:${QueryString({
             image: body.image,
-          })}, query:${QueryString({ email: body.email })}) {
-            email
+          })}, query:${QueryString({ id: body.id })}) {
+            id
             image
           }
         }

@@ -1,25 +1,20 @@
 "use client";
 
+import Error from "@/app/error";
+import Loading from "@/app/home/loading";
 import { useEffect, useState } from "react";
-import Profile from "./components/profile";
-import EditProfile from "./components/editProfile";
-import Error from "../error";
-import Loading from "../home/loading";
-import Portfolio from "./components/portfolio";
 
-export default function UserProfile({ data, link }) {
+export default function UserProfile({ id, link, data }) {
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(true);
   const [error, setError] = useState(false);
-  const [show, setShow] = useState(false);
-  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     const getDoc = async () => {
       const res = await fetch(`/api/get-user-info`, {
         method: "POST",
         body: JSON.stringify({
           auth_email: data.data.email,
-          email: data.data.email,
+          id: id,
         }),
         cache: "no-cache",
       }).then((e) => e.json());
@@ -45,8 +40,7 @@ export default function UserProfile({ data, link }) {
       }
     };
     getDoc();
-  }, [refresh]);
-  useEffect(() => {}, [show, userData]);
+  }, []);
   return (
     <>
       {loading ? (
@@ -55,30 +49,36 @@ export default function UserProfile({ data, link }) {
         <Error></Error>
       ) : (
         <>
-          <Profile
-            data={userData}
-            link={link}
-            email={data.data.email}
-          ></Profile>
-          <button onClick={() => setShow(true)}>Edit Profile</button>
-          {show && (
-            <EditProfile
-              data={userData}
-              link={link}
-              email={data.data.email}
-              setShow={setShow}
-              setRefresh={setRefresh}
-              refresh={refresh}
-              setData={setUserData}
-            ></EditProfile>
-          )}
-          <Portfolio
-            data={userData}
-            email={data.data.email}
-            setRefresh={setRefresh}
-            refresh={refresh}
-            setData={setUserData}
-          ></Portfolio>
+          <img
+            src={`${link}api/image/${id}`}
+            width={100}
+            height={100}
+            alt="The profile picture"
+            id="profile_image_refreshed"
+          ></img>
+          {userData.name || "Name Not Provided"}
+          {userData.email}
+          {userData.batch || "Batch Not Provided"}
+          {userData.bio || "Bio Not Provided"}
+          {[
+            [userData.occupation, "occupation"],
+            [userData.education, "education"],
+            [userData.projects, "projects"],
+            [userData.honors, "honors"],
+          ].map((e) => {
+            return (
+              <div key={e[1]}>
+                {e[1].toUpperCase()}
+                {e[0].map((f) => {
+                  return (
+                    <div key={e[0].indexOf(f)}>
+                      {f.title},{f.subTitle},{f.description},{f.duration}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </>
       )}
     </>
