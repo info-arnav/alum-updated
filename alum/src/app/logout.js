@@ -1,3 +1,5 @@
+"use client";
+
 import Cookies from "universal-cookie";
 
 export default async function Logout() {
