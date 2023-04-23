@@ -11,8 +11,8 @@ export default function Update({ email, oldData }) {
       body: JSON.stringify({ email: email }),
     }).then((e) => e.json());
     if (!data.loggedIn) {
-      cookies.set("session_id", "Logged Out", {
-        domain: ".nsut.alumninet.in",
+      cookies.set("session_id", process.env.SESSION_REMOVE, {
+        domain: process.env.SESSION_URL,
         path: "/",
       });
       location.reload();
@@ -26,7 +26,7 @@ export default function Update({ email, oldData }) {
         cookies.set("session_id", data.key, {
           secure: true,
           sameSite: "lax",
-          domain: ".nsut.alumninet.in",
+          domain: process.env.SESSION_URL,
           path: "/",
         });
         setShow(true);
