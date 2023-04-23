@@ -11,7 +11,10 @@ export default function Update({ email, oldData }) {
       body: JSON.stringify({ email: email }),
     }).then((e) => e.json());
     if (!data.loggedIn) {
-      cookies.set("session_id", "Logged Out");
+      cookies.set("session_id", "Logged Out", {
+        domain: ".nsut.alumninet.in",
+        path: "/",
+      });
       location.reload();
     } else {
       oldData.verified = `${oldData.verified}`;
