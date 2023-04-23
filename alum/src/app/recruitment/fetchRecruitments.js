@@ -7,7 +7,6 @@ import Link from "next/link";
 
 export default function DataFetch({ email }) {
   const [loading, setLoading] = useState(true);
-  const [refresh, setRefresh] = useState(true);
   const [error, setError] = useState(false);
   const [data, setData] = useState("");
   const fetcher = async () => {
@@ -27,7 +26,7 @@ export default function DataFetch({ email }) {
   };
   useEffect(() => {
     fetcher();
-  }, [refresh]);
+  }, []);
   return (
     <>
       {loading ? (
