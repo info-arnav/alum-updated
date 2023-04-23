@@ -24,6 +24,7 @@ query{
     batch,
     bio,
     branch,
+    email,
     name,
     occupation,
     education,
