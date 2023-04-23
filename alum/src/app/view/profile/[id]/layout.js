@@ -2,7 +2,7 @@ import Empty from "@/app/empty";
 import LoggedIn from "@/app/loggedIn";
 
 const fetchData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/get-meta-data`, {
+  const res = await fetch(`${process.env.LINK}api/get-meta-data`, {
     method: "POST",
     body: JSON.stringify({
       id: id,
