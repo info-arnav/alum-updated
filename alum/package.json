@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.2.4",
+    "@vercel/analytics": "^1.0.0",
     "bcrypt": "^5.1.0",
     "compressorjs": "^1.2.1",
     "crypto": "^1.0.1",
