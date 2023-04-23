@@ -106,7 +106,7 @@ export default async function register(req, res) {
         if (registeredUser.data.insertOneRegisteration.email == body.email) {
           res.setHeader(
             "Set-Cookie",
-            `User=${CryptoJS.AES.encrypt(
+            `login_token=${CryptoJS.AES.encrypt(
               apiKey,
               process.env.SECRET
             )}; HttpOnly; Secure; SameSite=lax`

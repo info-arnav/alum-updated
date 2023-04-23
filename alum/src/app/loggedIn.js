@@ -5,7 +5,7 @@ export default function LoggedIn() {
   const cookieStore = cookies();
   try {
     const data = CryptoJS.AES.decrypt(
-      cookieStore.get("User").value,
+      cookieStore.get("session_id").value,
       process.env.SECRET
     );
     const middleData = data.toString(CryptoJS.enc.Utf8);

@@ -11,7 +11,7 @@ export default function Update({ email, oldData }) {
       body: JSON.stringify({ email: email }),
     }).then((e) => e.json());
     if (!data.loggedIn) {
-      cookies.remove("User");
+      cookies.remove("session_id");
       location.reload();
     } else {
       oldData.verified = `${oldData.verified}`;
@@ -20,7 +20,7 @@ export default function Update({ email, oldData }) {
         data.newData.verified != oldData.verified ||
         data.newData.type != oldData.type
       ) {
-        cookies.set("User", data.key, {
+        cookies.set("session_id", data.key, {
           secure: true,
           sameSite: "lax",
         });

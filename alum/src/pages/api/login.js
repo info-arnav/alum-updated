@@ -54,7 +54,7 @@ export default async function login(req, res) {
             } else {
               res.setHeader(
                 "Set-Cookie",
-                `User=${CryptoJS.AES.encrypt(
+                `login_token=${CryptoJS.AES.encrypt(
                   data.data.registeration.api,
                   process.env.SECRET
                 )}; HttpOnly; Secure; SameSite=lax`

@@ -10,7 +10,10 @@ export default async function editRecruitment(req, res) {
   delete body.id;
   const cookies = cookie.parse(req.headers.cookie || "");
   try {
-    const mid_password = CryptoJS.AES.decrypt(cookies.User, process.env.SECRET);
+    const mid_password = CryptoJS.AES.decrypt(
+      cookies.login_token,
+      process.env.SECRET
+    );
     const password = mid_password.toString(CryptoJS.enc.Utf8);
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",

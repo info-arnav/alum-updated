@@ -21,7 +21,7 @@ export default function Login() {
       setLoading(false);
     } else {
       let cookies = new Cookies();
-      cookies.set("User", data.key, {
+      cookies.set("session_id", data.key, {
         secure: true,
         sameSite: "lax",
       });
