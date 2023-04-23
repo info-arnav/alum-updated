@@ -11,7 +11,7 @@ export default function Update({ email, oldData }) {
       body: JSON.stringify({ email: email }),
     }).then((e) => e.json());
     if (!data.loggedIn) {
-      cookies.remove("session_id");
+      cookies.set("session_id", "Logged Out");
       location.reload();
     } else {
       oldData.verified = `${oldData.verified}`;
