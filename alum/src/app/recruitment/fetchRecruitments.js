@@ -1,10 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Modal from "./components/modal";
 import Loading from "../home/loading";
 import Error from "../error";
-import Delete from "./components/delete";
 import Link from "next/link";
 
 export default function DataFetch({ email }) {

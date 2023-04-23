@@ -20,9 +20,9 @@ export default function Loading() {
           cy="50"
           fill="none"
           stroke="#1d0e0b"
-          stroke-width="10"
+          strokeWidth="10"
           r="35"
-          stroke-dasharray="164.93361431346415 56.97787143782138"
+          strokeDasharray="164.93361431346415 56.97787143782138"
         >
           <animateTransform
             attributeName="transform"
