@@ -4,7 +4,6 @@ export default function Pending({ path }) {
   return (
     <div className="nav-links">
       <button
-        href="/login"
         className="nav-sub-button"
         onClick={(e) => {
           Logout();

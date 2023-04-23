@@ -21,7 +21,6 @@ export default function Alumni({ path }) {
         );
       })}
       <button
-        href="/login"
         className={`nav-sub-button`}
         onClick={(e) => {
           Logout();

@@ -23,7 +23,6 @@ export default function Student({ path }) {
         );
       })}
       <button
-        href="/login"
         className={`nav-sub-button`}
         onClick={(e) => {
           Logout();
