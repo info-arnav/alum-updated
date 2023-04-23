@@ -21,13 +21,13 @@ export async function generateMetadata({ params }) {
   return {
     title: data.name
       ? data.name[0].toUpperCase() + data.name.slice(1)
-      : "Porifle",
+      : "Profile",
     description:
       "Discover and explore the profiles of NSUT alumni and students on Alum - the premier networking platform for connecting with the university's community. View academic and professional information, skills, and interests to build meaningful connections and collaborations.",
     openGraph: {
       title: data.name
         ? data.name[0].toUpperCase() + data.name.slice(1)
-        : "Porifle",
+        : "Profile",
       description:
         "Discover and explore the profiles of NSUT alumni and students on Alum - the premier networking platform for connecting with the university's community. View academic and professional information, skills, and interests to build meaningful connections and collaborations.",
       url: `${process.env.LINK}view/profile/${params.id}`,
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       title: data.name
         ? data.name[0].toUpperCase() + data.name.slice(1)
-        : "Porifle",
+        : "Profile",
       description:
         "Discover and explore the profiles of NSUT alumni and students on Alum - the premier networking platform for connecting with the university's community. View academic and professional information, skills, and interests to build meaningful connections and collaborations.",
       images: [`${process.env.LINK}api/image/${params.id}`],
