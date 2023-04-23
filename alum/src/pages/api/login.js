@@ -52,12 +52,14 @@ export default async function login(req, res) {
             if (data.error) {
               res.json({ error: true, message: "Invalid Credentials" });
             } else {
+              var expirationDate = new Date();
+              expirationDate.setDate(expirationDate.getDate() + 100);
               res.setHeader(
                 "Set-Cookie",
                 `login_token=${CryptoJS.AES.encrypt(
                   data.data.registeration.api,
                   process.env.SECRET
-                )}; HttpOnly; Secure; SameSite=lax; Path=/`
+                )}; expires=${expirationDate.toUTCString()}; HttpOnly; Secure; SameSite=lax; Path=/`
               );
               res.json({
                 error: false,

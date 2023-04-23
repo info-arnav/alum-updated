@@ -20,11 +20,14 @@ export default function Login() {
       setError(data.message);
       setLoading(false);
     } else {
+      var expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + 100);
       let cookies = new Cookies();
       cookies.set("session_id", data.key, {
         secure: true,
         sameSite: "lax",
         path: "/",
+        expires: expirationDate,
       });
       location.replace("/");
       setLoading("");

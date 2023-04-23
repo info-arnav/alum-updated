@@ -104,12 +104,14 @@ export default async function register(req, res) {
           }),
         });
         if (registeredUser.data.insertOneRegisteration.email == body.email) {
+          var expirationDate = new Date();
+          expirationDate.setDate(expirationDate.getDate() + 100);
           res.setHeader(
             "Set-Cookie",
             `login_token=${CryptoJS.AES.encrypt(
               apiKey,
               process.env.SECRET
-            )}; HttpOnly; Secure; SameSite=lax; Path=/`
+            )}; expires=${expirationDate.toUTCString()}; HttpOnly; Secure; SameSite=lax; Path=/`
           );
           res.json({
             error: false,
