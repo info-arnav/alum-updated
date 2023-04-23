@@ -24,6 +24,8 @@ export default function Login() {
       cookies.set("session_id", data.key, {
         secure: true,
         sameSite: "lax",
+        domain: "nsut.alumninet.in",
+        path: "/",
       });
       location.replace("/");
       setLoading("");
