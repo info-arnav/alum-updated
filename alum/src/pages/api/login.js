@@ -57,9 +57,7 @@ export default async function login(req, res) {
                 `login_token=${CryptoJS.AES.encrypt(
                   data.data.registeration.api,
                   process.env.SECRET
-                )}; HttpOnly; Secure; SameSite=lax; Domain=.${
-                  process.env.SESSION_URL
-                }; Path=/`
+                )}; HttpOnly; Secure; SameSite=lax; Path=/`
               );
               res.json({
                 error: false,

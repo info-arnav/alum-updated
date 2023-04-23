@@ -24,7 +24,6 @@ export default function Login() {
       cookies.set("session_id", data.key, {
         secure: true,
         sameSite: "lax",
-        domain: process.env.SESSION_URL,
         path: "/",
       });
       location.replace("/");
