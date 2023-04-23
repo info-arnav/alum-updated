@@ -5,7 +5,7 @@ export default async function Logout() {
   await fetch("/api/logout")
     .then((e) =>
       cookies.set("session_id", process.env.SESSION_REMOVE, {
-        domain: ".nsut.alumninet.in",
+        domain: process.env.SESSION_URL,
         path: "/",
       })
     )

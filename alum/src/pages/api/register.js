@@ -109,7 +109,7 @@ export default async function register(req, res) {
             `login_token=${CryptoJS.AES.encrypt(
               apiKey,
               process.env.SECRET
-            )}; HttpOnly; Secure; SameSite=lax; Domain=${
+            )}; HttpOnly; Secure; SameSite=lax; Domain=.${
               process.env.SESSION_URL
             }; Path=/`
           );
