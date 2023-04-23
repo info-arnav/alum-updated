@@ -23,7 +23,7 @@ export default function Update({ email, oldData }) {
         cookies.set("session_id", data.key, {
           secure: true,
           sameSite: "lax",
-          domain: "nsut.alumninet.in",
+          domain: ".nsut.alumninet.in",
           path: "/",
         });
         setShow(true);

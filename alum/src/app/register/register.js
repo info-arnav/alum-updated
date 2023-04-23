@@ -43,7 +43,7 @@ export default function Register({ type, otp, email }) {
                 cookies.set("session_id", e.key, {
                   secure: true,
                   sameSite: "lax",
-                  domain: "nsut.alumninet.in",
+                  domain: ".nsut.alumninet.in",
                   path: "/",
                 });
                 location.replace("/");
