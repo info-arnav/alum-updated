@@ -60,22 +60,14 @@ export default async function ProfileLayout({ children, params }) {
   const data = await fetchData(params.id);
   const status = LoggedIn();
   if (status.loggedIn) {
-    if (status.data.verified) {
-      if (status.data.type != "admin") {
-        if (
-          data.type != "student" &&
-          data.type != "alumni" &&
-          data.verified != "true"
-        ) {
-          return <Empty link="/"></Empty>;
-        } else {
-          return <>{children}</>;
-        }
-      } else {
-        return <Empty link="/"></Empty>;
-      }
-    } else {
+    if (
+      status.data.type == "admin" ||
+      (data.type != "student" && data.type != "alumni") ||
+      !status.data.verified
+    ) {
       return <Empty link="/"></Empty>;
+    } else {
+      return <>{children}</>;
     }
   } else {
     return <Empty link="/login"></Empty>;

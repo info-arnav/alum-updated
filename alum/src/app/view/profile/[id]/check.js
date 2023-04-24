@@ -37,6 +37,7 @@ export default function Check({ id, link, data }) {
             res.data[e[1]] = [];
           }
         });
+        setError(false);
         setUserData(res.data);
         setLoading(false);
       }

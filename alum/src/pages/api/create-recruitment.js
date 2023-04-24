@@ -22,7 +22,7 @@ export default async function createRecruitment(req, res) {
         query: `
             mutation{
                 insertOneRecruitment(data: ${QueryString(body)}) {
-                  email
+                  _id
                 }
               }
           `,

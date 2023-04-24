@@ -40,6 +40,7 @@ export default function UserProfile({ data, link }) {
             res.data[e[1]] = [];
           }
         });
+        setError(false);
         setUserData(res.data);
         setLoading(false);
       }

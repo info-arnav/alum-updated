@@ -62,6 +62,7 @@ export default function EditPortfolio({
       setLoading(false);
     } else {
       setData(data);
+      setError(false);
       setRefresh(!refresh);
       setLoading(false);
       show(false);

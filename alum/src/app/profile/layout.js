@@ -42,12 +42,8 @@ export const metadata = {
 export default function ProfileLayout({ children }) {
   const status = LoggedIn();
   if (status.loggedIn) {
-    if (status.data.verified) {
-      if (status.data.type != "admin") {
-        return <>{children}</>;
-      } else {
-        return <Empty link="/"></Empty>;
-      }
+    if (status.data.type != "admin" && status.data.verified) {
+      return <>{children}</>;
     } else {
       return <Empty link="/"></Empty>;
     }

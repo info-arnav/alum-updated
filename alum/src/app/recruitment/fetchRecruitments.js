@@ -20,6 +20,7 @@ export default function DataFetch({ email }) {
       setError(true);
       setLoading(false);
     } else {
+      setError(false);
       setData(fetchedData.data);
       setLoading(false);
     }

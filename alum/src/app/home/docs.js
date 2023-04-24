@@ -83,6 +83,7 @@ export default function Docs({ data }) {
         setLoading(false);
       } else {
         setDoc(res.data);
+        setError(false);
         setErrorData(res.error_data);
         setLoading(false);
       }

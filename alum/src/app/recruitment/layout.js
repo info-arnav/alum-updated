@@ -49,7 +49,7 @@ export default function RecruitmentPage({ children }) {
   if (!status.loggedIn) {
     return (
       <>
-        <Empty link="/"></Empty>
+        <Empty link="/login"></Empty>
       </>
     );
   } else {
