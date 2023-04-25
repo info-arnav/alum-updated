@@ -39,7 +39,7 @@ export default function DataFetch({ email }) {
         <>
           {data.map((e) => {
             return (
-              <Link key={e._id} href={`/view/post/${e._id}`}>
+              <Link key={e._id} href={`/view/recruitment/${e._id}`}>
                 {e.title},{e.company}, {e.description}
                 <Apply
                   recruitment={e._id}
