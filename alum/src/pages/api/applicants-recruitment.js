@@ -2,7 +2,7 @@ import QueryString from "./query-string";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
 
-export default async function findRecruitment(req, res) {
+export default async function applicantsRecruitment(req, res) {
   let body = JSON.parse(req.body);
   const email = body.auth_email;
   delete body.auth_email;

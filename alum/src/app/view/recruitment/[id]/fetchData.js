@@ -3,6 +3,7 @@
 import Error from "@/app/error";
 import Loading from "@/app/home/loading";
 import { useEffect, useState } from "react";
+import Apply from "./apply";
 
 export default function FetchData({ data, id }) {
   const [fetchedData, setFetchedData] = useState([]);
@@ -36,7 +37,14 @@ export default function FetchData({ data, id }) {
       ) : error ? (
         <Error></Error>
       ) : (
-        <>{fetchedData.title}</>
+        <>
+          {fetchedData.title}
+          <Apply
+            user={data.data.email}
+            recruitment={fetchedData._id}
+            applicants={fetchedData.applicants}
+          ></Apply>
+        </>
       )}
     </>
   );
