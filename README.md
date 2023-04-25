@@ -38,8 +38,8 @@ Now, you can access the application at `http://localhost:3000/`.
 
 ## Features in Progress Currently
 
-- Recruitment Status viewing
-- Recruitment apply and retreat Option
+- Recruitment Status viewing, apply and retreat Option
+- Now main focus is frontend
 
 ## Security Protocols
 

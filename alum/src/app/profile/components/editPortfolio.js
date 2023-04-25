@@ -31,6 +31,7 @@ export default function EditPortfolio({
     setError(false);
     setLoading(true);
     let updatedData = data[type];
+    let oldData = JSON.stringify(data[type]);
     if (edit) {
       updatedData[location] = {
         title: title,
@@ -50,6 +51,8 @@ export default function EditPortfolio({
     updatedData = JSON.stringify(updatedData);
     let bodyData = {
       email: email,
+      oldData: oldData,
+      category: type,
     };
     bodyData[type] = updatedData;
     const res = await fetch(`/api/edit-portfolio-item`, {
@@ -95,7 +98,8 @@ export default function EditPortfolio({
           onChange={(e) => setDescription(e.target.value)}
           placeholder={placeholder[3]}
         ></textarea>
-        {error && "Some error occured"}
+        {error &&
+          "Some error occured, Maybe two devics are simultaneously editing"}
         <button action="submit" disabled={loading}>
           {edit ? "Edit" : "Add"}
         </button>
