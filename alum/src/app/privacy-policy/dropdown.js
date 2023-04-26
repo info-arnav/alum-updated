@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function Dropdown({ title, content, index }) {
   const [show, setShow] = useState(false);
   return (

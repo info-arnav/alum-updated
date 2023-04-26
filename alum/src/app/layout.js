@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navigation data={status}></Navigation>
         <div className="nav-gap"></div>
-        {/* <Analytics /> */}
+        <Analytics />
         {status.loggedIn && (
           <Update email={status.data.email} oldData={status.data}></Update>
         )}

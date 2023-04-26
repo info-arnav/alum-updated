@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function UpdateNotification() {
   return (
-    <div class="notification-box">
+    <div className="notification-box">
       <header>
         <Image src="/logo.png" height="20" width="20"></Image>
         <div className="title">Alum</div>
