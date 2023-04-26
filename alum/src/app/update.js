@@ -1,6 +1,7 @@
 "use client";
 import Cookies from "universal-cookie";
 import { useEffect, useState } from "react";
+import UpdateNotification from "./update-notification";
 
 export default function Update({ email, oldData }) {
   let cookies = new Cookies();
@@ -34,13 +35,5 @@ export default function Update({ email, oldData }) {
   useEffect(() => {
     fetchData();
   }, []);
-  return (
-    <div>
-      {show && (
-        <button onClick={() => location.reload()}>
-          Update is available please refresh
-        </button>
-      )}
-    </div>
-  );
+  return <div>{show && <UpdateNotification></UpdateNotification>}</div>;
 }

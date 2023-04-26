@@ -72,39 +72,41 @@ export default function EditPortfolio({
     }
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input
-          required
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder={placeholder[0]}
-        ></input>
-        <input
-          required
-          value={subTitle}
-          onChange={(e) => setSubTitle(e.target.value)}
-          placeholder={placeholder[1]}
-        ></input>
-        <input
-          required
-          value={duration}
-          onChange={(e) => setDuration(e.target.value)}
-          placeholder={placeholder[2]}
-        ></input>
-        <textarea
-          required
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder={placeholder[3]}
-        ></textarea>
-        {error &&
-          "Some error occured, Maybe two devics are simultaneously editing"}
-        <button action="submit" disabled={loading}>
-          {edit ? "Edit" : "Add"}
-        </button>
-      </form>
-      <button onClick={() => show(false)}>Close</button>
-    </>
+    <div className="modal">
+      <div className="modal-content">
+        <form onSubmit={handleSubmit}>
+          <input
+            required
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder={placeholder[0]}
+          ></input>
+          <input
+            required
+            value={subTitle}
+            onChange={(e) => setSubTitle(e.target.value)}
+            placeholder={placeholder[1]}
+          ></input>
+          <input
+            required
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+            placeholder={placeholder[2]}
+          ></input>
+          <textarea
+            required
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder={placeholder[3]}
+          ></textarea>
+          {error &&
+            "Some error occured, Maybe two devics are simultaneously editing"}
+          <button action="submit" disabled={loading}>
+            {edit ? "Edit" : "Add"}
+          </button>
+        </form>
+        <button onClick={() => show(false)}>Close</button>
+      </div>
+    </div>
   );
 }

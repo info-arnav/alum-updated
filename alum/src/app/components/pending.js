@@ -1,16 +1,5 @@
-import Logout from "../logout";
+import Links from "./links";
 
 export default function Pending({ path }) {
-  return (
-    <div className="nav-links">
-      <button
-        className="nav-sub-button"
-        onClick={(e) => {
-          Logout();
-        }}
-      >
-        <div>Logout</div>
-      </button>
-    </div>
-  );
+  return <Links links={[["Home", "/"]]} logout={true} path={path}></Links>;
 }

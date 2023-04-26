@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="loading-page">
+    <div className="empty">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
