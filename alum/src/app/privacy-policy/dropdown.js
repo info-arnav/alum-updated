@@ -13,7 +13,7 @@ export default function Dropdown({ title, content, index }) {
             className="dropdown-sign"
             style={{
               transform: show
-                ? "translateX(0%) translateY(0%) rotate(-90deg)"
+                ? "translateX(0%) translateY(0%) rotate(-45deg)"
                 : "rotate(0deg)",
             }}
           >
@@ -29,7 +29,6 @@ export default function Dropdown({ title, content, index }) {
             : `${
                 document.getElementById(`height-dropdown-${index}`).clientHeight
               }px`,
-          transition: "height 1s",
         }}
       >
         <div
