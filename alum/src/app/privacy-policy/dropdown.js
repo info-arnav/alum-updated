@@ -24,11 +24,7 @@ export default function Dropdown({ title, content, index }) {
       <div
         className="dropdown-content"
         style={{
-          height: !show
-            ? "0px"
-            : `${
-                document.getElementById(`height-dropdown-${index}`).clientHeight
-              }px`,
+          height: !show ? "0px" : `100%`,
         }}
       >
         <div
