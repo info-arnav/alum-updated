@@ -59,7 +59,7 @@ export default function Links({ links, path, logout }) {
           className="block"
           style={{
             height: show ? "100%" : "0px",
-            transition: "height 1s",
+            transition: "height 0.5s",
           }}
         >
           <div className="items">
