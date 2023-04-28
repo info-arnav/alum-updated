@@ -39,41 +39,62 @@ export default function DataFetch({ email }) {
         <Error></Error>
       ) : (
         <>
-          <Modal
-            type="new"
-            mainData={data}
-            email={email}
-            updater={setData}
-            refresh={refresh}
-            update={setRefresh}
-          ></Modal>
-          {data.map((e) => {
-            return (
-              <div key={e._id}>
-                <Modal
-                  type="edit"
-                  data={e}
-                  mainData={data}
-                  email={email}
-                  updater={setData}
-                  position={data.indexOf(e)}
-                  refresh={refresh}
-                  update={setRefresh}
-                ></Modal>
-                <Delete
-                  updater={setData}
-                  data={data}
-                  position={data.indexOf(e)}
-                  refresh={refresh}
-                  update={setRefresh}
-                  index={e._id}
-                  email={email}
-                ></Delete>
-                {e.title}, {e.description}
-                <br></br>
-              </div>
-            );
-          })}
+          <div className="recruitment-new">
+            <Modal
+              type="new"
+              mainData={data}
+              email={email}
+              updater={setData}
+              refresh={refresh}
+              update={setRefresh}
+            ></Modal>
+          </div>
+          <div className="recruitment-grid">
+            {data.map((e) => {
+              return (
+                <div key={e._id} className="recruitment-box">
+                  <div className="recruitment-box-header">
+                    {e.title} at {e.company}
+                  </div>
+                  <div className="recruitment-box-body">
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          e.description &&
+                          e.description.slice(0, 300) + "......",
+                      }}
+                    ></p>
+                    {e.link && (
+                      <a className="recruitment-box-website" href={e.link}>
+                        Company site link
+                      </a>
+                    )}
+                  </div>
+                  <div className="recruitment-box-footer">
+                    <Modal
+                      type="edit"
+                      data={e}
+                      mainData={data}
+                      email={email}
+                      updater={setData}
+                      position={data.indexOf(e)}
+                      refresh={refresh}
+                      update={setRefresh}
+                    ></Modal>
+                    <Delete
+                      updater={setData}
+                      data={data}
+                      position={data.indexOf(e)}
+                      refresh={refresh}
+                      update={setRefresh}
+                      index={e._id}
+                      email={email}
+                    ></Delete>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </>
       )}
     </>

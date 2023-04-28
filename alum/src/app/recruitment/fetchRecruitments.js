@@ -37,18 +37,41 @@ export default function DataFetch({ email }) {
         <Error></Error>
       ) : (
         <>
-          {data.map((e) => {
-            return (
-              <Link key={e._id} href={`/view/recruitment/${e._id}`}>
-                {e.title},{e.company}, {e.description}
-                <Apply
-                  recruitment={e._id}
-                  user={email}
-                  applicants={e.applicants}
-                ></Apply>
-              </Link>
-            );
-          })}
+          <div className="recruitment-grid">
+            {data.map((e) => {
+              return (
+                <div key={e._id} className="recruitment-box">
+                  <div className="recruitment-box-header">
+                    {e.title} at {e.company}
+                  </div>
+                  <div className="recruitment-box-body">
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          e.description &&
+                          e.description.slice(0, 300) + "......",
+                      }}
+                    ></p>
+                    {e.link && (
+                      <a className="recruitment-box-website" href={e.link}>
+                        Company site link
+                      </a>
+                    )}
+                  </div>
+                  <div className="recruitment-box-footer">
+                    <Apply
+                      recruitment={e._id}
+                      user={email}
+                      applicants={e.applicants}
+                    ></Apply>
+                    <Link href={`/view/recruitment/${e._id}`}>
+                      <button>Read More</button>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </>
       )}
     </>

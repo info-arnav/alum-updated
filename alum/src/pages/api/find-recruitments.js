@@ -26,6 +26,8 @@ export default async function findRecruitment(req, res) {
                 recruitments(query: ${QueryString(body)}) {
                   title
                   description
+                  location
+                  duration
                   company
                   email
                   link

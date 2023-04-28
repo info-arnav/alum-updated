@@ -18,6 +18,8 @@ export default function Modal({
   const [description, setDescription] = useState(
     type == "edit" ? data.description : ""
   );
+  const [location, setLocation] = useState(type == "edit" ? data.location : "");
+  const [duration, setDuration] = useState(type == "edit" ? data.duration : "");
   const [loading, setLoading] = useState(false);
   const [link, setLink] = useState(type == "edit" ? data.link : "");
   const handleSubmit = async (e) => {
@@ -32,6 +34,8 @@ export default function Modal({
           title: title,
           company: company,
           description: description,
+          location: location,
+          duration: duration,
           link: link,
         }),
       }).then((e) => e.json());
@@ -39,6 +43,8 @@ export default function Modal({
         title: title,
         company: company,
         description: description,
+        location: location,
+        duration: duration,
         link: link,
       };
       updater(mainData);
@@ -57,6 +63,8 @@ export default function Modal({
           title: title,
           company: company,
           description: description,
+          location: location,
+          duration: duration,
           link: link,
         }),
       }).then((e) => e.json());
@@ -65,6 +73,8 @@ export default function Modal({
         title: title,
         company: company,
         description: description,
+        location: location,
+        duration: duration,
         link: link,
       });
       updater(mainData);
@@ -79,11 +89,14 @@ export default function Modal({
   };
   return (
     <>
-      <button onClick={() => setShow(true)}>
+      <button
+        onClick={() => setShow(true)}
+        className={type != "edit" && "main-button"}
+      >
         {type == "edit" ? "Edit" : "New Post"}
       </button>
       {show && (
-        <>
+        <div className="modal">
           <form onSubmit={handleSubmit}>
             <input
               value={title}
@@ -95,6 +108,18 @@ export default function Modal({
               value={company}
               onChange={(e) => setCompany(e.target.value)}
               placeholder="Company"
+              required
+            ></input>
+            <input
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="location"
+              required
+            ></input>
+            <input
+              value={duration}
+              onChange={(e) => setDuration(e.target.value)}
+              placeholder="duration"
               required
             ></input>
             <textarea
@@ -113,7 +138,7 @@ export default function Modal({
             </button>
           </form>
           <button onClick={() => setShow(false)}>Close</button>
-        </>
+        </div>
       )}
     </>
   );
