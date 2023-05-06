@@ -47,9 +47,15 @@ export default function DataFetch({ email }) {
                   <div className="recruitment-box-body">
                     <p
                       dangerouslySetInnerHTML={{
-                        __html:
-                          e.description &&
-                          e.description.slice(0, 300) + "......",
+                        __html: `<p><b>Duration</b>: ${
+                          e.duration || "No Duration Provided"
+                        }</p><p><b>Location</b>: ${
+                          e.location || "No Location Provided"
+                        }</p>
+                          ${
+                            e.description &&
+                            e.description.slice(0, 300) + "......"
+                          }`,
                       }}
                     ></p>
                     {e.link && (

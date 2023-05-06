@@ -461,3 +461,226 @@ hr {
   font-weight: bold;
   margin-left: 5px;
 }
+
+/* Internships */
+
+.recruitment-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.recruitment-box {
+  margin: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 3px 2px #d6d4d4;
+  border-radius: 20px;
+  border: none;
+  overflow: hidden;
+}
+
+.main-button {
+  margin: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: calc(100% - 40px);
+  border-radius: 20px;
+  padding: 7px;
+  background-color: rgb(24, 145, 206);
+  color: white;
+  border: none;
+  font-weight: bold;
+  box-shadow: 2px 2px 3px 2px #d6d4d4;
+}
+
+.main-button:hover {
+  background-color: rgb(8, 97, 142);
+}
+
+.recruitment-box-header {
+  background-color: rgb(24, 145, 206);
+  width: calc(100% - 30px);
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.recruitment-box-body {
+  padding: 10px;
+}
+
+.recruitment-box-footer {
+  background-color: white;
+  border-top: solid black;
+  width: calc(100% - 30px);
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.recruitment-box-footer button {
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  background-color: white;
+  border: solid black;
+}
+
+.recruitment-box-footer button:hover {
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  background-color: rgb(193, 192, 192);
+  border: solid black;
+}
+
+.recruitment-box-website {
+  font-weight: bold;
+  color: black;
+}
+
+.recruitment-box-website:hover {
+  text-decoration: underline;
+}
+
+/* Proilfe Page */
+
+.profile-page {
+  width: auto;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-page button {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  background-color: white;
+  border: solid black;
+}
+
+.profile-page img {
+  margin-bottom: 20px;
+}
+
+.profile-block {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.profile-block img {
+  border-radius: 100%;
+}
+
+.profile-right {
+  width: 100%;
+  margin: 10px;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 1200px;
+}
+
+.category {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-details {
+  margin-bottom: 20px;
+}
+
+.category button {
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  background-color: white;
+  border: solid black;
+}
+
+.category button:hover {
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  background-color: rgb(193, 192, 192);
+  border: solid black;
+}
+
+.category-details {
+  box-shadow: 2px 2px 3px 2px #d6d4d4;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.main-category-header {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.category-header {
+  display: flex;
+  padding: 10px;
+  background-color: rgb(24, 145, 206);
+  color: white;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.category-header::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.category-subheader {
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: 14px;
+  color: gray;
+  text-align: left;
+}
+
+.category-sub-subheader {
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  color: gray;
+  font-size: 14px;
+  text-align: left;
+}
+
+.category-description {
+  padding: 10px;
+  text-align: left;
+}
+
+.nothing-to-see {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.header-buttons {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}

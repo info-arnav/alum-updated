@@ -3,15 +3,17 @@ export default function Profile({ data, email, link }) {
     <>
       <img
         src={`${link}api/image/${data._id}`}
-        width={100}
-        height={100}
+        width={200}
+        height={200}
         alt="The profile picture"
         id="profile_image_refreshed"
       ></img>
-      {data.name || "Name Not Provided"}
-      {email}
-      {data.batch || "Batch Not Provided"}
-      {data.bio || "Bio Not Provided"}
+      <p>{data.name || "Name Not Provided"}</p>
+      <p>{email}</p>
+      <p>{data.batch || "Batch Not Provided"}</p>
+      <p
+        dangerouslySetInnerHTML={{ __html: data.bio || "Bio Not Provided" }}
+      ></p>
     </>
   );
 }

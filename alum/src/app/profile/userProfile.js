@@ -55,13 +55,15 @@ export default function UserProfile({ data, link }) {
       ) : error ? (
         <Error></Error>
       ) : (
-        <>
-          <Profile
-            data={userData}
-            link={link}
-            email={data.data.email}
-          ></Profile>
-          <button onClick={() => setShow(true)}>Edit Profile</button>
+        <div className="profile-page">
+          <div className="profile-block">
+            <Profile
+              data={userData}
+              link={link}
+              email={data.data.email}
+            ></Profile>
+            <button onClick={() => setShow(true)}>Edit Profile</button>
+          </div>
           {show && (
             <EditProfile
               data={userData}
@@ -80,7 +82,7 @@ export default function UserProfile({ data, link }) {
             refresh={refresh}
             setData={setUserData}
           ></Portfolio>
-        </>
+        </div>
       )}
     </>
   );
