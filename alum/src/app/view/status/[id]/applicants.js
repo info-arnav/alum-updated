@@ -29,7 +29,7 @@ export default function Applicants({ email, id }) {
       ) : (
         <>
           {data.map((e) => {
-            return <div>{e}</div>;
+            return <div key={e}>{e}</div>;
           })}
         </>
       )}

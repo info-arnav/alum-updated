@@ -32,14 +32,14 @@ export default async function applicantsRecruitment(req, res) {
     }).then((e) => e.json());
     let array = [];
     data.data.recruitments[0].applicants == null
-      ? (array = array)
+      ? (array = [])
       : (array = data.data.recruitments[0].applicants);
     if (array.indexOf(email) == -1) {
       array.push(email);
     } else {
       array.splice(array.indexOf(email), 1);
     }
-    const updatedData = await fetch(process.env.GRAPHQL_URI, {
+    await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
         email: email,
