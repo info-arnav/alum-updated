@@ -5,6 +5,7 @@ import Modal from "./components/modal";
 import Loading from "../home/loading";
 import Error from "../error";
 import Delete from "./components/delete";
+import Link from "next/link";
 
 export default function DataFetch({ email }) {
   const [loading, setLoading] = useState(true);
@@ -77,6 +78,13 @@ export default function DataFetch({ email }) {
                     )}
                   </div>
                   <div className="recruitment-box-footer">
+                    <button
+                      onClick={(e) => document.getElementById("status").click()}
+                    >
+                      <Link href={`/view/status/${e._id}`} id="status">
+                        Status
+                      </Link>
+                    </button>
                     <Modal
                       type="edit"
                       data={e}
