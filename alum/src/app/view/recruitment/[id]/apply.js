@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Apply({ recruitment, user, applicants }) {
   const [profiles, setProfiles] = useState(
     applicants == null ? [] : applicants
   );
   const [loading, setLoading] = useState(false);
+  useEffect(() => {}, [loading]);
   const handleSubmit = async () => {
     setLoading(true);
     const fetchedData = await fetch("/api/applicants-recruitment", {
