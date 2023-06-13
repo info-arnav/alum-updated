@@ -7,7 +7,6 @@ export default function Apply({ recruitment, user, applicants }) {
     applicants == null ? [] : applicants
   );
   const [loading, setLoading] = useState(false);
-  useEffect(() => {}, [loading]);
   const handleSubmit = async () => {
     setLoading(true);
     const fetchedData = await fetch("/api/applicants-recruitment", {
@@ -16,9 +15,12 @@ export default function Apply({ recruitment, user, applicants }) {
         auth_email: user,
         _id: recruitment,
       }),
-    }).then((e) => e.json());
-    setProfiles(fetchedData.data.data.updateOneRecruitment.applicants);
-    setLoading(false);
+    })
+      .then((e) => e.json())
+      .then(() => {
+        setProfiles(fetchedData.data.data.updateOneRecruitment.applicants);
+        setLoading(false);
+      });
   };
   return (
     <>

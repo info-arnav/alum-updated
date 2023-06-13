@@ -28,9 +28,13 @@ export default function Applicants({ email, id }) {
         <Loading></Loading>
       ) : (
         <>
-          {data.map((e) => {
-            return <div key={e}>{e}</div>;
-          })}
+          {data ? (
+            data.map((e) => {
+              return <div key={e}>{e}</div>;
+            })
+          ) : (
+            <div>No Applicants</div>
+          )}
         </>
       )}
     </>
