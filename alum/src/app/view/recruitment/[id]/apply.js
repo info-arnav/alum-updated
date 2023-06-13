@@ -9,7 +9,7 @@ export default function Apply({ recruitment, user, applicants }) {
   const [loading, setLoading] = useState(false);
   const handleSubmit = async () => {
     setLoading(true);
-    const fetchedData = await fetch("/api/applicants-recruitment", {
+    await fetch("/api/applicants-recruitment", {
       method: "POST",
       body: JSON.stringify({
         auth_email: user,
@@ -18,7 +18,7 @@ export default function Apply({ recruitment, user, applicants }) {
     })
       .then((e) => e.json())
       .then(() => {
-        setProfiles(fetchedData.data.data.updateOneRecruitment.applicants);
+        setProfiles(e.data.data.updateOneRecruitment.applicants);
         setLoading(false);
       });
   };
