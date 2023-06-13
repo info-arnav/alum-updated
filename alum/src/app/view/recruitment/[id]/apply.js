@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Apply({ recruitment, user, applicants }) {
   const [profiles, setProfiles] = useState(
