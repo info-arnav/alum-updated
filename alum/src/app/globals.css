@@ -719,3 +719,13 @@ hr {
   justify-content: right;
 }
 
+/* login */
+.loginHeader{
+  background-image: url("./image/bgcloud.png");
+  background-repeat: no-repeat;
+  z-index: -20;
+  
+}
+
+
+

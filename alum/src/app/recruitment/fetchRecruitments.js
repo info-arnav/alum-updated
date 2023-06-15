@@ -53,7 +53,9 @@ export default function DataFetch({ email }) {
                     {/* {e.title} at {e.company} */}
                     <img className="CompanyLogo"></img>
                     <div>
-                      <h1>{e.title}</h1>
+                      {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
+                          alt="compimage"></img> */}
+                      <h1 className="font-bold text-2xl">{e.title}</h1>
                       <h5>{e.company}</h5>
                     </div>
                   </div>
@@ -103,6 +105,8 @@ export default function DataFetch({ email }) {
 </clipPath>
 </defs>
 </svg>
+
+
                       <p className="inline">Stipend</p>
                       <p>{e.stipend || "No data"}</p>
                     </div>
@@ -144,3 +148,4 @@ export default function DataFetch({ email }) {
     </>
   );
 }
+
