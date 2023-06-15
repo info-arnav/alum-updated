@@ -1,4 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Global CSS */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #EBEDF2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3d7fe9;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4d6e;
+}
 
 * {
   font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial,
@@ -464,21 +488,28 @@ hr {
 
 /* Internships */
 
-.recruitment-grid {
+/* .recruitment-grid {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 40px;
-}
+} */
+
 
 .recruitment-box {
   margin: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  box-shadow: 2px 2px 3px 2px #d6d4d4;
-  border-radius: 20px;
-  border: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px 25px;
+  border-radius: 25px;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(177, 177, 177);
   overflow: hidden;
+}
+
+.recruitment-box:hover {
+  border-color:#00183F;
 }
 
 .main-button {
@@ -499,25 +530,31 @@ hr {
   background-color: rgb(8, 97, 142);
 }
 
+
+
 .recruitment-box-header {
-  background-color: rgb(24, 145, 206);
+  /* background-color: rgb(24, 145, 206); */
   width: calc(100% - 30px);
-  color: white;
+  color: black;
   font-weight: bold;
-  padding: 15px;
+  padding: 12px;
 }
 
 .recruitment-box-body {
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .recruitment-box-footer {
   background-color: white;
-  border-top: solid black;
   width: calc(100% - 30px);
-  color: white;
+  color: black;
   font-weight: bold;
-  padding: 15px;
+  padding: 15px 15px;
+  margin:0 15px;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -526,8 +563,8 @@ hr {
 .recruitment-box-footer button {
   border-radius: 20px;
   padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: 10px;
   background-color: white;
   border: solid black;
@@ -535,9 +572,6 @@ hr {
 
 .recruitment-box-footer button:hover {
   border-radius: 20px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
   margin-left: 10px;
   background-color: rgb(193, 192, 192);
   border: solid black;
@@ -684,3 +718,4 @@ hr {
   align-items: center;
   justify-content: right;
 }
+
