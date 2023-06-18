@@ -531,8 +531,6 @@ hr {
   background-color: rgb(8, 97, 142);
 }
 
-
-
 .recruitment-box-header {
   /* background-color: rgb(24, 145, 206); */
   width: calc(100% - 30px);
@@ -730,6 +728,8 @@ hr {
   
 }
 
+/* modal */
+
 .modal {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
@@ -753,28 +753,42 @@ hr {
   position:relative;
   background-color: white;
   width: 70%; /* Width in proportion to its parent container*/
-  max-width: 640px; /* Max width where it stops expanding */
+  /*max-width: 640px; /* Max width where it stops expanding */
   min-width: 100px;
   min-height: 70%; /* Height in proportion to its parent container */
   overflow: auto;
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
-  border-radius: 10px; /* Optional. Rounds container corners */
-  
+  border-radius: 10px; /* Optional. Rounds container corners */ 
 }
 
-.close {
+#form-close {
+  display: grid;
+  place-content: center;
   position:absolute;
-  top:0;
-  color: red;
-  right:3px;
-  font-size: 25px;
+  top: 0;
+  width: 3rem;
+  background-color: red;
+  color: white;
+  right: 0;
+  border-radius: 0 0 0 10px;
+  border: 0;
+  font-size: 30px;
   font-weight: bold;
+  transition: all 200ms;
 }
-.close:hover, 
-.close:focus {
-   color: #8d8888;
-   text-decoration: none;
-   cursor: pointer;
+#form-close:hover, 
+#form-close:focus {
+  background-color: rgb(213, 0, 0);
+  
+
+}
+
+@media(max-width: 768px){ /* For mobile */
+
+  .modal-content{
+    width: 90%;
+  }
+  
 }
