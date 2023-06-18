@@ -77,7 +77,7 @@ export default function DataFetch({ email }) {
                       </a>
                     )}
                   </div>
-                  <div className="recruitment-box-footer">
+                  <div className="recruitment-box-footer sm:flex-row  flex-col">
                     <button
                       onClick={(e) => document.getElementById("status").click()}
                     >

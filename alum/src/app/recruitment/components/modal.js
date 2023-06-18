@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
+import Image from "next/image";
+import alumni from "../../image/alumni.png"
 export default function Modal({
   type,
   data,
@@ -89,6 +90,7 @@ export default function Modal({
   };
   return (
     <>
+    <div className="">
       <button
         onClick={() => setShow(true)}
         className={type != "edit" && "main-button"}
@@ -97,49 +99,77 @@ export default function Modal({
       </button>
       {show && (
         <div className="modal">
-          <form onSubmit={handleSubmit}>
-            <input
+          <div className="modal-content">
+            <Image src={alumni} width={76}/>
+            {/* <div className="flex flex-col justify-center"> */}
+          <form onSubmit={handleSubmit} className="">
+          
+            <div className="relative my-6">
+            <input id="position" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Position"
+              // placeholder="Position"
               required
             ></input>
-            <input
+            <label for="position" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Position</label>
+            </div>
+
+            <div className="relative my-6">
+            <input id="Company" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
               value={company}
               onChange={(e) => setCompany(e.target.value)}
-              placeholder="Company"
               required
             ></input>
-            <input
+            <label for="Company" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Company</label>
+            </div>
+            
+            <div className="relative my-6">
+            <input id="Location" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              placeholder="location"
               required
             ></input>
-            <input
+            <label for="Location" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Location</label>
+            </div>
+            
+            <div className="relative my-6">
+            <input id = "Duration" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
-              placeholder="duration"
               required
             ></input>
-            <textarea
+            <label for="Duration" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Duration</label>
+            </div>
+            
+            <div className="relative my-6">
+            <textarea id = "Description" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Descrption"
               required
             ></textarea>
-            <input
+            <label for="Description" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 top-2 left-4">Description</label>
+            </div>
+            
+            <div className="relative my-6">
+            <input id="Link" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
               value={link}
               onChange={(e) => setLink(e.target.value)}
-              placeholder="Website link if any"
             ></input>
-            <button type="submit" disabled={loading}>
+            <label for="Link" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Website link if any</label>
+            </div>
+            
+            <button className="block m-2" type="submit" disabled={loading}>
               Save Changes
             </button>
           </form>
-          <button onClick={() => setShow(false)}>Close</button>
+          {/* </div> */}
+          <div className="close block m-2">
+            <button onClick={() => setShow(false)}>X</button>
+          </div>
+          </div>
         </div>
       )}
+      </div>
     </>
   );
 }

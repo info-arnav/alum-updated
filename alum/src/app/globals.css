@@ -497,6 +497,7 @@ hr {
 
 
 .recruitment-box {
+  /* position:relative; */
   margin: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -549,7 +550,9 @@ hr {
 }
 
 .recruitment-box-footer {
+
   background-color: white;
+  
   width: calc(100% - 30px);
   color: black;
   font-weight: bold;
@@ -727,5 +730,51 @@ hr {
   
 }
 
+.modal {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+  z-index: 1; /* Overlay effect: positioned over other containers */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed; /* Fix position on the top-left corner*/
+  top: 0;
+  left: 0;
+  overflow: auto; 
+  /* scrollbar-width: 0; */
+  padding-top: 80px; /* Location of the content container */
+  /* -ms-overflow-style: none;  IE and Edge */
+  /* scrollbar-width: none;  Firefox */
+}
+.model::-webkit-scrollbar {
+  display: none;
+}
 
+.modal-content {
+  position:relative;
+  background-color: white;
+  width: 70%; /* Width in proportion to its parent container*/
+  max-width: 640px; /* Max width where it stops expanding */
+  min-width: 100px;
+  min-height: 70%; /* Height in proportion to its parent container */
+  overflow: auto;
+  margin: auto; /* Auto margin according to the element width */
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px; /* Optional. Rounds container corners */
+  
+}
 
+.close {
+  position:absolute;
+  top:0;
+  color: red;
+  right:3px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.close:hover, 
+.close:focus {
+   color: #8d8888;
+   text-decoration: none;
+   cursor: pointer;
+}
