@@ -561,7 +561,7 @@ hr {
   justify-content: right;
 }
 
-.recruitment-box-footer button {
+.recuit-button {
   border-radius: 20px;
   padding: 5px;
   padding-left: 20px;
@@ -571,7 +571,7 @@ hr {
   border: solid black;
 }
 
-.recruitment-box-footer button:hover {
+.recuit-button:hover {
   border-radius: 20px;
   margin-left: 10px;
   background-color: rgb(193, 192, 192);
@@ -590,29 +590,29 @@ hr {
 /* Proilfe Page */
 
 .profile-page {
-  width: auto;
-  margin: 20px;
+  /* width: auto; */
+  /* margin: 20px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.profile-page button {
+/* .profile-page button {
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 20px;
   background-color: white;
   border: solid black;
-}
+} */
 
-.profile-page img {
+/* .profile-page img {
   margin-bottom: 20px;
-}
+} */
 
 .profile-block {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   text-align: center;
 }
 
@@ -621,24 +621,28 @@ hr {
 }
 
 .profile-right {
-  width: 100%;
-  margin: 10px;
+  /* width: 100%; */
+  /* margin: 10px; */
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   padding: 10px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
 }
 
 .category {
-  width: 100%;
+  width: 85%;
   display: flex;
   flex-direction: column;
+
 }
 
-.category-details {
+/* .category-details {
   margin-bottom: 20px;
-}
+} */
 
-.category button {
+/* .category button {
   border-radius: 20px;
   padding: 5px;
   padding-left: 15px;
@@ -656,7 +660,7 @@ hr {
   margin-left: 10px;
   background-color: rgb(193, 192, 192);
   border: solid black;
-}
+} */
 
 .category-details {
   box-shadow: 2px 2px 3px 2px #d6d4d4;
@@ -745,7 +749,7 @@ hr {
   /* -ms-overflow-style: none;  IE and Edge */
   /* scrollbar-width: none;  Firefox */
 }
-.model::-webkit-scrollbar {
+.modal::-webkit-scrollbar {
   display: none;
 }
 
@@ -763,8 +767,10 @@ hr {
   border-radius: 10px; /* Optional. Rounds container corners */ 
 }
 
-#form-close {
+.form-close , #edit-close, #form-close{
   display: grid;
+  padding: 0;
+  margin:0;
   place-content: center;
   position:absolute;
   top: 0;
@@ -775,15 +781,30 @@ hr {
   border-radius: 0 0 0 10px;
   border: 0;
   font-size: 30px;
+  
   font-weight: bold;
   transition: all 200ms;
 }
-#form-close:hover, 
-#form-close:focus {
+.form-close:hover, 
+.form-close:focus, #edit-close:hover, #form-close:hover {
   background-color: rgb(213, 0, 0);
-  
-
 }
+/* .recruitment-box-footer button {
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 10px;
+  background-color: white;
+  border: solid black;
+}
+
+.recruitment-box-footer button:hover {
+  border-radius: 20px;
+  margin-left: 10px;
+  background-color: rgb(193, 192, 192);
+  border: solid black;
+} */
 
 @media(max-width: 768px){ /* For mobile */
 
@@ -791,4 +812,136 @@ hr {
     width: 90%;
   }
   
+}
+
+.form-post{
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  margin-top: 15px;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.form-post span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-post svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-post:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.form-post:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.form-post:hover span {
+  transform: translateX(5em);
+}
+
+.form-post:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* Profile */
+.profile-add {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.941);
+  background-color: rgb(15, 48, 102);
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+.profile-add:hover {
+  background: rgb(61, 106, 255);
+  color: rgba(253, 253, 253, 0.941);
+  box-shadow: 0 0 13px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.profile-add:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.profile-add::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.profile-add:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
 }

@@ -101,7 +101,8 @@ export default function EditProfile({
     }
   };
   return (
-    <>
+    <div className="modal">
+    <div className="modal-content">
       <form onSubmit={handleUpdate}>
         <img
           src={image}
@@ -138,6 +139,7 @@ export default function EditProfile({
         </button>
       </form>
       <button onClick={() => setShow(false)}>Close</button>
-    </>
+      </div>
+    </div>
   );
 }

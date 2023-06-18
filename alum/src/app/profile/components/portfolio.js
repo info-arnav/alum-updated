@@ -11,7 +11,7 @@ export default function Portfolio({
   setData,
 }) {
   return (
-    <div className="profile-right">
+    <div className="profile-right w-full">
       {[
         [data.occupation, "Work Experience", "occupation"],
         [data.education, "Education", "education"],
@@ -19,7 +19,7 @@ export default function Portfolio({
         [data.honors, "Honors", "honors"],
       ].map((e) => {
         return (
-          <div key={e[1]} className="category">
+          <div key={e[1]} className="category rounded-xl bg-white p-4 my-4 border-2 border-[#868686] mx-auto">
             <hr></hr>
             <div className="main-category-header">
               {e[1]}
@@ -39,7 +39,7 @@ export default function Portfolio({
             {e[0].length > 0 ? (
               e[0].map((f) => {
                 return (
-                  <div key={e[0].indexOf(f)} className="category-details">
+                  <div key={e[0].indexOf(f)} className="category-details my-4">
                     <div className="category-header">
                       {f.title}
                       <div className="header-buttons">

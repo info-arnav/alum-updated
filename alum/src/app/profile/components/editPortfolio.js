@@ -74,38 +74,51 @@ export default function EditPortfolio({
   return (
     <div className="modal">
       <div className="modal-content">
+      <section class="bg-white">
+        <div className="py-8 px-4 mx-auto max-w-3xl lg:py-16">
         <form onSubmit={handleSubmit}>
-          <input
-            required
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder={placeholder[0]}
-          ></input>
-          <input
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-7">
+
+          <div class="sm:col-span-2 relative">
+            <input  className="text-black border-2 rounded-xl block m-4 p-4 w-[50%]"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder={placeholder[0]}
+            ></input>
+          </div>
+
+          <input className="text-black border-2 rounded-xl block m-4 p-4 w-[50%]"
             required
             value={subTitle}
             onChange={(e) => setSubTitle(e.target.value)}
             placeholder={placeholder[1]}
           ></input>
-          <input
+
+          <input className="text-black border-2 rounded-xl block m-4 p-4 w-[50%]"
             required
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
             placeholder={placeholder[2]}
           ></input>
-          <textarea
+
+          <textarea className="text-black border-2 rounded-xl block m-4 p-4 w-[50%]"
             required
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder={placeholder[3]}
           ></textarea>
+
           {error &&
             "Some error occured, Maybe two devics are simultaneously editing"}
-          <button action="submit" disabled={loading}>
+          <button className="profile-add m-4 p-4 w-[50%]"  action="submit" disabled={loading}>
             {edit ? "Edit" : "Add"}
           </button>
+        </div>
         </form>
-        <button onClick={() => show(false)}>Close</button>
+        <button className="form-close" onClick={() => show(false)}>X</button>
+        </div>
+        </section>
       </div>
     </div>
   );

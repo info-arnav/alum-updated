@@ -94,7 +94,7 @@ export default function Modal({
       <div className="">
         <button
           onClick={() => setShow(true)}
-          className={type != 'edit' && 'main-button'}
+          className={type == 'edit' ? 'recuit-button' : 'main-button'}
         >
           {type == 'edit' ? 'Edit' : 'New Post'}
         </button>
@@ -193,7 +193,7 @@ export default function Modal({
                         </label>
                       </div>
 
-                      <div className="sm:col-span-2 relative">
+                      {/* <div className="sm:col-span-2 relative">
                         <textarea
                           id="Description"
                           rows="8"
@@ -209,7 +209,7 @@ export default function Modal({
                         >
                           Description
                         </label>
-                      </div>
+                      </div> */}
 
                       <div class="sm:col-span-2">
                         <label
@@ -229,13 +229,26 @@ export default function Modal({
                         ></textarea>
                       </div>
                     </div>
-                    <button
+                  <button id="edit-post" className="form-post"
+                      type="submit"
+                      disabled={loading}>
+                    <div class="svg-wrapper-1">
+                      <div class="svg-wrapper">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <span>Post</span>
+                  </button>
+                    {/* <button
                       className="block m-2"
                       type="submit"
                       disabled={loading}
                     >
                       Save Changes
-                    </button>
+                    </button> */}
                   </form>
                 </div>
               </section>
@@ -349,7 +362,7 @@ export default function Modal({
                 </button>
               </form> */}
 
-              <button onClick={() => setShow(false)} id="form-close">
+              <button onClick={() => setShow(false)} id="edit-close" className="form-close">
                 X
               </button>
             </div>

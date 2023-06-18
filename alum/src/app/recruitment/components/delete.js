@@ -27,7 +27,7 @@ export default function Delete({
     update(!refresh);
   };
   return (
-    <button onClick={deleteData} disabled={disabled}>
+    <button className="recuit-button" onClick={deleteData} disabled={disabled}>
       Delete
     </button>
   );
