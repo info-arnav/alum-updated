@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import alumni from "../../image/alumni.png"
+import { useState } from 'react';
+import Image from 'next/image';
+import alumni from '../../image/alumni.png';
 export default function Modal({
   type,
   data,
@@ -14,21 +14,21 @@ export default function Modal({
   position,
 }) {
   const [show, setShow] = useState(false);
-  const [title, setTitle] = useState(type == "edit" ? data.title : "");
-  const [company, setCompany] = useState(type == "edit" ? data.company : "");
+  const [title, setTitle] = useState(type == 'edit' ? data.title : '');
+  const [company, setCompany] = useState(type == 'edit' ? data.company : '');
   const [description, setDescription] = useState(
-    type == "edit" ? data.description : ""
+    type == 'edit' ? data.description : ''
   );
-  const [location, setLocation] = useState(type == "edit" ? data.location : "");
-  const [duration, setDuration] = useState(type == "edit" ? data.duration : "");
+  const [location, setLocation] = useState(type == 'edit' ? data.location : '');
+  const [duration, setDuration] = useState(type == 'edit' ? data.duration : '');
   const [loading, setLoading] = useState(false);
-  const [link, setLink] = useState(type == "edit" ? data.link : "");
+  const [link, setLink] = useState(type == 'edit' ? data.link : '');
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (type == "edit") {
-      await fetch("/api/edit-recruitments", {
-        method: "POST",
+    if (type == 'edit') {
+      await fetch('/api/edit-recruitments', {
+        method: 'POST',
         body: JSON.stringify({
           id: data._id,
           email: email,
@@ -50,15 +50,15 @@ export default function Modal({
       };
       updater(mainData);
       update(!refresh);
-      setTitle("");
-      setCompany("");
-      setDescription("");
-      setLink("");
+      setTitle('');
+      setCompany('');
+      setDescription('');
+      setLink('');
       setShow(false);
       setLoading(false);
     } else {
-      await fetch("/api/create-recruitment", {
-        method: "POST",
+      await fetch('/api/create-recruitment', {
+        method: 'POST',
         body: JSON.stringify({
           email: email,
           title: title,
@@ -80,95 +80,281 @@ export default function Modal({
       });
       updater(mainData);
       update(!refresh);
-      setTitle("");
-      setCompany("");
-      setDescription("");
-      setLink("");
+      setTitle('');
+      setCompany('');
+      setDescription('');
+      setLink('');
       setShow(false);
       setLoading(false);
     }
   };
+
   return (
     <>
-    <div className="">
-      <button
-        onClick={() => setShow(true)}
-        className={type != "edit" && "main-button"}
-      >
-        {type == "edit" ? "Edit" : "New Post"}
-      </button>
-      {show && (
-        <div className="modal">
-          <div className="modal-content">
-            <Image src={alumni} width={76}/>
-            {/* <div className="flex flex-col justify-center"> */}
-          <form onSubmit={handleSubmit} className="">
-          
-            <div className="relative my-6">
-            <input id="position" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              // placeholder="Position"
-              required
-            ></input>
-            <label for="position" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Position</label>
-            </div>
+      <div className="">
+        <button
+          onClick={() => setShow(true)}
+          className={type != 'edit' && 'main-button'}
+        >
+          {type == 'edit' ? 'Edit' : 'New Post'}
+        </button>
+        {show && (
+          <div className="modal">
+            <div className="modal-content">
+              <section class="bg-white">
+                <div className="py-8 px-4 mx-auto max-w-3xl lg:py-16">
+                  <h2 className="text-2xl font-bold">
+                    {type == 'edit' ? 'Edit Post' : 'New Post'}
+                  </h2>
+                  <hr className="mb-14 h-0.5" />
+                  <form onSubmit={handleSubmit} className="">
+                    <div className="grid gap-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-7">
+                      <div class="sm:col-span-2 relative">
+                        <input
+                          id="position"
+                          className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                          placeholder=" "
+                          value={title}
+                          onChange={(e) => setTitle(e.target.value)}
+                          required
+                        ></input>
+                        <label
+                          for="position"
+                          className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                        >
+                          Position
+                        </label>
+                      </div>
 
-            <div className="relative my-6">
-            <input id="Company" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              required
-            ></input>
-            <label for="Company" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Company</label>
+                      <div className="w-full relative">
+                        <input
+                          id="Company"
+                          className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                          placeholder=" "
+                          value={company}
+                          onChange={(e) => setCompany(e.target.value)}
+                          required
+                        ></input>
+                        <label
+                          for="Company"
+                          className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                        >
+                          Company
+                        </label>
+                      </div>
+
+                      <div className="w-full relative">
+                        <input
+                          id="Location"
+                          className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                          placeholder=" "
+                          value={location}
+                          onChange={(e) => setLocation(e.target.value)}
+                          required
+                        ></input>
+                        <label
+                          for="Location"
+                          className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                        >
+                          Location
+                        </label>
+                      </div>
+
+                      <div className="w-full relative">
+                        <input
+                          id="Duration"
+                          className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                          placeholder=" "
+                          value={duration}
+                          onChange={(e) => setDuration(e.target.value)}
+                          required
+                        ></input>
+                        <label
+                          for="Duration"
+                          className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                        >
+                          Duration
+                        </label>
+                      </div>
+
+                      <div className="w-full relative">
+                        <input
+                          id="Link"
+                          className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                          placeholder=" "
+                          value={link}
+                          onChange={(e) => setLink(e.target.value)}
+                        ></input>
+                        <label
+                          for="Link"
+                          className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                        >
+                          Website link if any
+                        </label>
+                      </div>
+
+                      <div className="sm:col-span-2 relative">
+                        <textarea
+                          id="Description"
+                          rows="8"
+                          className="block p-2.5 w-full border-2 border-[#8a8a8a] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                          placeholder=" "
+                          value={description}
+                          onChange={(e) => setDescription(e.target.value)}
+                          required
+                        ></textarea>
+                        <label
+                          for="Description"
+                          className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 top-2 left-4"
+                        >
+                          Description
+                        </label>
+                      </div>
+
+                      <div class="sm:col-span-2">
+                        <label
+                          for="Description"
+                          class="block mb-2 text-sm font-medium text-gray-500"
+                        >
+                          Description
+                        </label>
+                        <textarea
+                          id="Description"
+                          rows="8"
+                          class="block p-2.5 w-full border-2 border-gray-500 text-sm text-gray-900 bg-gray-50 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                          placeholder="Add more details..."
+                          value={description}
+                          onChange={(e) => setDescription(e.target.value)}
+                          required
+                        ></textarea>
+                      </div>
+                    </div>
+                    <button
+                      className="block m-2"
+                      type="submit"
+                      disabled={loading}
+                    >
+                      Save Changes
+                    </button>
+                  </form>
+                </div>
+              </section>
+              {/* <Image src={alumni} width={76} /> */}
+
+              {/* <form onSubmit={handleSubmit} className="">
+                <div className="relative my-6">
+                  <input
+                    id="position"
+                    className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    // placeholder="Position"
+                    required
+                  ></input>
+                  <label
+                    for="position"
+                    className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                  >
+                    Position
+                  </label>
+                </div>
+
+                <div className="relative my-6">
+                  <input
+                    id="Company"
+                    className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    required
+                  ></input>
+                  <label
+                    for="Company"
+                    className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                  >
+                    Company
+                  </label>
+                </div>
+
+                <div className="relative my-6">
+                  <input
+                    id="Location"
+                    className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    required
+                  ></input>
+                  <label
+                    for="Location"
+                    className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                  >
+                    Location
+                  </label>
+                </div>
+
+                <div className="relative my-6">
+                  <input
+                    id="Duration"
+                    className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    value={duration}
+                    onChange={(e) => setDuration(e.target.value)}
+                    required
+                  ></input>
+                  <label
+                    for="Duration"
+                    className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                  >
+                    Duration
+                  </label>
+                </div>
+
+                <div className="relative my-6">
+                  <textarea
+                    id="Description"
+                    className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                  ></textarea>
+                  <label
+                    for="Description"
+                    className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 top-2 left-4"
+                  >
+                    Description
+                  </label>
+                </div>
+
+                <div className="relative my-6">
+                  <input
+                    id="Link"
+                    className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    value={link}
+                    onChange={(e) => setLink(e.target.value)}
+                  ></input>
+                  <label
+                    for="Link"
+                    className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                  >
+                    Website link if any
+                  </label>
+                </div>
+
+                <button className="block m-2" type="submit" disabled={loading}>
+                  Save Changes
+                </button>
+              </form> */}
+
+              <button onClick={() => setShow(false)} id="form-close">
+                X
+              </button>
             </div>
-            
-            <div className="relative my-6">
-            <input id="Location" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              required
-            ></input>
-            <label for="Location" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Location</label>
-            </div>
-            
-            <div className="relative my-6">
-            <input id = "Duration" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-              required
-            ></input>
-            <label for="Duration" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Duration</label>
-            </div>
-            
-            <div className="relative my-6">
-            <textarea id = "Description" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            ></textarea>
-            <label for="Description" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 top-2 left-4">Description</label>
-            </div>
-            
-            <div className="relative my-6">
-            <input id="Link" className="block my-2 border-2 border-[#8a8a8a] px-2.5 pb-2.5 pt-4 w-[80%] text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "
-              value={link}
-              onChange={(e) => setLink(e.target.value)}
-            ></input>
-            <label for="Link" className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4">Website link if any</label>
-            </div>
-            
-            <button className="block m-2" type="submit" disabled={loading}>
-              Save Changes
-            </button>
-          </form>
-          {/* </div> */}
-          <div className="close block m-2">
-            <button onClick={() => setShow(false)}>X</button>
           </div>
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </>
   );

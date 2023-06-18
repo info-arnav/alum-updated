@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Modal from "./components/modal";
-import Loading from "../home/loading";
-import Error from "../error";
-import Delete from "./components/delete";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import Modal from './components/modal';
+import Loading from '../home/loading';
+import Error from '../error';
+import Delete from './components/delete';
+import Link from 'next/link';
 
 export default function DataFetch({ email }) {
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [error, setError] = useState(false);
-  const [data, setData] = useState("");
+  const [data, setData] = useState('');
   const fetcher = async () => {
-    const fetchedData = await fetch("/api/find-recruitments", {
-      method: "POST",
+    const fetchedData = await fetch('/api/find-recruitments', {
+      method: 'POST',
       body: JSON.stringify({
         auth_email: email,
         email: email,
@@ -61,13 +61,13 @@ export default function DataFetch({ email }) {
                     <p
                       dangerouslySetInnerHTML={{
                         __html: `<p><b>Duration</b>: ${
-                          e.duration || "No Duration Provided"
+                          e.duration || 'No Duration Provided'
                         }</p><p><b>Location</b>: ${
-                          e.location || "No Location Provided"
+                          e.location || 'No Location Provided'
                         }</p>
                           ${
                             e.description &&
-                            e.description.slice(0, 300) + "......"
+                            e.description.slice(0, 300) + '......'
                           }`,
                       }}
                     ></p>
@@ -79,7 +79,7 @@ export default function DataFetch({ email }) {
                   </div>
                   <div className="recruitment-box-footer sm:flex-row  flex-col">
                     <button
-                      onClick={(e) => document.getElementById("status").click()}
+                      onClick={(e) => document.getElementById('status').click()}
                     >
                       <Link href={`/view/status/${e._id}`} id="status">
                         Status
