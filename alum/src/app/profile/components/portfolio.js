@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Delete from "./delete";
-import Modal from "./modal";
+import Delete from './delete';
+import Modal from './modal';
 
 export default function Portfolio({
   data,
@@ -13,13 +13,16 @@ export default function Portfolio({
   return (
     <div className="profile-right w-full">
       {[
-        [data.occupation, "Work Experience", "occupation"],
-        [data.education, "Education", "education"],
-        [data.projects, "Projects", "projects"],
-        [data.honors, "Honors", "honors"],
+        [data.occupation, 'Work Experience', 'occupation'],
+        [data.education, 'Education', 'education'],
+        [data.projects, 'Projects', 'projects'],
+        [data.honors, 'Honors', 'honors'],
       ].map((e) => {
         return (
-          <div key={e[1]} className="category rounded-xl bg-white p-4 my-4 border-2 border-[#868686] mx-auto">
+          <div
+            key={e[1]}
+            className="category rounded-xl bg-white p-4 my-4 border-2 border-[#868686] mx-auto"
+          >
             <hr></hr>
             <div className="main-category-header">
               {e[1]}
@@ -43,7 +46,7 @@ export default function Portfolio({
                     <div className="category-header">
                       {f.title}
                       <div className="header-buttons">
-                        {" "}
+                        {' '}
                         <Delete
                           position={e[0].indexOf(f)}
                           type={e[2]}
