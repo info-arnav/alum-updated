@@ -17,8 +17,8 @@ export default function Apply({ recruitment, user, applicants }) {
       }),
     })
       .then((e) => e.json())
-      .then(() => {
-        setProfiles(e.data.data.updateOneRecruitment.applicants);
+      .then((e) => {
+        setProfiles(e.data);
         setLoading(false);
       });
   };
