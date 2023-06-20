@@ -813,14 +813,14 @@ hr {
   }
   
 }
-
+/* Modal Post Button */
 .form-post{
   font-family: inherit;
   font-size: 20px;
   background: royalblue;
-  margin-top: 15px;
+  margin-top: 20px;
   color: white;
-  padding: 0.7em 1em;
+  padding: 0.5em 0.8em;
   padding-left: 0.9em;
   display: flex;
   align-items: center;
@@ -871,7 +871,7 @@ hr {
 /* Profile */
 .profile-add {
   position: relative;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border-radius: 7px;
   border: 1px solid rgb(61, 106, 255);
   font-size: 14px;
@@ -891,9 +891,9 @@ hr {
 }
 
 .profile-add:hover {
-  background: rgb(61, 106, 255);
+  /* background: rgb(61, 106, 255); */
   color: rgba(253, 253, 253, 0.941);
-  box-shadow: 0 0 13px 5px rgba(0, 142, 236, 0.815);
+  /* box-shadow: 0 0 13px 5px rgba(0, 142, 236, 0.815); */
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
