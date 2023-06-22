@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import Loading from "@/app/home/loading";
-import { useEffect, useState } from "react";
+import Loading from '@/app/home/loading';
+import { useEffect, useState } from 'react';
+import Recruit_Table from './Recruit_Table';
 
 export default function Applicants({ email, id }) {
   const [loading, setLoading] = useState(true);
@@ -15,16 +16,16 @@ export default function Applicants({ email, id }) {
     setSubLoading(true);
     let name, position;
     const res = await fetch(`/api/get-post-meta-data`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         id: id,
       }),
-      cache: "no-cache",
+      cache: 'no-cache',
     }).then((e) => e.json());
     position = res.data.title;
     name = res.data.company;
     await fetch(`/api/recruitment-close`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         _id: id,
         auth_email: email,
@@ -33,7 +34,7 @@ export default function Applicants({ email, id }) {
         company: name,
         position: position,
       }),
-      cache: "no-cache",
+      cache: 'no-cache',
     })
       .then((e) => e.json())
       .then((e) => {
@@ -41,7 +42,7 @@ export default function Applicants({ email, id }) {
           setError(true);
           setSubLoading(false);
         } else {
-          location.replace("/recruitment");
+          location.replace('/recruitment');
           setError(false);
           setSubLoading(false);
         }
@@ -49,12 +50,12 @@ export default function Applicants({ email, id }) {
   };
   const fetcher = async () => {
     const tempData = await fetch(`/api/get-recruitment-status`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         _id: id,
         auth_email: email,
       }),
-      cache: "no-cache",
+      cache: 'no-cache',
     }).then((e) => e.json());
     let updatedData = tempData.data.data.recruitments[0].applicants;
     otherArray = updatedData;
@@ -71,33 +72,48 @@ export default function Applicants({ email, id }) {
       ) : (
         <>
           <form>
-            {data ? (
-              data.map((e) => {
-                return (
-                  <>
-                    <input
-                      type="checkbox"
-                      onChange={(f) => {
-                        if (f.target.checked) {
-                          recruitsArray.push(e);
-                          otherArray.splice(recruitsArray.indexOf(e), 1);
-                        } else {
-                          recruitsArray.splice(recruitsArray.indexOf(e), 1);
-                          otherArray.push(e);
-                        }
-                      }}
-                    />
-                    <div key={e}>{e}</div>
-                  </>
-                );
-              })
-            ) : (
-              <div>No Applicants</div>
-            )}
+            <Recruit_Table />
           </form>
-          {error && "Some error occured"}
+
+          {/* <form>
+            <table>
+              {data ? (
+                data.map((e) => {
+                  return (
+                    <>
+                      <tr>
+                        <td>
+                          <input
+                            type="checkbox"
+                            onChange={(f) => {
+                              if (f.target.checked) {
+                                recruitsArray.push(e);
+                                otherArray.splice(recruitsArray.indexOf(e), 1);
+                              } else {
+                                recruitsArray.splice(
+                                  recruitsArray.indexOf(e),
+                                  1
+                                );
+                                otherArray.push(e);
+                              }
+                            }}
+                          />
+                        </td>
+                        <td>
+                          <div key={e}>{e}</div>
+                        </td>
+                      </tr>
+                    </>
+                  );
+                })
+              ) : (
+                <div>No Applicants</div>
+              )}
+            </table>
+          </form> */}
+          {error && 'Some error occured'}
           <button onClick={onSubmit} disabled={subLoading}>
-            {subLoading ? "Processing..." : "Recruit"}
+            {subLoading ? 'Processing...' : 'Recruit'}
           </button>
         </>
       )}
