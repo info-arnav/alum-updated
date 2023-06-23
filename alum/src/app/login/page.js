@@ -39,17 +39,15 @@ export default function Login() {
   return (
     <div className="login-page flex md:flex-row flex-col">
       <div className="loginHeader md:w-3/5 w-full relative md:min-h-screen h-[540px] md:p-5">
-        <div className="m-20">
-          <h1 className="text-4xl font-bold z-10">
-            Nsut’s Alumni <br />
-            networking Portal
-          </h1>
-          <h3 className="z-10 tracking-widest">
-            Welcome to Alum!
-            <br />
-            Be patient, the website is going live soon
-          </h3>
-        </div>
+        <h1 className="text-4xl font-bold mt-14 z-10">
+          Nsut’s Alumni <br />
+          networking Portal
+        </h1>
+        <h3 className="z-10 tracking-widest">
+          Welcome to Alum!
+          <br />
+          Be patient, the website is going live soon
+        </h3>
         <div className="absolute -z-10 w-full flex flex-col justify-between h-full md:right-4 ">
           <div className="absolute right-3 md:-top-36 -top-14">
             <Image

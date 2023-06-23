@@ -12,7 +12,7 @@ const Table_Content = (props) => {
       Set_Color('bg-red-500');
     }
   });
-  // console.log('Re-rendering');
+
   return (
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <td class="w-4 p-4">

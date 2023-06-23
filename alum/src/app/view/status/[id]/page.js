@@ -3,7 +3,6 @@ import Applicants from './applicants';
 
 export default function Status({ params }) {
   const data = LoggedIn();
-  // console.log(data);
 
   return (
     <>
