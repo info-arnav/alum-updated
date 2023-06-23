@@ -1,19 +1,18 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+
 const Table_Content = (props) => {
   const [color, Set_Color] = useState('');
   useEffect(() => {
-    Set_Color((prev) => {
-      if (props.info.cgpa >= 8) {
-        return 'bg-green-500';
-      } else if (props.info.cgpa >= 6) {
-        return 'bg-yellow-800';
-      } else {
-        return 'bg-red-500';
-      }
-    });
-  }, []);
-
+    if (props.info.cgpa >= 8) {
+      Set_Color('bg-green-500');
+    } else if (props.info.cgpa >= 6) {
+      Set_Color('bg-yellow-800');
+    } else {
+      Set_Color('bg-red-500');
+    }
+  });
+  // console.log('Re-rendering');
   return (
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <td class="w-4 p-4">

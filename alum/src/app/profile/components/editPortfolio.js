@@ -14,6 +14,12 @@ export default function EditPortfolio({
   setData,
   placeholder,
 }) {
+  const type_identifier = {
+    occupation: ['Company', 'Position', 'Duration'],
+    education: ['Intitution', 'Course', 'Year of Passing'],
+    projects: ['Title', 'Domain', 'Duration'],
+    honors: ['Title', 'Issuing Organisation', 'Date of Honor'],
+  };
   const [error, setError] = useState(false);
   const [title, setTitle] = useState(edit ? data[type][location].title : '');
   const [subTitle, setSubTitle] = useState(
@@ -71,6 +77,7 @@ export default function EditPortfolio({
       show(false);
     }
   };
+
   return (
     <div className="modal">
       <div className="modal-content">
@@ -84,7 +91,7 @@ export default function EditPortfolio({
               <div className="grid gap-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-7">
                 <div class="sm:col-span-2 relative">
                   <input
-                    id="company"
+                    id={type_identifier[type][0]}
                     className="w-full p-3 border-2 border-gray-500  text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     required
                     value={title}
@@ -93,16 +100,16 @@ export default function EditPortfolio({
                     // placeholder={placeholder[0]}
                   ></input>
                   <label
-                    for="company"
+                    for={type_identifier[type][0]}
                     className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                   >
-                    Company
+                    {type_identifier[type][0]}
                   </label>
                 </div>
 
                 <div className="w-full relative">
                   <input
-                    id="position"
+                    id={type_identifier[type][1]}
                     className="w-full p-3 border-2 border-gray-500  text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     required
                     value={subTitle}
@@ -111,16 +118,16 @@ export default function EditPortfolio({
                     // placeholder={placeholder[1]}
                   ></input>
                   <label
-                    for="position"
+                    for={type_identifier[type][1]}
                     className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                   >
-                    Position
+                    {type_identifier[type][1]}
                   </label>
                 </div>
 
                 <div className="w-full relative">
                   <input
-                    id="duration"
+                    id={type_identifier[type][2]}
                     className="w-full p-3 border-2 border-gray-500  text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     required
                     value={duration}
@@ -129,10 +136,10 @@ export default function EditPortfolio({
                     // placeholder={placeholder[2]}
                   ></input>
                   <label
-                    for="Duration"
+                    for={type_identifier[type][2]}
                     className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                   >
-                    Duration
+                    {type_identifier[type][2]}
                   </label>
                 </div>
 
