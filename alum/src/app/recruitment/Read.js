@@ -7,7 +7,7 @@ import Image from 'next/image';
 import idleimage from '../image/select.png';
 
 const Read = (props) => {
-  console.log(props.info);
+  // console.log(props.info);
 
   return (
     <div>

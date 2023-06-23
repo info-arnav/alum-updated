@@ -11,7 +11,8 @@ export default function DataFetch({ email }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [data, setData] = useState('');
-  const [expanded_data, Set_expanded_data] = useState({});
+  const [expanded_data, set_expanded_data] = useState({});
+  const [selected_idx, set_selected_idx] = useState(-1);
   const fetcher = async () => {
     const fetchedData = await fetch('/api/find-recruitments', {
       method: 'POST',
@@ -32,12 +33,14 @@ export default function DataFetch({ email }) {
     fetcher();
   }, []);
 
-  const ReadHandler = (e) => {
-    Set_expanded_data((prev) => {
+  const ReadHandler = (e, idx) => {
+    set_selected_idx((prev) => idx);
+    set_expanded_data((prev) => {
       return e;
     });
   };
 
+  console.log(selected_idx);
   return (
     <>
       {loading ? (
@@ -48,12 +51,13 @@ export default function DataFetch({ email }) {
         <>
           <div className="grid grid-cols-5  divide-x">
             <div className="recruitment-grid mb-[40px] col-span-2 overflow-y-scroll h-[97vh] ">
-              {data.map((e) => {
+              {data.map((e, idx) => {
                 return (
                   <div
-                    onClick={() => ReadHandler(e)}
+                    onClick={() => ReadHandler(e, idx)}
                     key={e._id}
-                    className="recruitment-box"
+                    className={`recruitment-box m-[20px] py-[20px] px-[25px] rounded-[25px] border-2 border-[##B1B1B1] overflow-hidden hover:border-[#00183F]
+                     ${idx == selected_idx && `border-2 border-black`}`}
                   >
                     <div className="recruitment-box-header">
                       {/* {e.title} at {e.company} */}
