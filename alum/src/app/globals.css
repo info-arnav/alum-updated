@@ -208,7 +208,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  min-height: calc(100vh - 90px);
+  /* min-height: calc(100vh - 90px); */
   background-color: black;
 }
 
@@ -265,7 +265,7 @@ footer .section-title {
 footer .links {
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
+  margin-top: 40px;
   align-items: center;
   justify-content: center;
 }
@@ -283,8 +283,8 @@ footer form {
 }
 
 .footer-email {
-  margin-top: 64px;
-  background-color: #cbcbcd;
+  margin-top: 30px;
+  background-color: #d6d6d6;
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
@@ -296,7 +296,7 @@ footer form {
 }
 
 .footer-message {
-  background-color: #cbcbcd;
+  background-color: #d6d6d6;
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
@@ -945,3 +945,146 @@ hr {
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
+
+
+/* 
+@@@@ This is the css for gallary in home page of alumni
+*/
+
+/* participate section starts */
+
+/* .participate-section {
+  color: #FBFBFB;
+}
+
+.participate-section header {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Akira-expanded';
+  margin-top: 20px;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 18rem));
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.participate-card {
+  overflow: hidden;
+  border-radius: 3px;
+  height: 210px;
+  padding: 25px;
+  padding-left: 35px;
+  font-size: 20px;  
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 1.5px;
+}
+
+#participate1,#participate3,#participate5{
+  background-color: #330c5c;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+#participate2,#participate4,#participate6{
+  background-color: #5a0c4d;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+#participate1 h2,#participate2 h2,#participate3 h2,#participate4 h2,#participate5 h2,#participate6 h2{
+  color: white;
+  transition: color 0.4s;
+}
+
+#participate1:hover,#participate3:hover,#participate5:hover{
+  background-color: white;
+  color: black;
+}
+
+#participate1:hover h2,#participate3:hover h2,#participate5:hover h2{
+  color: #330c5c;
+}
+
+#participate2:hover,#participate4:hover,#participate6:hover{
+  background-color: white;
+  color: black;
+}
+
+#participate2:hover h2,#participate4:hover h2,#participate6:hover h2{
+  color: #5a0c4d;
+}
+
+.participate-card h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  margin-top: 20px;
+}
+
+.participate-card p {
+  font-size: 18px;
+  line-height: 28px;
+} */
+
+/* gallery starts */
+
+.gallery-section {
+ 
+  /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+  font-size: 14px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  margin: auto;
+  /* margin-left: -10px;
+  margin-right: -10px; */
+
+
+}
+.gallery-header h2{
+  text-align: center !important;
+}
+.gallery-header {
+  padding: .75rem 0;
+
+
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-size: cover;
+  width: 700px;
+  height: 700px;
+}
+
+.swiper-slide img {
+  display: block;
+  /* width: 100%; */
+  height: 100%;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 2rem;
+
+}
+
+/* @media(min-width:1000px){
+.gallery-header h2{
+ margin-left: -50px !important;
+  
+} 
+} */
+/* gallery ends */

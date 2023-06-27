@@ -38,8 +38,8 @@ export default function Footer() {
             <Image
               className="footer-img"
               src="/logo.png"
-              width={200}
-              height={200}
+              width={180}
+              height={180}
               alt="Logo of the platform Alum"
             ></Image>
           </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
               required
             ></textarea>
             <div className="error">{error}</div>
-            <button type="submit" disabled={loading}>
+            <button className="bg-white" type="submit" disabled={loading}>
               {loading ? "Sending....." : "Send Message"}
             </button>
           </form>
