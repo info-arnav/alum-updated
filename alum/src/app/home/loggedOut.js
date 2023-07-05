@@ -5,6 +5,7 @@ import heroImg from '..//image/hero.png';
 import Slider from './Slider.js';
 import { Carousel } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
+import FeatureCard from './featureCard';
 // DAtabase Format is like this
 
 const alumniData = [
@@ -44,21 +45,37 @@ const alumniData = [
     desc: 'UPSC AIR 1',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Aditya',
     image:
       'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80',
     desc: 'UPSC AIR 1',
   },
   {
-    id: 5,
+    id: 7,
     name: 'Aditya',
     image:
       'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80',
     desc: 'UPSC AIR 1',
   },
 ];
-
+const featureData = [
+  {
+    id: 1,
+    feature: 'Connect',
+    desc: 'Lorem ipsum dolor sit  adipisicing elit. Minus quia eos vero ducimus impedit debitis.',
+  },
+  {
+    id: 2,
+    feature: 'Grab Internships',
+    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ducimus impedit debitis.',
+  },
+  {
+    id: 3,
+    feature: 'Recruit',
+    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.  vero ducimus impedit debitis.',
+  },
+];
 export default function LoggedOut() {
   const [custom_alumni_array, set_custom_array] = useState([]);
 
@@ -66,7 +83,7 @@ export default function LoggedOut() {
     set_custom_array((prev) => {
       return [];
     });
-    const disp_size = 2;
+    const disp_size = 2; // no of sloder displayed together in carousel
     for (let i = 0; i < alumniData.length; i += disp_size) {
       if (i + disp_size > alumniData.length) {
         set_custom_array((prev) => {
@@ -78,12 +95,6 @@ export default function LoggedOut() {
         });
       }
     }
-    // if (alumniData.length % 3 != 0) {
-    //   const i = 3 * (alumniData.length / 3) - 1;
-    //   set_custom_array((prev) => {
-    //     return [...prev, alumniData.slice(i)];
-    //   });
-    // }
   };
 
   useEffect(() => {
@@ -138,7 +149,11 @@ export default function LoggedOut() {
               quo! Quisquam cum repudiandae deleniti.
             </p>
           </div>
-          <div className="feature-cards bg-white"></div>
+          <div className="feature-cards grid grid-cols-3 gap-4">
+            {featureData.map((e) => {
+              return <FeatureCard {...e} />;
+            })}
+          </div>
         </div>
       </section>
 
@@ -170,14 +185,6 @@ export default function LoggedOut() {
               </div>
             );
           })}
-          {/* {
-            for(let i=0; i<alumniData.length; i+=3){
-
-            }:
-              return 
-          })}
-            
-          } */}
         </Carousel>
       </section>
     </main>
