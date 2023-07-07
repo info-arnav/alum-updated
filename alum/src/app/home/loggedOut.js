@@ -5,7 +5,7 @@ import heroImg from '..//image/hero.png';
 import Slider from './Slider.js';
 import { Carousel } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
-import FeatureCard from './featureCard';
+import FeatureCard from './FeatureCard';
 // DAtabase Format is like this
 
 const alumniData = [
