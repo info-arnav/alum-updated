@@ -151,7 +151,7 @@ export default function LoggedOut() {
           </div>
           <div className="feature-cards grid grid-cols-3 gap-4">
             {featureData.map((e) => {
-              return <FeatureCard {...e} />;
+              return <FeatureCard key={e.id} {...e} />;
             })}
           </div>
         </div>
