@@ -15,6 +15,7 @@ import {
 const Slider = (props) => {
   return (
     <Card
+      key={props.key}
       color="white"
       shadow={false}
       className="w-full max-w-[26rem] justift-center mx-auto p-2"

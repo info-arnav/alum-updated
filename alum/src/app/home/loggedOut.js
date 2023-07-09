@@ -176,11 +176,11 @@ export default function LoggedOut() {
             </div>
           )}
         >
-          {custom_alumni_array.map((e) => {
+          {custom_alumni_array.map((e, idx) => {
             return (
-              <div className="flex flex-row">
-                {e.map((elem) => {
-                  return <Slider info={elem} />;
+              <div key={idx} className="flex flex-row">
+                {e.map((elem, idx) => {
+                  return <Slider info={elem} key={idx} />;
                 })}
               </div>
             );
