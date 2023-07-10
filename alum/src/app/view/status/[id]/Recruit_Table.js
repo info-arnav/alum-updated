@@ -271,7 +271,7 @@ const Recruit_Table = () => {
                   >
                     {Object.keys(branch_filter).map((e, idx) => {
                       return (
-                        <li>
+                        <li key={idx}>
                           <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                             <input
                               id={`checkbox-item-` + idx}
@@ -369,8 +369,8 @@ const Recruit_Table = () => {
         </thead>
         <tbody>
           {/* Rendering Each Row */}
-          {data.map((e) => {
-            return <Table_Content info={e} />;
+          {data.map((e, idx) => {
+            return <Table_Content key={idx} info={e} />;
           })}
         </tbody>
       </table>

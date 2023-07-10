@@ -27,6 +27,8 @@
 * {
   font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -41,6 +43,13 @@ button {
 
 body {
   margin: 0px;
+  min-height: 100vh;
+  /* padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  
+  position: relative; */
+  /* min-height: 100vh; */
 }
 
 /* Empty -> Loading and Error pages */
@@ -204,12 +213,16 @@ nav {
 /* Footer */
 
 footer {
+  height: fit-content;
+  width: 100%;
+  bottom: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  /* min-height: calc(100vh - 90px); */
+  min-height: calc(100vh - 600px);
   background-color: black;
+  align-self: flex-end;
 }
 
 footer a {
@@ -1033,14 +1046,16 @@ hr {
 .gallery-section {
  
   /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+  position: relative;
   font-size: 14px;
   color: white;
   margin: 0;
   padding: 0;
   width: 100vw;
-  margin: auto;
-  /* margin-left: -10px;
-  margin-right: -10px; */
+  height: 80vh;
+  /* margin: auto; 
+  margin-left: -10px;
+  margin-right: -10px;  */
 
 
 }
@@ -1049,8 +1064,6 @@ hr {
 }
 .gallery-header {
   padding: .75rem 0;
-
-
 }
 
 .swiper {
@@ -1064,14 +1077,16 @@ hr {
   margin-left: 100px;
   margin-right: 100px;
   background-size: cover;
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 400px;
 }
 
 .swiper-slide img {
   display: block;
-  /* width: 100%; */
-  height: 100%;
+  width: 600px;
+  height: 400px;
+  /* width: 100%;
+  height: 100%; */
 }
 
 .gallery-header {
@@ -1081,10 +1096,10 @@ hr {
 
 }
 
-/* @media(min-width:1000px){
+@media(min-width:1000px){
 .gallery-header h2{
  margin-left: -50px !important;
   
 } 
-} */
+}
 /* gallery ends */

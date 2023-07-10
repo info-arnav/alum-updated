@@ -1,35 +1,36 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+export default function Footer({ data }) {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const sendMessage = async (e) => {
     e.preventDefault();
-    setError("");
+    setError('');
     setLoading(true);
     try {
-      await fetch("/api/contact", {
-        method: "POST",
+      await fetch('/api/contact', {
+        method: 'POST',
         body: JSON.stringify({ email: email, message: message }),
       }).then((e) => {
-        setMessage("");
-        setEmail("");
-        setError("Message Sent");
+        setMessage('');
+        setEmail('');
+        setError('Message Sent');
         setLoading(false);
       });
     } catch {
-      setMessage("");
-      setEmail("");
-      setError("Some error occured");
+      setMessage('');
+      setEmail('');
+      setError('Some error occured');
       setLoading(false);
     }
   };
+
   return (
     <>
       <footer>
@@ -52,16 +53,25 @@ export default function Footer() {
         <div className="small">
           <div className="section-title">Quick Links</div>
           <div className="links">
-            {[
-              ["About", "/about"],
-              ["Login", "/login"],
-              ["Register", "/register"],
-              ["Privacy Policy", "/privacy-policy"],
-            ].map((e) => (
-              <Link key={e[0]} href={e[1].toLowerCase()}>
-                {e[0]}
-              </Link>
-            ))}
+            {!data.loggedIn
+              ? [
+                  ['About', '/about'],
+                  ['Login', '/login'],
+                  ['Register', '/register'],
+                  ['Privacy Policy', '/privacy-policy'],
+                ].map((e) => (
+                  <Link key={e[0]} href={e[1].toLowerCase()}>
+                    {e[0]}
+                  </Link>
+                ))
+              : [
+                  ['About', '/about'],
+                  ['Privacy Policy', '/privacy-policy'],
+                ].map((e) => (
+                  <Link key={e[0]} href={e[1].toLowerCase()}>
+                    {e[0]}
+                  </Link>
+                ))}
           </div>
         </div>
         <div className="large">
@@ -85,7 +95,7 @@ export default function Footer() {
             ></textarea>
             <div className="error">{error}</div>
             <button className="bg-white" type="submit" disabled={loading}>
-              {loading ? "Sending....." : "Send Message"}
+              {loading ? 'Sending.....' : 'Send Message'}
             </button>
           </form>
         </div>
