@@ -1,4 +1,4 @@
-# Alum - NSUT Alumni Portal
+# Alum - The NSUT Alumni Portal
 
 [![DeepScan grade](https://deepscan.io/api/teams/21902/projects/25256/branches/788040/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=21902&pid=25256&bid=788040)
 
