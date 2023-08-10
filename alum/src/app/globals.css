@@ -2,26 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global CSS */
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #EBEDF2;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #3d7fe9;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #3a4d6e;
+.Description.col-span-3 {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  min-height: 400px;
 }
 
 * {
@@ -66,7 +50,7 @@ body {
 
 nav {
   z-index: 101;
-  height: 50px;
+  height: 60px;
   width: 100%;
   background-color: white;
   position: fixed;
@@ -77,11 +61,8 @@ nav {
 }
 
 .logo {
-  border-radius: 100%;
-  border: 2px solid black;
   background-color: white;
-  margin-left: 10px;
-  padding: 2.4px;
+  margin-left: 14.6px;
 }
 
 .nav-image-link {
@@ -220,7 +201,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  min-height: calc(100vh - 600px);
+  min-height: calc(100vh - 60px);
   background-color: black;
   align-self: flex-end;
 }
@@ -345,15 +326,19 @@ footer button {
   border-radius: 20px;
   color: black;
   font-weight: bold;
-  background-color: aqua;
+  background-color: aqua !important;
   margin-top: 10px;
   cursor: pointer;
   border: none;
 }
 
+footer form button {
+  background-color: aqua !important;
+}
+
 footer button:hover,
 footer button:disabled {
-  background-color: rgb(23, 216, 216);
+  background-color: rgb(48, 178, 178) !important;
 }
 
 @media screen and (max-width: 800px) {
@@ -508,7 +493,6 @@ hr {
   margin-bottom: 40px;
 } */
 
-
 /* .recruitment-box {
 
   margin: 20px;
@@ -561,14 +545,13 @@ hr {
 }
 
 .recruitment-box-footer {
-
   background-color: white;
-  
+
   width: calc(100% - 30px);
   color: black;
   font-weight: bold;
   padding: 15px 15px;
-  margin:0 15px;
+  margin: 0 15px;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -648,7 +631,6 @@ hr {
   width: 85%;
   display: flex;
   flex-direction: column;
-
 }
 
 /* .category-details {
@@ -738,25 +720,29 @@ hr {
 }
 
 /* login */
-.loginHeader{
+.loginHeader {
   background-image: url("./image/bgcloud.png");
   background-repeat: no-repeat;
   z-index: -20;
-  
 }
 
 /* modal */
 
 .modal {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Overlay effect: translucent background: black w/ partial opacity */
   z-index: 1; /* Overlay effect: positioned over other containers */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   position: fixed; /* Fix position on the top-left corner*/
   top: 0;
   left: 0;
-  overflow: auto; 
+  overflow: auto;
   /* scrollbar-width: 0; */
   padding-top: 80px; /* Location of the content container */
   /* -ms-overflow-style: none;  IE and Edge */
@@ -767,7 +753,7 @@ hr {
 }
 
 .modal-content {
-  position:relative;
+  position: relative;
   background-color: white;
   width: 70%; /* Width in proportion to its parent container*/
   /*max-width: 640px; /* Max width where it stops expanding */
@@ -777,15 +763,17 @@ hr {
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
-  border-radius: 10px; /* Optional. Rounds container corners */ 
+  border-radius: 10px; /* Optional. Rounds container corners */
 }
 
-.form-close , #edit-close, #form-close{
+.form-close,
+#edit-close,
+#form-close {
   display: grid;
   padding: 0;
-  margin:0;
+  margin: 0;
   place-content: center;
-  position:absolute;
+  position: absolute;
   top: 0;
   width: 3rem;
   background-color: red;
@@ -794,12 +782,14 @@ hr {
   border-radius: 0 0 0 10px;
   border: 0;
   font-size: 30px;
-  
+
   font-weight: bold;
   transition: all 200ms;
 }
-.form-close:hover, 
-.form-close:focus, #edit-close:hover, #form-close:hover {
+.form-close:hover,
+.form-close:focus,
+#edit-close:hover,
+#form-close:hover {
   background-color: rgb(213, 0, 0);
 }
 /* .recruitment-box-footer button {
@@ -819,15 +809,15 @@ hr {
   border: solid black;
 } */
 
-@media(max-width: 768px){ /* For mobile */
+@media (max-width: 768px) {
+  /* For mobile */
 
-  .modal-content{
+  .modal-content {
     width: 90%;
   }
-  
 }
 /* Modal Post Button */
-.form-post{
+.form-post {
   font-family: inherit;
   font-size: 20px;
   background: royalblue;
@@ -919,7 +909,7 @@ hr {
 }
 
 .profile-add::before {
-  content: '';
+  content: "";
   display: block;
   width: 0px;
   height: 86%;
@@ -958,7 +948,6 @@ hr {
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
-
 
 /* 
 @@@@ This is the css for gallary in home page of alumni
@@ -1044,7 +1033,6 @@ hr {
 /* gallery starts */
 
 .gallery-section {
- 
   /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
   position: relative;
   font-size: 14px;
@@ -1056,14 +1044,12 @@ hr {
   /* margin: auto; 
   margin-left: -10px;
   margin-right: -10px;  */
-
-
 }
-.gallery-header h2{
+.gallery-header h2 {
   text-align: center !important;
 }
 .gallery-header {
-  padding: .75rem 0;
+  padding: 0.75rem 0;
 }
 
 .swiper {
@@ -1093,13 +1079,11 @@ hr {
   text-align: center;
   margin-top: 3rem;
   font-size: 2rem;
-
 }
 
-@media(min-width:1000px){
-.gallery-header h2{
- margin-left: -50px !important;
-  
-} 
+@media (min-width: 1000px) {
+  .gallery-header h2 {
+    margin-left: -50px !important;
+  }
 }
 /* gallery ends */

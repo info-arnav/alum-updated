@@ -34,6 +34,8 @@ export default async function findRecruitment(req, res) {
                   _id
                   description
                   applicants
+                  stipend
+                  deadline
                 }
               }
           `,

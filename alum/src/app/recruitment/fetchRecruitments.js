@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Loading from '../home/loading';
-import Error from '../error';
-import Link from 'next/link';
-import Apply from '../view/recruitment/[id]/apply';
-import Read from './Read.js';
+import { useEffect, useState } from "react";
+import Loading from "../home/loading";
+import Error from "../error";
+import Link from "next/link";
+import Apply from "../view/recruitment/[id]/apply";
+import Read from "./Read.js";
 
 export default function DataFetch({ email }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [data, setData] = useState('');
+  const [data, setData] = useState("");
   const [expanded_data, set_expanded_data] = useState({});
   const [selected_idx, set_selected_idx] = useState(-1);
   const fetcher = async () => {
-    const fetchedData = await fetch('/api/find-recruitments', {
-      method: 'POST',
+    const fetchedData = await fetch("/api/find-recruitments", {
+      method: "POST",
       body: JSON.stringify({
         auth_email: email,
       }),
@@ -50,7 +50,10 @@ export default function DataFetch({ email }) {
       ) : (
         <>
           <div className="grid grid-cols-5  divide-x">
-            <div className="recruitment-grid mb-[40px] col-span-2 overflow-y-scroll h-[97vh] ">
+            <div
+              className="recruitment-grid mb-[40px] col-span-2 overflow-y-scroll h-[calc(100vh-80px)] min-h-[400px] "
+              style={{ marginBottom: 10 }}
+            >
               {data.map((e, idx) => {
                 return (
                   <div
@@ -107,7 +110,7 @@ export default function DataFetch({ email }) {
                           />
                         </svg>
                         <p className="inline">Start Date</p>
-                        <p>{e.start_date || 'No data'}</p>
+                        <p>{e.start_date || "No data"}</p>
                       </div>
                       <div className=" text-center">
                         <svg
@@ -135,7 +138,7 @@ export default function DataFetch({ email }) {
                           />
                         </svg>
                         <p className="inline">Duration</p>
-                        <p>{e.duration || 'No Duration Provided'}</p>
+                        <p>{e.duration || "No Duration Provided"}</p>
                       </div>
                       <div className="text-center">
                         <svg
@@ -172,7 +175,7 @@ export default function DataFetch({ email }) {
                         </svg>
 
                         <p className="inline">Stipend</p>
-                        <p>{e.stipend || 'No data'}</p>
+                        <p>{e.stipend || "No data"}</p>
                       </div>
                     </div>
                     {/* <div className="recruitment-box-footer">
@@ -203,7 +206,9 @@ export default function DataFetch({ email }) {
                             stroke-linejoin="round"
                           />
                         </svg>
-                        <p className="inline px-2">200 Applied</p>
+                        <p className="inline px-2">
+                          {e.applicants.length} Applied
+                        </p>
                       </div>
                       <div className=" px-2">
                         <svg
@@ -222,7 +227,16 @@ export default function DataFetch({ email }) {
                             stroke-linejoin="round"
                           />
                         </svg>
-                        <p className="inline px-2">09 Days Left</p>
+                        <p className="inline px-2">
+                          {e.deadline
+                            ? Math.round(
+                                (new Date(e.deadline).getTime() -
+                                  new Date().getTime()) /
+                                  (1000 * 3600 * 24)
+                              )
+                            : "Na"}{" "}
+                          Days Left
+                        </p>
                       </div>
                     </div>
                   </div>

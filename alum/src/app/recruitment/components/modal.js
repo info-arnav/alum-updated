@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import alumni from '../../image/alumni.png';
+import { useState } from "react";
+import Image from "next/image";
+import alumni from "../../image/alumni.png";
 export default function Modal({
   type,
   data,
@@ -14,21 +14,23 @@ export default function Modal({
   position,
 }) {
   const [show, setShow] = useState(false);
-  const [title, setTitle] = useState(type == 'edit' ? data.title : '');
-  const [company, setCompany] = useState(type == 'edit' ? data.company : '');
+  const [stipend, setStipend] = useState(type == "edit" ? data.stipend : "");
+  const [title, setTitle] = useState(type == "edit" ? data.title : "");
+  const [company, setCompany] = useState(type == "edit" ? data.company : "");
   const [description, setDescription] = useState(
-    type == 'edit' ? data.description : ''
+    type == "edit" ? data.description : ""
   );
-  const [location, setLocation] = useState(type == 'edit' ? data.location : '');
-  const [duration, setDuration] = useState(type == 'edit' ? data.duration : '');
+  const [location, setLocation] = useState(type == "edit" ? data.location : "");
+  const [duration, setDuration] = useState(type == "edit" ? data.duration : "");
+  const [deadline, setDeadline] = useState(type == "edit" ? data.deadline : "");
   const [loading, setLoading] = useState(false);
-  const [link, setLink] = useState(type == 'edit' ? data.link : '');
+  const [link, setLink] = useState(type == "edit" ? data.link : "");
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (type == 'edit') {
-      await fetch('/api/edit-recruitments', {
-        method: 'POST',
+    if (type == "edit") {
+      await fetch("/api/edit-recruitments", {
+        method: "POST",
         body: JSON.stringify({
           id: data._id,
           email: email,
@@ -38,6 +40,8 @@ export default function Modal({
           location: location,
           duration: duration,
           link: link,
+          stipend: stipend,
+          deadline: deadline,
         }),
       }).then((e) => e.json());
       mainData[position] = {
@@ -46,19 +50,23 @@ export default function Modal({
         description: description,
         location: location,
         duration: duration,
+        stipend: stipend,
+        deadline: deadline,
         link: link,
       };
       updater(mainData);
       update(!refresh);
-      setTitle('');
-      setCompany('');
-      setDescription('');
-      setLink('');
+      setTitle("");
+      setCompany("");
+      setDescription("");
+      setStipend("");
+      setDeadline("");
+      setLink("");
       setShow(false);
       setLoading(false);
     } else {
-      await fetch('/api/create-recruitment', {
-        method: 'POST',
+      await fetch("/api/create-recruitment", {
+        method: "POST",
         body: JSON.stringify({
           email: email,
           title: title,
@@ -67,6 +75,8 @@ export default function Modal({
           location: location,
           duration: duration,
           link: link,
+          stipend: stipend,
+          deadline: deadline,
         }),
       }).then((e) => e.json());
       mainData.push({
@@ -77,13 +87,17 @@ export default function Modal({
         location: location,
         duration: duration,
         link: link,
+        stipend: stipend,
+        deadline: deadline,
       });
       updater(mainData);
       update(!refresh);
-      setTitle('');
-      setCompany('');
-      setDescription('');
-      setLink('');
+      setTitle("");
+      setCompany("");
+      setDescription("");
+      setDeadline("");
+      setLink("");
+      setStipend("");
       setShow(false);
       setLoading(false);
     }
@@ -94,16 +108,16 @@ export default function Modal({
       <div className="">
         <button
           onClick={() => setShow(true)}
-          className={type == 'edit' ? 'recuit-button' : 'main-button'}
+          className={type == "edit" ? "recuit-button" : "main-button"}
         >
-          {type == 'edit' ? 'Edit' : 'New Post'}
+          {type == "edit" ? "Edit" : "New Post"}
         </button>
         {show && (
           <div className="modal">
             <div className="modal-content">
               <section className="py-8 px-4 mx-auto max-w-3xl lg:py-14">
                 <h2 className="text-2xl font-bold">
-                  {type == 'edit' ? 'Edit Post' : 'New Post'}
+                  {type == "edit" ? "Edit Post" : "New Post"}
                 </h2>
                 <hr className="mb-14 h-0.5" />
                 <form onSubmit={handleSubmit} className="">
@@ -209,6 +223,43 @@ export default function Modal({
                           Description
                         </label>
                       </div> */}
+
+                    <div class="w-full relative">
+                      <input
+                        id="stipend"
+                        className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        value={stipend}
+                        onChange={(e) => setStipend(e.target.value)}
+                        required
+                      ></input>
+                      <label
+                        for="stipend"
+                        className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                      >
+                        Stipend
+                      </label>
+                    </div>
+
+                    <div class="w-full relative">
+                      <input
+                        id="deadline"
+                        className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        type="date"
+                        value={deadline}
+                        onChange={(e) => {
+                          setDeadline(e.target.value);
+                        }}
+                        required
+                      ></input>
+                      <label
+                        for="deadline"
+                        className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                      >
+                        deadline
+                      </label>
+                    </div>
 
                     <div class="sm:col-span-2">
                       <label
