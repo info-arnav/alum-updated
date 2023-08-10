@@ -149,7 +149,7 @@ export default function DataFetch({ email }) {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <g clipPath"url(#clip0_26_186)">
+                          <g clipPath="url(#clip0_26_186)">
                             <path
                               d="M16 18.4999H6C3 18.4999 1 16.9999 1 13.4999V6.49988C1 2.99988 3 1.49988 6 1.49988H16C19 1.49988 21 2.99988 21 6.49988V13.4999C21 16.9999 19 18.4999 16 18.4999Z"
                               stroke="#5B5B5B"
