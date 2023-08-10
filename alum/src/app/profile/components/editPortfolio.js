@@ -1,6 +1,6 @@
-'use clinet';
+"use clinet";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function EditPortfolio({
   email,
@@ -15,21 +15,21 @@ export default function EditPortfolio({
   placeholder,
 }) {
   const type_identifier = {
-    occupation: ['Company', 'Position', 'Duration'],
-    education: ['Intitution', 'Course', 'Year of Passing'],
-    projects: ['Title', 'Domain', 'Duration'],
-    honors: ['Title', 'Issuing Organisation', 'Date of Honor'],
+    occupation: ["Company", "Position", "Duration"],
+    education: ["Intitution", "Course", "Year of Passing"],
+    projects: ["Title", "Domain", "Duration"],
+    honors: ["Title", "Issuing Organisation", "Date of Honor"],
   };
   const [error, setError] = useState(false);
-  const [title, setTitle] = useState(edit ? data[type][location].title : '');
+  const [title, setTitle] = useState(edit ? data[type][location].title : "");
   const [subTitle, setSubTitle] = useState(
-    edit ? data[type][location].subTitle : ''
+    edit ? data[type][location].subTitle : ""
   );
   const [description, setDescription] = useState(
-    edit ? data[type][location].description : ''
+    edit ? data[type][location].description : ""
   );
   const [duration, setDuration] = useState(
-    edit ? data[type][location].duration : ''
+    edit ? data[type][location].duration : ""
   );
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
@@ -62,9 +62,9 @@ export default function EditPortfolio({
     };
     bodyData[type] = updatedData;
     const res = await fetch(`/api/edit-portfolio-item`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(bodyData),
-      cache: 'no-cache',
+      cache: "no-cache",
     }).then((e) => e.json());
     if (res.error) {
       setError(true);
@@ -81,15 +81,15 @@ export default function EditPortfolio({
   return (
     <div className="modal">
       <div className="modal-content">
-        <section class="bg-white">
+        <section className="bg-white">
           <div className="py-8 px-4 mx-auto max-w-3xl lg:py-14">
             <h2 className="text-2xl text-black font-bold">
-              {edit ? 'Edit Details' : 'Add Details'}
+              {edit ? "Edit Details" : "Add Details"}
             </h2>
             <hr className="mb-14 h-0.5" />
             <form onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-7">
-                <div class="sm:col-span-2 relative">
+                <div className="sm:col-span-2 relative">
                   <input
                     id={type_identifier[type][0]}
                     className="w-full p-3 border-2 border-gray-500  text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -143,10 +143,10 @@ export default function EditPortfolio({
                   </label>
                 </div>
 
-                <div class="sm:col-span-2">
+                <div className="sm:col-span-2">
                   <label
                     for="Description"
-                    class="block mb-2 text-sm font-medium text-gray-500"
+                    className="block mb-2 text-sm font-medium text-gray-500"
                   >
                     Description
                   </label>
@@ -163,14 +163,14 @@ export default function EditPortfolio({
                 </div>
 
                 {error &&
-                  'Some error occured, Maybe two devics are simultaneously editing'}
+                  "Some error occured, Maybe two devics are simultaneously editing"}
               </div>
               <button
                 className="profile-add mt-4 p-4"
                 action="submit"
                 disabled={loading}
               >
-                {edit ? 'Edit' : 'Add'}
+                {edit ? "Edit" : "Add"}
               </button>
             </form>
             <button className="form-close" onClick={() => show(false)}>

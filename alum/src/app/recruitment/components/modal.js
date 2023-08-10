@@ -122,7 +122,7 @@ export default function Modal({
                 <hr className="mb-14 h-0.5" />
                 <form onSubmit={handleSubmit} className="">
                   <div className="grid gap-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-7">
-                    <div class="sm:col-span-2 relative">
+                    <div className="sm:col-span-2 relative">
                       <input
                         id="position"
                         className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -224,7 +224,7 @@ export default function Modal({
                         </label>
                       </div> */}
 
-                    <div class="w-full relative">
+                    <div className="w-full relative">
                       <input
                         id="stipend"
                         className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -241,7 +241,7 @@ export default function Modal({
                       </label>
                     </div>
 
-                    <div class="w-full relative">
+                    <div className="w-full relative">
                       <input
                         id="deadline"
                         className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -261,17 +261,17 @@ export default function Modal({
                       </label>
                     </div>
 
-                    <div class="sm:col-span-2">
+                    <div className="sm:col-span-2">
                       <label
                         for="Description"
-                        class="block mb-2 text-sm font-medium text-gray-500"
+                        className="block mb-2 text-sm font-medium text-gray-500"
                       >
                         Description
                       </label>
                       <textarea
                         id="Description"
                         rows="8"
-                        class="block p-2.5 w-full border-2 border-gray-500 text-sm text-gray-900 bg-gray-50 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                        className="block p-2.5 w-full border-2 border-gray-500 text-sm text-gray-900 bg-gray-50 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Add more details..."
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
@@ -285,8 +285,8 @@ export default function Modal({
                     type="submit"
                     disabled={loading}
                   >
-                    <div class="svg-wrapper-1">
-                      <div class="svg-wrapper">
+                    <div className="svg-wrapper-1">
+                      <div className="svg-wrapper">
                         <svg
                           height="22"
                           width="22"

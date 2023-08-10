@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Compressor from 'compressorjs';
-import { useState } from 'react';
+import Compressor from "compressorjs";
+import { useState } from "react";
 
 export default function EditProfile({
   data,
@@ -21,21 +21,21 @@ export default function EditProfile({
   const [loading, setLoading] = useState(false);
   const secondUpdate = async () => {
     const res = await fetch(`/api/update-profile`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
         email: email,
         batch: batch,
         bio: bio,
         name: name,
       }),
-      cache: 'no-cache',
+      cache: "no-cache",
     }).then((e) => e.json());
     if (res.error) {
-      setError('Some error Occured Updating the profile');
+      setError("Some error Occured Updating the profile");
       setLoading(false);
     } else {
       document.getElementById(
-        'profile_image_refreshed'
+        "profile_image_refreshed"
       ).src = `${link}api/image/${data._id}?updated&&t=${new Date().getTime()}`;
       data.name = name;
       data.bio = bio;
@@ -53,16 +53,16 @@ export default function EditProfile({
     setLoading(true);
     if (changed) {
       const res = await fetch(`/api/set-profile-picture`, {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           email: email,
           id: data._id,
           image: image,
         }),
-        cache: 'no-cache',
+        cache: "no-cache",
       }).then((e) => e.json());
       if (res.error) {
-        setError('Some error Occured Updating the image');
+        setError("Some error Occured Updating the image");
         setLoading(false);
       } else {
         secondUpdate();
@@ -76,15 +76,15 @@ export default function EditProfile({
     reader.readAsDataURL(file);
     try {
       reader.onload = function () {
-        setError('');
+        setError("");
         setImage(reader.result);
         setChanged(true);
       };
       reader.onerror = function (error) {
-        setError('Some error occured uploading the image.');
+        setError("Some error occured uploading the image.");
       };
     } catch {
-      setError('Some error occured uploading the image.');
+      setError("Some error occured uploading the image.");
     }
   };
   const imageHandler = (e) => {
@@ -97,7 +97,7 @@ export default function EditProfile({
         },
       });
     } catch {
-      setError('Some error occured uploading the image.');
+      setError("Some error occured uploading the image.");
     }
   };
   return (
@@ -112,7 +112,7 @@ export default function EditProfile({
               alt="The profile picture"
               width={100}
               height={100}
-              onClick={(e) => document.getElementById('hidden_click').click()}
+              onClick={(e) => document.getElementById("hidden_click").click()}
             ></img>
             <input
               onChange={imageHandler}
@@ -122,7 +122,7 @@ export default function EditProfile({
               hidden
             ></input>
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-7 mt-6">
-              <div class="relative">
+              <div className="relative">
                 <input
                   id="name"
                   value={name}
@@ -138,7 +138,7 @@ export default function EditProfile({
                 </label>
               </div>
 
-              <div class="relative">
+              <div className="relative">
                 <input
                   id="batch"
                   value={batch}
@@ -155,10 +155,10 @@ export default function EditProfile({
                 </label>
               </div>
 
-              <div class="sm:col-span-2">
+              <div className="sm:col-span-2">
                 <label
                   for="bio"
-                  class="block mb-2 text-sm font-medium text-gray-500"
+                  className="block mb-2 text-sm font-medium text-gray-500"
                 >
                   Bio
                 </label>

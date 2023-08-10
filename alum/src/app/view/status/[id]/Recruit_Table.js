@@ -1,80 +1,80 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 // import Table from './Table';
-import Table_Content from './Table_Content';
-import { useState } from 'react';
+import Table_Content from "./Table_Content";
+import { useState } from "react";
 
 let DATA = [
   {
-    name: 'Jane Cooper',
-    email: 'jane.cooper@example.com',
+    name: "Jane Cooper",
+    email: "jane.cooper@example.com",
     cgpa: 10,
-    branch: 'CSE',
-    resume: 'Download',
+    branch: "CSE",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 4,
-    branch: 'ME',
-    resume: 'Download',
+    branch: "ME",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 8,
-    branch: 'ECE',
-    resume: 'Download',
+    branch: "ECE",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 9,
-    branch: 'MAC',
-    resume: 'Download',
+    branch: "MAC",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 6.5,
-    branch: 'EE',
-    resume: 'Download',
+    branch: "EE",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 7.86,
-    branch: 'ECE',
-    resume: 'Download',
+    branch: "ECE",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 6,
-    branch: 'ECE',
-    resume: 'Download',
+    branch: "ECE",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
   {
-    name: 'Cody Fisher',
-    email: 'cody.fisher@example.com',
+    name: "Cody Fisher",
+    email: "cody.fisher@example.com",
     cgpa: 9.21,
-    branch: 'CSAI',
-    resume: 'Download',
+    branch: "CSAI",
+    resume: "Download",
     imgUrl:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
 ];
 const Branches = {
@@ -102,17 +102,17 @@ const Branches = {
 const Recruit_Table = () => {
   const [gpa_filter, set_gpa] = useState(0);
   const [data, setData] = useState(DATA);
-  const [Branch_Drop, set_Branch_Drop] = useState('hidden');
+  const [Branch_Drop, set_Branch_Drop] = useState("hidden");
   const [branch_filter, set_branch_filter] = useState(Branches);
 
   const dropdown_handler = () => {
-    if (Branch_Drop == 'hidden') {
+    if (Branch_Drop == "hidden") {
       set_Branch_Drop((prev) => {
-        return '';
+        return "";
       });
     } else {
       set_Branch_Drop((prev) => {
-        return 'hidden';
+        return "hidden";
       });
     }
   };
@@ -175,20 +175,20 @@ const Recruit_Table = () => {
       return newData;
     });
     set_Branch_Drop((prev) => {
-      return 'hidden';
+      return "hidden";
     });
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
     }
   };
-  console.log('RE - render');
+  console.log("RE - render");
   console.log(branch_filter);
   return (
-    <div class=" overflow-x-auto shadow-md sm:rounded-lg">
-      <div class="flex items-center justify-between pb-4 bg-white dark:bg-gray-900">
+    <div className=" overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="flex items-center justify-between pb-4 bg-white dark:bg-gray-900">
         <div className="m-4 w-full">
           <form
             className="text-xl bg-gray-100 rounded-xl"
@@ -196,15 +196,15 @@ const Recruit_Table = () => {
           >
             {/* FILTER */}
             <div className="flex md:flex-row flex-col">
-              <div class="m-4">
+              <div className="m-4">
                 <label
                   for="steps-range"
-                  class="inline mb-2 text-sm font-medium text-gray-900"
+                  className="inline mb-2 text-sm font-medium text-gray-900"
                 >
                   Select Min CGPA :
                 </label>
                 <input
-                  class="inline mx-2 bg-gray-100"
+                  className="inline mx-2 bg-gray-100"
                   type="Number"
                   value={gpa_filter}
                   onChange={(e) => {
@@ -230,20 +230,20 @@ const Recruit_Table = () => {
                   value={gpa_filter}
                   step="0.01"
                   onChange={(e) => set_gpa(e.target.value)}
-                  class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                  className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
                 ></input>
               </div>
-              <div class="mx-auto my-auto">
+              <div className="mx-auto my-auto">
                 <button
                   id="dropdownSearchButton"
                   data-dropdown-toggle="dropdownSearch"
-                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   type="button"
                   onClick={dropdown_handler}
                 >
-                  Select Branch{' '}
+                  Select Branch{" "}
                   <svg
-                    class="w-4 h-4 ml-2"
+                    className="w-4 h-4 ml-2"
                     aria-hidden="true"
                     fill="none"
                     stroke="currentColor"
@@ -260,30 +260,30 @@ const Recruit_Table = () => {
                 </button>
                 <div
                   id="dropdownSearch"
-                  class={
+                  className={
                     `z-10 bg-white rounded-lg shadow w-60 dark:bg-gray-00 absolute ` +
                     Branch_Drop
                   }
                 >
                   <ul
-                    class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
+                    className="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownSearchButton"
                   >
                     {Object.keys(branch_filter).map((e, idx) => {
                       return (
                         <li key={idx}>
-                          <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                          <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                             <input
                               id={`checkbox-item-` + idx}
                               type="checkbox"
                               value={e}
                               checked={branch_filter[e]}
                               onChange={branch_filter_handler}
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                             ></input>
                             <label
                               for={`checkbox-item-` + idx}
-                              class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
+                              className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
                             >
                               {e}
                             </label>
@@ -295,10 +295,10 @@ const Recruit_Table = () => {
                   <button
                     onClick={clear_all_handler}
                     type="button"
-                    class="flex w-full items-center p-3 text-sm font-medium text-red-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500"
+                    className="flex w-full items-center p-3 text-sm font-medium text-red-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500"
                   >
                     <svg
-                      class="w-5 h-5 mr-1"
+                      className="w-5 h-5 mr-1"
                       aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -311,10 +311,10 @@ const Recruit_Table = () => {
                   <button
                     onClick={select_all_handler}
                     type="button"
-                    class="flex w-full items-center p-3 text-sm font-medium text-green-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500"
+                    className="flex w-full items-center p-3 text-sm font-medium text-green-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500"
                   >
                     <svg
-                      class="w-5 h-5 mr-1"
+                      className="w-5 h-5 mr-1"
                       aria-hidden="true"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -329,7 +329,7 @@ const Recruit_Table = () => {
             </div>
 
             <button
-              class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-4"
+              className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-4"
               onClick={filter_handler}
             >
               Filter
@@ -338,31 +338,31 @@ const Recruit_Table = () => {
         </div>
       </div>
 
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 m-4">
+      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 m-4">
           <tr>
-            <th scope="col" class="p-4">
-              <div class="flex items-center">
+            <th scope="col" className="p-4">
+              <div className="flex items-center">
                 <input
                   id="checkbox-all-search"
                   type="checkbox"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
-                <label for="checkbox-all-search" class="sr-only">
+                <label for="checkbox-all-search" className="sr-only">
                   checkbox
                 </label>
               </div>
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               Name
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               Branch
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               CGPA
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               Resume
             </th>
           </tr>

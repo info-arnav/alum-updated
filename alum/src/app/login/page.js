@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Cookies from 'universal-cookie';
-import login1 from '..//image/login1.png';
-import loginstu from '..//image/loginstu.png';
-import Image from 'next/image';
+import { useState } from "react";
+import Cookies from "universal-cookie";
+import login1 from "..//image/login1.png";
+import loginstu from "..//image/loginstu.png";
+import Image from "next/image";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
-    let data = await fetch('/api/login', {
-      method: 'POST',
+    setError("");
+    let data = await fetch("/api/login", {
+      method: "POST",
       body: JSON.stringify({ email: email, password: password }),
     }).then((e) => e.json());
     if (data.error) {
@@ -26,14 +26,14 @@ export default function Login() {
       var expirationDate = new Date();
       expirationDate.setDate(expirationDate.getDate() + 100);
       let cookies = new Cookies();
-      cookies.set('session_id', data.key, {
+      cookies.set("session_id", data.key, {
         secure: true,
-        sameSite: 'lax',
-        path: '/',
+        sameSite: "lax",
+        path: "/",
         expires: expirationDate,
       });
-      location.replace('/');
-      setLoading('');
+      location.replace("/");
+      setLoading("");
     }
   };
   return (
@@ -73,11 +73,11 @@ export default function Login() {
           <div className="container w-full text-center">
             <div className="title font-bold text-3xl mb-8 m-4">Login</div>
             <form onSubmit={handleSubmit}>
-              <div class="m-2 relative mb-6 w-[70%] mx-auto">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <div className="m-2 relative mb-6 w-[70%] mx-auto">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
                     aria-hidden="true"
-                    class="w-5 h-5 text-black dark:text-gray-400"
+                    className="w-5 h-5 text-black dark:text-gray-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -92,15 +92,15 @@ export default function Login() {
                   placeholder="Email"
                   value={email}
                   onChange={(e) =>
-                    setEmail(e.target.value.toLowerCase().replaceAll(' ', ''))
+                    setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
                   }
                 ></input>
               </div>
-              <div class="m-2 relative mb-4 w-[70%] mx-auto">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <div className="m-2 relative mb-4 w-[70%] mx-auto">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                    className="w-5 h-5 text-gray-500 dark:text-gray-400"
                     viewBox="0 0 24 24"
                     id="key-hole"
                   >
@@ -121,7 +121,7 @@ export default function Login() {
                 type="submit"
                 disabled={loading}
               >
-                {loading ? 'Logging you in....' : 'Login'}
+                {loading ? "Logging you in...." : "Login"}
               </button>
             </form>
           </div>
