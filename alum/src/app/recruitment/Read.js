@@ -1,14 +1,18 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Loading from '../home/loading';
-import Apply from '../view/recruitment/[id]/apply';
-import Image from 'next/image';
-import idleimage from '../image/select.png';
+import { useEffect, useState } from "react";
+import Apply from "../view/recruitment/[id]/apply";
+import Image from "next/image";
+import idleimage from "../image/select.png";
 
 const Read = (props) => {
-  // console.log(props.info);
-
+  const [applicants, setApplicants] = useState(
+    props.info.applicants != null ? props.info.applicants : []
+  );
+  useEffect(() => {
+    console.log("info", props.info);
+    console.log(applicants);
+  }, [applicants]);
   return (
     <div>
       {props.info._id ? (
@@ -22,7 +26,8 @@ const Read = (props) => {
               <Apply
                 recruitment={props.info._id}
                 user={props.email}
-                applicants={props.info.applicants}
+                applicants={props}
+                setApplicants={props.setData}
               ></Apply>
             </div>
           </div>
@@ -30,15 +35,15 @@ const Read = (props) => {
           <div className="m-4 flex flex-row justify-between align-middle">
             <div className="">
               <p className=" mr-2">Start Date </p>
-              <p className="inline">{props.info.startDate || 'No data'}</p>
+              <p className="inline">{props.info.startDate || "No data"}</p>
             </div>
             <div className="">
               <p className=" mr-2">Duration </p>
-              <p className="inline">{props.info.duration || 'No data'}</p>
+              <p className="inline">{props.info.duration || "No data"}</p>
             </div>
             <div className=" mr-4">
               <p className=" mr-2">Stipend </p>
-              <p className="inline">{props.info.Stipend || 'No data'}</p>
+              <p className="inline">{props.info.Stipend || "No data"}</p>
             </div>
           </div>
 

@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import Loading from "../home/loading";
 import Error from "../error";
-import Link from "next/link";
-import Apply from "../view/recruitment/[id]/apply";
 import Read from "./Read.js";
 
 export default function DataFetch({ email }) {

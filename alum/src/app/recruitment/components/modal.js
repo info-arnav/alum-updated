@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import alumni from "../../image/alumni.png";
 export default function Modal({
   type,
   data,

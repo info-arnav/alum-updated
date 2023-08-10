@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import Table from './Table';
 import Table_Content from "./Table_Content";
 import { useState } from "react";

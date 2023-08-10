@@ -1,21 +1,18 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import {
   Card,
   CardHeader,
   CardBody,
   Typography,
   Avatar,
-  CTypography,
-  Button,
-} from '@material-tailwind/react';
+} from "@material-tailwind/react";
 
 // import { StarIcon } from '@heroicons/react/24/solid';
 
 const Slider = (props) => {
   return (
     <Card
-      key={props.key}
       color="white"
       shadow={false}
       className="w-full max-w-[26rem] justift-center mx-auto p-2"
