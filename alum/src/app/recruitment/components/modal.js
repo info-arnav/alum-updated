@@ -132,7 +132,7 @@ export default function Modal({
                         required
                       ></input>
                       <label
-                        for="position"
+                        htmlFor="position"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         Position
@@ -149,7 +149,7 @@ export default function Modal({
                         required
                       ></input>
                       <label
-                        for="Company"
+                        htmlFor="Company"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         Company
@@ -166,7 +166,7 @@ export default function Modal({
                         required
                       ></input>
                       <label
-                        for="Location"
+                        htmlFor="Location"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         Location
@@ -183,7 +183,7 @@ export default function Modal({
                         required
                       ></input>
                       <label
-                        for="Duration"
+                        htmlFor="Duration"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         Duration
@@ -199,7 +199,7 @@ export default function Modal({
                         onChange={(e) => setLink(e.target.value)}
                       ></input>
                       <label
-                        for="Link"
+                        htmlFor="Link"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         Website link if any
@@ -217,7 +217,7 @@ export default function Modal({
                           required
                         ></textarea>
                         <label
-                          for="Description"
+                          htmlFor="Description"
                           className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 top-2 left-4"
                         >
                           Description
@@ -234,7 +234,7 @@ export default function Modal({
                         required
                       ></input>
                       <label
-                        for="stipend"
+                        htmlFor="stipend"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         Stipend
@@ -254,7 +254,7 @@ export default function Modal({
                         required
                       ></input>
                       <label
-                        for="deadline"
+                        htmlFor="deadline"
                         className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                       >
                         deadline
@@ -263,7 +263,7 @@ export default function Modal({
 
                     <div className="sm:col-span-2">
                       <label
-                        for="Description"
+                        htmlFor="Description"
                         className="block mb-2 text-sm font-medium text-gray-500"
                       >
                         Description

@@ -198,7 +198,7 @@ const Recruit_Table = () => {
             <div className="flex md:flex-row flex-col">
               <div className="m-4">
                 <label
-                  for="steps-range"
+                  htmlFor="steps-range"
                   className="inline mb-2 text-sm font-medium text-gray-900"
                 >
                   Select Min CGPA :
@@ -251,9 +251,9 @@ const Recruit_Table = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M19 9l-7 7-7-7"
                     ></path>
                   </svg>
@@ -282,7 +282,7 @@ const Recruit_Table = () => {
                               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                             ></input>
                             <label
-                              for={`checkbox-item-` + idx}
+                              htmlFor={`checkbox-item-` + idx}
                               className="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
                             >
                               {e}
@@ -348,7 +348,7 @@ const Recruit_Table = () => {
                   type="checkbox"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
-                <label for="checkbox-all-search" className="sr-only">
+                <label htmlFor="checkbox-all-search" className="sr-only">
                   checkbox
                 </label>
               </div>

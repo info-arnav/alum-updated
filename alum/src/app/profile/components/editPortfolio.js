@@ -100,7 +100,7 @@ export default function EditPortfolio({
                     // placeholder={placeholder[0]}
                   ></input>
                   <label
-                    for={type_identifier[type][0]}
+                    htmlFor={type_identifier[type][0]}
                     className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                   >
                     {type_identifier[type][0]}
@@ -118,7 +118,7 @@ export default function EditPortfolio({
                     // placeholder={placeholder[1]}
                   ></input>
                   <label
-                    for={type_identifier[type][1]}
+                    htmlFor={type_identifier[type][1]}
                     className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                   >
                     {type_identifier[type][1]}
@@ -136,7 +136,7 @@ export default function EditPortfolio({
                     // placeholder={placeholder[2]}
                   ></input>
                   <label
-                    for={type_identifier[type][2]}
+                    htmlFor={type_identifier[type][2]}
                     className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                   >
                     {type_identifier[type][2]}
@@ -145,7 +145,7 @@ export default function EditPortfolio({
 
                 <div className="sm:col-span-2">
                   <label
-                    for="Description"
+                    htmlFor="Description"
                     className="block mb-2 text-sm font-medium text-gray-500"
                   >
                     Description
