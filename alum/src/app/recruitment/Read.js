@@ -28,7 +28,11 @@ const Read = (props) => {
           <div className="m-4 flex flex-row justify-between align-middle">
             <div className="">
               <p className=" mr-2">Start Date </p>
-              <p className="inline">{props.info.startDate || "No data"}</p>
+              <p className="inline">{props.info.deadline || "No data"}</p>
+            </div>
+            <div className="">
+              <p className=" mr-2">Contact Email </p>
+              <p className="inline">{props.info.email || "No data"}</p>
             </div>
             <div className="">
               <p className=" mr-2">Duration </p>
