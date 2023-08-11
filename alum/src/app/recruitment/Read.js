@@ -9,10 +9,7 @@ const Read = (props) => {
   const [applicants, setApplicants] = useState(
     props.info.applicants != null ? props.info.applicants : []
   );
-  useEffect(() => {
-    console.log("info", props.info);
-    console.log(applicants);
-  }, [applicants]);
+  useEffect(() => {}, [applicants]);
   return (
     <div>
       {props.info._id ? (

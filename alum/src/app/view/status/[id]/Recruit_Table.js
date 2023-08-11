@@ -184,8 +184,6 @@ const Recruit_Table = () => {
       e.preventDefault();
     }
   };
-  console.log("RE - render");
-  console.log(branch_filter);
   return (
     <div className=" overflow-x-auto shadow-md sm:rounded-lg">
       <div className="flex items-center justify-between pb-4 bg-white dark:bg-gray-900">

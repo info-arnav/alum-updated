@@ -25,11 +25,12 @@ export default function Apply({ recruitment, user, applicants }) {
   return (
     <>
       <button onClick={handleSubmit}>
-        {loading
+        Processing
+        {/* {loading
           ? "Processing......"
           : profiles.indexOf(user) == -1
           ? "Apply"
-          : "Withdraw"}
+          : "Withdraw"} */}
       </button>
     </>
   );

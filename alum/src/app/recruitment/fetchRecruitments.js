@@ -38,7 +38,6 @@ export default function DataFetch({ email }) {
     });
   };
 
-  console.log(selected_idx);
   return (
     <>
       {loading ? (
