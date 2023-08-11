@@ -36,7 +36,7 @@ const Read = (props) => {
             </div>
             <div className=" mr-4">
               <p className=" mr-2">Stipend </p>
-              <p className="inline">{props.info.Stipend || "No data"}</p>
+              <p className="inline">{props.info.stipend || "No data"}</p>
             </div>
           </div>
 
