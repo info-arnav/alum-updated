@@ -13,7 +13,9 @@ const Read = (props) => {
           <div className="m-2 grid grid-cols-2">
             <div className="">
               <h1 className="font-bold text-2xl">{props.info.title}</h1>
-              <h5 className="font-bold text-lg">{props.info.company}</h5>
+              <h5 className="font-bold text-lg text-[#4358b7]">
+                {props.info.company}
+              </h5>
             </div>
             <div className="recruitment-box-footer">
               <Apply
@@ -25,22 +27,30 @@ const Read = (props) => {
             </div>
           </div>
 
-          <div className="m-4 flex flex-row justify-between align-middle">
-            <div className="">
+          <div className="m-4 md:flex md:flex-row inline justify-between align-middle">
+            <div className=" p-2 md:p-0">
               <p className=" mr-2">Start Date </p>
-              <p className="inline">{props.info.deadline || "No data"}</p>
+              <p className="inline text-[#4358b7]">
+                {props.info.deadline || "No data"}
+              </p>
             </div>
-            <div className="">
+            <div className=" p-2 md:p-0">
               <p className=" mr-2">Contact Email </p>
-              <p className="inline">{props.info.email || "No data"}</p>
+              <p className="inline text-[#4358b7]">
+                {props.info.email || "No data"}
+              </p>
             </div>
-            <div className="">
+            <div className=" p-2 md:p-0">
               <p className=" mr-2">Duration </p>
-              <p className="inline">{props.info.duration || "No data"}</p>
+              <p className="inline text-[#4358b7]">
+                {props.info.duration || "No data"}
+              </p>
             </div>
-            <div className=" mr-4">
+            <div className=" mr-4 p-2 md:p-0">
               <p className=" mr-2">Stipend </p>
-              <p className="inline">{props.info.stipend || "No data"}</p>
+              <p className="inline text-[#4358b7]">
+                {props.info.stipend || "No data"}
+              </p>
             </div>
           </div>
 
@@ -57,12 +67,10 @@ const Read = (props) => {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="box-border">
           <Image
             src={idleimage}
-            className="p-8"
-            width={750}
-            height={750}
+            className="p-7 w-[750px] h-[620px]"
             alt="image login"
           ></Image>
         </div>

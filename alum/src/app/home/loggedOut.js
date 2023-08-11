@@ -78,12 +78,17 @@ const featureData = [
 ];
 export default function LoggedOut() {
   const [custom_alumni_array, set_custom_array] = useState([]);
-
+  const hasWindow = typeof window !== "undefined";
+  const width = hasWindow ? window.innerWidth : null;
   const set_data = () => {
     set_custom_array((prev) => {
       return [];
     });
-    const disp_size = 2; // no of sloder displayed together in carousel
+
+    let disp_size = 2; // no of sloder displayed together in carousel
+    if (width < 500) {
+      disp_size = 1;
+    }
     for (let i = 0; i < alumniData.length; i += disp_size) {
       if (i + disp_size > alumniData.length) {
         set_custom_array((prev) => {
@@ -137,8 +142,8 @@ export default function LoggedOut() {
         </div>
       </section>
       {/* Features */}
-      <section className="h-[40vh] bg-[#1E53CF]">
-        <div className="feature-container w-[80vw] mx-auto py-4 flex justify-between">
+      <div className="bg-[#1E53CF]">
+        <div className="feature-container flex flex-col justify-around w-[80vw] mx-auto py-4 md:flex md:justify-between">
           <div className="feature-content text-white md:max-w-[500px]">
             <h2 className="text-4xl ">Features</h2>
             <p className="my-4">
@@ -147,19 +152,19 @@ export default function LoggedOut() {
               quo! Quisquam cum repudiandae deleniti.
             </p>
           </div>
-          <div className="feature-cards grid grid-cols-3 gap-4">
+          <div className="feature-cards flex flex-col items-center md:items-start md:grid md:grid-cols-3 md:gap-4 ">
             {featureData.map((e) => {
               return <FeatureCard key={e.id} {...e} />;
             })}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Slider */}
       <section className="bg-black/50 py-4">
         <Carousel
           transition={{ duration: 1 }}
-          className="rounded-xl my-8 text-red-200 py-14 autoplay"
+          className="rounded-xl my-8 text-red-200 py-14 autoplay "
           navigation={({ setActiveIndex, activeIndex, length }) => (
             <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
               {new Array(length).fill("").map((_, i) => (

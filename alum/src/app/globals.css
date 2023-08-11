@@ -549,7 +549,6 @@ hr {
 
   width: calc(100% - 30px);
   color: black;
-  font-weight: bold;
   padding: 15px 15px;
   margin: 0 15px;
   display: flex;
@@ -1037,10 +1036,10 @@ hr {
   position: relative;
   font-size: 14px;
   color: white;
-  margin: 0;
+  margin: auto;
   padding: 0;
-  width: 100vw;
-  height: 80vh;
+  width: 98vw;
+  /* height: 80vh; */
   /* margin: auto; 
   margin-left: -10px;
   margin-right: -10px;  */
@@ -1064,7 +1063,7 @@ hr {
   margin-right: 100px;
   background-size: cover;
   width: 600px;
-  height: 400px;
+  height: 380px;
 }
 
 .swiper-slide img {

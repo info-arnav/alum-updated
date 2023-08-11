@@ -6,14 +6,14 @@ import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
-import img1 from "..//image/alumnibg.png";
-import img2 from "..//image/alumnibg.png";
+import img1 from "..//image/login1.png";
+import img2 from "..//image/login1.png";
 import img4 from "..//image/alumnibg.png";
 import img3 from "..//image/login1.png";
-import img5 from "..//image/alumnibg.png";
+import img5 from "..//image/login1.png";
 import img6 from "..//image/login1.png";
 import img7 from "..//image/alumnibg.png";
-import img8 from "..//image/alumnibg.png";
+import img8 from "..//image/login1.png";
 import img9 from "..//image/alumnibg.png";
 import img10 from "..//image/alumnibg.png";
 import img11 from "..//image/alumnibg.png";
