@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SendOTP from "./sendOTP";
+import "./register.css";
 
 export default function Register() {
   const [type, setType] = useState("alumni");

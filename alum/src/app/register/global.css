@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,600&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-montserrat: Montserrat;
+
+  /* font sizes */
+  --font-size-smi: 13px;
+  --font-size-mini: 15px;
+  --font-size-base: 16px;
+  --font-size-sm-3: 13.3px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gainsboro: #e6e6e6;
+  --color-gray-100: #8c8c8c;
+  --color-gray-200: #00183f;
+  --color-lavender: #dfe6f9;
+
+  /* border radiuses */
+  --br-481xl: 500px;
+  --br-mini: 15px;
+  --br-xl: 20px;
+}

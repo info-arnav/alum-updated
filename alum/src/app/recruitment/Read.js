@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Apply from "../view/recruitment/[id]/apply";
+import Apply from "./apply";
 import Image from "next/image";
 import idleimage from "../image/select.png";
 
@@ -9,7 +9,6 @@ const Read = (props) => {
   const [applicants, setApplicants] = useState(
     props.info.applicants != null ? props.info.applicants : []
   );
-  useEffect(() => {}, [applicants]);
   return (
     <div>
       {props.info._id ? (
