@@ -25,6 +25,7 @@ export default function DataFetch({ email }) {
     } else {
       setError(false);
       setData(fetchedData.data);
+      console.log(data);
       setLoading(false);
     }
   };
@@ -51,9 +52,9 @@ export default function DataFetch({ email }) {
         <Error></Error>
       ) : (
         <>
-          <div className="grid grid-cols-5  divide-x">
+          <div className="md:grid md:grid-cols-5 md:divide-x divide-y">
             <div
-              className="recruitment-grid mb-[40px] col-span-2 overflow-y-scroll h-[calc(100vh-80px)] min-h-[400px] "
+              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll md:overflow-x-hidden max-w-screen md:overflow-y-scroll md:h-[calc(100vh-80px)] md:min-h-[400px] md:block flex flex-row whitespace-nowrap md:bg-white bg-[#dcdcdc]"
               style={{ marginBottom: 10 }}
             >
               {data.map((e, idx) => {
@@ -68,7 +69,7 @@ export default function DataFetch({ email }) {
                     <div
                       onClick={() => ReadHandler(e, idx)}
                       key={e._id}
-                      className={`recruitment-box m-[20px] py-[20px] px-[25px] rounded-[25px] border-2 border-[##B1B1B1] overflow-hidden hover:border-[#00183F]
+                      className={`recruitment-box m-[20px] md:py-[20px] md:px-[25px] p-[15px] rounded-[25px] w-[100%] md:overflow-hidden border-2 md:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] md:w-auto bg-[#f8f8f8] md:bg-white 
                      ${idx == selected_idx && `border-2 border-black`}`}
                     >
                       <div className="recruitment-box-header">
@@ -78,10 +79,10 @@ export default function DataFetch({ email }) {
                           {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
                           alt="compimage"></img> */}
                           <h1 className="font-bold text-2xl">{e.title}</h1>
-                          <h5>{e.company}</h5>
+                          <h5 class="text-[#4358b7]">{e.company}</h5>
                         </div>
                       </div>
-                      <div className="recruitment-box-body">
+                      <div className="recruitment-box-body flex justify-between">
                         {/* <p
                       dangerouslySetInnerHTML={{
                         __html: `<p></p><b>Duration</b>: ${
@@ -140,7 +141,9 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Start Date</p>
-                          <p>{e.deadline || "No data"}</p>
+                          <p class="text-[#4358b7]">
+                            {e.deadline || "No data"}
+                          </p>
                         </div>
                         <div className=" text-center">
                           <svg
@@ -168,7 +171,9 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Duration</p>
-                          <p>{e.duration || "No Duration Provided"}</p>
+                          <p class=" text-[#4358b7]">
+                            {e.duration || "No Duration Provided"}
+                          </p>
                         </div>
                         <div className="text-center">
                           <svg
@@ -205,7 +210,9 @@ export default function DataFetch({ email }) {
                           </svg>
 
                           <p className="inline">Stipend</p>
-                          <p>{e.stipend || "No data"}</p>
+                          <p class=" text-[#4358b7]">
+                            {e.stipend || "No data"}
+                          </p>
                         </div>
                       </div>
                       {/* <div className="recruitment-box-footer">
@@ -237,7 +244,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline px-2">
-                            {e.applicants.length} Applied
+                            {e.applicants ? e.applicants.length : 0} Applied
                           </p>
                         </div>
                         <div className=" px-2">
