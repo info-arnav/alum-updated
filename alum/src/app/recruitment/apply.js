@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 
-export default function Apply({ recruitment, user, applicants }) {
-  const [profiles, setProfiles] = useState(
-    applicants == null ? [] : applicants
-  );
+export default function Apply({ recruitment, user, profiles, setProfiles }) {
   const [loading, setLoading] = useState(false);
   const handleSubmit = async () => {
     setLoading(true);
@@ -25,12 +22,11 @@ export default function Apply({ recruitment, user, applicants }) {
   return (
     <>
       <button onClick={handleSubmit}>
-        Processing
-        {/* {loading
+        {loading
           ? "Processing......"
           : profiles.indexOf(user) == -1
           ? "Apply"
-          : "Withdraw"} */}
+          : "Withdraw"}
       </button>
     </>
   );

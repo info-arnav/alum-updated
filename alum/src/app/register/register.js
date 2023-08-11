@@ -3,6 +3,7 @@
 import Compressor from "compressorjs";
 import { useState } from "react";
 import Cookies from "universal-cookie";
+import Dropzone from "./dropzone.js";
 
 export default function Register({ type, otp, email }) {
   const [image, setImage] = useState("");
@@ -93,8 +94,9 @@ export default function Register({ type, otp, email }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input value={email} type="email" disabled></input>
+      {/* <input value={email} type="email" disabled></input> */}
       <input
+        className="input-field"
         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
         type="password"
         value={password}
@@ -102,10 +104,11 @@ export default function Register({ type, otp, email }) {
         placeholder="Password"
         required
       ></input>
-      Your password must be at least 8 characters long, include one uppercase
+      {/* Your password must be at least 8 characters long, include one uppercase
       letter, one lowercase letter, one number, one special character (choose
-      from - #,@, $, !, %, *, ?, &), and not contain spaces.
+      from - #,@, $, !, %, *, ?, &), and not contain spaces. */}
       <input
+        className="input-field-2"
         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
         type="password"
         value={confirmPassword}
@@ -118,21 +121,32 @@ export default function Register({ type, otp, email }) {
           <div className="file">
             Please attach a scanned image of your degree
           </div>
-          <input
+          {/* <input
             type="file"
             accept="image/*"
             onChange={imageHandler}
             required
-          ></input>
-          <img
-            src={image}
-            style={{ width: "100%" }}
-            alt="Verification document uploaded by user"
-          ></img>
+          ></input> */}
+          <div className="dropzone-file">
+            <Dropzone onChange={imageHandler} />
+          </div>
+
+          {image && (
+            <img
+              src={image}
+              style={{ width: "100%" }}
+              alt="Verification document uploaded by user"
+            ></img>
+          )}
         </>
       )}
-      {error && error}
-      <button type="submit" disabled={loading}>
+      {error && <div className="error-2">{error}</div>}
+      <button
+        type="submit"
+        disabled={loading}
+        className="button-2"
+        style={{ backgroundColor: "black" }}
+      >
         {loading ? "Registering...." : "Register"}
       </button>
     </form>

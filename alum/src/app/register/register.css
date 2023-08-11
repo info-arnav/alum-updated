@@ -1,6 +1,6 @@
 :root {
-  /* fonts */
-  --font-montserrat: Montserrat;
+    /* fonts */
+    --font-montserrat: Montserrat;
 }
 /* .signup-child {
     border-radius: var(--br-xl);
@@ -316,134 +316,158 @@
   }
    */
 
-body {
-  margin: 0;
+body{
+    margin: 0;
+    
 }
-.register-page {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+.register-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
 }
-.left {
-  flex: 3;
+.left{
+    flex:3
 }
-.content {
-  display: flex;
-  flex-direction: column;
+.content{
+    display: flex;
+    flex-direction: column;
+    
 }
-.heading {
-  position: absolute;
-  top: 30%;
-  left: 50px;
-  font-size: 50px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-  color: var(--color-gray-200);
+.heading{
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    font-size: 50px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: var(--color-gray-200);
 }
 .nsuts-alumni {
-  margin: 0;
+    margin: 0;
+  }
+.subheading{
+    position: absolute;
+    top: 44%;
+    left: 52px;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    width: 400px;
 }
-.subheading {
-  position: absolute;
-  top: 44%;
-  left: 52px;
-  font-size: 20px;
-  letter-spacing: 0.04em;
-  display: inline-block;
-  width: 400px;
+.image{
+    position: absolute;
+    top: 10;
+    left: 15%;
+    width: 500px;
+    height: 500px;
 }
-.image {
-  position: absolute;
-  top: 10;
-  left: 15%;
-  width: 500px;
-  height: 500px;
+.image-29-icon{
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }
-.image-29-icon {
-  position: absolute;
-  top: 60%;
-  left: 45%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.image-28-icon{
+    position: absolute;
+    top: 18%;
+    left: 100%;
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
 }
-.image-28-icon {
-  position: absolute;
-  top: 18%;
-  left: 100%;
-  width: 60%;
-  height: 60%;
-  object-fit: cover;
+.right{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
 }
-.right {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
+.register{
+    position: absolute;
+    top: 13%;
+    left: 72.5%;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
 }
-.register {
-  position: absolute;
-  top: 13%;
-  left: 72.5%;
-  font-size: 40px;
-  letter-spacing: 0.04em;
-  font-weight: 500;
+.options{
+    position: absolute;
+    top: 25%;
+    left: 72%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 350px;
+    height: 180px;
 }
-.options {
-  position: absolute;
-  top: 25%;
-  left: 72%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 350px;
-  height: 180px;
+.image-34-icon{
+   
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: lightgrey;
+    object-fit: cover;
 }
-.image-34-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background-color: lightgrey;
-  object-fit: cover;
-}
-.image-35-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background-color: lightgrey;
-  object-fit: cover;
-}
-
-.thirty-4 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-  width: 150px;
-  cursor: pointer;
-}
-.thirty-5 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-  width: 150px;
-  cursor: pointer;
-}
-.content-34 {
-  text-align: center;
-  font-size: 20px;
-  width: 100px;
-}
-.content-35 {
-  text-align: center;
-  font-size: 20px;
-  width: 100px;
+.image-35-icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: lightgrey;
+    object-fit: cover;
 }
 
-.input-field {
+.thirty-4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+.thirty-5{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+.content-34{
+    text-align: center;
+    font-size: 20px;
+    width: 100px;
+    
+}
+.content-35{
+    text-align: center;
+    font-size: 20px;
+    width: 100px;
+    
+}
+
+.input-field{
+
+    position: absolute;
+    top: 45% ;
+    left: 67% ; 
+    width: 25%;
+    height: 40px;
+    border-radius: 20px;
+    border: 0px solid black;
+    background-color: #dfe6f9;
+    padding: 15px;
+    font-size: 20px;
+    outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input-field-2{
+
   position: absolute;
-  top: 45%;
-  left: 67%;
+  top: 55% ;
+  left: 67% ; 
   width: 25%;
   height: 40px;
   border-radius: 20px;
@@ -452,30 +476,31 @@ body {
   padding: 15px;
   font-size: 20px;
   outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 }
-.input-field-2 {
-  position: absolute;
-  top: 55%;
-  left: 67%;
-  width: 25%;
-  height: 40px;
-  border-radius: 20px;
-  border: 0px solid black;
-  background-color: #dfe6f9;
-  padding: 15px;
-  font-size: 20px;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.OTP{
+    position: absolute;
+    top: 60% ;
+    left: 67% ; 
+    width: 27%;
+    height: 70px;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+    background-color: #00183f;
+    outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    
 }
-.OTP {
+.button-2{
   position: absolute;
-  top: 60%;
-  left: 67%;
+  top: 80% ;
+  left: 67% ; 
   width: 27%;
   height: 70px;
   border-radius: 20px;
@@ -484,49 +509,35 @@ body {
   color: white;
   background-color: #00183f;
   outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+  
 }
-.button-2 {
+.dropzone-file{
   position: absolute;
-  top: 80%;
-  left: 67%;
-  width: 27%;
-  height: 70px;
-  border-radius: 20px;
-  padding: 20px;
-  font-size: 25px;
-  color: white;
-  background-color: #00183f;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.dropzone-file {
-  position: absolute;
-  top: 68%;
-  left: 67%;
+  top: 68% ;
+  left: 67% ; 
   width: 27%;
 }
-.file {
+.file{
   position: absolute;
-  top: 65%;
+  top: 65% ;
   font-size: 18px;
-  left: 67%;
+  left: 67% ; 
+  
 }
-.error {
-  position: absolute;
-  font-size: 18px;
-  top: 70%;
-  left: 67%;
-  color: red;
+.error{
+    position: absolute;
+    font-size: 18px;
+    top: 70% ;
+    left: 67% ;
+    color: red;
 }
-.error-2 {
+.error-2{
   position: absolute;
   font-size: 18px;
-  top: 89%;
-  left: 67%;
+  top: 89% ;
+  left: 67% ;
   color: red;
 }

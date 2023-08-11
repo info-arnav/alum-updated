@@ -10,6 +10,7 @@ export default function DataFetch({ email }) {
   const [error, setError] = useState(false);
   const [data, setData] = useState("");
   const [expanded_data, set_expanded_data] = useState({});
+  const [refresh, setRefresh] = useState(true);
   const [selected_idx, set_selected_idx] = useState(-1);
   const fetcher = async () => {
     const fetchedData = await fetch("/api/find-recruitments", {
@@ -29,7 +30,7 @@ export default function DataFetch({ email }) {
   };
   useEffect(() => {
     fetcher();
-  }, []);
+  }, [refresh]);
 
   const ReadHandler = (e, idx) => {
     set_selected_idx((prev) => idx);
@@ -37,7 +38,11 @@ export default function DataFetch({ email }) {
       return e;
     });
   };
-
+  const setProfiles = (applicants) => {
+    data[selected_idx].applicants = applicants;
+    setData(data);
+    setRefresh(!refresh);
+  };
   return (
     <>
       {loading ? (
@@ -241,7 +246,14 @@ export default function DataFetch({ email }) {
               })}
             </div>
             <div className="Description col-span-3">
-              <Read info={expanded_data} email={email}></Read>
+              <Read
+                info={expanded_data}
+                email={email}
+                profiles={
+                  data[selected_idx] ? data[selected_idx].applicants : []
+                }
+                setProfiles={setProfiles}
+              ></Read>
             </div>
           </div>
         </>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import VerifyOTP from "./verifyOTP";
+import "./register.css";
 
 export default function SendOTP({ type }) {
   const [oldType, setOldType] = useState(type);
@@ -64,14 +65,24 @@ export default function SendOTP({ type }) {
         <form onSubmit={type == "student" ? sendStudentOTP : sendOTP}>
           <input
             type="email"
+            className="input-field"
             value={email}
             onChange={(e) =>
               setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
             }
-            placeholder={type == "student" ? "NSUT Email ID" : "Email Id"}
+            placeholder={
+              type == "student"
+                ? "Enter your NSUT Email ID"
+                : "Enter your Email ID"
+            }
           ></input>
-          {error && error}
-          <button type="submit" disabled={loading}>
+          {error && <div className="error">{error}</div>}
+          <button
+            type="submit"
+            disabled={loading}
+            className="OTP"
+            style={{ backgroundColor: "black" }}
+          >
             {loading ? "Sending OTP...." : "Send OTP"}
           </button>
         </form>

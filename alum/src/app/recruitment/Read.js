@@ -6,9 +6,6 @@ import Image from "next/image";
 import idleimage from "../image/select.png";
 
 const Read = (props) => {
-  const [applicants, setApplicants] = useState(
-    props.info.applicants != null ? props.info.applicants : []
-  );
   return (
     <div>
       {props.info._id ? (
@@ -22,8 +19,8 @@ const Read = (props) => {
               <Apply
                 recruitment={props.info._id}
                 user={props.email}
-                applicants={props}
-                setApplicants={props.setData}
+                profiles={props.profiles}
+                setProfiles={props.setProfiles}
               ></Apply>
             </div>
           </div>

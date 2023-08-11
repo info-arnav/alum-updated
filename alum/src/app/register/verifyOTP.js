@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Register from "./register";
-
+import "./register.css";
 export default function VerifyOTP({ type, email }) {
   const [error, setError] = useState("");
   const [otp, setOtp] = useState(0);
@@ -41,12 +41,18 @@ export default function VerifyOTP({ type, email }) {
         <form onSubmit={verifyOTP}>
           <input
             type="number"
+            className="input-field"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
             placeholder="OTP"
           ></input>
-          {error && error}
-          <button type="submit" disabled={loading}>
+          {error && <div className="error">{error}</div>}
+          <button
+            type="submit"
+            disabled={loading}
+            className="OTP"
+            style={{ backgroundColor: "black" }}
+          >
             {loading ? "Verifying OTP...." : "Verify OTP"}
           </button>
         </form>
