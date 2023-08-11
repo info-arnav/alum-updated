@@ -138,13 +138,13 @@ export default function Register() {
       <div className="left">
         <div className="content">
           <div className="heading">
-            <p className="nsuts-alumni">Nsut's alumni</p>
+            <p className="nsuts-alumni">Nsut&apos;s alumni</p>
             <p className="nsuts-alumni">networking Portal</p>
           </div>
           <div className="subheading" style={{ marginTop: 100 }}>
             <p className="nsuts-alumni">Welcome to Alum!</p>
             <p className="nsuts-alumni">
-              Be patient, the website is going live soon
+              {"Be patient, the website is going live soon"}
             </p>
           </div>
         </div>
