@@ -286,7 +286,11 @@ export default function DataFetch({ email }) {
                 info={expanded_data}
                 email={email}
                 profiles={
-                  data[selected_idx] ? data[selected_idx].applicants : []
+                  data[selected_idx]
+                    ? data[selected_idx].applicants
+                      ? data[selected_idx].applicants
+                      : []
+                    : []
                 }
                 setProfiles={setProfiles}
               ></Read>
