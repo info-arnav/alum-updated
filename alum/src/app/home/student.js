@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import bgImage from '..//image/alumnibg.png';
-import Gallery from './Gallery';
+import Image from "next/image";
+import bgImage from "..//image/alumnibg.png";
+import Gallery from "./Gallery";
 
 export default function Student() {
   return (
@@ -64,16 +64,76 @@ export default function Student() {
       </section>
 
       {/* GALLERY */}
-      <section className="mt-32">
+      {/* <section className="mt-32">
         <h1 className="text-4xl font-bold text-center text-blue-700 ">
           Gallery
+        </h1> */}
+      <section className="my-24 bg-[#444444] py-8 relative">
+        <h1 className="text-4xl font-bold text-center text-white absolute left-8 -top-[28px] z-20 bg-blue-700 px-8 p-2 rounded-xl w-[280px]">
+          <p class="inline">Gallery</p>
+          <p class="inline pl-20">&gt;</p>
         </h1>
         <Gallery></Gallery>
       </section>
 
       {/*LATEST  NEWS */}
-      <section className="mb-14">
-        <div className="flex flex-row justify-between max-w-[85vw] mx-auto">
+      <section className="mb-14 bg-[#eef0f8] w-[92%] p-4 mx-auto relative">
+        <div className="justify-between max-w-[85vw] mx-auto">
+          <h1 className="text-3xl font-bold text-white bg-blue-700 mb-4 absolute -top-[28px] left-0 right-0 mx-auto md:mx-0 md:left-8 px-4 p-2 rounded-xl w-[340px]">
+            Latest Opportunities
+          </h1>
+          <div className="w-full items-center pt-8 flex flex-col">
+            <div class="py-2">
+              <p class="font-bold text-2xl my-1">
+                NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.
+              </p>
+              <p class="text-xl my-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                nobis quae explicabo dolores laboriosam assumenda quos,
+                consequuntur officiis eum optio.
+              </p>
+              <p class="text-xl my-1">
+                The Alumni Meet 2019 began with a warm welcome to all the alumni
+                through a welcome song by the stu- dents of Netaji Subhas
+                University of Technology followed by the tra- ditional lamp
+                lighting ceremony by Prof K.P.S Rana, acting Vice-Chan- cellor,
+                Prof Raj Senani, Ex-Director NSUT, Prof Vijyant Agrawal, Chair-
+                man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
+                Alumni Meet 2019, Alumni and Faculty NSUT.
+              </p>
+              <p class="text-xl my-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                nobis quae explicabo dolores laboriosam assumenda quos,
+                consequuntur officiis eum optio.
+              </p>
+            </div>
+            <div class="py-2">
+              <p class="font-bold text-2xl my-1">
+                NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.
+              </p>
+              <p class="text-xl my-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                nobis quae explicabo dolores laboriosam assumenda quos,
+                consequuntur officiis eum optio.
+              </p>
+              <p class="text-xl my-1">
+                The Alumni Meet 2019 began with a warm welcome to all the alumni
+                through a welcome song by the stu- dents of Netaji Subhas
+                University of Technology followed by the tra- ditional lamp
+                lighting ceremony by Prof K.P.S Rana, acting Vice-Chan- cellor,
+                Prof Raj Senani, Ex-Director NSUT, Prof Vijyant Agrawal, Chair-
+                man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
+                Alumni Meet 2019, Alumni and Faculty NSUT.
+              </p>
+              <p class="text-xl my-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                nobis quae explicabo dolores laboriosam assumenda quos,
+                consequuntur officiis eum optio.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* <div className="flex flex-row justify-between max-w-[85vw] mx-auto">
           <div className="flex flex-col w-[800px] items-center ">
             <h1 className="text-4xl font-bold text-blue-700 mb-4">
               Latest Opportunities
@@ -101,7 +161,7 @@ export default function Student() {
               consequuntur officiis eum optio.
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </main>
   );
