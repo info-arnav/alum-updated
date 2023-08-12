@@ -9,8 +9,8 @@ export default function Applicants({ email, id }) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [subLoading, setSubLoading] = useState(false);
-  let recruitsArray = [];
-  let otherArray = [];
+  const [recruitsArray, setRecruitsArray] = useState([]);
+  const [otherArray, setOtherArray] = useState([]);
   const onSubmit = async () => {
     setError(false);
     setSubLoading(true);
@@ -27,7 +27,7 @@ export default function Applicants({ email, id }) {
     await fetch(`/api/recruitment-close`, {
       method: "POST",
       body: JSON.stringify({
-        _id: id,
+        id: id,
         auth_email: email,
         emails: otherArray,
         recruited: recruitsArray,
@@ -42,7 +42,9 @@ export default function Applicants({ email, id }) {
           setError(true);
           setSubLoading(false);
         } else {
-          location.replace("/recruitment");
+          location.replace(
+            `/view/recruited/${e.id.data.insertOneRecruited._id}`
+          );
           setError(false);
           setSubLoading(false);
         }
@@ -57,8 +59,11 @@ export default function Applicants({ email, id }) {
       }),
       cache: "no-cache",
     }).then((e) => e.json());
-    let updatedData = tempData.data.data.recruitments[0].applicants;
-    otherArray = updatedData;
+    let updatedData =
+      tempData.data.data.recruitments[0].applicants == null
+        ? []
+        : tempData.data.data.recruitments[0].applicants;
+    setOtherArray([...updatedData]);
     setData(updatedData);
     setLoading(false);
   };
@@ -80,7 +85,7 @@ export default function Applicants({ email, id }) {
               {data ? (
                 data.map((e) => {
                   return (
-                    <div key={recruitsArray.indexOf(e)}>
+                    <div key={e}>
                       <tr>
                         <td>
                           <input
@@ -88,13 +93,17 @@ export default function Applicants({ email, id }) {
                             onChange={(f) => {
                               if (f.target.checked) {
                                 recruitsArray.push(e);
-                                otherArray.splice(recruitsArray.indexOf(e), 1);
+                                setRecruitsArray(recruitsArray);
+                                otherArray.splice(otherArray.indexOf(e), 1);
+                                setOtherArray(otherArray);
                               } else {
                                 recruitsArray.splice(
                                   recruitsArray.indexOf(e),
                                   1
                                 );
+                                setRecruitsArray(recruitsArray);
                                 otherArray.push(e);
+                                setOtherArray(otherArray);
                               }
                             }}
                           />
