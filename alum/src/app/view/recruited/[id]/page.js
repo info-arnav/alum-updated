@@ -1,5 +1,5 @@
-import LoggedIn from "@/app/loggedIn";
-import Applicants from "./applicants";
+import LoggedIn from '@/app/loggedIn';
+import Applicants from './applicants';
 
 export default function Status({ params }) {
   const data = LoggedIn();

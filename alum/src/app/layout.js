@@ -78,7 +78,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
-        <Navigation data={status}></Navigation>
+        <Navigation
+          data={status}
+          keys={[process.env.ALGOLIA_MAIN, process.env.ALGOLIA_SEARCH]}
+        ></Navigation>
         <div className="nav-gap"></div>
         <Analytics />
         {status.loggedIn && (

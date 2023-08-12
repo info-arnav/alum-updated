@@ -1,8 +1,14 @@
 import CryptoJS from "crypto-js";
 import cookie from "cookie";
 import QueryString from "./query-string";
+const algoliasearch = require("algoliasearch");
 
 export default async function setProfilePicture(req, res) {
+  const client = algoliasearch(
+    process.env.ALGOLIA_MAIN,
+    process.env.ALGOLIA_PRIVATE
+  );
+  const index = client.initIndex("dev_alum");
   let body = JSON.parse(req.body);
   const cookies = cookie.parse(req.headers.cookie || "");
   try {

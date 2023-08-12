@@ -3,7 +3,6 @@
 import Compressor from "compressorjs";
 import { useState } from "react";
 import Cookies from "universal-cookie";
-import Dropzone from "./dropzone.js";
 
 export default function Register({ type, otp, email }) {
   const [image, setImage] = useState("");
@@ -121,15 +120,12 @@ export default function Register({ type, otp, email }) {
           <div className="file">
             Please attach a scanned image of your degree
           </div>
-          {/* <input
+          <input
             type="file"
             accept="image/*"
             onChange={imageHandler}
             required
-          ></input> */}
-          <div className="dropzone-file">
-            <Dropzone onChange={imageHandler} />
-          </div>
+          ></input>
 
           {image && (
             <img

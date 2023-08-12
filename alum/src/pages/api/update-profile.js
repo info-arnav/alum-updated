@@ -1,8 +1,14 @@
 import QueryString from "./query-string";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
+const algoliasearch = require("algoliasearch");
 
 export default async function addOccupation(req, res) {
+  const client = algoliasearch(
+    process.env.ALGOLIA_MAIN,
+    process.env.ALGOLIA_PRIVATE
+  );
+  const index = client.initIndex("dev_alum");
   let body = JSON.parse(req.body);
 
   const cookies = cookie.parse(req.headers.cookie || "");
@@ -30,12 +36,24 @@ export default async function addOccupation(req, res) {
           batch: body.batch,
         })}) {
                   email
+                  _id
                 }
               }
           `,
       }),
     }).then((e) => e.json());
-    res.json({ error: false, data: data });
+    await index
+      .partialUpdateObjects([
+        {
+          objectID: data.data.updateOneRegisteration._id,
+          bio: body.bio,
+          name: body.name,
+          batch: body.batch,
+        },
+      ])
+      .then(({ objectIDs }) => {
+        res.json({ error: false, data: data });
+      });
   } catch {
     res.json({ error: true, message: "Some error occured" });
   }

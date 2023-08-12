@@ -3,8 +3,14 @@ import CryptoJS from "crypto-js";
 const crypto = require("crypto");
 import * as Realm from "realm-web";
 import QueryString from "./query-string";
+const algoliasearch = require("algoliasearch");
 
 export default async function register(req, res) {
+  const client = algoliasearch(
+    process.env.ALGOLIA_MAIN,
+    process.env.ALGOLIA_PRIVATE
+  );
+  const index = client.initIndex("dev_alum");
   let body = JSON.parse(req.body);
   const app = Realm.getApp(process.env.APP_ID);
   try {
@@ -76,6 +82,7 @@ export default async function register(req, res) {
                 error: "",
               })}) {
                 email
+                _id
               }
             }
             `,
@@ -103,6 +110,16 @@ export default async function register(req, res) {
             `,
           }),
         });
+        if (verified == "true") {
+          await index.saveObjects([
+            {
+              type: type,
+              email: registeredUser.data.insertOneRegisteration.email,
+              objectID: registeredUser.data.insertOneRegisteration._id,
+              image: `https://alumninet.in/api/image/${registeredUser.data.insertOneRegisteration._id}`,
+            },
+          ]);
+        }
         if (registeredUser.data.insertOneRegisteration.email == body.email) {
           var expirationDate = new Date();
           expirationDate.setDate(expirationDate.getDate() + 100);

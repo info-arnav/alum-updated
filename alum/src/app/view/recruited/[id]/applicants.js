@@ -2,13 +2,15 @@
 
 import Loading from "@/app/home/loading";
 import { useEffect, useState } from "react";
-import Recruit_Table from "./Recruit_Table";
+import Table_Content from "./Table_Content";
 
 export default function Applicants({ email, id }) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [subLoading, setSubLoading] = useState(false);
+  const [recruitsArray, setRecruitsArray] = useState([]);
+  const [otherArray, setOtherArray] = useState([]);
   const fetcher = async () => {
     const tempData = await fetch(`/api/get-recruiteds-status`, {
       method: "POST",
@@ -22,6 +24,7 @@ export default function Applicants({ email, id }) {
       tempData.data.data.recruiteds[0].applicants == null
         ? []
         : tempData.data.data.recruiteds[0].applicants;
+    setOtherArray([...updatedData]);
     setData(updatedData);
     setLoading(false);
   };
@@ -34,27 +37,35 @@ export default function Applicants({ email, id }) {
         <Loading></Loading>
       ) : (
         <>
-          <form>
-            <Recruit_Table />
-          </form>
-
-          <table>
-            {data ? (
-              data.map((e) => {
-                return (
-                  <div key={e}>
-                    <tr>
-                      <td>
-                        <div key={e}>{e}</div>
-                      </td>
-                    </tr>
-                  </div>
-                );
-              })
-            ) : (
-              <div>No Applicants</div>
-            )}
-          </table>
+          <div className=" overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              <tbody>
+                {data ? (
+                  data.map((e) => {
+                    return (
+                      <div key={e}>
+                        <Table_Content
+                          key={e}
+                          info={{
+                            email: e,
+                            resume: () => {
+                              console.log("download");
+                            },
+                          }}
+                          recruitsArray={recruitsArray}
+                          setRecruitsArray={setRecruitsArray}
+                          otherArray={otherArray}
+                          setOtherArray={setOtherArray}
+                        />
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div>No Applicants</div>
+                )}{" "}
+              </tbody>
+            </table>
+          </div>
         </>
       )}
     </>
