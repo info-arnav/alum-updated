@@ -87,8 +87,16 @@ export default function Applicants({ email, id }) {
                           key={e}
                           info={{
                             email: e,
-                            resume: () => {
-                              console.log("download");
+                            resume: async () => {
+                              const res = await fetch(`/api/get-user-info`, {
+                                method: "POST",
+                                body: JSON.stringify({
+                                  auth_email: email,
+                                  email: e,
+                                }),
+                                cache: "no-cache",
+                              }).then((e) => e.json());
+                              console.log(res);
                             },
                           }}
                           recruitsArray={recruitsArray}

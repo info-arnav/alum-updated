@@ -33,23 +33,17 @@ export default function Navigation({ data, keys }) {
         <div className="nav-title">Alum</div>
       </a>
       {data.loggedIn && data.data.verified ? (
-        <>
-          <InstantSearch searchClient={searchClient} indexName="dev_alum">
-            <SearchBox
-              searchAsYouType={true}
-              queryHook={(query, search) => {
-                if (query.length == 1) {
-                  setValue(true);
-                } else if (query.length == 0) {
-                  setValue(false);
-                } else {
-                  search(query);
-                }
-              }}
-            />
-            {value && <Hits hitComponent={Hit} />}
-          </InstantSearch>
-        </>
+        value ? (
+          <>
+            <InstantSearch searchClient={searchClient} indexName="dev_alum">
+              <SearchBox searchAsYouType={true} />
+              <Hits hitComponent={Hit} />
+            </InstantSearch>
+            <button onClick={(e) => setValue(false)}>Stop</button>
+          </>
+        ) : (
+          <button onClick={(e) => setValue(true)}>Search</button>
+        )
       ) : (
         <input placeholder="login to search" disabled></input>
       )}
