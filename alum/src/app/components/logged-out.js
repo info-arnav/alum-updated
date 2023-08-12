@@ -5,7 +5,7 @@ export default function LoggedOut({ path }) {
     <Links
       links={[
         ["Home", "/"],
-        // ["About", "/about"],
+        ["About", "/about"],
         ["Register", "/register"],
         ["Login", "/login"],
       ]}
