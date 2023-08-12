@@ -79,7 +79,7 @@ export default function DataFetch({ email }) {
                           {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
                           alt="compimage"></img> */}
                           <h1 className="font-bold text-2xl">{e.title}</h1>
-                          <h5 class="text-[#4358b7]">{e.company}</h5>
+                          <h5 className="text-[#4358b7]">{e.company}</h5>
                         </div>
                       </div>
                       <div className="recruitment-box-body flex justify-between">

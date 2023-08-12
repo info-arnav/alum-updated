@@ -20,7 +20,7 @@ export default function DataFetch({ email }) {
         email: email,
       }),
     }).then((e) => e.json());
-    if (data.error) {
+    if (fetchedData.error) {
       setError(true);
       setLoading(false);
     } else {
