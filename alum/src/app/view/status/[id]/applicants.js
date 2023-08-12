@@ -80,7 +80,7 @@ export default function Applicants({ email, id }) {
               {data ? (
                 data.map((e) => {
                   return (
-                    <>
+                    <div key={recruitsArray.indexOf(e)}>
                       <tr>
                         <td>
                           <input
@@ -103,7 +103,7 @@ export default function Applicants({ email, id }) {
                           <div key={e}>{e}</div>
                         </td>
                       </tr>
-                    </>
+                    </div>
                   );
                 })
               ) : (

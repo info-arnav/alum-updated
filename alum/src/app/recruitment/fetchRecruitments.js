@@ -79,7 +79,7 @@ export default function DataFetch({ email }) {
                           {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
                           alt="compimage"></img> */}
                           <h1 className="font-bold text-2xl">{e.title}</h1>
-                          <h5 class="text-[#4358b7]">{e.company}</h5>
+                          <h5 className="text-[#4358b7]">{e.company}</h5>
                         </div>
                       </div>
                       <div className="recruitment-box-body flex justify-between">
@@ -141,7 +141,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Start Date</p>
-                          <p class="text-[#4358b7]">
+                          <p className="text-[#4358b7]">
                             {e.deadline || "No data"}
                           </p>
                         </div>
@@ -171,7 +171,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Duration</p>
-                          <p class=" text-[#4358b7]">
+                          <p className=" text-[#4358b7]">
                             {e.duration || "No Duration Provided"}
                           </p>
                         </div>
@@ -210,7 +210,7 @@ export default function DataFetch({ email }) {
                           </svg>
 
                           <p className="inline">Stipend</p>
-                          <p class=" text-[#4358b7]">
+                          <p className=" text-[#4358b7]">
                             {e.stipend || "No data"}
                           </p>
                         </div>

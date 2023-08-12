@@ -51,8 +51,8 @@ export default function Alumni() {
       {/* GALLERY */}
       <section className="my-24 bg-[#444444] py-8 relative">
         <h1 className="text-4xl font-bold text-center text-white absolute left-8 -top-[28px] z-20 bg-blue-700 px-8 p-2 rounded-xl w-[280px]">
-          <p class="inline">Gallery</p>
-          <p class="inline pl-20">&gt;</p>
+          <p className="inline">Gallery</p>
+          <p className="inline pl-20">&gt;</p>
         </h1>
         <Gallery></Gallery>
       </section>
@@ -64,16 +64,16 @@ export default function Alumni() {
             Latest News
           </h1>
           <div className="w-full items-center pt-8 flex flex-col">
-            <div class="py-2">
-              <p class="font-bold text-2xl my-1">
+            <div className="py-2">
+              <p className="font-bold text-2xl my-1">
                 NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.
               </p>
-              <p class="text-xl my-1">
+              <p className="text-xl my-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                 nobis quae explicabo dolores laboriosam assumenda quos,
                 consequuntur officiis eum optio.
               </p>
-              <p class="text-xl my-1">
+              <p className="text-xl my-1">
                 The Alumni Meet 2019 began with a warm welcome to all the alumni
                 through a welcome song by the stu- dents of Netaji Subhas
                 University of Technology followed by the tra- ditional lamp
@@ -82,22 +82,22 @@ export default function Alumni() {
                 man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
                 Alumni Meet 2019, Alumni and Faculty NSUT.
               </p>
-              <p class="text-xl my-1">
+              <p className="text-xl my-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                 nobis quae explicabo dolores laboriosam assumenda quos,
                 consequuntur officiis eum optio.
               </p>
             </div>
-            <div class="py-2">
-              <p class="font-bold text-2xl my-1">
+            <div className="py-2">
+              <p className="font-bold text-2xl my-1">
                 NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.
               </p>
-              <p class="text-xl my-1">
+              <p className="text-xl my-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                 nobis quae explicabo dolores laboriosam assumenda quos,
                 consequuntur officiis eum optio.
               </p>
-              <p class="text-xl my-1">
+              <p className="text-xl my-1">
                 The Alumni Meet 2019 began with a warm welcome to all the alumni
                 through a welcome song by the stu- dents of Netaji Subhas
                 University of Technology followed by the tra- ditional lamp
@@ -106,7 +106,7 @@ export default function Alumni() {
                 man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
                 Alumni Meet 2019, Alumni and Faculty NSUT.
               </p>
-              <p class="text-xl my-1">
+              <p className="text-xl my-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                 nobis quae explicabo dolores laboriosam assumenda quos,
                 consequuntur officiis eum optio.

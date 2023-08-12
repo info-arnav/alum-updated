@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Apply from "./apply";
 import Image from "next/image";
 import idleimage from "../image/select.png";
