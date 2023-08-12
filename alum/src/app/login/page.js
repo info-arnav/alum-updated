@@ -39,11 +39,11 @@ export default function Login() {
   return (
     <div className="login-page flex md:flex-row flex-col">
       <div className="loginHeader md:w-3/5 w-full relative md:min-h-screen h-[540px] md:p-5">
-        <h1 className="text-4xl font-bold mt-14 z-10">
+        <h1 className="text-4xl font-bold mt-14 z-10 pl-2">
           Nsut’s Alumni <br />
           networking Portal
         </h1>
-        <h3 className="z-10 tracking-widest">
+        <h3 className="z-10 tracking-widest pl-2">
           Welcome to Alum!
           <br />
           Be patient, the website is going live soon

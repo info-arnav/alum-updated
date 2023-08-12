@@ -21,7 +21,10 @@ export default function Apply({ recruitment, user, profiles, setProfiles }) {
   };
   return (
     <>
-      <button onClick={handleSubmit}>
+      <button
+        onClick={handleSubmit}
+        className="border-1 bg-[#1976d2] text-white w-[105px] p-1 rounded-xl font-[14px] hover:bg-[#2d7ecf]"
+      >
         {loading
           ? "Processing......"
           : profiles.indexOf(user) == -1
