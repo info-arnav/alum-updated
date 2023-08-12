@@ -1,5 +1,6 @@
 "use clinet";
 
+import Editor from "@/app/components/Editor";
 import { useState } from "react";
 
 export default function EditPortfolio({
@@ -150,16 +151,13 @@ export default function EditPortfolio({
                   >
                     Description
                   </label>
-                  <textarea
+                  <Editor
                     id="Description"
-                    rows="8"
-                    className="block p-2.5 w-full border-2 border-gray-500 text-sm text-gray-900 bg-gray-50 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                     required
                     value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    setValue={setDescription}
                     placeholder="Add more details..."
-                    // placeholder={placeholder[3]}
-                  ></textarea>
+                  />
                 </div>
 
                 {error &&

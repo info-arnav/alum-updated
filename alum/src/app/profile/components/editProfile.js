@@ -2,6 +2,7 @@
 
 import Compressor from "compressorjs";
 import { useState } from "react";
+import Editor from "../../components/Editor";
 
 export default function EditProfile({
   data,
@@ -162,14 +163,12 @@ export default function EditProfile({
                 >
                   Bio
                 </label>
-                <textarea
+                <Editor
                   id="bio"
-                  rows="4"
                   value={bio}
-                  onChange={(e) => setBio(e.target.value)}
-                  className="block p-2.5 w-full border-2 border-gray-500 text-sm text-gray-900 bg-gray-50 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Bio, we suggest mentioning some of your skills here"
-                ></textarea>
+                  setValue={setBio}
+                  placeholder="Add more details..."
+                />
               </div>
             </div>
             {error && error}

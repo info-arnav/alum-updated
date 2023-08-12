@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Editor from "../../components/Editor";
 export default function Modal({
   type,
   data,
@@ -266,15 +267,15 @@ export default function Modal({
                       >
                         Description
                       </label>
-                      <textarea
+                      <Editor
                         id="Description"
                         rows="8"
                         className="block p-2.5 w-full border-2 border-gray-500 text-sm text-gray-900 bg-gray-50 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Add more details..."
                         value={description}
-                        onChange={(e) => setDescription(e.target.value)}
+                        setValue={setDescription}
                         required
-                      ></textarea>
+                      ></Editor>
                     </div>
                   </div>
                   <button

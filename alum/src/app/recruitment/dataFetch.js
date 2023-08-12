@@ -83,14 +83,9 @@ export default function DataFetch({ email }) {
                     )}
                   </div>
                   <div className="recruitment-box-footer sm:flex-row  flex-col">
-                    <button
-                      className="recuit-button"
-                      onClick={(e) => document.getElementById("status").click()}
-                    >
-                      <Link href={`/view/status/${e._id}`} id="status">
-                        Status
-                      </Link>
-                    </button>
+                    <Link href={`/view/status/${e._id}`} id="status">
+                      Status
+                    </Link>
                     <Modal
                       type="edit"
                       data={e}
