@@ -52,9 +52,9 @@ export default function DataFetch({ email }) {
         <Error></Error>
       ) : (
         <>
-          <div className="md:grid md:grid-cols-5 md:divide-x divide-y">
+          <div className="lg:grid lg:grid-cols-5 lg:divide-x divide-y">
             <div
-              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll md:overflow-x-hidden max-w-screen md:overflow-y-scroll md:h-[calc(100vh-80px)] md:min-h-[400px] md:block flex flex-row whitespace-nowrap md:bg-white bg-[#dcdcdc]"
+              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll lg:overflow-x-hidden max-w-screen lg:overflow-y-scroll lg:h-[calc(100vh-80px)] lg:min-h-[400px] lg:block flex flex-row whitespace-nowrap lg:bg-white bg-[#dcdcdc]"
               style={{ marginBottom: 10 }}
             >
               {data.map((e, idx) => {
@@ -69,7 +69,7 @@ export default function DataFetch({ email }) {
                     <div
                       onClick={() => ReadHandler(e, idx)}
                       key={e._id}
-                      className={`recruitment-box m-[20px] md:py-[20px] md:px-[25px] p-[15px] rounded-[25px] w-[100%] md:overflow-hidden border-2 md:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] md:w-auto bg-[#f8f8f8] md:bg-white 
+                      className={`recruitment-box m-[20px] lg:py-[20px] lg:px-[25px] p-[15px] rounded-[25px] w-[100%] lg:overflow-hidden border-2 lg:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] lg:w-auto bg-[#f8f8f8] lg:bg-white 
                      ${idx == selected_idx && `border-2 border-black`}`}
                     >
                       <div className="recruitment-box-header">
@@ -119,7 +119,7 @@ export default function DataFetch({ email }) {
                             strokeLinejoin="round"
                           />
                         </svg>
-                        <p className="inline">Email</p>
+                        <p className="inline">Email</p> 
                         <p>{e.email || "No data"}</p>
                       </div> */}
                         <div className=" text-center">

@@ -550,6 +550,7 @@ hr {
   width: calc(100% - 30px);
   /* color: white; */
   padding: 15px 15px;
+
   margin: 0 15px;
   display: flex;
   align-items: center;
@@ -1089,4 +1090,34 @@ hr {
 /* gallery ends */
 .quill {
   color: black;
+}
+
+/* SearchBox */
+.ais-SearchBox {
+  display: block;
+  width: 60%;
+  height: 50px;
+  margin-bottom: 20px;
+}
+.ais-SearchBox-form {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.ais-SearchBox-reset {
+  display: none;
+}
+.ais-SearchBox-submitIcon {
+  width: 20px;
+  height: 20px;
+}
+.ais-SearchBox-input {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+
+  background-color: rgb(245 244 251);
+  margin-right: 3px;
+  border-radius: 5px;
 }
