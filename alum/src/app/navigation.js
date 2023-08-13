@@ -16,7 +16,7 @@ export default function Navigation({ data, keys }) {
   const [value, setValue] = useState("");
   let path = usePathname().toLowerCase();
   function Hit({ hit }) {
-    return hit.firstname;
+    return <div>{hit.name}</div>;
   }
   return (
     <nav>
