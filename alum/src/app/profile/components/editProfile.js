@@ -45,6 +45,7 @@ export default function EditProfile({
       setRefresh(!refresh);
       setLoading(false);
       setError(false);
+      document.querySelector("body").classList.remove("no-scroll");
       setShow(false);
     }
   };
@@ -186,7 +187,13 @@ export default function EditProfile({
             </button>
           </form>
         </section>
-        <button onClick={() => setShow(false)} className="form-close">
+        <button
+          onClick={() => {
+            document.querySelector("body").classList.remove("no-scroll");
+            setShow(false);
+          }}
+          className="form-close"
+        >
           X
         </button>
       </div>

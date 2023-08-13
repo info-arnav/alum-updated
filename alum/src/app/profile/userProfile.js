@@ -71,7 +71,10 @@ export default function UserProfile({ data, link }) {
               <div className="md:absolute md:bottom-2 md:top-16 md:right-2">
                 <button
                   className="bg-[#00183F] text-white h-10 rounded-full px-8 hover:bg-[#002d75]"
-                  onClick={() => setShow(true)}
+                  onClick={() => {
+                    document.querySelector("body").classList.add("no-scroll");
+                    setShow(true);
+                  }}
                 >
                   Edit Profile
                 </button>

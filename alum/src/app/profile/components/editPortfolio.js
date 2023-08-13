@@ -75,6 +75,7 @@ export default function EditPortfolio({
       setError(false);
       setRefresh(!refresh);
       setLoading(false);
+      document.querySelector("body").classList.remove("no-scroll");
       show(false);
     }
   };
@@ -171,7 +172,13 @@ export default function EditPortfolio({
                 {edit ? "Edit" : "Add"}
               </button>
             </form>
-            <button className="form-close" onClick={() => show(false)}>
+            <button
+              className="form-close"
+              onClick={() => {
+                document.querySelector("body").classList.remove("no-scroll");
+                show(false);
+              }}
+            >
               X
             </button>
           </div>

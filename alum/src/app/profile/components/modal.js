@@ -20,7 +20,10 @@ export default function Modal({
     <>
       <button
         className="bg-[#00183F] border-2 text-white rounded-full w-10 h-10 font-bold text-2xl hover:bg-[#084a8d] grid content-center justify-center mx-2"
-        onClick={() => setShow(true)}
+        onClick={() => {
+          document.querySelector("body").classList.add("no-scroll");
+          setShow(true);
+        }}
       >
         {edit ? (
           <svg

@@ -106,7 +106,10 @@ export default function Modal({
     <>
       <div className="">
         <button
-          onClick={() => setShow(true)}
+          onClick={() => {
+            document.querySelector("body").classList.add("no-scroll");
+            setShow(true);
+          }}
           className={type == "edit" ? "recuit-button" : "main-button"}
         >
           {type == "edit" ? "Edit" : "New Post"}
@@ -315,7 +318,10 @@ export default function Modal({
               {/* <Image src={alumni} width={76} /> */}
 
               <button
-                onClick={() => setShow(false)}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("no-scroll");
+                  setShow(false);
+                }}
                 id="edit-close"
                 className="form-close"
               >
