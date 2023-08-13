@@ -1,9 +1,31 @@
 "use client";
+import bg_nsut from "..//image/bgnsut.png";
 
 export default function OtherUserProfile({ id, link, userData }) {
   return (
     <>
-      <div className="profile-page">
+      <div className="relative profile-info flex flex-col w-full shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+        <div className="image w-full ">
+          <Image className="w-full h-[280px]" src={bg_nsut} />
+        </div>
+        <div className=" relative flex flex-col md:flex-row w-full profile-block md:h-52 h-80 ">
+          {/* <Profile
+            data={userData}
+            link={link}
+            email={data.data.email}
+          ></Profile> */}
+          <div className="md:absolute md:bottom-2 md:top-16 md:right-2">
+            <button
+              className="bg-[#00183F] text-white h-10 rounded-full px-8 hover:bg-[#002d75]"
+              onClick={() => setShow(true)}
+            >
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="profile-page bg-red-100">
         <div className="profile-block">
           <img
             src={`${link}api/image/${id}`}

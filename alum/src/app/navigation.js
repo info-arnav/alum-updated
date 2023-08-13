@@ -11,13 +11,31 @@ import algoliasearch from "algoliasearch/lite";
 import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
 import { useState } from "react";
 
-export default function Navigation({ data, keys }) {
+export default function Navigation({ data, keys, LINK }) {
   const searchClient = algoliasearch(keys[0], keys[1]);
   const [value, setValue] = useState("");
   let path = usePathname().toLowerCase();
+
   function Hit({ hit }) {
-    return hit.firstname;
+    console.log(hit);
+    return (
+      <div classname="w-full">
+        <a href={`${LINK}/view/profile/${hit.objectID}`}>
+          <div className="flex flex-row justify-between items-center p-2 md:px-4 md:py-2">
+            <div>
+              <img
+                className="w-[50px] h-[50px]"
+                src={`${LINK}/api/image/${hit.objectID}`}
+              ></img>
+            </div>
+            <div>{hit.name}</div>
+            <div>{hit.batch}</div>
+          </div>
+        </a>
+      </div>
+    );
   }
+
   return (
     <nav>
       <a href="/" className="nav-image-link">
@@ -34,13 +52,24 @@ export default function Navigation({ data, keys }) {
       </a>
       {data.loggedIn && data.data.verified ? (
         value ? (
-          <>
-            <InstantSearch searchClient={searchClient} indexName="dev_alum">
-              <SearchBox searchAsYouType={true} />
-              <Hits hitComponent={Hit} />
-            </InstantSearch>
-            <button onClick={(e) => setValue(false)}>Stop</button>
-          </>
+          <div className="absolute bg-black/[.54] flex-col justify-center w-full h-[100vh] top-[60px] p-4  ">
+            <div className="card relative w-[90%] md:w-[60%] h-[80%] mx-auto bg-white">
+              <InstantSearch
+                className="color-blue"
+                searchClient={searchClient}
+                indexName="dev_alum"
+              >
+                <div className="flex flex-row justify-center">
+                  <SearchBox className="ml-5" searchAsYouType={true} />
+                  <button onClick={(e) => setValue(false)}>Stop</button>
+                </div>
+                {/* <div className="flex  text-center w-[100%]"> */}
+                <Hits hitComponent={Hit} />
+                {/* </div> */}
+                {/* <SearchPopup/> */}
+              </InstantSearch>
+            </div>
+          </div>
         ) : (
           <button onClick={(e) => setValue(true)}>Search</button>
         )
