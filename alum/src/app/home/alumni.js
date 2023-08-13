@@ -130,7 +130,7 @@ export default function Alumni() {
             </div>
             <div className="news my-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              nobis quae explicabo dolores laboriosam assumenda quos,
+              no bis quae explicabo dolores laboriosam assumenda quos,
               consequuntur officiis eum optio.
             </div>
           </div> */}
