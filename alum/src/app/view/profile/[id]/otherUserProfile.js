@@ -1,5 +1,5 @@
 "use client";
-import bg_nsut from "...//image/bgnsut.png";
+import bg_nsut from "..//image/bgnsut.png";
 
 export default function OtherUserProfile({ id, link, userData }) {
   return (
