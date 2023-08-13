@@ -49,19 +49,21 @@ export default function Login() {
           Be patient, the website is going live soon
         </h3>
         <div className="absolute -z-10 w-full flex flex-col justify-between h-full md:right-4 ">
-          <div className="absolute right-3 md:-top-36 -top-14">
+          <div className="absolute right-3 md:-top-36 -top-12 w-[175px] h-[175px] md:w-[200px] md:h-[200px] ">
             <Image
+              className="w-[175px] h-[175px] md:w-[200px] md:h-[200px]"
               src={login1}
-              width={185}
-              height={185}
+              // width={180}
+              // height={180}
               alt="image login"
             ></Image>
           </div>
           <div className="absolute right-14 md:top-0 top-20">
             <Image
+              className="w-[303px] h-[303px] md:w-[440px] md:h-[440px]"
               src={loginstu}
-              width={303}
-              height={303}
+              // width={303}
+              // height={303}
               alt="image login"
             ></Image>
           </div>
@@ -115,7 +117,6 @@ export default function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 ></input>
               </div>
-              <a href="/reset">Reset Password</a>
               <div className="text-red-600">{error && error}</div>
               <button
                 className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
