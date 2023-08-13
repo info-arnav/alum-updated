@@ -53,8 +53,11 @@ export default function DataFetch({ email }) {
           <div className="recruitment-grid">
             {data.map((e) => {
               return (
-                <div key={e._id} className="recruitment-box">
-                  <div className="recruitment-box-header">
+                <div
+                  key={e._id}
+                  className="recruitment-box bg-[#eef0f8] md:w-[90%] w-[96%] mx-auto my-4 p-2 rounded-2xl "
+                >
+                  <div className="recruitment-box-header text-xl text-blue-700">
                     {e.title} at {e.company} with {e.stipend} and{" "}
                     {Math.round(
                       (new Date(e.deadline).getTime() - new Date().getTime()) /
@@ -64,6 +67,7 @@ export default function DataFetch({ email }) {
                   </div>
                   <div className="recruitment-box-body">
                     <p
+                      className=" md:w-[95%]"
                       dangerouslySetInnerHTML={{
                         __html: `<p><b>Duration</b>: ${
                           e.duration || "No Duration Provided"
@@ -83,7 +87,11 @@ export default function DataFetch({ email }) {
                     )}
                   </div>
                   <div className="recruitment-box-footer sm:flex-row  flex-col">
-                    <Link href={`/view/status/${e._id}`} id="status">
+                    <Link
+                      href={`/view/status/${e._id}`}
+                      id="status"
+                      className="text-white"
+                    >
                       Status
                     </Link>
                     <Modal

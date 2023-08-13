@@ -81,6 +81,7 @@ export default function RootLayout({ children }) {
         <Navigation
           data={status}
           keys={[process.env.ALGOLIA_MAIN, process.env.ALGOLIA_SEARCH]}
+          LINK={process.env.LINK}
         ></Navigation>
         <div className="nav-gap"></div>
         <Analytics />

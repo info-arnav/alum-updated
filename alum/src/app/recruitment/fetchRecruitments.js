@@ -141,7 +141,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Start Date</p>
-                          <p class="text-[#4358b7]">
+                          <p className="text-[#4358b7]">
                             {e.deadline || "No data"}
                           </p>
                         </div>
@@ -171,7 +171,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Duration</p>
-                          <p class=" text-[#4358b7]">
+                          <p className=" text-[#4358b7]">
                             {e.duration || "No Duration Provided"}
                           </p>
                         </div>
@@ -210,7 +210,7 @@ export default function DataFetch({ email }) {
                           </svg>
 
                           <p className="inline">Stipend</p>
-                          <p class=" text-[#4358b7]">
+                          <p className=" text-[#4358b7]">
                             {e.stipend || "No data"}
                           </p>
                         </div>

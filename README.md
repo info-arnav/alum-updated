@@ -27,19 +27,25 @@ npm run dev
 
 Now, you can access the application at `http://localhost:3000/`.
 
-## Features
+## Update
 
-- User registration and login
-- Alumni can post, edit, and delete job opportunities
-- Students can view and apply for job opportunities
-- Users can search for other alumni and students
-- Users can participate in forums and discussions
-- Notifications and updates for college events and activities
+all curves same ratio
 
-## Features in Progress Currently
+LOGIN
+Heading and content Ratio - Login Page - 3:1
+Curves of all boxes to be encreased
+placeholder colour
 
-- Recruitment Status viewing, apply and retreat Option
-- Now main focus is frontend
+Student HOME
+ratio - > 4:1
+stay connected - > 3:1
+image filter white-> black
+
+Profile
+curves radius encreased
+
+Unverified Alumni
+Page Design
 
 ## Security Protocols
 

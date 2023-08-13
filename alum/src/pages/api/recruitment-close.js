@@ -29,6 +29,7 @@ export default async function sendOTP(req, res) {
                 applicants: recruited,
                 title: body.position,
                 company: body.company,
+                description: body.description,
               })}) {
                   _id
                 }
