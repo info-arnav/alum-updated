@@ -15,15 +15,22 @@ export default function Applicants({ email, id }) {
     setError(false);
     setSubLoading(true);
     let name, position;
-    const res = await fetch(`/api/get-post-meta-data`, {
+    const res = await fetch(`/api/get-post-all-data`, {
       method: "POST",
       body: JSON.stringify({
-        id: id,
+        email: email,
       }),
       cache: "no-cache",
     }).then((e) => e.json());
     position = res.data.title;
     name = res.data.company;
+    description = res.data.description;
+    duration = res.data.duration;
+    stipend = res.data.stipend;
+    deadline = res.data.deadline;
+    email = res.data.email;
+    link = res.data.link;
+    location = res.data.location;
     await fetch(`/api/recruitment-close`, {
       method: "POST",
       body: JSON.stringify({
@@ -33,6 +40,13 @@ export default function Applicants({ email, id }) {
         recruited: recruitsArray,
         company: name,
         position: position,
+        description: body.description,
+        duration: body.duration,
+        stipend: body.stipend,
+        deadline: body.deadline,
+        email: body.email,
+        link: body.link,
+        location: body.location,
       }),
       cache: "no-cache",
     })

@@ -30,6 +30,12 @@ export default async function sendOTP(req, res) {
                 title: body.position,
                 company: body.company,
                 description: body.description,
+                duration: body.duration,
+                stipend: body.stipend,
+                deadline: body.deadline,
+                email: body.email,
+                link: body.link,
+                location: body.location,
               })}) {
                   _id
                 }
