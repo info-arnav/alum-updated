@@ -1,5 +1,5 @@
 "use client";
-import bg_nsut from "..//image/bgnsut.png";
+import bg_nsut from "..//..//..//image/bgnsut.png";
 
 export default function OtherUserProfile({ id, link, userData }) {
   return (
@@ -14,14 +14,6 @@ export default function OtherUserProfile({ id, link, userData }) {
             link={link}
             email={data.data.email}
           ></Profile> */}
-          <div className="md:absolute md:bottom-2 md:top-16 md:right-2">
-            <button
-              className="bg-[#00183F] text-white h-10 rounded-full px-8 hover:bg-[#002d75]"
-              onClick={() => setShow(true)}
-            >
-              Edit Profile
-            </button>
-          </div>
         </div>
       </div>
 
