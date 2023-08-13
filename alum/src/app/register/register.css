@@ -1,473 +1,474 @@
 :root {
-    /* fonts */
-    --font-montserrat: Montserrat;
+  /* fonts */
+  --font-montserrat: Montserrat;
 }
 /* .signup-child {
-    border-radius: var(--br-xl);
-    background-color: var(--color-white);
-    width: 1377px;
-    height: 846px;
-  }
-  .group-child,
-  .image-25-icon,
-  .signup-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .image-25-icon {
-    border-radius: var(--br-xl);
-    width: 1377px;
-    height: 846px;
-    object-fit: cover;
-    display: none;
-    opacity: 0.2;
-  }
-  .group-child {
-    border-radius: var(--br-mini);
-    background-color: var(--color-lavender);
-    width: 439px;
-    height: 62px;
-  }
-  .enter-your-email {
-    position: absolute;
-    top: 21px;
-    left: 50px;
-    font-weight: 300;
-    display: inline-block;
-    width: 262.59px;
-  }
-  .rectangle-group,
-  .rectangle-parent {
-    position: absolute;
-    top: 180px;
-    left: 752px;
-    width: 439px;
-    height: 62px;
-  }
-  .rectangle-group {
-    top: 276px;
-  }
-  .hide-1-icon,
-  .lock-1-icon,
-  .user-1-icon {
-    position: absolute;
-    top: 200px;
-    left: 764px;
-    width: 21px;
-    height: 21px;
-    object-fit: cover;
-  }
-  .hide-1-icon,
-  .lock-1-icon {
-    top: 294px;
-    left: 1146px;
-    width: 26px;
-    height: 26px;
-  }
-  .lock-1-icon {
-    top: 296px;
-    left: 764px;
-    width: 21px;
-    height: 21px;
-  }
-  .group-inner {
-    position: absolute;
-    top: 357px;
-    left: 752px;
-    border-radius: 4px;
-    border: 0.6px solid var(--color-gray-200);
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
-  }
-  .forgot-password,
-  .remember-me {
-    position: absolute;
-    font-size: 13.33px;
-    font-weight: 300;
-  }
-  .remember-me {
-    top: 358.67px;
-    left: 778.67px;
-    color: var(--color-black);
-  }
-  .forgot-password {
-    top: 359px;
-    left: 1077px;
-    color: #555;
-  }
-  .rectangle-div {
-    position: absolute;
-    top: 413px;
-    left: 752px;
-    border-radius: var(--br-mini);
-    background-color: var(--color-gray-200);
-    box-shadow: 0 5px 20px 4px rgba(0, 24, 63, 0.4);
-    width: 439px;
-    height: 70px;
-  }
-  .sign-in {
-    position: absolute;
-    top: 438px;
-    left: 940px;
-    font-weight: 600;
-    color: var(--color-white);
-  }
-  .or-continue-with {
-    position: absolute;
-    top: 517px;
-    left: 911px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-black);
-  }
-  .group-child1,
-  .group-icon {
-    position: absolute;
-    top: 568px;
-    left: 984px;
-    width: 95.82px;
-    height: 62px;
-  }
-  .group-child1 {
-    top: -200px;
-    left: -116px;
-    width: 1075.82px;
-    height: 830px;
-  }
-  .group-child2,
-  .vector-icon {
-    position: absolute;
-    top: 525.5px;
-    left: 772px;
-    width: 129.5px;
-    height: 1px;
-    opacity: 0.7;
-  }
-  .group-child2 {
-    left: 1043px;
-  }
-  .group-parent {
-    position: absolute;
-    top: 147px;
-    left: 81px;
-    width: 1192px;
-    height: 630px;
-    font-size: var(--font-size-base);
-    color: var(--color-gray-100);
-  }
-  .nsuts-alumni {
-    margin: 0;
-  }
-  .nsuts-alumni-networking-container {
-    position: absolute;
-    top: 239px;
-    left: 50px;
-    font-size: 40.45px;
-    letter-spacing: 0.04em;
-    font-weight: 600;
-    color: var(--color-gray-200);
-  }
-  .welcome-to-alum-container {
-    position: absolute;
-    top: 355px;
-    left: 52px;
-    letter-spacing: 0.04em;
-    display: inline-block;
-    width: 359px;
-  }
-  .register,
-  .welcome-to-alum-container {
-    color: var(--color-gray-200);
-  }
-  .here1,
-  .register {
-    font-weight: 600;
-  }
-  .span {
-    font-family: var(--font-montserrat);
-  }
-  .here {
-    color: var(--color-gray-200);
-  }
-  .till-then-register-container {
-    position: absolute;
-    top: 423px;
-    left: 52px;
-    letter-spacing: 0.04em;
-  }
-  .image-29-icon,
-  .image-30-icon,
-  .image-31-icon {
-    position: absolute;
-    top: 436px;
-    left: 127px;
-    width: 68.25px;
-    height: 11px;
-    object-fit: cover;
-  }
-  .image-29-icon,
-  .image-31-icon {
-    left: 176px;
-  }
-  .image-29-icon {
-    top: 137.09px;
-    left: 0;
-    width: 303.91px;
-    height: 303.91px;
-  }
-  .image-28-icon,
-  .image-28-wrapper,
-  .image-29-parent {
-    position: absolute;
-    top: 0;
-    width: 185.55px;
-    height: 185.55px;
-  }
-  .image-28-icon {
-    left: 0;
-    object-fit: cover;
-  }
-  .image-28-wrapper,
-  .image-29-parent {
-    left: 178.97px;
-  }
-  .image-29-parent {
-    top: 212px;
-    left: 411px;
-    width: 364.52px;
-    height: 441px;
-  }
-  .login-as {
-    position: absolute;
-    top: 129px;
-    left: 982px;
-    font-size: 30px;
-    letter-spacing: 0.04em;
-    font-weight: 600;
-  }
-  .frame-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    background-color: var(--color-gainsboro);
-    width: 81px;
-    height: 81px;
-  }
-  .image-35-icon {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 76px;
-    height: 76px;
-    object-fit: cover;
-  }
-  .ellipse-parent {
-    position: absolute;
-    top: 194px;
-    left: 953px;
-    border-radius: var(--br-481xl);
-    width: 81px;
-    height: 81px;
-    overflow: hidden;
-  }
-  .image-34-icon {
-    position: absolute;
-    top: 0;
-    left: 7px;
-    width: 68px;
-    height: 81px;
-    object-fit: cover;
-  }
-  .ellipse-group {
-    position: absolute;
-    top: 194px;
-    left: 1074px;
-    border-radius: var(--br-481xl);
-    width: 81px;
-    height: 81px;
-    overflow: hidden;
-  }
-  .alumni,
-  .student {
-    position: absolute;
-    top: 283px;
-    left: 968px;
-    font-size: var(--font-size-smi);
-    letter-spacing: 0.04em;
-    font-weight: 600;
-  }
-  .student {
-    left: 1086px;
-  }
-  .signup {
-    position: relative;
-    border-radius: 30px;
-    background-color: var(--color-white);
-    width: 100vw;
-    height: 100vh;
-    text-align: left;
-    font-size: var(--font-size-mini);
-    color: var(--color-black);
-    font-family: var(--font-montserrat);
-    display: flex;
-  }
-   */
-
-body{
-    margin: 0;
-    
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  width: 1377px;
+  height: 846px;
 }
-.register-page{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+.group-child,
+.image-25-icon,
+.signup-child {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.left{
-    flex:3
+.image-25-icon {
+  border-radius: var(--br-xl);
+  width: 1377px;
+  height: 846px;
+  object-fit: cover;
+  display: none;
+  opacity: 0.2;
 }
-.content{
-    display: flex;
-    flex-direction: column;
-    
+.group-child {
+  border-radius: var(--br-mini);
+  background-color: var(--color-lavender);
+  width: 439px;
+  height: 62px;
 }
-.heading{
-    position: absolute;
-    top: 30%;
-    left: 50px;
-    font-size: 50px;
-    letter-spacing: 0.04em;
-    font-weight: 600;
-    color: var(--color-gray-200);
+.enter-your-email {
+  position: absolute;
+  top: 21px;
+  left: 50px;
+  font-weight: 300;
+  display: inline-block;
+  width: 262.59px;
+}
+.rectangle-group,
+.rectangle-parent {
+  position: absolute;
+  top: 180px;
+  left: 752px;
+  width: 439px;
+  height: 62px;
+}
+.rectangle-group {
+  top: 276px;
+}
+.hide-1-icon,
+.lock-1-icon,
+.user-1-icon {
+  position: absolute;
+  top: 200px;
+  left: 764px;
+  width: 21px;
+  height: 21px;
+  object-fit: cover;
+}
+.hide-1-icon,
+.lock-1-icon {
+  top: 294px;
+  left: 1146px;
+  width: 26px;
+  height: 26px;
+}
+.lock-1-icon {
+  top: 296px;
+  left: 764px;
+  width: 21px;
+  height: 21px;
+}
+.group-inner {
+  position: absolute;
+  top: 357px;
+  left: 752px;
+  border-radius: 4px;
+  border: 0.6px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+.forgot-password,
+.remember-me {
+  position: absolute;
+  font-size: 13.33px;
+  font-weight: 300;
+}
+.remember-me {
+  top: 358.67px;
+  left: 778.67px;
+  color: var(--color-black);
+}
+.forgot-password {
+  top: 359px;
+  left: 1077px;
+  color: #555;
+}
+.rectangle-div {
+  position: absolute;
+  top: 413px;
+  left: 752px;
+  border-radius: var(--br-mini);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 5px 20px 4px rgba(0, 24, 63, 0.4);
+  width: 439px;
+  height: 70px;
+}
+.sign-in {
+  position: absolute;
+  top: 438px;
+  left: 940px;
+  font-weight: 600;
+  color: var(--color-white);
+}
+.or-continue-with {
+  position: absolute;
+  top: 517px;
+  left: 911px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+.group-child1,
+.group-icon {
+  position: absolute;
+  top: 568px;
+  left: 984px;
+  width: 95.82px;
+  height: 62px;
+}
+.group-child1 {
+  top: -200px;
+  left: -116px;
+  width: 1075.82px;
+  height: 830px;
+}
+.group-child2,
+.vector-icon {
+  position: absolute;
+  top: 525.5px;
+  left: 772px;
+  width: 129.5px;
+  height: 1px;
+  opacity: 0.7;
+}
+.group-child2 {
+  left: 1043px;
+}
+.group-parent {
+  position: absolute;
+  top: 147px;
+  left: 81px;
+  width: 1192px;
+  height: 630px;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-100);
 }
 .nsuts-alumni {
-    margin: 0;
-  }
-.subheading{
-    position: absolute;
-    top: 44%;
-    left: 52px;
-    font-size: 20px;
-    letter-spacing: 0.04em;
-    display: inline-block;
-    width: 400px;
+  margin: 0;
 }
-.image{
-    position: absolute;
-    top: 10;
-    left: 15%;
-    width: 500px;
-    height: 500px;
-}
-.image-29-icon{
-    position: absolute;
-    top: 60%;
-    left: 45%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-.image-28-icon{
-    position: absolute;
-    top: 18%;
-    left: 100%;
-    width: 60%;
-    height: 60%;
-    object-fit: cover;
-}
-.right{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-}
-.register{
-    position: absolute;
-    top: 13%;
-    left: 72.5%;
-    font-size: 40px;
-    letter-spacing: 0.04em;
-    font-weight: 500;
-}
-.options{
-    position: absolute;
-    top: 25%;
-    left: 72%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 350px;
-    height: 180px;
-}
-.image-34-icon{
-   
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    background-color: lightgrey;
-    object-fit: cover;
-}
-.image-35-icon{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    background-color: lightgrey;
-    object-fit: cover;
-}
-
-.thirty-4{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 150px;
-    width: 150px;
-    cursor: pointer;
-}
-.thirty-5{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 150px;
-    width: 150px;
-    cursor: pointer;
-}
-.content-34{
-    text-align: center;
-    font-size: 20px;
-    width: 100px;
-    
-}
-.content-35{
-    text-align: center;
-    font-size: 20px;
-    width: 100px;
-    
-}
-
-.input-field{
-
-    position: absolute;
-    top: 45% ;
-    left: 67% ; 
-    width: 25%;
-    height: 40px;
-    border-radius: 20px;
-    border: 0px solid black;
-    background-color: #dfe6f9;
-    padding: 15px;
-    font-size: 20px;
-    outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-.input-field-2{
-
+.nsuts-alumni-networking-container {
   position: absolute;
-  top: 55% ;
-  left: 67% ; 
+  top: 239px;
+  left: 50px;
+  font-size: 40.45px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--color-gray-200);
+}
+.welcome-to-alum-container {
+  position: absolute;
+  top: 355px;
+  left: 52px;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  width: 359px;
+}
+.register,
+.welcome-to-alum-container {
+  color: var(--color-gray-200);
+}
+.here1,
+.register {
+  font-weight: 600;
+}
+.span {
+  font-family: var(--font-montserrat);
+}
+.here {
+  color: var(--color-gray-200);
+}
+.till-then-register-container {
+  position: absolute;
+  top: 423px;
+  left: 52px;
+  letter-spacing: 0.04em;
+}
+.image-29-icon,
+.image-30-icon,
+.image-31-icon {
+  position: absolute;
+  top: 436px;
+  left: 127px;
+  width: 68.25px;
+  height: 11px;
+  object-fit: cover;
+}
+.image-29-icon,
+.image-31-icon {
+  left: 176px;
+}
+.image-29-icon {
+  top: 137.09px;
+  left: 0;
+  width: 303.91px;
+  height: 303.91px;
+}
+.image-28-icon,
+.image-28-wrapper,
+.image-29-parent {
+  position: absolute;
+  top: 0;
+  width: 185.55px;
+  height: 185.55px;
+}
+.image-28-icon {
+  left: 0;
+  object-fit: cover;
+}
+.image-28-wrapper,
+.image-29-parent {
+  left: 178.97px;
+}
+.image-29-parent {
+  top: 212px;
+  left: 411px;
+  width: 364.52px;
+  height: 441px;
+}
+.login-as {
+  position: absolute;
+  top: 129px;
+  left: 982px;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.frame-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro);
+  width: 81px;
+  height: 81px;
+}
+.image-35-icon {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+}
+.ellipse-parent {
+  position: absolute;
+  top: 194px;
+  left: 953px;
+  border-radius: var(--br-481xl);
+  width: 81px;
+  height: 81px;
+  overflow: hidden;
+}
+.image-34-icon {
+  position: absolute;
+  top: 0;
+  left: 7px;
+  width: 68px;
+  height: 81px;
+  object-fit: cover;
+}
+.ellipse-group {
+  position: absolute;
+  top: 194px;
+  left: 1074px;
+  border-radius: var(--br-481xl);
+  width: 81px;
+  height: 81px;
+  overflow: hidden;
+}
+.alumni,
+.student {
+  position: absolute;
+  top: 283px;
+  left: 968px;
+  font-size: var(--font-size-smi);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.student {
+  left: 1086px;
+}
+.signup {
+  position: relative;
+  border-radius: 30px;
+  background-color: var(--color-white);
+  width: 100vw;
+  height: 100vh;
+  text-align: left;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+  font-family: var(--font-montserrat);
+  display: flex;
+}
+ */
+
+body {
+  margin: 0;
+}
+.register-page {
+  width: 100vw;
+  min-height: 100vh;
+  /* display: flex; */
+}
+.left {
+  flex: 3;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  /* position: absolute; */
+  /* top: 30%; */
+  /* left: 50px; */
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--color-gray-200);
+}
+.nsuts-alumni {
+  margin: 0;
+}
+.subheading {
+  /* position: absolute;
+  top: 44%;
+  left: 52px; */
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  /* width: 400px; */
+}
+.image {
+  /* position: absolute;
+  top: 10;
+  left: 15%; */
+  /* width: 500px;
+  height: 500px; */
+}
+.image-29-icon {
+  /* position: absolute;
+  top: 60%;
+  left: 45%; */
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-28-icon {
+  /* position: absolute; */
+  /* top: 18%;
+  left: 100%; */
+  z-index: -1;
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+}
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  /* justify-content:center; */
+  align-items: center;
+}
+.register {
+  /* position: absolute; */
+  /* top: 13%; */
+  /* left: 72.5%; */
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.options {
+  /* position: absolute; */
+  /* top: 25%; */
+  /* left: 72%; */
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 350px;
+  height: 180px;
+}
+.image-34-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: lightgrey;
+  object-fit: cover;
+}
+.image-35-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: lightgrey;
+  object-fit: cover;
+}
+
+.thirty-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+}
+.thirty-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+}
+.content-34 {
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
+}
+.content-35 {
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
+}
+
+.input-field {
+  /* position: absolute; */
+  /* top: 45% ;
+  left: 67% ;  */
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: 0px solid black;
+  background-color: #dfe6f9;
+  padding: 15px;
+  font-size: 20px;
+  outline: none;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input-field-2 {
+  /* position: absolute; */
+  /* top: 55% ;
+left: 67% ;  */
   width: 25%;
   height: 40px;
   border-radius: 20px;
@@ -476,31 +477,31 @@ body{
   padding: 15px;
   font-size: 20px;
   outline: none;
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.OTP{
-    position: absolute;
-    top: 60% ;
-    left: 67% ; 
-    width: 27%;
-    height: 70px;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: 25px;
-    color: white;
-    background-color: #00183f;
-    outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-    
+.OTP {
+  /* position: absolute;
+  top: 60% ;
+  left: 67% ;  */
+  width: 100%;
+  /* height: 70px; */
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 25px;
+  color: white;
+  background-color: #00183f;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.button-2{
+.button-2 {
   position: absolute;
-  top: 80% ;
-  left: 67% ; 
+  top: 80%;
+  left: 67%;
   width: 27%;
   height: 70px;
   border-radius: 20px;
@@ -509,35 +510,33 @@ appearance: none;
   color: white;
   background-color: #00183f;
   outline: none;
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
-  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.dropzone-file{
+.dropzone-file {
   position: absolute;
-  top: 68% ;
-  left: 67% ; 
+  top: 68%;
+  left: 67%;
   width: 27%;
 }
-.file{
+.file {
   position: absolute;
-  top: 65% ;
+  top: 65%;
   font-size: 18px;
-  left: 67% ; 
-  
+  left: 67%;
 }
-.error{
-    position: absolute;
-    font-size: 18px;
-    top: 70% ;
-    left: 67% ;
-    color: red;
-}
-.error-2{
+.error {
   position: absolute;
   font-size: 18px;
-  top: 89% ;
-  left: 67% ;
+  top: 70%;
+  left: 67%;
+  color: red;
+}
+.error-2 {
+  position: absolute;
+  font-size: 18px;
+  top: 89%;
+  left: 67%;
   color: red;
 }

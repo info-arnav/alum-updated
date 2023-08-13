@@ -134,63 +134,77 @@ export default function Register() {
   const [type, setType] = useState("alumni");
 
   return (
-    <div className="register-page">
-      <div className="left">
-        <div className="content">
-          <div className="heading">
+    <div className="register-page flex flex-col md:flex-row p-2 w-[100%] box-border">
+      <div className="left ">
+        <div className="content ">
+          <div className="heading text-4xl md:text-5xl px-4 py-2">
             <p className="nsuts-alumni">Nsut&apos;s alumni</p>
             <p className="nsuts-alumni">networking Portal</p>
           </div>
-          <div className="subheading" style={{ marginTop: 100 }}>
+          <div className="subheading px-8 text-1xl md:text-2xl">
             <p className="nsuts-alumni">Welcome to Alum!</p>
             <p className="nsuts-alumni">
               {"Be patient, the website is going live soon"}
             </p>
           </div>
         </div>
-        <div className="image">
+        <div className="image relative md:static h-[460px] md:h-[700px] md:block ">
+          {/* <div className="relative"> */}
           <img
-            className="image-29-icon"
-            src="./image-29@2x.png"
+            className="image-28-icon absolute -top-[5%] right-[0%] w-[175px] h-[175px] md:w-[200px] md:h-[200px] md:absolute md:top-[18%]  md:right-[35%]"
+            src="./image-28@2x.png"
             alt="error"
           ></img>
+          {/* </div> */}
           <img
-            className="image-28-icon"
-            src="./image-28@2x.png"
+            className="image-29-icon absolute bottom-[5%] w-[303px] h-[303px] md:w-[440px] md:h-[440px] md:absolute md:top-[42%] md:right-[40%]"
+            src="./image-29@2x.png"
             alt="error"
           ></img>
         </div>
       </div>
-      <div className="right">
-        <div className="register">
+      <div className="right mx-auto">
+        <div className="register md:font-medium">
           <p>Register as</p>
         </div>
-        <div className="options">
+        <div className="options md:font-medium">
           <div
-            className={`thirty-5 right ${type == "alumni" && "active"}`}
+            className={`thirty-5 ${type == "alumni" && "active"}`}
             onClick={(e) => {
               setType("alumni");
             }}
           >
-            <img
-              className="image-35-icon"
-              src="./image-35@2x.png"
-              alt="error"
-            ></img>
+            <div
+              className={`rounded-full p-1 ${
+                type == "alumni" && "bg-blue-500"
+              }`}
+            >
+              <img
+                className="image-35-icon"
+                src="./image-35@2x.png"
+                alt="error"
+              ></img>
+            </div>
             <p className="content-35">Alumni</p>
           </div>
 
           <div
-            className={`thirty-4 left ${type == "student" && "active"}`}
+            className={`thirty-4 ${type == "student" && "active"}`}
             onClick={(e) => {
               setType("student");
             }}
           >
-            <img
-              className="image-34-icon"
-              src="./image-34@2x.png"
-              alt="error"
-            ></img>
+            <div
+              className={`rounded-full p-1 ${
+                type == "student" && "bg-blue-500"
+              }`}
+            >
+              <img
+                className="image-34-icon"
+                src="./image-34@2x.png"
+                alt="error"
+              ></img>
+            </div>
             <p className="content-34">Student</p>
           </div>
         </div>

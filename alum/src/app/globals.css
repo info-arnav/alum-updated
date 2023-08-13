@@ -531,7 +531,7 @@ hr {
 .recruitment-box-header {
   /* background-color: rgb(24, 145, 206); */
   width: calc(100% - 30px);
-  color: black;
+  /* color: black; */
   font-weight: bold;
   padding: 12px;
 }
@@ -545,10 +545,10 @@ hr {
 }
 
 .recruitment-box-footer {
-  background-color: white;
+  /* background-color: white; */
 
   width: calc(100% - 30px);
-  color: black;
+  /* color: white; */
   padding: 15px 15px;
   margin: 0 15px;
   display: flex;
@@ -557,20 +557,21 @@ hr {
 }
 
 .recuit-button {
+  color: white;
   border-radius: 20px;
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: 10px;
-  background-color: white;
-  border: solid black;
+  background-color: rgb(94, 100, 222);
+  border: solid white;
 }
 
 .recuit-button:hover {
   border-radius: 20px;
   margin-left: 10px;
-  background-color: rgb(193, 192, 192);
-  border: solid black;
+  background-color: rgb(144, 139, 212);
+  border: solid white;
 }
 
 .recruitment-box-website {
@@ -1086,7 +1087,6 @@ hr {
   }
 }
 /* gallery ends */
-
 .quill {
   color: black;
 }

@@ -7,7 +7,7 @@ export default function Alumni({ path }) {
         ["Home", "/"],
         ["Profile", "/profile"],
         ["Internships", "/recruitment"],
-        ["Candidates", "/candidates"],
+        ["Recruitments", "/candidates"],
       ]}
       logout={true}
       path={path}
