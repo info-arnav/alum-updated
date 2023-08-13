@@ -19,6 +19,7 @@ export default function Applicants({ email, id }) {
       method: "POST",
       body: JSON.stringify({
         email: email,
+        id: id,
       }),
       cache: "no-cache",
     }).then((e) => e.json());
