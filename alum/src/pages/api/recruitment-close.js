@@ -18,7 +18,8 @@ export default async function sendOTP(req, res) {
   await fetch(process.env.GRAPHQL_URI, {
     method: "POST",
     headers: {
-      apikey: process.env.GRAPHQL_API,
+      email: body.auth_email,
+      password: password,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -33,7 +34,6 @@ export default async function sendOTP(req, res) {
                 duration: body.duration,
                 stipend: body.stipend,
                 deadline: body.deadline,
-                email: body.email,
                 link: body.link,
                 location: body.location,
               })}) {
@@ -46,7 +46,6 @@ export default async function sendOTP(req, res) {
     .then((e) => e.json())
     .then(async (e) => {
       recruited_data = e;
-      console.log(recruited_data);
       await fetch(process.env.GRAPHQL_URI, {
         method: "POST",
         headers: {

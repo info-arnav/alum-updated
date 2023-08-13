@@ -1,6 +1,6 @@
 import Links from "./links";
 
-export default function Alumni({ path }) {
+export default function Alumni({ path, data, link }) {
   return (
     <Links
       links={[
@@ -11,6 +11,8 @@ export default function Alumni({ path }) {
       ]}
       logout={true}
       path={path}
+      link={link}
+      data={data}
     ></Links>
   );
 }

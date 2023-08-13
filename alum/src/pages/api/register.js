@@ -134,6 +134,7 @@ export default async function register(req, res) {
             error: false,
             key: CryptoJS.AES.encrypt(
               JSON.stringify({
+                id: registeredUser.data.insertOneRegisteration._id,
                 email: body.email,
                 type: body.type,
                 verified: verified,

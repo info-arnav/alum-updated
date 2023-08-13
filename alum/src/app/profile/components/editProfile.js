@@ -163,12 +163,16 @@ export default function EditProfile({
                 >
                   Bio
                 </label>
-                <Editor
+                <textarea
+                  style={{ width: "100%", border: "solid grey" }}
                   id="bio"
                   value={bio}
-                  setValue={setBio}
+                  onChange={(e) => {
+                    e.target.value.length < 60 && setBio(e.target.value);
+                  }}
                   placeholder="Add more details..."
                 />
+                Max 60 char
               </div>
             </div>
             {error && error}

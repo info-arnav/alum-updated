@@ -18,7 +18,7 @@ export default function OtherUserProfile({ id, link, userData }) {
               height={200}
               alt="The profile picture"
               id="profile_image_refreshed"
-              className="absolute m-auto md:m-0 left-0 right-0 md:left-8 -top-16 border-white border-8 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
+              className="absolute m-auto md:m-0 left-0 right-0 md:left-8 -top-16 border-white border-8 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[150px] md:w-[200px] md:h-[200px]"
             ></img>
             <div className="md:absolute md:left-64 pt-[90px] m-2 md:p-0">
               <div className="flex flex-col md:text-left text-center">
@@ -31,12 +31,7 @@ export default function OtherUserProfile({ id, link, userData }) {
                 <p className="m-1 font-semibold text-[#7d7d7d]">
                   {userData.email}
                 </p>
-                <p
-                  className="m-1"
-                  dangerouslySetInnerHTML={{
-                    __html: userData.bio || "Bio Not Provided",
-                  }}
-                ></p>
+                <p className="m-1">{userData.bio || "No bio provided"}</p>
               </div>
             </div>
           </div>
@@ -47,7 +42,7 @@ export default function OtherUserProfile({ id, link, userData }) {
           ></Profile> */}
         </div>
       </div>
-      <div className="bg-blue-50 flex flex-col m-auto justify-center w-full ">
+      <div className="flex flex-col m-auto justify-center w-full ">
         <div className="profile-right w-full">
           {[
             [userData.occupation, "Work Experience", "occupation"],
@@ -71,9 +66,19 @@ export default function OtherUserProfile({ id, link, userData }) {
                         className="category-details my-4"
                       >
                         <div className="category-header">{f.title}</div>
-                        <div className="category-subheader">{f.subTitle}</div>
-                        <div className="category-sub-subheader">
-                          {f.duration}
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div className="category-subheader">{f.subTitle}</div>
+                          {f.duration && (
+                            <div className="category-space">|</div>
+                          )}
+                          <div className="category-sub-subheader">
+                            {f.duration}
+                          </div>
                         </div>
                         <div
                           className="category-description"

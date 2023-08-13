@@ -47,6 +47,29 @@ curves radius encreased
 Unverified Alumni
 Page Design
 
+## Distributed
+
+Tomorrow -
+
+Arnav -
+
+Navigation
+Register
+Reset Password
+
+Chirag -
+
+Interships
+Candidates
+Search
+
+Arnab -
+Alumni unverified Login
+
+Later -
+
+Minute Changes
+
 ## Security Protocols
 
 - API key generation and encryption

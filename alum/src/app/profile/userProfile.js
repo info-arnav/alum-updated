@@ -79,7 +79,7 @@ export default function UserProfile({ data, link }) {
             </div>
           </div>
 
-          <div className="bg-blue-50 flex flex-col m-auto justify-center w-full ">
+          <div className="flex flex-col m-auto justify-center w-full ">
             {show && (
               <EditProfile
                 data={userData}

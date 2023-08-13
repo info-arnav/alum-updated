@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Logout from "../logout";
 
-export default function Links({ links, path, logout }) {
+export default function Links({ links, path, logout, data, link }) {
   const [show, setShow] = useState(false);
   let action = () => {
     if (!show) {
@@ -32,6 +32,29 @@ export default function Links({ links, path, logout }) {
         {logout && (
           <div className={`nav-sub-links`} onClick={Logout}>
             <a>Logout</a>
+          </div>
+        )}
+        {logout && (
+          <div
+            style={{
+              height: 50,
+              width: 50,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              cursor: "unset",
+            }}
+          >
+            <img
+              height={40}
+              width={40}
+              src={`${link}api/image/${data ? data.id : "undefined"}`}
+              style={{
+                borderRadius: "100%",
+                backgroundColor: "gray",
+                cursor: "unset",
+              }}
+            />
           </div>
         )}
       </div>

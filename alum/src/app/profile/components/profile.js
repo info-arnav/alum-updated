@@ -19,12 +19,7 @@ export default function Profile({ data, email, link }) {
               {data.batch || "Batch Not Provided"}
             </p>
             <p className="m-1 font-semibold text-[#7d7d7d]">{email}</p>
-            <p
-              className="m-1"
-              dangerouslySetInnerHTML={{
-                __html: data.bio || "Bio Not Provided",
-              }}
-            ></p>
+            <p className="m-1">{data.bio || "Bio not provided"}</p>
           </div>
         </div>
       </div>

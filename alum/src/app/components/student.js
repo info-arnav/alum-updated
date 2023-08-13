@@ -2,7 +2,7 @@
 
 import Links from "./links";
 
-export default function Student({ path }) {
+export default function Student({ path, data, link }) {
   return (
     <Links
       links={[
@@ -12,6 +12,8 @@ export default function Student({ path }) {
       ]}
       logout={true}
       path={path}
+      data={data}
+      link={link}
     ></Links>
   );
 }

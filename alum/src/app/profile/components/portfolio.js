@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Delete from './delete';
-import Modal from './modal';
+import Delete from "./delete";
+import Modal from "./modal";
 
 export default function Portfolio({
   data,
@@ -13,10 +13,10 @@ export default function Portfolio({
   return (
     <div className="profile-right w-full">
       {[
-        [data.occupation, 'Work Experience', 'occupation'],
-        [data.education, 'Education', 'education'],
-        [data.projects, 'Projects', 'projects'],
-        [data.honors, 'Honors', 'honors'],
+        [data.occupation, "Work Experience", "occupation"],
+        [data.education, "Education", "education"],
+        [data.projects, "Projects", "projects"],
+        [data.honors, "Honors", "honors"],
       ].map((e) => {
         return (
           <div
@@ -46,7 +46,7 @@ export default function Portfolio({
                     <div className="category-header">
                       {f.title}
                       <div className="header-buttons">
-                        {' '}
+                        {" "}
                         <Delete
                           position={e[0].indexOf(f)}
                           type={e[2]}
@@ -68,8 +68,16 @@ export default function Portfolio({
                         ></Modal>
                       </div>
                     </div>
-                    <div className="category-subheader">{f.subTitle}</div>
-                    <div className="category-sub-subheader">{f.duration}</div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div className="category-subheader">{f.subTitle}</div>
+                      {f.duration && <div className="category-space">|</div>}
+                      <div className="category-sub-subheader">{f.duration}</div>
+                    </div>
                     <div
                       className="category-description"
                       dangerouslySetInnerHTML={{ __html: f.description }}

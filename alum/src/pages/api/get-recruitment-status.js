@@ -25,6 +25,7 @@ export default async function applicantsRecruitment(req, res) {
             {
                 recruitments(query: ${QueryString(body)}) {
                   applicants
+                  email
                 }
               }
           `,

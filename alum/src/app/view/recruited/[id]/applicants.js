@@ -20,13 +20,17 @@ export default function Applicants({ email, id }) {
       }),
       cache: "no-cache",
     }).then((e) => e.json());
-    let updatedData =
-      tempData.data.data.recruiteds[0].applicants == null
-        ? []
-        : tempData.data.data.recruiteds[0].applicants;
-    setOtherArray([...updatedData]);
-    setData(updatedData);
-    setLoading(false);
+    if (tempData.data.data.recruiteds[0].email == email) {
+      let updatedData =
+        tempData.data.data.recruiteds[0].applicants == null
+          ? []
+          : tempData.data.data.recruiteds[0].applicants;
+      setOtherArray([...updatedData]);
+      setData(updatedData);
+      setLoading(false);
+    } else {
+      location.replace("/");
+    }
   };
   useEffect(() => {
     fetcher();
@@ -40,7 +44,7 @@ export default function Applicants({ email, id }) {
           <div className=" overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <tbody>
-                {data ? (
+                {data.length ? (
                   data.map((e) => {
                     return (
                       <div key={e}>

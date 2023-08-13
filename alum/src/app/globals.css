@@ -659,9 +659,6 @@ hr {
 } */
 
 .category-details {
-  box-shadow: 2px 2px 3px 2px #d6d4d4;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 .main-category-header {
@@ -672,9 +669,6 @@ hr {
 
 .category-header {
   display: flex;
-  padding: 10px;
-  background-color: rgb(24, 145, 206);
-  color: white;
   align-items: center;
   overflow-x: scroll;
 }
@@ -686,25 +680,29 @@ hr {
 }
 
 .category-subheader {
-  padding: 10px;
-  padding-bottom: 0px;
   font-size: 14px;
   color: gray;
   text-align: left;
 }
 
 .category-sub-subheader {
-  padding: 10px;
-  padding-bottom: 0px;
   padding-top: 0px;
   color: gray;
   font-size: 14px;
   text-align: left;
 }
 
+.category-space {
+  color: gray;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .category-description {
-  padding: 10px;
   text-align: left;
+  border-bottom: solid rgb(234, 229, 229);
+  margin-top: 14px;
 }
 
 .nothing-to-see {
@@ -1095,10 +1093,15 @@ hr {
 /* SearchBox */
 .ais-SearchBox {
   display: block;
-  width: 60%;
+  outline: none !important;
+  border: none !important;
+  width: 100%;
+  margin-right: 60px;
+  margin-left: 20px;
   height: 50px;
   margin-bottom: 20px;
 }
+
 .ais-SearchBox-form {
   display: flex;
   flex-direction: row;
@@ -1110,6 +1113,7 @@ hr {
 .ais-SearchBox-submitIcon {
   width: 20px;
   height: 20px;
+  display: none;
 }
 .ais-SearchBox-input {
   /* display: block; */
@@ -1120,4 +1124,13 @@ hr {
   background-color: rgb(245 244 251);
   margin-right: 3px;
   border-radius: 5px;
+}
+
+.modal-content {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

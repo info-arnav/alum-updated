@@ -44,6 +44,7 @@ export default async function login(req, res) {
             type
             verified
             api
+            _id
           }
         }
       `,
@@ -66,6 +67,7 @@ export default async function login(req, res) {
                 key: CryptoJS.AES.encrypt(
                   JSON.stringify({
                     email: body.email,
+                    id: data.data.registeration._id,
                     type: data.data.registeration.type,
                     verified: data.data.registeration.verified,
                   }),
