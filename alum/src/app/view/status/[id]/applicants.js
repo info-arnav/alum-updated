@@ -25,13 +25,12 @@ export default function Applicants({ email, id }) {
     }).then((e) => e.json());
     position = res.data.title;
     name = res.data.company;
-    description = res.data.description;
-    duration = res.data.duration;
-    stipend = res.data.stipend;
-    deadline = res.data.deadline;
-    email = res.data.email;
-    link = res.data.link;
-    location = res.data.location;
+    let description = res.data.description;
+    let duration = res.data.duration;
+    let stipend = res.data.stipend;
+    let deadline = res.data.deadline;
+    let link = res.data.link;
+    let location = res.data.location;
     await fetch(`/api/recruitment-close`, {
       method: "POST",
       body: JSON.stringify({
@@ -41,13 +40,13 @@ export default function Applicants({ email, id }) {
         recruited: recruitsArray,
         company: name,
         position: position,
-        description: body.description,
-        duration: body.duration,
-        stipend: body.stipend,
-        deadline: body.deadline,
-        email: body.email,
-        link: body.link,
-        location: body.location,
+        description: description,
+        duration: duration,
+        stipend: stipend,
+        deadline: deadline,
+        email: email,
+        link: link,
+        location: location,
       }),
       cache: "no-cache",
     })
