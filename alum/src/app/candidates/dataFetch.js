@@ -59,7 +59,7 @@ export default function DataFetch({ email }) {
         <>
           <div className="md:grid md:grid-cols-5 md:divide-x divide-y gap-2">
             <div
-              className="recruitment-grid gap-2.5 mb-[40px] col-span-2 overflow-x-scroll md:overflow-x-hidden max-w-screen md:overflow-y-scroll md:h-[calc(100vh-80px)] md:min-h-[400px] md:block flex flex-row whitespace-nowrap md:bg-white bg-[#dcdcdc]"
+              className="recruitment-grid gap-2.5 mb-[40px] col-span-2 overflow-x-scroll md:overflow-x-hidden max-w-screen md:overflow-y-scroll md:h-[calc(100vh-80px)] md:min-h-[400px] md:block flex flex-row whitespace-nowrap md:bg-white bg-[#f9f9f9]"
               style={{ marginBottom: 10 }}
             >
               {/* <div className="recruitment-grid"> */}
@@ -71,14 +71,14 @@ export default function DataFetch({ email }) {
                         <div
                           onClick={() => ReadHandler(e, idx)}
                           key={e._id}
-                          className={`recruitment-box m-[20px] md:py-[20px] md:px-[25px] p-[15px] rounded-[25px] w-[100%] md:overflow-hidden border-2 md:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] md:w-auto bg-[#f8f8f8] md:bg-white 
+                          className={`recruitment-box m-[20px] md:py-[20px] md:px-[25px] p-[15px] rounded-[25px] w-[100%] md:overflow-hidden border-2 md:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] md:w-auto bg-[#ffffff] md:bg-white 
                ${idx == selected_idx && `border-2 border-black`}`}
                         >
                           <div className="recruitment-box-header">
                             <img className="CompanyLogo"></img>
                             <div>
                               <h1 className="font-bold text-2xl">{e.title}</h1>
-                              <h5 className="text-[#4358b7]">{e.company}</h5>
+                              <h5 className="text-[#878686]">{e.company}</h5>
                             </div>
                           </div>
 
@@ -102,7 +102,7 @@ export default function DataFetch({ email }) {
                                 />
                               </svg>
                               <p className="inline">Start Date</p>
-                              <p className="text-[#4358b7]">
+                              <p className="text-[#878686]">
                                 {e.deadline || "No data"}
                               </p>
                             </div>
@@ -132,7 +132,7 @@ export default function DataFetch({ email }) {
                                 />
                               </svg>
                               <p className="inline">Duration</p>
-                              <p className=" text-[#4358b7]">
+                              <p className=" text-[#878686]">
                                 {e.duration || "No Duration Provided"}
                               </p>
                             </div>
@@ -171,7 +171,7 @@ export default function DataFetch({ email }) {
                               </svg>
 
                               <p className="inline">Stipend</p>
-                              <p className=" text-[#4358b7]">
+                              <p className=" text-[#878686]">
                                 {e.stipend || "No data"}
                               </p>
                             </div>

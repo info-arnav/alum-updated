@@ -22,27 +22,22 @@ export default function Links({ links, path, logout, data, link }) {
             <div
               key={e[0].toLowerCase()}
               className={`nav-sub-links ${
-                e[1].toLowerCase() == path.toLowerCase() && "active"
-              }`}
+                e[0].toLowerCase() == "login" && "nav-button"
+              } ${e[1].toLowerCase() == path.toLowerCase() && "active"}`}
             >
               <Link href={e[1].toLowerCase()}>{e[0]}</Link>
             </div>
           );
         })}
         {logout && (
-          <div className={`nav-sub-links`} onClick={Logout}>
-            <a>Logout</a>
-          </div>
-        )}
-        {logout && (
           <div
+            className="dp"
             style={{
               height: 50,
               width: 50,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor: "unset",
             }}
           >
             <img
@@ -52,9 +47,13 @@ export default function Links({ links, path, logout, data, link }) {
               style={{
                 borderRadius: "100%",
                 backgroundColor: "gray",
-                cursor: "unset",
               }}
             />
+            {logout && (
+              <div className="dp-drop" onClick={Logout}>
+                <a>Logout</a>
+              </div>
+            )}
           </div>
         )}
       </div>

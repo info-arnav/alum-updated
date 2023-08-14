@@ -62,7 +62,9 @@ export default async function ProfileLayout({ children, params }) {
   if (status.loggedIn) {
     if (
       status.data.type == "admin" ||
-      (data.type != "student" && data.type != "alumni") ||
+      (data.type != "student" &&
+        data.type != "alumni" &&
+        data.type != "admin") ||
       !status.data.verified
     ) {
       return <Empty link="/"></Empty>;

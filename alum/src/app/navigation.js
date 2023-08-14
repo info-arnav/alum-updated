@@ -19,30 +19,47 @@ export default function Navigation({ data, keys, LINK }) {
   function Hit({ hit }) {
     console.log(hit);
     return (
-      <div classname="w-full ">
+      <div
+        className="search-hover"
+        style={{
+          paddingTop: 10,
+          paddingBottom: 10,
+          borderBottom: "solid gray 0.2px",
+        }}
+      >
         <a href={`${LINK}/view/profile/${hit.objectID}`}>
-          <div className="flex flex-row  border-b-2  border-blue-900  mx-1 bg-[#F5F4FB] items-center p-2 ">
-            {/* p-2 md:px-4 md:py-2 */}
-            <div className="mr-4">
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div>
               <img
-                className="w-[60px] h-[60px] rounded-full"
+                height={60}
+                width={60}
+                style={{
+                  minHeight: 60,
+                  minWidth: 60,
+                  marginRight: 20,
+                  borderRadius: "100%",
+                }}
                 src={`${LINK}/api/image/${hit.objectID}`}
               ></img>
             </div>
-
-            <div className="flex flex-col w-full">
-              <div className="flex justify-between">
-                <div className=" text-lg font-semibold">
+            <div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <div style={{ fontWeight: "bold" }}>
                   {hit.name || "No Name"}
                 </div>
-                <div className=" md:mr-8 text-white bg-[#1976D2] px-2 rounded-md text-center h-[70%]">
-                  {hit.batch || "-"}
+                <div style={{ fontSize: 11, color: "grey" }}>
+                  {hit.bio ? hit.bio : "No bio"}
                 </div>
               </div>
-              <div className="text-sm font-extralight">
-                {hit.bio || "No bio provided"}
-              </div>
             </div>
+            {/* <div style={{ flex: 1, display: "flex", justifyContent: "right" }}>
+              View
+            </div> */}
           </div>
         </a>
       </div>
@@ -62,9 +79,9 @@ export default function Navigation({ data, keys, LINK }) {
           <Image
             className="logo"
             src="/logo.png"
-            width={40}
-            height={40}
-            style={{ minHeight: 40, minWidth: 40 }}
+            width={30}
+            height={30}
+            style={{ minHeight: 30, minWidth: 30 }}
             alt="Logo of the Alum portal"
           ></Image>
         </a>
@@ -89,7 +106,17 @@ export default function Navigation({ data, keys, LINK }) {
               setValue(true);
             }}
           >
-            🔍
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              {" "}
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{" "}
+            </svg>
           </button>
         </div>
       )}

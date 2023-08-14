@@ -7,7 +7,7 @@ export default function Admin({ path, data, link }) {
       logout={true}
       path={path}
       data={{ id: "pending" }}
-      link="link"
+      link={link}
     ></Links>
   );
 }

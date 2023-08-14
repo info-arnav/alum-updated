@@ -54,7 +54,7 @@ export default function DataFetch({ email }) {
         <>
           <div className="lg:grid lg:grid-cols-5 lg:divide-x divide-y">
             <div
-              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll lg:overflow-x-hidden max-w-screen lg:overflow-y-scroll lg:h-[calc(100vh-80px)] lg:min-h-[400px] lg:block flex flex-row whitespace-nowrap lg:bg-white bg-[#dcdcdc]"
+              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll lg:overflow-x-hidden max-w-screen lg:overflow-y-scroll lg:h-[calc(100vh-80px)] lg:min-h-[400px] lg:block flex flex-row whitespace-nowrap lg:bg-white bg-[#f9f9f9]"
               style={{ marginBottom: 10 }}
             >
               {data.map((e, idx) => {
@@ -69,7 +69,7 @@ export default function DataFetch({ email }) {
                     <div
                       onClick={() => ReadHandler(e, idx)}
                       key={e._id}
-                      className={`recruitment-box m-[20px] lg:py-[20px] lg:px-[25px] p-[15px] rounded-[25px] w-[100%] lg:overflow-hidden border-2 lg:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] lg:w-auto bg-[#f8f8f8] lg:bg-white 
+                      className={`recruitment-box m-[20px] lg:py-[20px] lg:px-[25px] p-[15px] rounded-[25px] w-[100%] lg:overflow-hidden border-2 lg:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] lg:w-auto bg-[#ffffff] lg:bg-white 
                      ${idx == selected_idx && `border-2 border-black`}`}
                     >
                       <div className="recruitment-box-header">
@@ -79,7 +79,7 @@ export default function DataFetch({ email }) {
                           {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png"
                           alt="compimage"></img> */}
                           <h1 className="font-bold text-2xl">{e.title}</h1>
-                          <h5 className="text-[#4358b7]">{e.company}</h5>
+                          <h5 className="text-[#878686]">{e.company}</h5>
                         </div>
                       </div>
                       <div className="recruitment-box-body flex justify-between">
@@ -141,7 +141,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Start Date</p>
-                          <p className="text-[#4358b7]">
+                          <p className="text-[#878686]">
                             {e.deadline || "No data"}
                           </p>
                         </div>
@@ -171,7 +171,7 @@ export default function DataFetch({ email }) {
                             />
                           </svg>
                           <p className="inline">Duration</p>
-                          <p className=" text-[#4358b7]">
+                          <p className=" text-[#878686]">
                             {e.duration || "No Duration Provided"}
                           </p>
                         </div>
@@ -210,7 +210,7 @@ export default function DataFetch({ email }) {
                           </svg>
 
                           <p className="inline">Stipend</p>
-                          <p className=" text-[#4358b7]">
+                          <p className=" text-[#878686]">
                             {e.stipend || "No data"}
                           </p>
                         </div>
