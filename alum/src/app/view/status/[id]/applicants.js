@@ -56,9 +56,10 @@ export default function Applicants({ email, id }) {
           setError(true);
           setSubLoading(false);
         } else {
-          location.replace(
+          window.location.replace(
             `/view/recruited/${e.id.data.insertOneRecruited._id}`
           );
+
           setError(false);
           setSubLoading(false);
         }

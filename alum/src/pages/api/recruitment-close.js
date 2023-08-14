@@ -27,7 +27,6 @@ export default async function sendOTP(req, res) {
             mutation{
               insertOneRecruited(data: ${QueryString({
                 email: body.auth_email,
-                applicants: recruited,
                 title: body.position,
                 company: body.company,
                 description: body.description,
@@ -46,6 +45,28 @@ export default async function sendOTP(req, res) {
     .then((e) => e.json())
     .then(async (e) => {
       recruited_data = e;
+      await fetch(process.env.GRAPHQL_URI, {
+        method: "POST",
+        headers: {
+          apikey: process.env.GRAPHQL_API,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
+              mutation{
+                updateOneRecruited(query: ${QueryString({
+                  _id: recruited_data.data.insertOneRecruited._id,
+                })}, set: ${QueryString({
+            applicants: recruited,
+          })}) {
+                    _id
+                  }
+                }
+            `,
+        }),
+      });
+    })
+    .then(async (e) => {
       await fetch(process.env.GRAPHQL_URI, {
         method: "POST",
         headers: {
