@@ -20,8 +20,8 @@ export default function Links({ links, path, logout, data, link }) {
         {links.map((e) => {
           return (
             <div
-              onClick={(e) => {
-                e[0].toLowerCase() == "login" && window.location.push("/login");
+              onClick={(temp) => {
+                window.location.replace(e[1].toLowerCase());
               }}
               key={e[0].toLowerCase()}
               className={`nav-sub-links ${
