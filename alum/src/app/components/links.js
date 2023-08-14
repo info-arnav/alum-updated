@@ -20,6 +20,9 @@ export default function Links({ links, path, logout, data, link }) {
         {links.map((e) => {
           return (
             <div
+              onClick={(e) => {
+                e[0].toLowerCase() == "login" && window.location.push("/login");
+              }}
               key={e[0].toLowerCase()}
               className={`nav-sub-links ${
                 e[0].toLowerCase() == "login" && "nav-button"
