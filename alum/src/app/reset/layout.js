@@ -2,14 +2,14 @@ import Empty from "../empty";
 import LoggedIn from "../loggedIn";
 
 export const metadata = {
-  title: "Register",
+  title: "Reset",
   description:
-    "Join Alum, the NSUT community platform, by registering as a student or alumnus. Create an account to access networking opportunities, job offers, internships, mentorship, and more.",
+    "Reset your Alum account password and regain access to the NSUT community platform. Follow the instructions to securely reset your password and continue exploring networking opportunities, job offers, internships, mentorship, and more.",
   openGraph: {
-    title: "Register",
+    title: "Reset",
     description:
-      "Join Alum, the NSUT community platform, by registering as a student or alumnus. Create an account to access networking opportunities, job offers, internships, mentorship, and more.",
-    url: `${process.env.LINK}register`,
+      "Reset your Alum account password and regain access to the NSUT community platform. Follow the instructions to securely reset your password and continue exploring networking opportunities, job offers, internships, mentorship, and more.",
+    url: `${process.env.LINK}reset`,
     siteName: "Alum",
     images: [
       {
@@ -29,9 +29,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Register",
+    title: "Reset",
     description:
-      "Join Alum, the NSUT community platform, by registering as a student or alumnus. Create an account to access networking opportunities, job offers, internships, mentorship, and more.",
+      "Reset your Alum account password and regain access to the NSUT community platform. Follow the instructions to securely reset your password and continue exploring networking opportunities, job offers, internships, mentorship, and more.",
     images: [
       `${process.env.LINK}logo-background.png`,
       `${process.env.LINK}logo.png`,

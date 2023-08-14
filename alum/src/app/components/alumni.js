@@ -6,8 +6,8 @@ export default function Alumni({ path, data, link }) {
       links={[
         ["Home", "/"],
         ["Profile", "/profile"],
-        ["Internships", "/recruitment"],
-        ["Recruitments", "/candidates"],
+        ["Manage", "/recruitment"],
+        ["History", "/candidates"],
       ]}
       logout={true}
       path={path}

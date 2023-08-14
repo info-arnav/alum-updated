@@ -8,7 +8,7 @@ export default function Student({ path, data, link }) {
       links={[
         ["Home", "/"],
         ["Profile", "/profile"],
-        ["Internships", "/recruitment"],
+        ["Opportunities", "/recruitment"],
       ]}
       logout={true}
       path={path}

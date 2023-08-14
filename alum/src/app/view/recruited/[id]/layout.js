@@ -23,18 +23,18 @@ export async function generateMetadata({ params }) {
   return {
     title:
       data.title && data.comapny
-        ? "Status" + " " + data.comapny + "-" + data.title
-        : "Recruitment Status",
+        ? "History" + " " + data.comapny + "-" + data.title
+        : "Recruitment History",
     description:
-      "Discover top talent for your internship program on Alum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
+      "Explore Exceptional Internship Candidates on Alum, the official NSUT alumni portal. Uncover a treasure trove of skilled applicants as you navigate through their profiles and qualifications. Elevate your recruitment approach using our robust platform, meticulously designed to link you with accomplished NSUT alumni actively seeking enriching internship experiences. Begin forging impactful professional connections today!",
     openGraph: {
       title:
         data.title && data.comapny
-          ? "Status" + " " + data.comapny + "-" + data.title
-          : "Recruitment Status",
+          ? "History" + " " + data.comapny + "-" + data.title
+          : "Recruitment History",
       description:
-        "Discover top talent for your internship program on Alum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
-      url: `${process.env.LINK}view/status/${params.id}`,
+        "Explore Exceptional Internship Candidates on Alum, the official NSUT alumni portal. Uncover a treasure trove of skilled applicants as you navigate through their profiles and qualifications. Elevate your recruitment approach using our robust platform, meticulously designed to link you with accomplished NSUT alumni actively seeking enriching internship experiences. Begin forging impactful professional connections today!",
+      url: `${process.env.LINK}view/recruited/${params.id}`,
       siteName: "Alum",
       images: [
         {
@@ -56,10 +56,10 @@ export async function generateMetadata({ params }) {
     twitter: {
       title:
         data.title && data.comapny
-          ? "Status" + " " + data.comapny + "-" + data.title
-          : "Recruitment Status",
+          ? "History" + " " + data.comapny + "-" + data.title
+          : "Recruitment History",
       description:
-        "Discover top talent for your internship program on Alum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
+        "Explore Exceptional Internship Candidates on Alum, the official NSUT alumni portal. Uncover a treasure trove of skilled applicants as you navigate through their profiles and qualifications. Elevate your recruitment approach using our robust platform, meticulously designed to link you with accomplished NSUT alumni actively seeking enriching internship experiences. Begin forging impactful professional connections today!",
       images: [
         `${process.env.LINK}logo-background.png`,
         `${process.env.LINK}logo.png`,

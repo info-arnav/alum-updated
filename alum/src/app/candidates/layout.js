@@ -4,17 +4,15 @@ import LoggedIn from "../loggedIn";
 export async function metadata() {
   const status = LoggedIn();
   let description = status.loggedIn
-    ? status.data.type == "student"
-      ? "Effortlessly manage your recruitment posts on Alum, the NSUT alumni portal. Create, edit, or delete job opportunities, and monitor their status to streamline your hiring process and attract top talent."
-      : "Explore exciting job opportunities on Alum, the NSUT alumni portal. Browse and apply for positions posted by esteemed alumni, and kickstart your career with valuable connections in your professional network."
+    ? "Explore exciting job opportunities on Alum, the NSUT alumni portal. Browse and apply for positions posted by esteemed alumni, and kickstart your career with valuable connections in your professional network."
     : "Unlock your career potential with Alum, the NSUT alumni portal. Log in to explore job opportunities posted by alumni, apply for positions, and connect with professionals to boost your career growth and network.";
   return {
-    title: "View Recruitments",
+    title: "View History",
     description: description,
     openGraph: {
-      title: "View Recruitments",
+      title: "View History",
       description: description,
-      url: `${process.env.LINK}recruitment`,
+      url: `${process.env.LINK}candidates`,
       siteName: "Alum",
       images: [
         {
@@ -34,7 +32,7 @@ export async function metadata() {
       type: "website",
     },
     twitter: {
-      title: "View Recruitments",
+      title: "View History",
       description: description,
       images: [
         `${process.env.LINK}logo-background.png`,
