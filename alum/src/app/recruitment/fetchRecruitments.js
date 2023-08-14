@@ -25,7 +25,6 @@ export default function DataFetch({ email }) {
     } else {
       setError(false);
       setData(fetchedData.data);
-      console.log(data);
       setLoading(false);
     }
   };

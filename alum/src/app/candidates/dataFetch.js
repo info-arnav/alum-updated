@@ -63,7 +63,6 @@ export default function DataFetch({ email }) {
               style={{ marginBottom: 10 }}
             >
               {/* <div className="recruitment-grid"> */}
-              {console.log(data)}
               {data
                 ? data.map((e, idx) => {
                     return (

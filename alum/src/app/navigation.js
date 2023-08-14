@@ -17,7 +17,6 @@ export default function Navigation({ data, keys, LINK }) {
   let path = usePathname().toLowerCase();
 
   function Hit({ hit }) {
-    console.log(hit);
     return (
       <div
         className="search-hover"

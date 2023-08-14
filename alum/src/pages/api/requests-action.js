@@ -42,7 +42,6 @@ export default async function Requests(req, res) {
       }),
     }).then((e) => e.json());
     if (body.verified == "true") {
-      console.log(data.data.updateOneRegisteration._id);
       await index
         .saveObject({
           type: body.type,

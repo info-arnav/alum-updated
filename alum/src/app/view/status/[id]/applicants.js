@@ -114,7 +114,6 @@ export default function Applicants({ email, id }) {
                                 }),
                                 cache: "no-cache",
                               }).then((e) => e.json());
-                              console.log(res);
                             },
                           }}
                           recruitsArray={recruitsArray}
