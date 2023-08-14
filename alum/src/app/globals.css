@@ -1219,3 +1219,8 @@ button[disabled] {
 body {
   padding-bottom: env(safe-area-inset-bottom);
 }
+
+.custom-search-height {
+  --safe-area: env(safe-area-inset-bottom);
+  height: calc(100vh - var(--safe-area) - 80px);
+}

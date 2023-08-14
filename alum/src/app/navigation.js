@@ -124,7 +124,7 @@ export default function Navigation({ data, keys, LINK }) {
           <div className="absolute bg-black/[.54] flex-col justify-center w-full h-[100vh] top-[60px] ">
             <div
               style={{ marginTop: 10 }}
-              className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] h-[calc(100%-80px)] mx-auto bg-white py-4"
+              className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] mx-auto bg-white py-4 custom-search-height"
             >
               <InstantSearch searchClient={searchClient} indexName="dev_alum">
                 <div className="flex flex-row justify-center">
