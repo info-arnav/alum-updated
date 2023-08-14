@@ -28,7 +28,17 @@ export default function DataFetch({ email }) {
       setLoading(false);
     } else {
       setError(false);
-      setData(fetchedData.data);
+      if (
+        selected_idx >= 0 &&
+        selected_idx < data.length &&
+        expanded_data._id == fetchedData.data[selected_idx]._id
+      ) {
+        setData(fetchedData.data);
+        set_expanded_data(fetchedData.data[selected_idx]);
+      } else {
+        setData(fetchedData.data);
+        set_expanded_data({});
+      }
       setLoading(false);
     }
   };

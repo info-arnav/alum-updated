@@ -61,6 +61,7 @@ export default function Modal({
       setStipend("");
       setDeadline("");
       setLink("");
+      document.querySelector("body").classList.remove("no-scroll");
       setShow(false);
       setLoading(false);
     } else {
@@ -97,6 +98,7 @@ export default function Modal({
       setDeadline("");
       setLink("");
       setStipend("");
+      document.querySelector("body").classList.remove("no-scroll");
       setShow(false);
       setLoading(false);
     }
