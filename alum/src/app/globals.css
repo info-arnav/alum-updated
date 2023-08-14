@@ -1215,12 +1215,3 @@ hr {
 button[disabled] {
   filter: brightness(0.5);
 }
-
-body {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.custom-search-height {
-  --safe-area: env(safe-area-inset-bottom);
-  height: calc(100vh - var(--safe-area) - 80px);
-}
