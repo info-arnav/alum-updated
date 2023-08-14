@@ -53,7 +53,7 @@ export default function RecruitmentPage({ children }) {
       </>
     );
   } else {
-    if (status.data.type == "alumni") {
+    if (status.data.type == "alumni" && status.data.verified == "true") {
       return <>{children}</>;
     } else {
       return (
