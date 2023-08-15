@@ -61,7 +61,6 @@ export default async function ProfileLayout({ children, params }) {
   const status = LoggedIn();
   if (status.loggedIn) {
     if (
-      status.data.type == "admin" ||
       (data.type != "student" &&
         data.type != "alumni" &&
         data.type != "admin") ||

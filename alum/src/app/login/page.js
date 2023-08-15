@@ -5,6 +5,7 @@ import Cookies from "universal-cookie";
 import login1 from "..//image/login1.png";
 import loginstu from "..//image/loginstu.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -38,12 +39,15 @@ export default function Login() {
   };
   return (
     <div className="login-page flex md:flex-row flex-col">
-      <div className="loginHeader md:w-3/5 w-full relative md:min-h-screen h-[540px] md:p-5">
-        <h1 className="text-4xl font-bold mt-14 z-10 pl-2">
+      <div className="loginHeader md:w-3/5 w-full relative h-[540px] md:p-5">
+        <h1
+          className="text-4xl font-bold mt-14 z-10 pl-2"
+          style={{ marginLeft: 20, marginBottom: 20 }}
+        >
           Nsut’s Alumni <br />
           networking Portal
         </h1>
-        <h3 className="z-10 tracking-widest pl-2">
+        <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
           Welcome to Alum!
           <br />
           Be patient, the website is going live soon
@@ -69,7 +73,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className="md:w-2/5 w-full p-4 md:mt-10">
+      <div className="md:w-2/5 w-full p-4 md:mt-10" style={{ marginTop: 100 }}>
         <main className="login">
           <main className="overlay"></main>
           <div className="container w-full text-center">
@@ -122,9 +126,20 @@ export default function Login() {
                 className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 type="submit"
                 disabled={loading}
+                style={{ marginBottom: 10 }}
               >
                 {loading ? "Logging you in...." : "Login"}
               </button>
+              <Link href="/login">
+                <div className="text-black-600" style={{ marginTop: 10 }}>
+                  Not registered yet ? Register Now
+                </div>
+              </Link>
+              <Link href="/reset">
+                <div className="text-black-600" style={{ marginTop: 10 }}>
+                  Forgot password ?
+                </div>
+              </Link>
             </form>
           </div>
         </main>

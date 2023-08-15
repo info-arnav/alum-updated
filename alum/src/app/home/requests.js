@@ -5,6 +5,8 @@ import Error from "../error";
 import Loading from "./loading";
 
 export default function Requests({ status }) {
+  const [show, setShow] = useState(false);
+  const [img, setImg] = useState("");
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState("");
   const [error, setError] = useState(false);
@@ -49,40 +51,114 @@ export default function Requests({ status }) {
     fetchRequests();
   }, [refresh]);
   return (
-    <>
+    <div className="admin">
       {loading ? (
         <Loading></Loading>
       ) : error ? (
         <Error></Error>
       ) : (
-        <>
-          {data.map((e) => {
-            return (
-              <div key={data.indexOf(e)}>
-                {e.email}
-                <img
-                  src={e.files}
-                  alt="Verification document uploaded by User"
-                ></img>
-                <button
-                  onClick={() => {
-                    process("approve", data.indexOf(e), e.email);
+        <div className="table-overflow">
+          <table>
+            {show && (
+              <div className="modal">
+                <div
+                  className="modal-content"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                  Approve
-                </button>
-                <button
-                  onClick={() => {
-                    process("reject", data.indexOf(e), e.email);
-                  }}
-                >
-                  Reject
-                </button>
+                  <img src={img} height="auto" width="100%"></img>
+                  <button
+                    onClick={() => {
+                      document
+                        .querySelector("body")
+                        .classList.remove("no-scroll");
+                      setShow(false);
+                    }}
+                    id="edit-close"
+                    className="form-close"
+                  >
+                    X
+                  </button>
+                </div>
               </div>
-            );
-          })}
-        </>
+            )}
+            {data.map((e) => {
+              return (
+                <tr>
+                  <th>
+                    <center>
+                      <img
+                        height={50}
+                        style={{
+                          maxHeight: 50,
+                          height: 50,
+                          maxWidth: 70,
+                          margin: 10,
+                        }}
+                        src={e.files}
+                        onClick={(temp) => {
+                          setImg(e.files);
+                          document
+                            .querySelector("body")
+                            .classList.add("no-scroll");
+                          setShow(true);
+                        }}
+                        alt="Verification document uploaded by User"
+                      ></img>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>{e.email}</p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <button
+                        style={{
+                          backgroundColor: "lightgreen",
+                          padding: 2,
+                          paddingLeft: 10,
+                          paddingRight: 10,
+                          borderRadius: 20,
+                          margin: 10,
+                          fontWeight: "lighter",
+                          fontSize: 14,
+                        }}
+                        onClick={() => {
+                          process("approve", data.indexOf(e), e.email);
+                        }}
+                      >
+                        Approve
+                      </button>
+                      <button
+                        style={{
+                          backgroundColor: "red",
+                          padding: 2,
+                          paddingLeft: 10,
+                          paddingRight: 10,
+                          borderRadius: 20,
+                          margin: 10,
+                          fontWeight: "lighter",
+                          fontSize: 14,
+                        }}
+                        onClick={() => {
+                          process("reject", data.indexOf(e), e.email);
+                        }}
+                      >
+                        Reject
+                      </button>
+                    </center>
+                  </th>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       )}
-    </>
+    </div>
   );
 }

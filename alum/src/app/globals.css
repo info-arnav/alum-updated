@@ -1215,3 +1215,36 @@ hr {
 button[disabled] {
   filter: brightness(0.5);
 }
+
+.admin table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border-radius: 100%;
+  width: 100%;
+}
+
+.admin tr {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  border-radius: 20px;
+  overflow-x: scroll;
+}
+
+.admin th {
+  align-items: center;
+  text-align: center;
+}
+
+.admin th,
+.admin td {
+  min-width: 200px !important;
+}
+
+.table-overflow {
+  overflow-x: auto;
+  width: calc(100vw - 20px);
+  border: 1px solid #dddddd;
+  margin: 10px;
+  border-radius: 10px;
+}

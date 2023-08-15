@@ -1,3 +1,5 @@
+import Alum from "./alum";
+
 export default function About() {
-  return <main>About page</main>;
+  return <Alum></Alum>;
 }
