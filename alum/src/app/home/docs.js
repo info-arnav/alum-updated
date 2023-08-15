@@ -141,6 +141,7 @@ export default function Docs({ data }) {
       <p
         style={{
           marginTop: 10,
+          color: "red",
         }}
       >
         {imageError}
@@ -148,6 +149,7 @@ export default function Docs({ data }) {
       <p
         style={{
           marginTop: 10,
+          color: "green",
         }}
       >
         {updated && "Updated"}

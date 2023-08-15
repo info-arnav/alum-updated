@@ -26,6 +26,7 @@ export default async function updateInfo(req, res) {
           type
           verified
           api
+          _id
         }
       }
     `,
@@ -41,12 +42,14 @@ export default async function updateInfo(req, res) {
           email: body.email,
           type: data.data.registeration.type,
           verified: data.data.registeration.verified,
+          id: data.data.registeration._id,
         },
         key: CryptoJS.AES.encrypt(
           JSON.stringify({
             email: body.email,
             type: data.data.registeration.type,
             verified: data.data.registeration.verified,
+            id: data.data.registeration._id,
           }),
           process.env.SECRET
         ).toString(),
