@@ -698,6 +698,10 @@ hr {
   display: flex;
   align-items: center;
   font-weight: bold;
+  border-top: solid lightgray 0.1px;
+  border-bottom: solid lightgray 0.1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .category-header {

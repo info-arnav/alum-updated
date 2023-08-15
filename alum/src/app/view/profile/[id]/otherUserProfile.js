@@ -55,9 +55,7 @@ export default function OtherUserProfile({ id, link, userData }) {
                 key={e[1]}
                 className="category rounded-xl bg-white p-4 my-4 border-2 border-[#868686] mx-auto"
               >
-                <hr></hr>
                 <div className="main-category-header">{e[1]}</div>
-                <hr></hr>
                 {e[0].length > 0 ? (
                   e[0].map((f) => {
                     return (

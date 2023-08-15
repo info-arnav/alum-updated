@@ -7,7 +7,7 @@ import OtherUserProfile from "../../profile/[id]/otherUserProfile";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-export default function Applicants({ email, id }) {
+export default function Applicants({ email, id, link }) {
   let pdfRef = useRef();
   const [show, setShow] = useState(false);
   const [compData, setCompData] = useState({});
@@ -131,27 +131,42 @@ export default function Applicants({ email, id }) {
                     }}
                     onClick={(e) => {
                       const input = pdfRef.current;
-                      html2canvas(input).then((canvas) => {
-                        const imgData = canvas.toDataURL("img/png");
-                        const pdf = new jsPDF("p", "mm", "a4", true);
-                        const pdfWidth = pdf.internal.pageSize.getWidth();
-                        const pdfHeight = pdf.internal.pageSize.getHeight();
-                        const imageWidth = canvas.width;
-                        const imageHeight = canvas.height;
-                        const ratio = Math.min(
-                          pdfWidth / imageWidth,
-                          pdfHeight / imageHeight
-                        );
-                        const imgX = (pdfWidth - imageWidth * ratio) / 2;
-                        const imgY = 20;
+                      html2canvas(input, { allowTaint: true }).then(function (
+                        canvas
+                      ) {
+                        var imgData = canvas.toDataURL("image/jpeg");
+                        var HTML_Width = canvas.width;
+                        var HTML_Height = canvas.height;
+                        var top_left_margin = 15;
+                        var PDF_Width = HTML_Width + top_left_margin * 2;
+                        var PDF_Height = PDF_Width * 1.5 + top_left_margin * 2;
+                        var canvas_image_width = HTML_Width;
+                        var canvas_image_height = HTML_Height;
+                        var totalPDFPages =
+                          Math.ceil(HTML_Height / PDF_Height) - 1;
+                        canvas.getContext("2d");
+                        var pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height]);
                         pdf.addImage(
                           imgData,
-                          "PNG",
-                          imgX,
-                          imgY,
-                          imageWidth * ratio,
-                          imageHeight * ratio
+                          "JPG",
+                          top_left_margin,
+                          top_left_margin,
+                          canvas_image_width,
+                          canvas_image_height
                         );
+
+                        for (var i = 1; i <= totalPDFPages; i++) {
+                          pdf.addPage([PDF_Width, PDF_Height]);
+                          pdf.addImage(
+                            imgData,
+                            "JPG",
+                            top_left_margin,
+                            -(PDF_Height * i) + top_left_margin * 4,
+                            canvas_image_width,
+                            canvas_image_height
+                          );
+                        }
+
                         pdf.save(`${compData.data._id}.pdf`);
                       });
                     }}
@@ -160,18 +175,19 @@ export default function Applicants({ email, id }) {
                   </button>
                   <div
                     id="printable"
-                    ref={pdfRef}
                     style={{
                       border: "solid black",
                       borderRadius: 20,
                       overflow: "hidden",
                     }}
                   >
-                    <OtherUserProfile
-                      id={compData.data._id}
-                      link="https://nsut.alumninet.in/"
-                      userData={compData.data}
-                    ></OtherUserProfile>
+                    <div ref={pdfRef}>
+                      <OtherUserProfile
+                        id={compData.data._id}
+                        link={link}
+                        userData={compData.data}
+                      ></OtherUserProfile>
+                    </div>
                   </div>
                 </div>
                 <button
