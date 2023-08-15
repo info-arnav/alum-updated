@@ -1243,7 +1243,7 @@ button[disabled] {
 
 .table-overflow {
   overflow-x: auto;
-  width: calc(100vw - 20px);
+  width: calc(100% - 20px);
   border: 1px solid #dddddd;
   margin: 10px;
   border-radius: 10px;
