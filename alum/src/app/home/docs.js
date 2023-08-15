@@ -103,7 +103,7 @@ export default function Docs({ data }) {
             width={200}
             alt="Verification document uploaded by user"
           ></img>
-          {errorData}
+          <p style={{ marginTop: 20, color: "red" }}>{errorData}</p>
         </>
       )}
       <br></br>
@@ -112,20 +112,60 @@ export default function Docs({ data }) {
         accept="image/*"
         onChange={imageHandler}
         required
+        style={{ display: "none" }}
+        id="file-verify-upload"
       ></input>
-      <br></br>
-      {image && (
+      <button
+        style={{
+          backgroundColor: "black",
+          color: "white",
+          padding: 5,
+          paddingLeft: 20,
+          paddingRight: 20,
+          borderRadius: 20,
+          marginBottom: 20,
+        }}
+        onClick={() => document.getElementById("file-verify-upload").click()}
+      >
+        Select New File
+      </button>
+      {image ? (
         <img
           src={image}
           width={200}
           alt="Verification document uploaded by user"
         ></img>
+      ) : (
+        <p>No files selected</p>
       )}
-      <br></br>
-      {imageError}
-      {updated && "Updated"}
-      <br></br>
-      <button onClick={handleSubmit} disabled={processing}>
+      <p
+        style={{
+          marginTop: 10,
+        }}
+      >
+        {imageError}
+      </p>
+      <p
+        style={{
+          marginTop: 10,
+        }}
+      >
+        {updated && "Updated"}
+      </p>
+      <button
+        onClick={handleSubmit}
+        disabled={processing}
+        style={{
+          backgroundColor: "black",
+          color: "white",
+          padding: 5,
+          paddingLeft: 20,
+          paddingRight: 20,
+          borderRadius: 20,
+          marginBottom: 20,
+          marginTop: 10,
+        }}
+      >
         {processing ? "Updating....." : "Update"}
       </button>
     </div>
