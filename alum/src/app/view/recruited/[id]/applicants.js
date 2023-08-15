@@ -41,7 +41,26 @@ export default function Applicants({ email, id }) {
         <Loading></Loading>
       ) : (
         <>
-          <div className=" overflow-x-auto shadow-md sm:rounded-lg">
+          <center>
+            <p
+              style={{
+                margin: 10,
+                marginTop: 20,
+                fontWeight: "bold",
+                fontSize: 24,
+              }}
+            >
+              Accepted Candidates
+            </p>
+          </center>
+          <div
+            className=" overflow-x-auto shadow-md sm:rounded-lg"
+            style={{
+              margin: 10,
+              marginTop: 20,
+              boxShadow: "0px 0px 2px 1px grey",
+            }}
+          >
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <tbody>
                 {data.length ? (

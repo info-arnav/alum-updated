@@ -16,7 +16,7 @@ function Table_Content(props) {
   });
 
   return (
-    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
       <td className="w-4 p-4">
         <div className="flex items-center">
           <input

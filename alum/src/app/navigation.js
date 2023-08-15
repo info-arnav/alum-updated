@@ -30,11 +30,11 @@ export default function Navigation({ data, keys, LINK }) {
           <div style={{ display: "flex", alignItems: "center" }}>
             <div>
               <img
-                height={60}
-                width={60}
+                height={40}
+                width={40}
                 style={{
-                  minHeight: 60,
-                  minWidth: 60,
+                  minHeight: 40,
+                  minWidth: 40,
                   marginRight: 20,
                   borderRadius: "100%",
                 }}
@@ -48,7 +48,7 @@ export default function Navigation({ data, keys, LINK }) {
                   flexDirection: "column",
                 }}
               >
-                <div style={{ fontWeight: "bold" }}>
+                <div style={{ fontWeight: "bold", fontSize: 13 }}>
                   {hit.name || "No Name"}
                 </div>
                 <div style={{ fontSize: 11, color: "grey" }}>
@@ -110,7 +110,7 @@ export default function Navigation({ data, keys, LINK }) {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-search"
+              className="bi bi-search"
               viewBox="0 0 16 16"
             >
               {" "}
