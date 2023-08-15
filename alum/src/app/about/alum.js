@@ -50,7 +50,7 @@ export default function Alum() {
         <div className="feature-container flex flex-col justify-around w-[80vw] mx-auto py-4 md:flex md:justify-between">
           <center>
             <div className="feature-content text-white md:max-w-[500px]">
-              <h2 className="text-4xl ">Why Alum ?</h2>
+              <h2 className="text-4xl ">Mission</h2>
             </div>
           </center>
         </div>
@@ -65,7 +65,13 @@ export default function Alum() {
           alignItems: "center",
           justifyContent: "center",
         }}
-      ></section>
+      >
+        <center>
+          <div className="feature-content text-white md:max-w-[500px]">
+            <h2 className="text-4xl ">Why Alum ?</h2>
+          </div>
+        </center>
+      </section>
     </main>
   );
 }

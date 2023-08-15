@@ -1,8 +1,4 @@
-import Image from "next/image";
-import bgImage from "../../../public/banner.webp";
-import Gallery from "./Gallery";
-
-export default function LoggedIn() {
+export default function LoggedIn({ type }) {
   return (
     // <main className=" flex flex-col justify-evenly -mt-4">
     //   <section
@@ -157,7 +153,9 @@ export default function LoggedIn() {
     // </main>
     <div style={{ marginTop: 35 }}>
       <center>
-        <h1 style={{ fontWeight: "bold", fontSize: 24 }}>Quick Links</h1>
+        <h1 style={{ fontWeight: "bold", fontSize: 24 }}>
+          Quick Links for {type}
+        </h1>
         <h1 style={{ fontWeight: "bold", fontSize: 24 }}>Upcoming Events</h1>
       </center>
     </div>

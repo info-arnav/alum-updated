@@ -30,7 +30,7 @@ function Table_Content(props) {
           onClick={props.info.resume}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
         >
-          Download
+          View Portfolio
         </button>
       </td>
     </tr>

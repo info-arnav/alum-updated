@@ -1,5 +1,5 @@
 import LoggedIn from "./loggedIn";
 
 export default function Alumni() {
-  return <LoggedIn></LoggedIn>;
+  return <LoggedIn type="alumni"></LoggedIn>;
 }
