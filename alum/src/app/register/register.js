@@ -127,13 +127,13 @@ export default function Register({ type, otp, email }) {
             required
           ></input>
 
-          {image && (
+          {/* {image && (
             <img
               src={image}
               style={{ width: "100%" }}
               alt="Verification document uploaded by user"
             ></img>
-          )}
+          )} */}
         </>
       )}
       {error && <div className="error-2">{error}</div>}

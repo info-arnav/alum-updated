@@ -153,13 +153,13 @@ export default function Register() {
         </h3>
         <div className="absolute -z-10 w-full flex flex-col justify-between h-full md:right-4 ">
           <div className="absolute right-3 md:-top-36 -top-12 w-[175px] h-[175px] md:w-[200px] md:h-[200px] ">
-            {/* <Image
+            <Image
               className="w-[175px] h-[175px] md:w-[200px] md:h-[200px]"
               src={login1}
               // width={180}
               // height={180}
               alt="image login"
-            ></Image> */}
+            ></Image>
           </div>
           <div className="absolute right-14 md:top-0 top-20">
             <Image
