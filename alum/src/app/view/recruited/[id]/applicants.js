@@ -65,6 +65,7 @@ export default function Applicants({ email, id, link }) {
                     alignItems: "center",
                     justifyContent: "center",
                     flexDirection: "column",
+                    width: "100%",
                   }}
                 >
                   <button
@@ -126,6 +127,7 @@ export default function Applicants({ email, id, link }) {
                       border: "solid black",
                       borderRadius: 20,
                       overflow: "hidden",
+                      width: "100%",
                     }}
                   >
                     <div ref={pdfRef}>
