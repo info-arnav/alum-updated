@@ -1,6 +1,7 @@
 "use client";
 
 import Compressor from "compressorjs";
+import Link from "next/link";
 import { useState } from "react";
 import Cookies from "universal-cookie";
 
@@ -93,58 +94,71 @@ export default function Register({ type, otp, email }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <input value={email} type="email" disabled></input> */}
-      <input
-        className="input-field"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      ></input>
-      {/* Your password must be at least 8 characters long, include one uppercase
+      <div className="m-2 relative mb-6 w-[70%] mx-auto">
+        {/* <input value={email} type="email" disabled></input> */}
+        <input
+          className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
+          style={{ marginBottom: 10 }}
+        ></input>
+        {/* Your password must be at least 8 characters long, include one uppercase
       letter, one lowercase letter, one number, one special character (choose
       from - #,@, $, !, %, *, ?, &), and not contain spaces. */}
-      <input
-        className="input-field-2"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
-        type="password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        placeholder="Confirm Password"
-        required
-      ></input>
-      {type == "alumni" && (
-        <>
-          <div className="file">
-            Please attach a scanned image of your degree
-          </div>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={imageHandler}
-            required
-          ></input>
+        <input
+          className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          placeholder="Confirm Password"
+          required
+        ></input>
 
-          {/* {image && (
-            <img
-              src={image}
-              style={{ width: "100%" }}
-              alt="Verification document uploaded by user"
-            ></img>
-          )} */}
-        </>
-      )}
-      {error && <div className="error-2">{error}</div>}
+        {type == "alumni" && (
+          <>
+            <div className="file" style={{ marginBottom: 10 }}>
+              <br></br>
+              Please attach a scanned image of your degree
+            </div>
+            <input
+              className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+              type="file"
+              accept="image/*"
+              onChange={imageHandler}
+              required
+              style={{ marginBottom: 10 }}
+            ></input>
+
+            {image && (
+              <img
+                src={image}
+                style={{ width: "100%" }}
+                alt="Verification document uploaded by user"
+              ></img>
+            )}
+          </>
+        )}
+      </div>
+      <div className="text-red-600">{error && error}</div>
+
       <button
+        className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         type="submit"
         disabled={loading}
-        className="button-2"
-        style={{ backgroundColor: "black" }}
+        style={{ backgroundColor: "black", marginBottom: 10 }}
       >
         {loading ? "Registering...." : "Register"}
       </button>
+      <Link href="/login">
+        <div className="text-black-600" style={{ marginTop: 10 }}>
+          Already registered ? Login Now
+        </div>
+      </Link>
     </form>
   );
 }

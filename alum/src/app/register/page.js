@@ -6,6 +6,7 @@ import login1 from "..//image/login1.png";
 import loginstu from "..//image/loginstu.png";
 import Image from "next/image";
 import Link from "next/link";
+import "./register.css";
 
 // export default function Register() {
 //   const [type, setType] = useState("alumni");
@@ -165,8 +166,6 @@ export default function Register() {
             <Image
               className="w-[303px] h-[303px] md:w-[440px] md:h-[440px]"
               src={loginstu}
-              // width={303}
-              // height={303}
               alt="image login"
             ></Image>
           </div>
@@ -176,61 +175,58 @@ export default function Register() {
         <main className="login">
           <main className="overlay">
             <div className="container w-full text-center">
-              <div className="title font-bold text-3xl mb-8 m-4">Register</div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="container w-full text-center">
                 <div
-                  className={`thirty-5 ${type == "alumni" && "active"}`}
-                  onClick={(e) => {
-                    setType("alumni");
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   <div
-                    className={`rounded-full p-1 ${
-                      type == "alumni" && "bg-blue-500"
-                    }`}
+                    className={`thirty-5 ${type == "alumni" && "active"}`}
+                    onClick={(e) => {
+                      setType("alumni");
+                    }}
                   >
-                    <img
-                      className="image-35-icon"
-                      src="./image-35@2x.png"
-                      alt="error"
-                    ></img>
+                    <div
+                      className={`rounded-full p-1 ${
+                        type == "alumni" && "bg-blue-500"
+                      }`}
+                    >
+                      <img
+                        className="image-35-icon"
+                        src="./image-35@2x.png"
+                        alt="error"
+                      ></img>
+                    </div>
+                    <p className="content-35">Alumni</p>
                   </div>
-                  <p className="content-35">Alumni</p>
-                </div>
 
-                <div
-                  className={`thirty-4 ${type == "student" && "active"}`}
-                  onClick={(e) => {
-                    setType("student");
-                  }}
-                >
                   <div
-                    className={`rounded-full p-1 ${
-                      type == "student" && "bg-blue-500"
-                    }`}
+                    className={`thirty-4 ${type == "student" && "active"}`}
+                    onClick={(e) => {
+                      setType("student");
+                    }}
+                    style={{ width: 100 }}
                   >
-                    <img
-                      className="image-34-icon"
-                      src="./image-34@2x.png"
-                      alt="error"
-                    ></img>
+                    <div
+                      className={`rounded-full p-1 ${
+                        type == "student" && "bg-blue-500"
+                      }`}
+                    >
+                      <img
+                        className="image-34-icon"
+                        src="./image-34@2x.png"
+                        alt="error"
+                      ></img>
+                    </div>
+                    <p className="content-34">Student</p>
                   </div>
-                  <p className="content-34">Student</p>
                 </div>
               </div>
+              <SendOTP type={type}></SendOTP>
             </div>
-            <SendOTP type={type}></SendOTP>
-            <Link href="/login">
-              <div className="text-black-600" style={{ marginTop: 10 }}>
-                Already Registered ? Login Now
-              </div>
-            </Link>
           </main>
         </main>
       </div>

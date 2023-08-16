@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import VerifyOTP from "./verifyOTP";
-import "./register.css";
+import Link from "next/link";
 
 export default function SendOTP({ type }) {
   const [oldType, setOldType] = useState(type);
@@ -63,28 +63,35 @@ export default function SendOTP({ type }) {
         <VerifyOTP type={type} email={email}></VerifyOTP>
       ) : (
         <form onSubmit={type == "student" ? sendStudentOTP : sendOTP}>
-          <input
-            type="email"
-            className="input-field"
-            value={email}
-            onChange={(e) =>
-              setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
-            }
-            placeholder={
-              type == "student"
-                ? "Enter your NSUT Email ID"
-                : "Enter your Email ID"
-            }
-          ></input>
-          {error && <div className="error">{error}</div>}
+          <div className="m-2 relative mb-6 w-[70%] mx-auto">
+            <input
+              type="email"
+              className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+              value={email}
+              onChange={(e) =>
+                setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
+              }
+              placeholder={
+                type == "student"
+                  ? "Enter your NSUT Email ID"
+                  : "Enter your Email ID"
+              }
+            ></input>
+          </div>
+          <div className="text-red-600">{error && error}</div>
           <button
+            className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             type="submit"
             disabled={loading}
-            className="OTP"
-            style={{ backgroundColor: "black" }}
+            style={{ backgroundColor: "black", marginBottom: 10 }}
           >
             {loading ? "Sending OTP...." : "Send OTP"}
           </button>
+          <Link href="/login">
+            <div className="text-black-600" style={{ marginTop: 10 }}>
+              Already registered ? Login Now
+            </div>
+          </Link>
         </form>
       )}
     </>

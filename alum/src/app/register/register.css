@@ -520,12 +520,6 @@ left: 67% ;  */
   left: 67%;
   width: 27%;
 }
-.file {
-  position: absolute;
-  top: 65%;
-  font-size: 18px;
-  left: 67%;
-}
 .error {
   position: absolute;
   font-size: 18px;
