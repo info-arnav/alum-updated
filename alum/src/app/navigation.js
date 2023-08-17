@@ -121,7 +121,10 @@ export default function Navigation({ data, keys, LINK }) {
       )}
       {data.loggedIn && data.data.verified ? (
         value ? (
-          <div className="absolute bg-black/[.54] flex-col justify-center w-full h-[100vh] top-[60px] ">
+          <div
+            className="absolute bg-black/[.54] flex-col justify-center w-full h-[100vh] top-[60px] "
+            style={{ overflowY: "scroll" }}
+          >
             <div
               style={{ marginTop: 10 }}
               className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] mx-auto bg-white py-4 custom-search-height"
