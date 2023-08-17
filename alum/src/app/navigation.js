@@ -66,65 +66,82 @@ export default function Navigation({ data, keys, LINK }) {
   }
 
   return (
-    <nav>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <a href="/" className="nav-image-link">
-          <Image
-            className="logo"
-            src="/logo.png"
-            width={30}
-            height={30}
-            style={{ minHeight: 30, minWidth: 30 }}
-            alt="Logo of the Alum portal"
-          ></Image>
-        </a>
-        <a href="/">
-          <div className="nav-title" style={{ marginLeft: 15 }}>
-            Alum
-          </div>
-        </a>
-      </div>
-      {data.loggedIn && data.data.verified && (
+    <>
+      {" "}
+      <nav>
         <div
           style={{
-            alignItems: "right",
-            width: "100%",
-            textAlign: "right",
-            marginRight: 10,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <button
-            onClick={(e) => {
-              document.querySelector("body").classList.add("no-scroll");
-              setValue(true);
+          <a href="/" className="nav-image-link">
+            <Image
+              className="logo"
+              src="/logo.png"
+              width={30}
+              height={30}
+              style={{ minHeight: 30, minWidth: 30 }}
+              alt="Logo of the Alum portal"
+            ></Image>
+          </a>
+          <a href="/">
+            <div className="nav-title" style={{ marginLeft: 15 }}>
+              Alum
+            </div>
+          </a>
+        </div>
+        {data.loggedIn && data.data.verified && (
+          <div
+            style={{
+              alignItems: "right",
+              width: "100%",
+              textAlign: "right",
+              marginRight: 10,
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-search"
-              viewBox="0 0 16 16"
+            <button
+              onClick={(e) => {
+                document.querySelector("body").classList.add("no-scroll");
+                setValue(true);
+              }}
             >
-              {" "}
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{" "}
-            </svg>
-          </button>
-        </div>
-      )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                {" "}
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{" "}
+              </svg>
+            </button>
+          </div>
+        )}
+
+        {data.loggedIn ? (
+          data.data.verified ? (
+            data.data.type == "student" ? (
+              <Student path={path} data={data.data} link={LINK}></Student>
+            ) : data.data.type == "alumni" ? (
+              <Alumni path={path} data={data.data} link={LINK}></Alumni>
+            ) : (
+              <Admin path={path} data={data.data} link={LINK}></Admin>
+            )
+          ) : (
+            <Pending path={path} link={LINK}></Pending>
+          )
+        ) : (
+          <LoggedOut path={path}></LoggedOut>
+        )}
+      </nav>
       {data.loggedIn && data.data.verified ? (
         value ? (
-          <div
-            className="absolute bg-black/[.54] flex-col justify-center w-full h-[100vh] top-[60px] "
-            style={{ overflowY: "scroll" }}
-          >
+          <div className="modal">
+            {" "}
             <div
               style={{ marginTop: 10 }}
               className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] mx-auto bg-white py-4 custom-search-height"
@@ -157,21 +174,6 @@ export default function Navigation({ data, keys, LINK }) {
       ) : (
         <></>
       )}
-      {data.loggedIn ? (
-        data.data.verified ? (
-          data.data.type == "student" ? (
-            <Student path={path} data={data.data} link={LINK}></Student>
-          ) : data.data.type == "alumni" ? (
-            <Alumni path={path} data={data.data} link={LINK}></Alumni>
-          ) : (
-            <Admin path={path} data={data.data} link={LINK}></Admin>
-          )
-        ) : (
-          <Pending path={path} link={LINK}></Pending>
-        )
-      ) : (
-        <LoggedOut path={path}></LoggedOut>
-      )}
-    </nav>
+    </>
   );
 }
