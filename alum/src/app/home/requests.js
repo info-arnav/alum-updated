@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Error from "../error";
 import Loading from "./loading";
+import Button from "./button";
 
 export default function Requests({ status }) {
   const [show, setShow] = useState(false);
@@ -29,6 +30,7 @@ export default function Requests({ status }) {
     }).then((e) => e.json());
     setData(temproryData);
     setRefresh(!refresh);
+    return 1;
   };
   const fetchRequests = async () => {
     const res = await fetch(`/api/requests`, {
@@ -47,6 +49,9 @@ export default function Requests({ status }) {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    console.log(1);
+  });
   useEffect(() => {
     fetchRequests();
   }, [refresh]);
@@ -116,46 +121,16 @@ export default function Requests({ status }) {
                     </center>
                   </th>
                   <th>
-                    <center>
-                      <button
-                        style={{
-                          backgroundColor: "lightgreen",
-                          padding: 2,
-                          paddingLeft: 10,
-                          paddingRight: 10,
-                          borderRadius: 20,
-                          margin: 10,
-                          fontWeight: "lighter",
-                          fontSize: 14,
-                        }}
-                        onClick={() => {
-                          process("approve", data.indexOf(e), e.email);
-                        }}
-                      >
-                        Approve
-                      </button>
-                      <button
-                        style={{
-                          backgroundColor: "red",
-                          padding: 2,
-                          paddingLeft: 10,
-                          paddingRight: 10,
-                          borderRadius: 20,
-                          margin: 10,
-                          fontWeight: "lighter",
-                          fontSize: 14,
-                        }}
-                        onClick={() => {
-                          process("reject", data.indexOf(e), e.email);
-                        }}
-                      >
-                        Reject
-                      </button>
-                    </center>
+                    <Button process={process} e={e} data={data}></Button>
                   </th>
                 </tr>
               );
             })}
+            {data.length == 0 && (
+              <p style={{ padding: 10 }}>
+                <center>No pending requests</center>
+              </p>
+            )}
           </table>
         </div>
       )}
