@@ -39,26 +39,52 @@ export default function SendOTP({ type }) {
       {validated ? (
         <VerifyOTP email={email}></VerifyOTP>
       ) : (
-        <form onSubmit={sendOTP}>
-          <input
-            type="email"
-            className="input-field"
-            value={email}
-            onChange={(e) =>
-              setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
-            }
-            placeholder={"Enter your Email ID"}
-          ></input>
-          {error && <div className="error">{error}</div>}
-          <button
-            type="submit"
-            disabled={loading}
-            className="OTP"
-            style={{ backgroundColor: "black" }}
+        <div className="relative h-[100vh]">
+          <form
+            onSubmit={sendOTP}
+            className="w-full absolute top-[15%] flex flex-col justify-center items-center"
           >
-            {loading ? "Sending OTP...." : "Send OTP"}
-          </button>
-        </form>
+            <div class=" font-bold text-4xl md:text-5xl m-2">
+              Forgot Password
+            </div>
+            <div class="  text-[#717171] text-lg m-2">
+              No worries, we’ll send you reset instructions
+            </div>
+
+            <div className="m-2 relative mb-4 w-[85%] lg:w-[35%] md:w-[50%] mx-auto">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5 text-black dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+              </div>
+              <input
+                type="email"
+                className="input-field pl-10 bg-[#DFE6F9] text-gray-900 text-lg rounded-xl w-full p-2.5 bol"
+                value={email}
+                onChange={(e) =>
+                  setEmail(e.target.value.toLowerCase().replaceAll(" ", ""))
+                }
+                placeholder={"Enter your Email ID"}
+              ></input>
+            </div>
+            {error && <div className="error text-red-600">{error}</div>}
+            <button
+              type="submit"
+              disabled={loading}
+              className="OTP mb-10 m-4 w-[85%] lg:w-[35%] md:w-[50%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              // style={{ backgroundColor: "black" }}
+            >
+              {loading ? "Sending OTP...." : "Send OTP"}
+            </button>
+          </form>
+        </div>
       )}
     </>
   );
