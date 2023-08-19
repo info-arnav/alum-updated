@@ -64,7 +64,7 @@ export default function Reset({ type, otp, email }) {
   };
 
   return (
-    <div className="relative h-[100vh]">
+    <div className="relative h-[calc(100vh - 100px)]">
       <form
         onSubmit={handleSubmit}
         className="w-full absolute top-[15%] flex flex-col justify-center items-center"
