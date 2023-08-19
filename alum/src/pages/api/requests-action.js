@@ -63,7 +63,7 @@ export default async function Requests(req, res) {
           await transporter
             .sendMail({
               from: `"Alum" <admin@alumninet.in>`,
-              to: body.email,
+              to: body.second_email,
               subject: "Alum Account Verified",
               text: `Congratulations, your alum if has been verified. Login now to avail its features.`,
               html: `<b>Congratulations, your alum if has been verified. Login now to avail its features.</b>`,
@@ -79,7 +79,7 @@ export default async function Requests(req, res) {
       await transporter
         .sendMail({
           from: `"Alum" <admin@alumninet.in>`,
-          to: body.email,
+          to: body.second_email,
           subject: "Alum Account Verification Failed",
           text: `Your Alum profile wasnt verified. Update the documents to request verification again.`,
           html: `<b>Your Alum profile wasnt verified. Update the documents to request verification again.</b>`,
