@@ -2,8 +2,18 @@ import cookie from "cookie";
 import CryptoJS from "crypto-js";
 import QueryString from "./query-string";
 const algoliasearch = require("algoliasearch");
+import nodemailer from "nodemailer";
 
 export default async function Requests(req, res) {
+  let transporter = nodemailer.createTransport({
+    host: "smtp.rediffmailpro.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "admin@alumninet.in",
+      pass: process.env.MAIL_PASSWORD,
+    },
+  });
   const client = algoliasearch(
     process.env.ALGOLIA_MAIN,
     process.env.ALGOLIA_PRIVATE
@@ -49,17 +59,37 @@ export default async function Requests(req, res) {
           objectID: data.data.updateOneRegisteration._id,
           image: `https://alumninet.in/api/image/${data.data.updateOneRegisteration._id}`,
         })
-        .then(() => {
-          res.json({
-            error: false,
-            data: data.data.updateOneRegisteration,
-          });
+        .then(async () => {
+          await transporter
+            .sendMail({
+              from: `"Alum" <admin@alumninet.in>`,
+              to: body.email,
+              subject: "Alum Account Verified",
+              text: `Congratulations, your alum if has been verified. Login now to avail its features.`,
+              html: `<b>Congratulations, your alum if has been verified. Login now to avail its features.</b>`,
+            })
+            .then((e) =>
+              res.json({
+                error: false,
+                data: data.data.updateOneRegisteration,
+              })
+            );
         });
     } else {
-      res.json({
-        error: false,
-        data: data.data.registeration,
-      });
+      await transporter
+        .sendMail({
+          from: `"Alum" <admin@alumninet.in>`,
+          to: body.email,
+          subject: "Alum Account Verification Failed",
+          text: `Your Alum profile wasnt verified. Update the documents to request verification again.`,
+          html: `<b>Your Alum profile wasnt verified. Update the documents to request verification again.</b>`,
+        })
+        .then((e) =>
+          res.json({
+            error: false,
+            data: data.data.registeration,
+          })
+        );
     }
   } catch {
     res.json({ error: true, message: "Some Error Occured" });
