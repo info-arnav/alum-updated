@@ -50,7 +50,7 @@ export default function SendOTP({ type }) {
         >
           <form
             onSubmit={sendOTP}
-            className="w-full absolute flex flex-col justify-center items-center"
+            className="w-full flex flex-col justify-center items-center"
           >
             <div class=" font-bold text-4xl md:text-5xl m-2">
               Forgot Password

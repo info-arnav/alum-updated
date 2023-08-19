@@ -75,7 +75,7 @@ export default function Reset({ type, otp, email }) {
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full absolute flex flex-col justify-center items-center"
+        className="w-full flex flex-col justify-center items-center"
       >
         <div class=" font-bold text-4xl md:text-5xl m-2">Set New Password</div>
         <br></br>

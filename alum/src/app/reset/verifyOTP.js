@@ -48,7 +48,7 @@ export default function VerifyOTP({ email }) {
         >
           <form
             onSubmit={verifyOTP}
-            className="w-full absolute flex flex-col justify-center items-center"
+            className="w-full flex flex-col justify-center items-center"
           >
             <div class=" font-bold text-4xl md:text-5xl m-2">
               Email Verification
