@@ -41,8 +41,23 @@ export default async function sendOTP(req, res) {
           from: `"Alum" <admin@alumninet.in>`,
           to: body.email,
           subject: "OTP for Alum Registeration",
-          text: `Your OTP is ${OTP}`,
-          html: `<b>Your OTP is ${OTP}</b>`,
+          text: `Your OTP to registr at alum is ${OTP}`,
+          html: `
+          <p>
+          Hi,
+          <br>
+          <br>
+          We recieved a request to register to alum from this email address. Please use the OTP <b>${OTP}</b> to register. If it wasnt you please ignore this mail.
+          <br>
+          <br>
+          OTP's are private and you should not share it with people you do not know. Alum or NSUT authorities would not ask you for your OTP's, you should consider any such call as a fraud.
+          <br>
+          <br>
+          Regards
+          <br>
+          Team Alum
+          </p>
+          `,
         })
         .then(async (e) => {
           let otpData = await fetch(process.env.GRAPHQL_URI, {

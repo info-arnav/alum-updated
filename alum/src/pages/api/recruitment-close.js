@@ -103,9 +103,26 @@ export default async function sendOTP(req, res) {
               transporter.sendMail({
                 from: `"Alum" <admin@alumninet.in>`,
                 to: emails[i],
-                subject: "Application Status",
-                text: `Application Status`,
-                html: `<b>We are sorry to inform but your application for internship at ${body.company} for the position of ${body.position} on our platform was rejected.</b>`,
+                subject: "Update on Alum Application",
+                text: `We are sorry to inform you that you were rejected from ${body.company} for the post of ${body.position}`,
+                html: `
+                <p>
+                Dear applicant,
+                <br>
+                <br>
+                Alum is sorry to inform you that your application for <b>${body.position}</b> at <b>${body.company}</b> was <b>rejected</b> by the company.
+                <br>
+                We hope you understand that the contesting pool was highly eligible for the post. This rejection does not in any way doubt your capabilities.
+                <br>
+                <br>
+                You can contact the recruiter at <b>${body.auth_email}</b> in case of any confusions.
+                <br>
+                <br>
+                Regards
+                <br>
+                Team alum
+                </p>
+                `,
               });
             } catch {
               continue;
@@ -116,9 +133,24 @@ export default async function sendOTP(req, res) {
               transporter.sendMail({
                 from: `"Alum" <admin@alumninet.in>`,
                 to: recruited[i],
-                subject: "Application Status",
-                text: `Application Status`,
-                html: `<b>Congratulation! You have been offered an internship at ${body.company} for the position of ${body.position} on our portal. The company would most probably be reaching you soon.</b>`,
+                subject: "Update on Alum Application",
+                text: `We are pleased to inform you that you were accepted for the post of ${body.position} by the company ${body.company}`,
+                html: `
+                <p>
+                Dear applicant,
+                <br>
+                <br>
+                Alum is pleased to inform you that your application for <b>${body.position}</b> at <b>${body.company}</b> was <b>accepted</b> by the company. You shall soon be contacted by the company official for more details.
+                <br>
+                <br>
+                You can contact the recruiter at <b>${body.auth_email}</b> in case of any confusions.
+                <br>
+                <br>
+                Regards
+                <br>
+                Team alum
+                </p>
+                `,
               });
             } catch {
               continue;
