@@ -39,7 +39,7 @@ export default function SendOTP({ type }) {
       {validated ? (
         <VerifyOTP email={email}></VerifyOTP>
       ) : (
-        <div className="relative h-[calc(100vh - 20px)]">
+        <div className="relative h-[100vh]">
           <form
             onSubmit={sendOTP}
             className="w-full absolute top-[15%] flex flex-col justify-center items-center"
