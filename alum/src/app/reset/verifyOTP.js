@@ -37,10 +37,18 @@ export default function VerifyOTP({ email }) {
       {validated ? (
         <Reset otp={otp} email={email}></Reset>
       ) : (
-        <div className="relative h-[calc(100vh - 100px)]">
+        <div
+          className="relative"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "calc(100vh - 100px)",
+          }}
+        >
           <form
             onSubmit={verifyOTP}
-            className="w-full absolute top-[15%] flex flex-col justify-center items-center"
+            className="w-full absolute flex flex-col justify-center items-center"
           >
             <div class=" font-bold text-4xl md:text-5xl m-2">
               Email Verification
