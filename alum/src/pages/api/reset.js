@@ -63,6 +63,7 @@ export default async function Reset(req, res) {
               id: userData.data.updateOneRegisteration._id,
               type: userData.data.updateOneRegisteration.type,
               verified: userData.data.updateOneRegisteration.verified,
+              image: `${process.env.LINK}api/image/${userData.data.updateOneRegisteration._id}`,
             }),
             process.env.SECRET
           ).toString(),

@@ -57,7 +57,7 @@ export default async function Requests(req, res) {
           type: body.type,
           email: body.second_email,
           objectID: data.data.updateOneRegisteration._id,
-          image: `https://alumninet.in/api/image/${data.data.updateOneRegisteration._id}`,
+          image: `${process.env.LINK}api/image/${data.data.updateOneRegisteration._id}`,
         })
         .then(async () => {
           await transporter

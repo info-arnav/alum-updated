@@ -116,7 +116,7 @@ export default async function register(req, res) {
               type: type,
               email: registeredUser.data.insertOneRegisteration.email,
               objectID: registeredUser.data.insertOneRegisteration._id,
-              image: `https://alumninet.in/api/image/${registeredUser.data.insertOneRegisteration._id}`,
+              image: `${process.env.LINK}api/image/${registeredUser.data.insertOneRegisteration._id}`,
             },
           ]);
         }
