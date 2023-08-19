@@ -40,14 +40,14 @@ export default async function sendOTP(req, res) {
         .sendMail({
           from: `"Alum" <admin@alumninet.in>`,
           to: body.email,
-          subject: "OTP for Alum Registeration",
-          text: `Your OTP to registr at alum is ${OTP}`,
+          subject: "OTP to Reset Password at Alum",
+          text: `Your OTP to Reset password at alum is ${OTP}`,
           html: `
           <p>
           Hi,
           <br>
           <br>
-          We recieved a request to register to alum from this email address. Please use the OTP <b>${OTP}</b> to register. If it wasnt you please ignore this mail.
+          We recieved a request to reset your password at alum for this email address. Please use the OTP <b>${OTP}</b> to register. If it wasnt you please ignore this mail.
           <br>
           <br>
           OTP's are private and you should not share it with people you do not know. Alum or NSUT authorities would not ask you for your OTP's, you should consider any such call as a fraud.
