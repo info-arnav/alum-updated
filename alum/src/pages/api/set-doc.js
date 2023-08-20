@@ -24,8 +24,20 @@ export default async function login(req, res) {
           updateOneRegisteration(set:${QueryString({
             files: body.files,
             error: "",
+            roll: body.roll,
+            work_status: body.work_status,
+            batch: body.batch,
+            department: body.department,
+            course: body.course,
+            phone: body.phone,
           })}, query:${QueryString({ email: body.email })}) {
             files
+            roll
+            work_status
+            batch
+            department
+            course
+            phone
             error
           }
         }
@@ -36,6 +48,12 @@ export default async function login(req, res) {
       error: false,
       data: data.data.updateOneRegisteration.files,
       error_data: data.data.updateOneRegisteration.error,
+      roll: data.data.updateOneRegisteration.roll,
+      work_status: data.data.updateOneRegisteration.work_status,
+      batch: data.data.updateOneRegisteration.batch,
+      department: data.data.updateOneRegisteration.department,
+      course: data.data.updateOneRegisteration.course,
+      phone: data.data.updateOneRegisteration.phone,
     });
   } catch {
     res.json({ error: true, message: "Some Error Occured" });

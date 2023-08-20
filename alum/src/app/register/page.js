@@ -75,7 +75,7 @@ import "./register.css";
 //         <img className="group-child2" alt="" src="/vector-1.svg" />
 //       </div>
 //       <div className="nsuts-alumni-networking-container">
-//         <p className="nsuts-alumni">{`Nsut’s Alumni `}</p>
+//         <p className="nsuts-alumni">{`NSUT’s Alumni `}</p>
 //         <p className="nsuts-alumni">networking Portal</p>
 //       </div>
 //       <div className="welcome-to-alum-container">
@@ -144,7 +144,7 @@ export default function Register() {
           className="text-4xl font-bold mt-14 z-10 pl-2"
           style={{ marginLeft: 20, marginBottom: 20 }}
         >
-          Nsut’s Alumni <br />
+          NSUT’s Alumni <br />
           networking Portal
         </h1>
         <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>

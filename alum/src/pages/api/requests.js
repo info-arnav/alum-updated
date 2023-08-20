@@ -28,6 +28,12 @@ export default async function Requests(req, res) {
     })}) {
       files
       email
+      roll
+      work_status
+      batch
+      department
+      course
+      phone
     }
   }
   `,

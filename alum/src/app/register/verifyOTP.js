@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Register from "./register";
 import Link from "next/link";
+import Batch from "./batch";
 
 export default function VerifyOTP({ type, email }) {
   const [error, setError] = useState("");
-  const [otp, setOtp] = useState(0);
+  const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
   const [validated, setValidated] = useState(false);
   const verifyOTP = async (e) => {
@@ -37,7 +37,7 @@ export default function VerifyOTP({ type, email }) {
   return (
     <>
       {validated ? (
-        <Register type={type} otp={otp} email={email}></Register>
+        <Batch type={type} otp={otp} email={email}></Batch>
       ) : (
         <form onSubmit={verifyOTP}>
           <div className="m-2 relative mb-6 w-[70%] mx-auto">

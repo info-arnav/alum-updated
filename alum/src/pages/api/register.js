@@ -80,6 +80,12 @@ export default async function register(req, res) {
                 education: "[]",
                 occupation: "[]",
                 error: "",
+                phone: body.phone,
+                course: body.course,
+                department: body.department,
+                batch: body.batch,
+                work_status: body.work_status,
+                roll: body.roll,
               })}) {
                 email
                 _id

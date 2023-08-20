@@ -24,7 +24,7 @@ export default function Requests({ status }) {
         error:
           type == "approve"
             ? ""
-            : "Your profile was rejected. Please upload new files for verification.",
+            : "Your profile was rejected. Please update data for re-verification.",
       }),
       cache: "no-cache",
     }).then((e) => e.json());
@@ -95,29 +95,79 @@ export default function Requests({ status }) {
                 <tr>
                   <th>
                     <center>
-                      <img
-                        height={50}
-                        style={{
-                          maxHeight: 50,
-                          height: 50,
-                          maxWidth: 70,
-                          margin: 10,
-                        }}
-                        src={e.files}
-                        onClick={(temp) => {
-                          setImg(e.files);
-                          document
-                            .querySelector("body")
-                            .classList.add("no-scroll");
-                          setShow(true);
-                        }}
-                        alt="Verification document uploaded by User"
-                      ></img>
+                      {e.files ? (
+                        <img
+                          height={50}
+                          style={{
+                            maxHeight: 50,
+                            height: 50,
+                            maxWidth: 70,
+                            margin: 10,
+                          }}
+                          src={e.files}
+                          onClick={(temp) => {
+                            setImg(e.files);
+                            document
+                              .querySelector("body")
+                              .classList.add("no-scroll");
+                            setShow(true);
+                          }}
+                          alt="Verification document uploaded by User"
+                        ></img>
+                      ) : (
+                        <div>No image uploaded</div>
+                      )}
                     </center>
                   </th>
                   <th>
                     <center>
                       <p style={{ fontWeight: "lighter" }}>{e.email}</p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>
+                        {e.batch ? e.batch : "Batch Not provided"}
+                      </p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>
+                        {e.phone ? e.phone : "Phone Not provided"}
+                      </p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>
+                        {e.course ? e.course : " Course Not provided"}
+                      </p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>
+                        {e.department
+                          ? e.department
+                          : " Department Not provided"}
+                      </p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>
+                        {e.roll ? e.roll : " Roll No Not provided"}
+                      </p>
+                    </center>
+                  </th>
+                  <th>
+                    <center>
+                      <p style={{ fontWeight: "lighter" }}>
+                        {e.work_status
+                          ? e.work_status
+                          : " Work Status Not provided"}
+                      </p>
                     </center>
                   </th>
                   <th>

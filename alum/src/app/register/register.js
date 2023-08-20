@@ -5,7 +5,17 @@ import Link from "next/link";
 import { useState } from "react";
 import Cookies from "universal-cookie";
 
-export default function Register({ type, otp, email }) {
+export default function Register({
+  type,
+  otp,
+  email,
+  course,
+  phone,
+  department,
+  batch,
+  workStatus,
+  roll,
+}) {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -31,6 +41,12 @@ export default function Register({ type, otp, email }) {
               files: image,
               type: type,
               verified: type == "student",
+              phone: phone,
+              course: course,
+              department: department,
+              batch: batch,
+              work_status: workStatus,
+              roll: roll,
             }),
           })
             .then((e) => e.json())
@@ -131,11 +147,13 @@ export default function Register({ type, otp, email }) {
               type="file"
               accept="image/*"
               onChange={imageHandler}
-              required
               style={{ marginBottom: 10 }}
             ></input>
             <div className="file" style={{ marginBottom: 10 }}>
-              Please attach a scanned image of your degree
+              <center>
+                Please attach a scanned image of your degree, transcript or any
+                other validating document, <b>if available</b>
+              </center>
             </div>
             {image && (
               <img

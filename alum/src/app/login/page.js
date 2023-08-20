@@ -44,7 +44,7 @@ export default function Login() {
           className="text-4xl font-bold mt-14 z-10 pl-2"
           style={{ marginLeft: 20, marginBottom: 20 }}
         >
-          Nsut’s Alumni <br />
+          NSUT’s Alumni <br />
           networking Portal
         </h1>
         <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
