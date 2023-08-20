@@ -534,3 +534,7 @@ left: 67% ;  */
   left: 67%;
   color: red;
 }
+
+.login-page {
+  padding-bottom: 100px;
+}

@@ -13,8 +13,7 @@ export default function Register({ type, otp, email }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const pattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$/;
+    const pattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
     setLoading(true);
     setError("");
     if (pattern.test(password)) {
@@ -98,7 +97,7 @@ export default function Register({ type, otp, email }) {
         {/* <input value={email} type="email" disabled></input> */}
         <input
           className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
+          pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -106,25 +105,27 @@ export default function Register({ type, otp, email }) {
           required
           style={{ marginBottom: 10 }}
         ></input>
+
         {/* Your password must be at least 8 characters long, include one uppercase
       letter, one lowercase letter, one number, one special character (choose
       from - #,@, $, !, %, *, ?, &), and not contain spaces. */}
         <input
           className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$"
+          pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           placeholder="Confirm Password"
           required
         ></input>
-
+        <center style={{ marginTop: 24 }}>
+          Password must contain one digit from 1 to 9, one lowercase letter, one
+          uppercase letter, one special character, no space, and it must be 8-16
+          characters long.
+        </center>
+        <br></br>
         {type == "alumni" && (
           <>
-            <div className="file" style={{ marginBottom: 10 }}>
-              <br></br>
-              Please attach a scanned image of your degree
-            </div>
             <input
               className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
               type="file"
@@ -133,7 +134,9 @@ export default function Register({ type, otp, email }) {
               required
               style={{ marginBottom: 10 }}
             ></input>
-
+            <div className="file" style={{ marginBottom: 10 }}>
+              Please attach a scanned image of your degree
+            </div>
             {image && (
               <img
                 src={image}

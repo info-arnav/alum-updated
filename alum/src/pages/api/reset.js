@@ -41,6 +41,7 @@ export default async function Reset(req, res) {
               api
               type
               verified
+              _id
             }
           }
           `,
