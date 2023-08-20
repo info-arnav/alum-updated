@@ -47,7 +47,6 @@ export default function Docs({ data }) {
     }
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
     setUpdated(false);
     setImageError(false);
     setProcessing(true);
