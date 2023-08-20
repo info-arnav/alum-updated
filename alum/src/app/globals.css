@@ -82,12 +82,16 @@ nav {
   display: block;
 }
 
+.ais-SearchBox-input {
+  width: 100%;
+}
+
 .nav-links {
   flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: right;
   align-items: center;
+  margin-left: 24px;
 }
 
 .nav-button {
@@ -136,11 +140,14 @@ nav {
 }
 
 .nav-sub-links.active * {
-  color: black !important;
+  color: #00183f;
+  border-bottom: solid #00183f;
+  padding-bottom: 2px;
 }
 
 .nav-button.active * {
-  color: black;
+  color: #00183f !important;
+  border: none;
 }
 
 .nav-button:hover {
@@ -1154,7 +1161,6 @@ hr {
 }
 .ais-SearchBox-input {
   /* display: block; */
-  width: 100%;
   height: 100%;
   padding: 5px;
   background-color: rgb(243, 243, 244);
@@ -1251,4 +1257,8 @@ button[disabled] {
   border: 1px solid #dddddd;
   margin: 10px;
   border-radius: 10px;
+}
+
+.form-button-hover:hover {
+  background-color: #000d22 !important;
 }

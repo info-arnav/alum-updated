@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Logout from "../logout";
 
-export default function Links({ links, path, logout, data, link }) {
+export default function Links({ links, path, logout, data, link, buttons }) {
   const [show, setShow] = useState(false);
   let action = () => {
     if (!show) {
@@ -25,24 +25,54 @@ export default function Links({ links, path, logout, data, link }) {
               }}
               key={e[0].toLowerCase()}
               className={`nav-sub-links ${
-                e[0].toLowerCase() == "login" && "nav-button"
+                e[0].toLowerCase() == "register" && "nav-button"
               } ${e[1].toLowerCase() == path.toLowerCase() && "active"}`}
             >
               <Link href={e[1].toLowerCase()}>{e[0]}</Link>
             </div>
           );
         })}
-        {logout && (
+        {buttons && (
           <div
-            className="dp"
             style={{
-              height: 50,
-              width: 50,
+              width: "100%",
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "right",
               alignItems: "center",
             }}
           >
+            {buttons.map((e) => {
+              return (
+                <div
+                  onClick={(temp) => {
+                    window.location.replace(e[1].toLowerCase());
+                  }}
+                  key={e[0].toLowerCase()}
+                  className={`nav-sub-links ${
+                    e[0].toLowerCase() == "register" && "nav-button"
+                  } ${e[1].toLowerCase() == path.toLowerCase() && "active"}`}
+                >
+                  <Link href={e[1].toLowerCase()}>{e[0]}</Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {logout && (
+          <div
+            style={{
+              height: 50,
+              width: "100%",
+              display: "flex",
+              justifyContent: "right",
+              alignItems: "center",
+            }}
+          >
+            {logout && (
+              <div onClick={Logout} style={{ color: "gray" }}>
+                <a style={{ color: "gray" }}>Logout</a>
+              </div>
+            )}
             <img
               height={40}
               width={40}
@@ -50,13 +80,9 @@ export default function Links({ links, path, logout, data, link }) {
               style={{
                 borderRadius: "100%",
                 backgroundColor: "gray",
+                cursor: "default",
               }}
             />
-            {logout && (
-              <div className="dp-drop" onClick={Logout}>
-                <a>Logout</a>
-              </div>
-            )}
           </div>
         )}
       </div>

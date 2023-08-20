@@ -80,10 +80,10 @@ export default function SendOTP({ type }) {
           </div>
           <div className="text-red-600">{error && error}</div>
           <button
-            className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 form-button-hover"
             type="submit"
             disabled={loading}
-            style={{ backgroundColor: "black", marginBottom: 10 }}
+            style={{ marginBottom: 10 }}
           >
             {loading ? "Sending OTP...." : "Send OTP"}
           </button>

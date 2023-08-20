@@ -39,7 +39,7 @@ export default function Login() {
   };
   return (
     <div className="login-page flex md:flex-row flex-col">
-      <div className=" md:w-3/5 w-full relative h-[540px] md:p-5">
+      <div className="loginHeader md:w-3/5 w-full relative h-[540px] md:p-5">
         <h1
           className="text-4xl font-bold mt-14 z-10 pl-2"
           style={{ marginLeft: 20, marginBottom: 20 }}
@@ -123,7 +123,7 @@ export default function Login() {
               </div>
               <div className="text-red-600">{error && error}</div>
               <button
-                className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 form-button-hover"
                 type="submit"
                 disabled={loading}
                 style={{ marginBottom: 10 }}

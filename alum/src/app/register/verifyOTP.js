@@ -53,8 +53,8 @@ export default function VerifyOTP({ type, email }) {
           <button
             type="submit"
             disabled={loading}
-            className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-            style={{ backgroundColor: "black", marginBottom: 10 }}
+            className=" mb-10 m-4 w-[70%] text-white bg-[#00183F] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-lg rounded-xl text-md px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 form-button-hover"
+            style={{ marginBottom: 10 }}
           >
             {loading ? "Verifying OTP...." : "Verify OTP"}
           </button>

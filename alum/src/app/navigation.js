@@ -96,7 +96,7 @@ export default function Navigation({ data, keys, LINK }) {
           <div
             style={{
               alignItems: "right",
-              width: "100%",
+              marginLeft: 35,
               textAlign: "right",
               marginRight: 10,
             }}
