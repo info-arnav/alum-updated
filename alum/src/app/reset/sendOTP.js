@@ -52,10 +52,10 @@ export default function SendOTP({ type }) {
             onSubmit={sendOTP}
             className="w-full flex flex-col justify-center items-center"
           >
-            <div class=" font-bold text-4xl md:text-5xl m-2">
+            <div className=" font-bold text-4xl md:text-5xl m-2">
               Forgot Password
             </div>
-            <div class="  text-[#717171] text-lg m-2">
+            <div className="  text-[#717171] text-lg m-2">
               No worries, we’ll send you reset instructions
             </div>
 

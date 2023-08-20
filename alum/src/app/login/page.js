@@ -39,7 +39,7 @@ export default function Login() {
   };
   return (
     <div className="login-page flex md:flex-row flex-col">
-      <div className="loginHeader md:w-3/5 w-full relative h-[540px] md:p-5">
+      <div className=" md:w-3/5 w-full relative h-[540px] md:p-5">
         <h1
           className="text-4xl font-bold mt-14 z-10 pl-2"
           style={{ marginLeft: 20, marginBottom: 20 }}

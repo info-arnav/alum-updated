@@ -139,38 +139,6 @@ export default function Register() {
 
   return (
     <div className="login-page flex md:flex-row flex-col">
-      <div className="loginHeader md:w-3/5 w-full relative h-[540px] md:p-5">
-        <h1
-          className="text-4xl font-bold mt-14 z-10 pl-2"
-          style={{ marginLeft: 20, marginBottom: 20 }}
-        >
-          Nsut’s Alumni <br />
-          networking Portal
-        </h1>
-        <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
-          Welcome to Alum!
-          <br />
-          Be patient, the website is going live soon
-        </h3>
-        <div className="absolute -z-10 w-full flex flex-col justify-between h-full md:right-4 ">
-          <div className="absolute right-3 md:-top-36 -top-12 w-[175px] h-[175px] md:w-[200px] md:h-[200px] ">
-            <Image
-              className="w-[175px] h-[175px] md:w-[200px] md:h-[200px]"
-              src={login1}
-              // width={180}
-              // height={180}
-              alt="image login"
-            ></Image>
-          </div>
-          <div className="absolute right-14 md:top-0 top-20">
-            <Image
-              className="w-[303px] h-[303px] md:w-[440px] md:h-[440px]"
-              src={loginstu}
-              alt="image login"
-            ></Image>
-          </div>
-        </div>
-      </div>
       <div className="md:w-2/5 w-full p-4 md:mt-10" style={{ marginTop: 100 }}>
         <main className="login">
           <main className="overlay">
@@ -229,6 +197,38 @@ export default function Register() {
             </div>
           </main>
         </main>
+      </div>
+      <div className=" md:w-3/5 w-full relative h-[540px] md:p-5">
+        <h1
+          className="text-4xl font-bold mt-14 z-10 pl-2"
+          style={{ marginLeft: 20, marginBottom: 20 }}
+        >
+          Nsut’s Alumni <br />
+          networking Portal
+        </h1>
+        <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
+          Welcome to Alum!
+          <br />
+          Be patient, the website is going live soon
+        </h3>
+        <div className="absolute -z-10 w-full flex flex-col justify-between h-full md:right-4 ">
+          <div className="absolute right-3 md:-top-36 -top-12 w-[175px] h-[175px] md:w-[200px] md:h-[200px] ">
+            <Image
+              className="w-[175px] h-[175px] md:w-[200px] md:h-[200px]"
+              src={login1}
+              // width={180}
+              // height={180}
+              alt="image login"
+            ></Image>
+          </div>
+          <div className="absolute right-14 md:top-0 top-20">
+            <Image
+              className="w-[303px] h-[303px] md:w-[440px] md:h-[440px]"
+              src={loginstu}
+              alt="image login"
+            ></Image>
+          </div>
+        </div>
       </div>
     </div>
   );

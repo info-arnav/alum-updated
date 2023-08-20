@@ -77,7 +77,9 @@ export default function Reset({ type, otp, email }) {
         onSubmit={handleSubmit}
         className="w-full flex flex-col justify-center items-center"
       >
-        <div class=" font-bold text-4xl md:text-5xl m-2">Set New Password</div>
+        <div className=" font-bold text-4xl md:text-5xl m-2">
+          Set New Password
+        </div>
         <br></br>
         <br></br>
         <div className="m-2 relative mb-4 w-[85%] lg:w-[35%] md:w-[50%] mx-auto">

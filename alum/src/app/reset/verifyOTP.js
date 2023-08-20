@@ -50,13 +50,13 @@ export default function VerifyOTP({ email }) {
             onSubmit={verifyOTP}
             className="w-full flex flex-col justify-center items-center"
           >
-            <div class=" font-bold text-4xl md:text-5xl m-2">
+            <div className=" font-bold text-4xl md:text-5xl m-2">
               Email Verification
             </div>
-            <div class="  text-[#717171] text-lg m-2">
+            <div className="  text-[#717171] text-lg m-2">
               We have sent a code to your email ID:
             </div>
-            <div class="  text-[#717171] text-lg m-2">{email}</div>
+            <div className="  text-[#717171] text-lg m-2">{email}</div>
             <div className="m-2 relative mb-4 w-[85%] lg:w-[35%] md:w-[50%] mx-auto">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg

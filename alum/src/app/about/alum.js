@@ -26,7 +26,6 @@ export default function Alum() {
               redefines networking, knowledge sharing, and career advancement
               within the NSUT community.
             </p>
-            
           </div>
           <div className="hero-img my-auto ">
             <Image className="w-[500px]" src={heroImg} />
