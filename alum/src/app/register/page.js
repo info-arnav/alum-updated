@@ -150,7 +150,7 @@ export default function Register() {
         <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
           Welcome to Alum!
           <br />
-          Be patient, the website is going live soon
+          Register now to avail its exciting features.
         </h3>
         <div className="absolute -z-10 w-full flex flex-col justify-between h-full md:right-4 ">
           <div className="absolute right-3 md:-top-36 -top-12 w-[175px] h-[175px] md:w-[200px] md:h-[200px] ">
