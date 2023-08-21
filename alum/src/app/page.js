@@ -8,7 +8,7 @@ import LoggedIn from "./loggedIn";
 export default function Home() {
   const status = LoggedIn();
   return (
-    <div className="home-page">
+    <div className="home-page" style={{ height: "100%" }}>
       {status.loggedIn ? (
         status.data.verified ? (
           status.data.type == "student" ? (
