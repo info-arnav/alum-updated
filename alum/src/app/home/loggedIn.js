@@ -80,7 +80,15 @@ export default function LoggedIn({ type, keys, link, data }) {
     <Loading></Loading>
   ) : (
     <>
-      <center style={{ marginTop: 43 }}>
+      <center
+        style={{
+          marginTop: 43,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <button
           style={{
             backgroundColor: "#F5F4F7",
@@ -215,6 +223,7 @@ export default function LoggedIn({ type, keys, link, data }) {
                   borderBottom: "solid gray 0.2px",
                   maxWidth: 900,
                   margin: 10,
+                  width: "100%",
                 }}
               >
                 <a href={`${link}/view/profile/${e._id}`}>

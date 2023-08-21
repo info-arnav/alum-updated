@@ -28,7 +28,6 @@ export default async function login(req, res) {
   `,
       }),
     }).then((e) => e.json());
-    console.log(userdata.data.registeration.batch);
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
