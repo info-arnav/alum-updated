@@ -8,7 +8,7 @@ import LoggedIn from "./loggedIn";
 export default function Home() {
   const status = LoggedIn();
   return (
-    <div className="home-page" style={{ height: "100%" }}>
+    <div className="home-page" style={{ minHeight: "calc(100vh - 80px)" }}>
       {status.loggedIn ? (
         status.data.verified ? (
           status.data.type == "student" ? (
