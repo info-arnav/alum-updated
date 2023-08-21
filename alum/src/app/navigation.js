@@ -17,52 +17,54 @@ export default function Navigation({ data, keys, LINK }) {
   let path = usePathname().toLowerCase();
 
   function Hit({ hit }) {
-    return (
-      <div
-        className="search-hover"
-        style={{
-          paddingTop: 10,
-          paddingBottom: 10,
-          borderBottom: "solid gray 0.2px",
-        }}
-      >
-        <a href={`${LINK}/view/profile/${hit.objectID}`}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <div>
-              <img
-                height={40}
-                width={40}
-                style={{
-                  minHeight: 40,
-                  minWidth: 40,
-                  marginRight: 20,
-                  borderRadius: "100%",
-                }}
-                src={`${LINK}/api/image/${hit.objectID}`}
-              ></img>
-            </div>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <div style={{ fontWeight: "bold", fontSize: 13 }}>
-                  {hit.name || "No Name"}
-                </div>
-                <div style={{ fontSize: 11, color: "grey" }}>
-                  {hit.bio ? hit.bio : "No bio"}
+    if (data.data.id != hit.objectID) {
+      return (
+        <div
+          className="search-hover"
+          style={{
+            paddingTop: 10,
+            paddingBottom: 10,
+            borderBottom: "solid gray 0.2px",
+          }}
+        >
+          <a href={`${LINK}/view/profile/${hit.objectID}`}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div>
+                <img
+                  height={40}
+                  width={40}
+                  style={{
+                    minHeight: 40,
+                    minWidth: 40,
+                    marginRight: 20,
+                    borderRadius: "100%",
+                  }}
+                  src={`${LINK}/api/image/${hit.objectID}`}
+                ></img>
+              </div>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div style={{ fontWeight: "bold", fontSize: 13 }}>
+                    {hit.name || "No Name"}
+                  </div>
+                  <div style={{ fontSize: 11, color: "grey" }}>
+                    {hit.bio ? hit.bio : "No bio"}
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* <div style={{ flex: 1, display: "flex", justifyContent: "right" }}>
+              {/* <div style={{ flex: 1, display: "flex", justifyContent: "right" }}>
               View
             </div> */}
-          </div>
-        </a>
-      </div>
-    );
+            </div>
+          </a>
+        </div>
+      );
+    }
   }
 
   return (

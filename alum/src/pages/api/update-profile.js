@@ -33,6 +33,9 @@ export default async function addOccupation(req, res) {
         bio: body.bio,
         name: body.name,
         batch: body.batch,
+        linkedin: body.linkedin,
+        facebook: body.facebook,
+        instagram: body.instagram,
       })}) {
                   email
                   _id

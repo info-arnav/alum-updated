@@ -50,9 +50,6 @@ export default function Requests({ status }) {
     }
   };
   useEffect(() => {
-    console.log(1);
-  });
-  useEffect(() => {
     fetchRequests();
   }, [refresh]);
   return (

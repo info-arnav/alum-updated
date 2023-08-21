@@ -1,5 +1,7 @@
+import LoggedIn from "../loggedIn";
 import Alum from "./alum";
 
 export default function About() {
-  return <Alum></Alum>;
+  const status = LoggedIn();
+  return <Alum logged={status.loggedIn}></Alum>;
 }

@@ -121,6 +121,14 @@ export default function Links({ links, path, logout, data, link, buttons }) {
                 </a>
               );
             })}
+            {buttons &&
+              buttons.map((e) => {
+                return (
+                  <a key={e[0].toLowerCase()} href={e[1].toLowerCase()}>
+                    {e[0]}
+                  </a>
+                );
+              })}
             {logout && <a onClick={Logout}>Logout</a>}
           </div>
           <div className="footer"></div>

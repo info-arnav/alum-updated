@@ -142,215 +142,224 @@ export default function Docs({ data }) {
         }}
       >
         <div
-          className="m-2 relative mb-6 w-[70%] mx-auto"
-          style={{ textAlign: "left" }}
+          className="row docs-row"
+          style={{
+            display: "flex",
+            margin: 10,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <input
-            type="text"
-            className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
-            placeholder="Phone Number"
-            required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          ></input>
-        </div>
-        <div className="m-2 relative mb-6 w-[70%] mx-auto">
-          <input
-            type="text"
-            className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
-            placeholder="Roll Number - Optional"
-            value={roll}
-            onChange={(e) => setRoll(e.target.value)}
-          ></input>
-        </div>
-        <div
-          className="m-2 relative mb-6 w-[70%] mx-auto"
-          style={{ textAlign: "left" }}
-        >
-          <select
-            placeholder="Batch"
-            style={{ marginTop: 10 }}
-            required={true}
-            onChange={(e) => setBatch(e.target.value)}
-            className={
-              "bg-[#DFE6F9] pl-10 text-lg" +
-              (batch == "Batch" ? "text-gray-200" : "text-gray-900") +
-              "rounded-xl w-full p-2.5 "
-            }
+          <div
+            className="m-2 relative mb-6 w-[70%] mx-auto"
+            style={{ textAlign: "left", margin: 10 }}
           >
-            {batch ? (
-              <option selected={true}>{batch}</option>
-            ) : (
-              <option
-                disabled={true}
-                selected={true}
-                hidden={true}
-                className="text-gray-400"
-              ></option>
-            )}
-            {[
-              "1980",
-              "1981",
-              "1982",
-              "1983",
-              "1984",
-              "1985",
-              "1986",
-              "1987",
-              "1988",
-              "1989",
-              "1990",
-              "1991",
-              "1992",
-              "1993",
-              "1994",
-              "1995",
-              "1996",
-              "1997",
-              "1998",
-              "1999",
-              "2000",
-              "2001",
-              "2002",
-              "2003",
-              "2004",
-              "2005",
-              "2006",
-              "2007",
-              "2008",
-              "2009",
-              "2010",
-              "2011",
-              "2012",
-              "2013",
-              "2014",
-              "2015",
-              "2016",
-              "2017",
-              "2018",
-              "2019",
-              "2020",
-              "2021",
-              "2022",
-              "2023",
-              "2024",
-              "2025",
-              "2026",
-              "2027",
-            ].map((e) => (
-              <option>{e}</option>
-            ))}
-          </select>
-        </div>
-        <div
-          className="m-2 relative mb-6 w-[70%] mx-auto"
-          style={{ textAlign: "left" }}
-        >
-          <select
-            placeholder="Course"
-            style={{ marginTop: 10 }}
-            required
-            onChange={(e) => setCourse(e.target.value)}
-            className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+            <input
+              type="text"
+              className="bg-[#F5F4F7] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+              placeholder="Phone Number"
+              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            ></input>
+          </div>
+          <div
+            className="m-2 relative mb-6 w-[70%] mx-auto"
+            style={{ textAlign: "left", margin: 10 }}
           >
-            {course ? (
-              <option selected={true}>{course}</option>
-            ) : (
-              <option
-                disabled={true}
-                selected={true}
-                hidden={true}
-                className="text-gray-400"
-              ></option>
-            )}
-            {["Undergraduate", "Masters", "Doctorate"].map((e) => (
-              <option>{e}</option>
-            ))}
-          </select>
-        </div>
-        <div
-          className="m-2 relative mb-6 w-[70%] mx-auto"
-          style={{ textAlign: "left" }}
-        >
-          <select
-            placeholder="Department"
-            style={{ marginTop: 10 }}
-            required
-            onChange={(e) => setDepartment(e.target.value)}
-            className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+            <input
+              type="text"
+              className="bg-[#F5F4F7] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+              placeholder="Roll Number - Optional"
+              value={roll}
+              onChange={(e) => setRoll(e.target.value)}
+            ></input>
+          </div>
+          <div
+            className="m-2 relative mb-6 w-[70%] mx-auto"
+            style={{ textAlign: "left", margin: 10 }}
           >
-            {department ? (
-              <option selected={true}>{department}</option>
-            ) : (
-              <option
-                disabled={true}
-                selected={true}
-                hidden={true}
-                className="text-gray-400"
-              ></option>
-            )}
-            {[
-              "Computer Science",
-              "Information Technology",
-              "Electronics and Communication",
-              "Electrical and Electronics",
-              "Mechanical",
-              "Civil",
-              "Chemical",
-              "Biotech",
-              "BBA",
-              "B.Arch",
-              "B.Design",
-              "Other/M.Sc/PHD",
-            ].map((e) => (
-              <option>{e}</option>
-            ))}
-          </select>
+            <select
+              placeholder="Batch"
+              required={true}
+              onChange={(e) => setBatch(e.target.value)}
+              className="bg-[#F5F4F7] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+            >
+              {batch ? (
+                <option selected={true}>{batch}</option>
+              ) : (
+                <option
+                  disabled={true}
+                  selected={true}
+                  hidden={true}
+                  className="text-gray-400"
+                ></option>
+              )}
+              {[
+                "1980",
+                "1981",
+                "1982",
+                "1983",
+                "1984",
+                "1985",
+                "1986",
+                "1987",
+                "1988",
+                "1989",
+                "1990",
+                "1991",
+                "1992",
+                "1993",
+                "1994",
+                "1995",
+                "1996",
+                "1997",
+                "1998",
+                "1999",
+                "2000",
+                "2001",
+                "2002",
+                "2003",
+                "2004",
+                "2005",
+                "2006",
+                "2007",
+                "2008",
+                "2009",
+                "2010",
+                "2011",
+                "2012",
+                "2013",
+                "2014",
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026",
+                "2027",
+              ].map((e) => (
+                <option>{e}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div
-          className="m-2 relative mb-6 w-[70%] mx-auto"
-          style={{ textAlign: "left" }}
-        >
-          <select
-            placeholder="Occupation Status"
-            style={{ marginTop: 10 }}
-            required
-            onChange={(e) => setWorkStatus(e.target.value)}
-            className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+        <div className="row  docs-row" style={{ display: "flex", margin: 10 }}>
+          <div
+            className="m-2 relative mb-6 w-[70%] mx-auto"
+            style={{ textAlign: "left", margin: 10 }}
           >
-            {workStatus ? (
-              <option selected={true}>{workStatus}</option>
-            ) : (
-              <option
-                disabled={true}
-                selected={true}
-                hidden={true}
-                className="text-gray-400"
-              ></option>
-            )}
-            {[
-              "Pursuing Degree",
-              "Working",
-              "Higher Studies",
-              "Buisiness",
-              "Other",
-            ].map((e) => (
-              <option>{e}</option>
-            ))}
-          </select>
-        </div>
+            <select
+              placeholder="Course"
+              style={{ marginTop: 10 }}
+              required
+              onChange={(e) => setCourse(e.target.value)}
+              className="bg-[#F5F4F7] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+            >
+              {course ? (
+                <option selected={true}>{course}</option>
+              ) : (
+                <option
+                  disabled={true}
+                  selected={true}
+                  hidden={true}
+                  className="text-gray-400"
+                ></option>
+              )}
+              {["Undergraduate", "Masters", "Doctorate"].map((e) => (
+                <option>{e}</option>
+              ))}
+            </select>
+          </div>
+          <div
+            className="m-2 relative mb-6 w-[70%] mx-auto"
+            style={{ textAlign: "left", margin: 10 }}
+          >
+            <select
+              placeholder="Department"
+              style={{ marginTop: 10 }}
+              required
+              onChange={(e) => setDepartment(e.target.value)}
+              className="bg-[#F5F4F7] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+            >
+              {department ? (
+                <option selected={true}>{department}</option>
+              ) : (
+                <option
+                  disabled={true}
+                  selected={true}
+                  hidden={true}
+                  className="text-gray-400"
+                ></option>
+              )}
+              {[
+                "Computer Science",
+                "Information Technology",
+                "Electronics and Communication",
+                "Electrical and Electronics",
+                "Mechanical",
+                "Civil",
+                "Chemical",
+                "Biotech",
+                "BBA",
+                "B.Arch",
+                "B.Design",
+                "Other/M.Sc/PHD",
+              ].map((e) => (
+                <option>{e}</option>
+              ))}
+            </select>
+          </div>
+          <div
+            className="m-2 relative mb-6 w-[70%] mx-auto"
+            style={{ textAlign: "left", margin: 10 }}
+          >
+            <select
+              placeholder="Occupation Status"
+              style={{ marginTop: 10 }}
+              required
+              onChange={(e) => setWorkStatus(e.target.value)}
+              className="bg-[#F5F4F7] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
+            >
+              {workStatus ? (
+                <option selected={true}>{workStatus}</option>
+              ) : (
+                <option
+                  disabled={true}
+                  selected={true}
+                  hidden={true}
+                  className="text-gray-400"
+                ></option>
+              )}
+              {[
+                "Pursuing Degree",
+                "Working",
+                "Higher Studies",
+                "Buisiness",
+                "Other",
+              ].map((e) => (
+                <option>{e}</option>
+              ))}
+            </select>
+          </div>
 
-        <br></br>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={imageHandler}
-          style={{ display: "none" }}
-          id="file-verify-upload"
-        ></input>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={imageHandler}
+            style={{ display: "none" }}
+            id="file-verify-upload"
+          ></input>
+        </div>
         <button
           style={{
-            backgroundColor: "black",
+            backgroundColor: "#00183F",
             color: "white",
             padding: 5,
             paddingLeft: 20,
@@ -392,7 +401,7 @@ export default function Docs({ data }) {
           disabled={processing}
           type="submit"
           style={{
-            backgroundColor: "black",
+            backgroundColor: "#00183F",
             color: "white",
             padding: 5,
             paddingLeft: 20,

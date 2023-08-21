@@ -231,7 +231,6 @@ export default function Batch({ type, otp, email }) {
               Already registered ? Login Now
             </div>
           </Link>
-          {console.log(batch)}
         </form>
       )}
     </>

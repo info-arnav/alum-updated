@@ -1,5 +1,7 @@
 import LoggedIn from "./loggedIn";
 
-export default function Student() {
-  return <LoggedIn type="student"></LoggedIn>;
+export default function Student({ keys, link, data }) {
+  return (
+    <LoggedIn type="student" keys={keys} link={link} data={data}></LoggedIn>
+  );
 }

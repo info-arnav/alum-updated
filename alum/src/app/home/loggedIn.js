@@ -1,168 +1,307 @@
-import Alum from "../about/alum";
+"use client";
 
-export default function LoggedIn({ type }) {
-  return (
-    // <main className=" flex flex-col justify-evenly -mt-4">
-    //   <section
-    //     className="banner flex flex-row justify-around"
-    //     style={{
-    //       backgroundImage: "url('/banner.webp')",
-    //       width: "100%",
-    //       height: "calc(100vh - 60px)",
-    //       display: "flex",
-    //       alignItems: "center",
-    //     }}
-    //   >
-    //     <div
-    //       style={{
-    //         backgroundColor: "#ffffff61",
-    //         width: "100%",
-    //         display: "flex",
-    //         alignItems: "center",
-    //         justifyContent: "center",
-    //         flexDirection: "column",
-    //         padding: 20,
-    //       }}
-    //     >
-    //       <h1 style={{ fontWeight: "bold", fontSize: 35 }}>Welcome</h1>
-    //       <div>
-    //         <p>
-    //           Alumni are the brand ambassadors of their university. The world
-    //           recognizes any university by its alumni. The alumni carry the
-    //           tradition and value system of their university to the outside
-    //           world.
-    //         </p>
-    //       </div>
-    //       <br></br>
-    //       <div>
-    //         <p>Stay Connected</p>
-    //       </div>
-    //     </div>
-    //   </section>
-    //   {/*  */}
-    //   <section className="">
-    //     <p className="mx-4">
-    //       Faculty and students are the bedrocks of any educational Institute. We
-    //       at Netaji Subhas University have always been blessed with bright
-    //       students and an equally bright and dedicated faculty. Perhaps that is
-    //       one of the reasons the university has carved a niche for itself in the
-    //       global setting. The journey from Delhi Institute of Technology to
-    //       Netaji Subhas University of Technology eventhough an ardous one, yet
-    //       has been a very fulfilling one .
-    //     </p>
-    //   </section>
+import algoliasearch from "algoliasearch/lite";
+import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Loading from "./loading";
 
-    //   {/* GALLERY */}
-    //   {/* <section className="mt-32">
-    //     <h1 className="text-4xl font-bold text-center text-blue-700 ">
-    //       Gallery
-    //     </h1> */}
-    //   <section className="my-24 bg-[#444444] py-8 relative">
-    //     <h1 className="text-4xl font-bold text-center text-white absolute left-8 -top-[28px] z-20 bg-blue-700 px-8 p-2 rounded-xl w-[280px]">
-    //       <p className="inline">Gallery</p>
-    //       <p className="inline pl-20">&gt;</p>
-    //     </h1>
-    //     <Gallery></Gallery>
-    //   </section>
-
-    //   {/*LATEST  NEWS */}
-    //   <section className="mb-14 bg-[#eef0f8] w-[92%] p-4 mx-auto relative">
-    //     <div className="justify-between max-w-[85vw] mx-auto">
-    //       <h1 className="md:text-3xl text-2xl font-bold text-white bg-blue-700 mb-4 absolute -top-[28px] left-0 right-0 mx-auto md:mx-0 md:left-8 px-4 p-2 rounded-xl w-[340px]">
-    //         Latest Opportunities
-    //       </h1>
-    //       <div className="w-full items-center pt-8 flex flex-col">
-    //         <div className="py-2">
-    //           <p className="font-bold md:text-2xl my-1">
-    //             NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.
-    //           </p>
-    //           <p className="md:text-xl my-1">
-    //             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-    //             nobis quae explicabo dolores laboriosam assumenda quos,
-    //             consequuntur officiis eum optio.
-    //           </p>
-    //           <p className="md:text-xl my-1">
-    //             The Alumni Meet 2019 began with a warm welcome to all the alumni
-    //             through a welcome song by the stu- dents of Netaji Subhas
-    //             University of Technology followed by the tra- ditional lamp
-    //             lighting ceremony by Prof K.P.S Rana, acting Vice-Chan- cellor,
-    //             Prof Raj Senani, Ex-Director NSUT, Prof Vijyant Agrawal, Chair-
-    //             man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
-    //             Alumni Meet 2019, Alumni and Faculty NSUT.
-    //           </p>
-    //           <p className="md:text-xl my-1">
-    //             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-    //             nobis quae explicabo dolores laboriosam assumenda quos,
-    //             consequuntur officiis eum optio.
-    //           </p>
-    //         </div>
-    //         <div className="py-2">
-    //           <p className="font-bold md:text-2xl my-1">
-    //             NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.
-    //           </p>
-    //           <p className="md:text-xl my-1">
-    //             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-    //             nobis quae explicabo dolores laboriosam assumenda quos,
-    //             consequuntur officiis eum optio.
-    //           </p>
-    //           <p className="md:text-xl my-1">
-    //             The Alumni Meet 2019 began with a warm welcome to all the alumni
-    //             through a welcome song by the stu- dents of Netaji Subhas
-    //             University of Technology followed by the tra- ditional lamp
-    //             lighting ceremony by Prof K.P.S Rana, acting Vice-Chan- cellor,
-    //             Prof Raj Senani, Ex-Director NSUT, Prof Vijyant Agrawal, Chair-
-    //             man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
-    //             Alumni Meet 2019, Alumni and Faculty NSUT.
-    //           </p>
-    //           <p className="md:text-xl my-1">
-    //             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-    //             nobis quae explicabo dolores laboriosam assumenda quos,
-    //             consequuntur officiis eum optio.
-    //           </p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     {/* <div className="flex flex-row justify-between max-w-[85vw] mx-auto">
-    //       <div className="flex flex-col w-[800px] items-center ">
-    //         <h1 className="text-4xl font-bold text-blue-700 mb-4">
-    //           Latest Opportunities
-    //         </h1>
-    //         <p>NSUT Secures 60th Rank in NIRF Rankings 2023: Engineering.</p>
-    //       </div>
-    //       <div className="flex flex-col mt-14 pl-8">
-    //         <div className="news my-2">
-    //           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-    //           nobis quae explicabo dolores laboriosam assumenda quos,
-    //           consequuntur officiis eum optio.
-    //         </div>
-    //         <div className="news my-2">
-    //           The Alumni Meet 2019 began with a warm welcome to all the alumni
-    //           through a welcome song by the stu- dents of Netaji Subhas
-    //           University of Technology followed by the tra- ditional lamp
-    //           lighting ceremony by Prof K.P.S Rana, acting Vice-Chan- cellor,
-    //           Prof Raj Senani, Ex-Director NSUT, Prof Vijyant Agrawal, Chair-
-    //           man of Alumni Affairs, Prof Ritu Sibal, Faculty In charge of
-    //           Alumni Meet 2019, Alumni and Faculty NSUT.
-    //         </div>
-    //         <div className="news my-2">
-    //           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-    //           nobis quae explicabo dolores laboriosam assumenda quos,
-    //           consequuntur officiis eum optio.
-    //         </div>
-    //       </div>
-    //     </div> */}
-    //   </section>
-    // </main>
-
-    // <div style={{ marginTop: 35 }}>
-    //   <center>
-    //     <h1 style={{ fontWeight: "bold", fontSize: 24 }}>
-    //       Quick Links for {type}
-    //     </h1>
-    //     <h1 style={{ fontWeight: "bold", fontSize: 24 }}>Upcoming Events</h1>
-    //   </center>
-    // </div>
-
-    <Alum></Alum>
+export default function LoggedIn({ type, keys, link, data }) {
+  const searchClient = algoliasearch(keys[0], keys[1]);
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [subloading, setSubLoading] = useState(false);
+  const [num, setNum] = useState(10);
+  const [userdata, setUserData] = useState([]);
+  const find = async () => {
+    let tempData = await fetch(`/api/find-people`, {
+      method: "POST",
+      body: JSON.stringify({
+        auth_email: data.data.email,
+        num: num,
+      }),
+      cache: "no-cache",
+    }).then((e) => e.json());
+    setUserData(tempData.data);
+    setLoading(false);
+    setSubLoading(false);
+  };
+  useEffect(() => {
+    find();
+  }, [num]);
+  function Hit({ hit }) {
+    if (data.data.id != hit.objectID) {
+      return (
+        <div
+          className="search-hover"
+          style={{
+            paddingTop: 10,
+            paddingBottom: 10,
+            borderBottom: "solid gray 0.2px",
+          }}
+        >
+          <a href={`${link}/view/profile/${hit.objectID}`}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div>
+                <img
+                  height={40}
+                  width={40}
+                  style={{
+                    minHeight: 40,
+                    minWidth: 40,
+                    marginRight: 20,
+                    borderRadius: "100%",
+                  }}
+                  src={`${link}/api/image/${hit.objectID}`}
+                ></img>
+              </div>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div style={{ fontWeight: "bold", fontSize: 13 }}>
+                    {hit.name || "No Name"}
+                  </div>
+                  <div style={{ fontSize: 11, color: "grey" }}>
+                    {hit.bio ? hit.bio : "No bio"}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      );
+    }
+  }
+  return loading ? (
+    <Loading></Loading>
+  ) : (
+    <>
+      <center style={{ marginTop: 43 }}>
+        <button
+          style={{
+            backgroundColor: "#F5F4F7",
+            color: "#939393",
+            padding: 15,
+            paddingLeft: 20,
+            paddingRight: 20,
+            borderRadius: 16,
+            margin: 20,
+            width: "calc(100% - 40px)",
+            maxWidth: 600,
+            textAlign: "left",
+          }}
+          onClick={(e) => {
+            setShow(true);
+            document.querySelector("body").classList.add("no-scroll");
+          }}
+        >
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-search"
+              viewBox="0 0 16 16"
+              style={{ marginRight: 10 }}
+            >
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{" "}
+            </svg>
+            Search for your batchmates
+          </p>
+        </button>
+        {type == "student" ? (
+          <div className="logged-in-button" style={{ marginTop: 20 }}>
+            <Link
+              href="/recruitment"
+              className="right-space"
+              style={{
+                backgroundColor: "#DFE6F9",
+                padding: 15,
+                fontSize: 14,
+                paddingLeft: 25,
+                paddingRight: 25,
+                borderRadius: 10,
+                marginRight: 14,
+                marginTop: 16,
+              }}
+            >
+              Find Opportunities
+            </Link>
+          </div>
+        ) : (
+          <div className="logged-in-button" style={{ marginTop: 20 }}>
+            <Link
+              href="/recruitment"
+              className="right-space"
+              style={{
+                backgroundColor: "#DFE6F9",
+                padding: 15,
+                fontSize: 14,
+                paddingLeft: 25,
+                paddingRight: 25,
+                borderRadius: 10,
+                marginRight: 14,
+                marginTop: 16,
+              }}
+            >
+              Manage Recruitments
+            </Link>
+            <Link
+              href="/candidates"
+              style={{
+                backgroundColor: "#DFE6F9",
+                padding: 15,
+                fontSize: 14,
+                paddingLeft: 25,
+                paddingRight: 25,
+                borderRadius: 10,
+              }}
+            >
+              Past Recruitments
+            </Link>
+          </div>
+        )}
+        <p
+          style={{
+            marginTop: 76,
+            fontWeight: "bold",
+            fontSize: 18,
+            marginBottom: 10,
+          }}
+        >
+          Upcoming Events
+        </p>
+        <br></br>
+        <div className="events-courosel">
+          {[
+            { index: 0, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+            { index: 1, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+            { index: 2, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+          ].map((e) => (
+            <div className={`card-events ${e.index == 1 && "active"}`}></div>
+          ))}
+        </div>
+        <br></br>
+        <p
+          style={{
+            marginTop: 53,
+            fontWeight: "bold",
+            fontSize: 18,
+            marginBottom: 10,
+          }}
+        >
+          People You May Know
+        </p>
+        <br></br>
+        {userdata.map((e) => {
+          if (e._id != data.data.id) {
+            return (
+              <div
+                className="search-hover"
+                style={{
+                  paddingTop: 10,
+                  paddingBottom: 10,
+                  borderBottom: "solid gray 0.2px",
+                  maxWidth: 900,
+                  margin: 10,
+                }}
+              >
+                <a href={`${link}/view/profile/${e._id}`}>
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <div>
+                      <img
+                        height={40}
+                        width={40}
+                        style={{
+                          minHeight: 40,
+                          minWidth: 40,
+                          marginRight: 20,
+                          borderRadius: "100%",
+                        }}
+                        src={`${link}/api/image/${e._id}`}
+                      ></img>
+                    </div>
+                    <div>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          textAlign: "left",
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold", fontSize: 13 }}>
+                          {e.name || "No Name"}
+                        </div>
+                        <div style={{ fontSize: 11, color: "grey" }}>
+                          {e.bio ? e.bio : "No bio"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            );
+          }
+        })}
+        <button
+          className="hoveryat"
+          onClick={(e) => {
+            setSubLoading(true);
+            setNum(num + 10);
+          }}
+          disabled={subloading}
+          style={{
+            width: "calc(100% - 20px)",
+            margin: 10,
+            backgroundColor: "rgb(223, 230, 249)",
+            padding: "10px",
+            borderRadius: 18,
+          }}
+        >
+          {subloading ? "Finding...." : "Load More"}
+        </button>
+      </center>
+      <div style={{ marginBottom: 80 }}></div>
+      {show && (
+        <div className="modal">
+          <div
+            style={{ marginTop: 10 }}
+            className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] mx-auto bg-white py-4 custom-search-height"
+          >
+            <InstantSearch searchClient={searchClient} indexName="dev_alum">
+              <div className="flex flex-row justify-center">
+                <SearchBox searchAsYouType={true} placeholder="Search..." />
+                <button
+                  className="form-close"
+                  onClick={(e) => {
+                    document
+                      .querySelector("body")
+                      .classList.remove("no-scroll");
+                    setShow(false);
+                  }}
+                >
+                  X
+                </button>
+              </div>
+              {/* <div className="w-[100%] bg-blue-200"> */}
+              <Hits hitComponent={Hit} />
+              {/* </div> */}
+              {/* <SearchPopup/> */}
+            </InstantSearch>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

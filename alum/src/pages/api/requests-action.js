@@ -45,6 +45,7 @@ export default async function Requests(req, res) {
         })}) {
       files
       email
+      batch
       _id
     }
   }
@@ -58,6 +59,7 @@ export default async function Requests(req, res) {
           email: body.second_email,
           objectID: data.data.updateOneRegisteration._id,
           image: `${process.env.LINK}api/image/${data.data.updateOneRegisteration._id}`,
+          batch: data.data.updateOneRegisteration.batch,
         })
         .then(async () => {
           await transporter

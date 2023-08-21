@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import heroImg from "..//image/hero.png";
-export default function Alum() {
+export default function Alum({ logged }) {
   return (
     <main>
       <section
@@ -26,6 +26,13 @@ export default function Alum() {
               redefines networking, knowledge sharing, and career advancement
               within the NSUT community.
             </p>
+            {!logged && (
+              <Link href="/login">
+                <div className="button w-fit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none tracking-widest">
+                  Login Now
+                </div>
+              </Link>
+            )}
           </div>
           <div className="hero-img my-auto ">
             <Image className="w-[500px]" src={heroImg} />

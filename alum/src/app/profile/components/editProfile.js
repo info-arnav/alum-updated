@@ -18,6 +18,9 @@ export default function EditProfile({
   const [changed, setChanged] = useState(false);
   const [batch, setBatch] = useState(data.batch);
   const [bio, setBio] = useState(data.bio);
+  const [instagram, setInstagram] = useState(data.instagram);
+  const [facebook, setFacebook] = useState(data.facebook);
+  const [linkedin, setLinkedin] = useState(data.linkedin);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const secondUpdate = async () => {
@@ -28,6 +31,9 @@ export default function EditProfile({
         batch: batch,
         bio: bio,
         name: name,
+        instagram: instagram,
+        linkedin: linkedin,
+        facebook: facebook,
       }),
       cache: "no-cache",
     }).then((e) => e.json());
@@ -154,6 +160,57 @@ export default function EditProfile({
                   className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
                 >
                   Batch
+                </label>
+              </div>
+
+              <div className="relative">
+                <input
+                  id="Facebook"
+                  value={facebook}
+                  onChange={(e) => setFacebook(e.target.value)}
+                  className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  // placeholder="Batch"
+                ></input>
+                <label
+                  htmlFor="Facebook"
+                  className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                >
+                  Facebook Link
+                </label>
+              </div>
+
+              <div className="relative">
+                <input
+                  id="LinkedIn"
+                  value={linkedin}
+                  onChange={(e) => setLinkedin(e.target.value)}
+                  className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  // placeholder="Batch"
+                ></input>
+                <label
+                  htmlFor="LinkedIn"
+                  className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                >
+                  LinkedIn Link
+                </label>
+              </div>
+
+              <div className="relative">
+                <input
+                  id="Instagram"
+                  value={instagram}
+                  onChange={(e) => setInstagram(e.target.value)}
+                  className="w-full p-2.5 border-2 border-gray-500 text-sm text-gray-900 bg-transparent rounded-lg  appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  // placeholder="Batch"
+                ></input>
+                <label
+                  htmlFor="Instagram"
+                  className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-4"
+                >
+                  Instagram Link
                 </label>
               </div>
 

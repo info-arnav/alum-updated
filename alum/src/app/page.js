@@ -12,9 +12,17 @@ export default function Home() {
       {status.loggedIn ? (
         status.data.verified ? (
           status.data.type == "student" ? (
-            <Student></Student>
+            <Student
+              link={process.env.LINK}
+              keys={[process.env.ALGOLIA_MAIN, process.env.ALGOLIA_SEARCH]}
+              data={status}
+            ></Student>
           ) : status.data.type == "alumni" ? (
-            <Alumni></Alumni>
+            <Alumni
+              link={process.env.LINK}
+              keys={[process.env.ALGOLIA_MAIN, process.env.ALGOLIA_SEARCH]}
+              data={status}
+            ></Alumni>
           ) : (
             <Admin data={status}></Admin>
           )

@@ -1262,3 +1262,59 @@ button[disabled] {
 .form-button-hover:hover {
   background-color: #000d22 !important;
 }
+
+@media (max-width: 600px) {
+  .docs-row {
+    display: block !important;
+  }
+}
+
+.pending-verification {
+  max-width: 900px;
+}
+
+.hoveryat {
+  margin-top: 35px !important;
+  max-width: 900px;
+}
+
+.logged-in-button a:hover,
+.hoveryat:hover {
+  background-color: #00183f !important;
+  color: white;
+}
+
+.logged-in-button {
+  margin: 10px;
+}
+
+@media (max-width: 400px) {
+  .logged-in-button {
+    display: flex;
+    flex-direction: column;
+  }
+  .logged-in-button .right-space {
+    margin-right: 0px !important;
+    margin-bottom: 10px;
+  }
+}
+
+.events-courosel {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-events {
+  width: 100%;
+  margin: 10px;
+  max-width: 261px;
+  border: solid black;
+  height: 300px;
+}
+
+.card-events.active {
+  height: 400px;
+  max-width: 350px;
+}

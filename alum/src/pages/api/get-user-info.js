@@ -35,6 +35,9 @@ query{
     honors,
     portfolio,
     applications,
+    instagram,
+    linkedin,
+    facebook,
     _id
   }
 }
