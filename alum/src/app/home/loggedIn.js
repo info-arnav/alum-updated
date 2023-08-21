@@ -87,6 +87,7 @@ export default function LoggedIn({ type, keys, link, data }) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          height: "100%",
         }}
       >
         <button
