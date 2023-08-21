@@ -224,7 +224,7 @@ export default function LoggedIn({ type, keys, link, data }) {
                   borderBottom: "solid gray 0.2px",
                   maxWidth: 900,
                   margin: 10,
-                  width: "100%",
+                  width: "calc(100% - 20px)",
                 }}
               >
                 <a href={`${link}/view/profile/${e._id}`}>
