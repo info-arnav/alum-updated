@@ -84,7 +84,7 @@ export default function Alum({ logged }) {
           justifyContent: "center",
         }}
       >
-        <center>
+        <center style={{ margin: 10 }}>
           <div className="feature-content text-black md:max-w-[500px]">
             <h2 className="text-4xl ">Gallery</h2>
           </div>

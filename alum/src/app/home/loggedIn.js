@@ -101,7 +101,6 @@ export default function LoggedIn({ type, keys, link, data }) {
     <>
       <center
         style={{
-          marginTop: 43,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -109,6 +108,148 @@ export default function LoggedIn({ type, keys, link, data }) {
           minHeight: "calc(100vh - 80px)",
         }}
       >
+        <p
+          style={{
+            marginTop: 53,
+            fontWeight: "bold",
+            fontSize: 18,
+            marginBottom: 10,
+          }}
+        >
+          Upcoming Events
+        </p>
+        <div className="events-courosel" style={{ margin: 10 }}>
+          <main className="gallery-section" id="gallery">
+            <Swiper
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              loop={true}
+              slidesPerView={"auto"}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 105,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              autoplay={{
+                disableOnInteraction: false,
+              }}
+              // pagination={true}
+              navigation={true}
+              modules={[EffectCoverflow, Autoplay, Navigation]}
+              className="mySwiper"
+            >
+              {[
+                {
+                  index: 0,
+                  title: "abcd",
+                  image: "sdsdsds",
+                  desc: "dsdsd",
+                  date: "dsdsd",
+                },
+                {
+                  index: 1,
+                  title: "abcd",
+                  image: "sdsdsds",
+                  desc: "dsdsd",
+                  date: "dsdsd",
+                },
+                {
+                  index: 2,
+                  title: "abcd",
+                  image: "sdsdsds",
+                  desc: "dsdsd",
+                  date: "dsdsd",
+                },
+                {
+                  index: 3,
+                  title: "abcd",
+                  image: "sdsdsds",
+                  desc: "dsdsd",
+                  date: "dsdsd",
+                },
+                {
+                  index: 4,
+                  title: "abcd",
+                  image: "sdsdsds",
+                  desc: "dsdsd",
+                  date: "dsdsd",
+                },
+                {
+                  index: 5,
+                  title: "abcd",
+                  image: "sdsdsds",
+                  desc: "dsdsd",
+                  date: "dsdsd",
+                },
+              ].map((e) => (
+                <SwiperSlide
+                  style={{
+                    overflow: "hidden",
+                    borderRadius: 20,
+                  }}
+                >
+                  <div
+                    style={{
+                      border: "solid black",
+                      width: "100%",
+                      height: "100%",
+                      color: "black",
+                      backgroundColor: "white",
+                      borderRadius: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "100%",
+                        overflow: "hidden",
+                        height: "100%",
+                        backgroundImage: `url("/gallary/meet%20(2).jpg")`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    ></div>
+                    {/* <div
+                      style={{
+                        width: "50%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontWeight: "bold",
+                          fontSize: 24,
+                          marginBottom: 5,
+                        }}
+                      >
+                        {e.title}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          marginBottom: 20,
+                          color: "grey",
+                        }}
+                      >
+                        {e.date}
+                      </p>
+                      <p>{e.desc}</p>
+                    </div> */}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </main>
+        </div>
+        <br></br>
         <button
           style={{
             backgroundColor: "#F5F4F7",
@@ -200,71 +341,6 @@ export default function LoggedIn({ type, keys, link, data }) {
             </Link>
           </div>
         )}
-        <p
-          style={{
-            marginTop: 76,
-            fontWeight: "bold",
-            fontSize: 18,
-            marginBottom: 10,
-          }}
-        >
-          Upcoming Events
-        </p>
-        <br></br>
-        <div className="events-courosel">
-          <main className="gallery-section" id="gallery">
-            <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              loop={true}
-              slidesPerView={"auto"}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 105,
-                modifier: 1,
-                slideShadows: true,
-              }}
-              autoplay={{
-                disableOnInteraction: false,
-              }}
-              // pagination={true}
-              navigation={true}
-              modules={[EffectCoverflow, Autoplay, Navigation]}
-              className="mySwiper"
-            >
-              {[
-                { index: 0, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 1, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 2, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 3, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 4, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 5, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-              ].map((e) => (
-                <SwiperSlide
-                  style={{
-                    overflow: "hidden",
-                    borderRadius: 20,
-                  }}
-                >
-                  <div
-                    style={{
-                      border: "solid black",
-                      width: "100%",
-                      height: "100%",
-                      color: "black",
-                      backgroundColor: "white",
-                      borderRadius: 20,
-                    }}
-                  >
-                    dssd
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </main>
-        </div>
         <br></br>
         <p
           style={{
