@@ -149,41 +149,6 @@ export default function LoggedIn({ type, keys, link, data }) {
                   desc: "dsdsd",
                   date: "dsdsd",
                 },
-                {
-                  index: 1,
-                  title: "abcd",
-                  image: "sdsdsds",
-                  desc: "dsdsd",
-                  date: "dsdsd",
-                },
-                {
-                  index: 2,
-                  title: "abcd",
-                  image: "sdsdsds",
-                  desc: "dsdsd",
-                  date: "dsdsd",
-                },
-                {
-                  index: 3,
-                  title: "abcd",
-                  image: "sdsdsds",
-                  desc: "dsdsd",
-                  date: "dsdsd",
-                },
-                {
-                  index: 4,
-                  title: "abcd",
-                  image: "sdsdsds",
-                  desc: "dsdsd",
-                  date: "dsdsd",
-                },
-                {
-                  index: 5,
-                  title: "abcd",
-                  image: "sdsdsds",
-                  desc: "dsdsd",
-                  date: "dsdsd",
-                },
               ].map((e) => (
                 <SwiperSlide
                   style={{
@@ -206,22 +171,15 @@ export default function LoggedIn({ type, keys, link, data }) {
                   >
                     <div
                       style={{
-                        backgroundImage: "url('/login.webp')",
+                        backgroundImage: "url('/event.jpg')",
                         width: "100%",
-                        height: "50%",
+                        height: "100%",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                         flex: 1,
                         backgroundColor: "white",
                       }}
                     ></div>
-                    <div style={{ flex: 1, backgroundColor: "white" }}>
-                      <center>
-                        <p>{e.title}</p>
-                        <p>{e.date}</p>
-                        <p>{e.desc}</p>
-                      </center>
-                    </div>
                   </div>
                 </SwiperSlide>
               ))}
