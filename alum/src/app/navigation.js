@@ -35,6 +35,10 @@ export default function Navigation({ data, keys, LINK }) {
                   width={40}
                   style={{
                     minHeight: 40,
+                    minHeight: 40,
+                    maxHeight: 40,
+                    maxWidth: 40,
+                    minWidth: 40,
                     minWidth: 40,
                     marginRight: 20,
                     borderRadius: "100%",

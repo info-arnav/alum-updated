@@ -156,7 +156,11 @@ export default function Alum({ logged }) {
       >
         <center>
           <div className="feature-content text-black md:max-w-[500px]">
+            {/* <<<<<<< HEAD */}
             <h2 className="text-4xl font-bold">Gallery</h2>
+            {/* ======= */}
+            <h2 className="text-4xl ">Gallery</h2>
+            {/* >>>>>>> 8e671d766922cfa89be6c046566e6af577ff9f68 */}
           </div>
           <Gallery></Gallery>
         </center>

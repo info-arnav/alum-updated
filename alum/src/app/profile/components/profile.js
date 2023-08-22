@@ -8,6 +8,7 @@ export default function Profile({ data, email, link }) {
           src={`${link}api/image/${data._id}`}
           width={200}
           height={200}
+          style={{ aspectRatio: "1 / 1" }}
           alt="The profile picture"
           id="profile_image_refreshed"
           className="absolute m-auto md:m-0 left-0 right-0 md:left-8 -top-16 border-white border-8 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
@@ -20,7 +21,6 @@ export default function Profile({ data, email, link }) {
             <p
               className="m-1 font-semibold"
               style={{
-                display: "flex",
                 alignItems: "center",
               }}
             >
