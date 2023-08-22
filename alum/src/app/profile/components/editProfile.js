@@ -99,7 +99,7 @@ export default function EditProfile({
     const image = e.target.files[0];
     try {
       new Compressor(image, {
-        quality: 0,
+        quality: 0.35,
 
         success: (compressedResult) => {
           base64Converter(compressedResult);
