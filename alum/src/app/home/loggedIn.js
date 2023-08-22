@@ -202,46 +202,7 @@ export default function LoggedIn({ type, keys, link, data }) {
                       alignItems: "center",
                       justifyContent: "center",
                     }}
-                  >
-                    <div
-                      style={{
-                        overflow: "hidden",
-                        height: "100%",
-                        backgroundImage: `url("/gallary/meet%20(2).jpg")`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    ></div>
-                    {/* <div
-                      style={{
-                        width: "50%",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <p
-                        style={{
-                          fontWeight: "bold",
-                          fontSize: 24,
-                          marginBottom: 5,
-                        }}
-                      >
-                        {e.title}
-                      </p>
-                      <p
-                        style={{
-                          fontSize: 14,
-                          marginBottom: 20,
-                          color: "grey",
-                        }}
-                      >
-                        {e.date}
-                      </p>
-                      <p>{e.desc}</p>
-                    </div> */}
-                  </div>
+                  ></div>
                 </SwiperSlide>
               ))}
             </Swiper>
