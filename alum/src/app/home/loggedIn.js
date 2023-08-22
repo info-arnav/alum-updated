@@ -5,6 +5,23 @@ import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Loading from "./loading";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
+
+// Import Swiper styles
+
+import "swiper/swiper.min.css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/navigation";
+
+// import "../globals.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+
+// import required modules
+import { EffectCoverflow } from "swiper";
 
 export default function LoggedIn({ type, keys, link, data }) {
   const searchClient = algoliasearch(keys[0], keys[1]);
@@ -193,13 +210,58 @@ export default function LoggedIn({ type, keys, link, data }) {
         </p>
         <br></br>
         <div className="events-courosel">
-          {[
-            { index: 0, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-            { index: 1, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-            { index: 2, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-          ].map((e) => (
-            <div className={`card-events ${e.index == 1 && "active"}`}></div>
-          ))}
+          <main className="gallery-section" id="gallery">
+            <Swiper
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              loop={true}
+              slidesPerView={"auto"}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 105,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              autoplay={{
+                disableOnInteraction: false,
+              }}
+              // pagination={true}
+              navigation={true}
+              modules={[EffectCoverflow, Autoplay, Navigation]}
+              className="mySwiper"
+            >
+              {[
+                { index: 0, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+                { index: 1, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+                { index: 2, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+                { index: 3, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+                { index: 4, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+                { index: 5, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+              ].map((e) => (
+                <SwiperSlide
+                  style={{
+                    overflow: "hidden",
+                    borderRadius: 20,
+                  }}
+                >
+                  <div
+                    style={{
+                      border: "solid black",
+                      width: "100%",
+                      height: "100%",
+                      color: "black",
+                      backgroundColor: "white",
+                      borderRadius: 20,
+                    }}
+                  >
+                    dssd
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </main>
         </div>
         <br></br>
         <p
