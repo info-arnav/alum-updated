@@ -1,3 +1,5 @@
+import { SocialIcon } from "react-social-icons";
+
 export default function Profile({ data, email, link }) {
   return (
     <>
@@ -15,8 +17,44 @@ export default function Profile({ data, email, link }) {
             <p className="m-1 mt-3 font-bold text-2xl">
               {data.name || "Name Not Provided"}
             </p>
-            <p className="m-1 font-semibold">
+            <p
+              className="m-1 font-semibold"
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               {data.batch || "Batch Not Provided"}
+              {data.instagram && (
+                <a href={data.instagram}>
+                  <SocialIcon
+                    bgColor="white"
+                    fgColor="black"
+                    url={data.instagram}
+                    style={{ marginLeft: 10, height: 35, width: 35 }}
+                  ></SocialIcon>
+                </a>
+              )}
+              {data.facebook && (
+                <a href={data.facebook}>
+                  <SocialIcon
+                    bgColor="white"
+                    fgColor="black"
+                    url={data.facebook}
+                    style={{ marginLeft: 10, height: 35, width: 35 }}
+                  ></SocialIcon>
+                </a>
+              )}
+              {data.linkedin && (
+                <a href={data.linkedin}>
+                  <SocialIcon
+                    bgColor="white"
+                    fgColor="black"
+                    url={data.linkedin}
+                    style={{ marginLeft: 10, height: 35, width: 35 }}
+                  ></SocialIcon>
+                </a>
+              )}
             </p>
             <p className="m-1 font-semibold text-[#7d7d7d]">{email}</p>
             <p className="m-1">{data.bio || "Bio not provided"}</p>

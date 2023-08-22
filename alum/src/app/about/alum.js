@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import heroImg from "..//image/hero.png";
+import Gallery from "../home/Gallery";
 export default function Alum({ logged }) {
   return (
     <main>
@@ -72,6 +73,22 @@ export default function Alum({ logged }) {
           <div className="feature-content text-white md:max-w-[500px]">
             <h2 className="text-4xl ">Why Alum ?</h2>
           </div>
+        </center>
+      </section>
+      <section
+        className="bg-white/50 py-4"
+        style={{
+          minHeight: "calc(100vh - 80px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <center>
+          <div className="feature-content text-black md:max-w-[500px]">
+            <h2 className="text-4xl ">Gallary</h2>
+          </div>
+          <Gallery></Gallery>
         </center>
       </section>
     </main>

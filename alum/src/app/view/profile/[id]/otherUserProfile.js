@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import bg_nsut from "..//..//..//image/bgnsut.png";
+import { SocialIcon } from "react-social-icons";
 
 export default function OtherUserProfile({ id, link, userData }) {
   return (
@@ -25,8 +26,44 @@ export default function OtherUserProfile({ id, link, userData }) {
                 <p className="m-1 mt-3 font-bold text-2xl">
                   {userData.name || "Name Not Provided"}
                 </p>
-                <p className="m-1 font-semibold">
+                <p
+                  className="m-1 font-semibold"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   {userData.batch || "Batch Not Provided"}
+                  {userData.instagram && (
+                    <a href={userData.instagram}>
+                      <SocialIcon
+                        bgColor="white"
+                        fgColor="black"
+                        url={userData.instagram}
+                        style={{ marginLeft: 10, height: 35, width: 35 }}
+                      ></SocialIcon>
+                    </a>
+                  )}
+                  {userData.facebook && (
+                    <a href={userData.facebook}>
+                      <SocialIcon
+                        bgColor="white"
+                        fgColor="black"
+                        url={userData.facebook}
+                        style={{ marginLeft: 10, height: 35, width: 35 }}
+                      ></SocialIcon>
+                    </a>
+                  )}
+                  {userData.linkedin && (
+                    <a href={userData.linkedin}>
+                      <SocialIcon
+                        bgColor="white"
+                        fgColor="black"
+                        url={userData.linkedin}
+                        style={{ marginLeft: 10, height: 35, width: 35 }}
+                      ></SocialIcon>
+                    </a>
+                  )}
                 </p>
                 <p className="m-1 font-semibold text-[#7d7d7d]">
                   {userData.email}

@@ -30,6 +30,7 @@
     "react-dropzone": "^14.2.3",
     "react-instantsearch": "^7.0.1",
     "react-quill": "^2.0.0",
+    "react-social-icons": "^5.15.0",
     "realm": "^11.7.0",
     "realm-web": "^2.0.0",
     "swiper": "^9.4.1",
