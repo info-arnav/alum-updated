@@ -194,7 +194,6 @@ export default function LoggedIn({ type, keys, link, data }) {
                   <div
                     style={{
                       border: "solid black",
-                      width: "100%",
                       height: "100%",
                       color: "black",
                       backgroundColor: "white",
@@ -206,7 +205,6 @@ export default function LoggedIn({ type, keys, link, data }) {
                   >
                     <div
                       style={{
-                        width: "100%",
                         overflow: "hidden",
                         height: "100%",
                         backgroundImage: `url("/gallary/meet%20(2).jpg")`,
