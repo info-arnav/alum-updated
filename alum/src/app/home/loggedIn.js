@@ -26,6 +26,36 @@ import 'swiper/css/navigation';
 import { EffectCoverflow } from 'swiper';
 
 export default function LoggedIn({ type, keys, link, data }) {
+  const [array, setArray] = useState([
+    {
+      title: 'Xerocrypt',
+      image: '/events/1.jpg',
+      date: '26th August 2023',
+      desc: 'A devcomm society event in collaboration with coding blocks',
+    },
+    {
+      title: 'Resonance',
+      image: '/events/2.webp',
+      date: 'October',
+      desc: 'Intra College NSUT yearly event',
+    },
+    {
+      title: 'NSUT-Thon',
+      image: '/events/3.jpg',
+      date: 'September',
+      desc: 'The annual freshers society interaction event',
+    },
+  ]);
+  useEffect(() => {
+    let len = array.length;
+    if (len <= 6) {
+      let temp = array;
+      for (let x = 0; x < len; x = x + 1) {
+        temp.push(array[x]);
+      }
+      setArray(temp);
+    }
+  }, []);
   const searchClient = algoliasearch(keys[0], keys[1]);
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -101,8 +131,11 @@ export default function LoggedIn({ type, keys, link, data }) {
     <Loading></Loading>
   ) : (
     <>
-      <div className="flex felx-row justify-center">
-        <Image classname="w-[95%] h-[30%] mx-auto" src={headerImg}></Image>
+      <div className="flex felx-row justify-center w-full  h-[200px] md:h-[30%]">
+        <Image
+          className="object-cover object-center  md:w-[95%] "
+          src={headerImg}
+        ></Image>
       </div>
       <center
         style={{
@@ -114,6 +147,94 @@ export default function LoggedIn({ type, keys, link, data }) {
           minHeight: 'calc(100vh - 80px)',
         }}
       >
+        <p
+          style={{
+            marginTop: 53,
+            fontWeight: 'bold',
+            fontSize: 18,
+            marginBottom: 10,
+          }}
+        >
+          Upcoming Events
+        </p>
+        <div className="events-courosel">
+          <main className="gallery-section" id="gallery">
+            <Swiper
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              loop={true}
+              slidesPerView={'auto'}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 105,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              autoplay={{
+                disableOnInteraction: false,
+              }}
+              // pagination={true}
+              navigation={true}
+              modules={[EffectCoverflow, Autoplay, Navigation]}
+              className="mySwiper"
+            >
+              {array.map((e) => (
+                <SwiperSlide
+                  style={{
+                    overflow: 'hidden',
+                    borderRadius: 20,
+                    outline: '3px solid black',
+                    backgroundColor: 'white',
+                  }}
+                >
+                  <div
+                    style={{
+                      height: '100%',
+                      color: 'black',
+                      backgroundColor: 'white',
+                      borderRadius: 20,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                    }}
+                  >
+                    <div
+                      style={{
+                        backgroundImage: `url("${e.image}")`,
+                        width: '100%',
+                        height: '50%',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        flex: 2,
+                        backgroundColor: 'white',
+                        marginBottom: 20,
+                      }}
+                    ></div>
+                    <div style={{ flex: 1, backgroundColor: 'white' }}>
+                      <center>
+                        <p
+                          style={{
+                            marginBottom: 5,
+                            fontWeight: 'bold',
+                            fontSize: 21,
+                          }}
+                        >
+                          {e.title}
+                        </p>
+                        <p style={{ marginBottom: 15 }}>{e.date}</p>
+                        <p>{e.desc}</p>
+                      </center>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </main>
+        </div>
+        <br></br>
         <button
           style={{
             backgroundColor: '#F5F4F7',
