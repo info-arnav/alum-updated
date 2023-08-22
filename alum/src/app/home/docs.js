@@ -37,8 +37,8 @@ export default function Docs({ data }) {
     const image = e.target.files[0];
     try {
       new Compressor(image, {
-        quality: 0.6,
-        convertSize: 2000000,
+        quality: 0.4,
+
         success: (compressedResult) => {
           base64Converter(compressedResult);
         },
