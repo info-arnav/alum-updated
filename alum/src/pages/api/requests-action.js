@@ -64,16 +64,16 @@ export default async function Requests(req, res) {
         .then(async () => {
           await transporter
             .sendMail({
-              from: `"Alum" <admin@alumninet.in>`,
+              from: `"Nalum" <admin@alumninet.in>`,
               to: body.second_email,
-              subject: "Alum Account Verified",
-              text: `Congratulations, your alum if has been verified. Login now to use the platform.`,
+              subject: "Nalum Account Verified",
+              text: `Congratulations, your Nalum if has been verified. Login now to use the platform.`,
               html: `
               <p>
               Hi,
               <br>
               <br>
-              Welcome to ALUM, the NSUT networking platform. We are pleased to inform you that your account as an alumni has been <b>verified</b>.
+              Welcome to Nalum, the NSUT networking platform. We are pleased to inform you that your account as an alumni has been <b>verified</b>.
               <br>
               <br>
               You can login now <a href="${process.env.LINK}/login">here</a> to access your account. Here are a list of features you can try out - 
@@ -92,7 +92,7 @@ export default async function Requests(req, res) {
               <br>
               Regards
               <br>
-              Team Alum
+              Team Nalum
               </p>
               `,
             })
@@ -106,10 +106,10 @@ export default async function Requests(req, res) {
     } else {
       await transporter
         .sendMail({
-          from: `"Alum" <admin@alumninet.in>`,
+          from: `"Nalum" <admin@alumninet.in>`,
           to: body.second_email,
-          subject: "Alum Account Verification Failed",
-          text: `Your Alum profile wasnt verified. Update the documents to request verification again.`,
+          subject: "Nalum Account Verification Failed",
+          text: `Your Nalum profile wasnt verified. Update the documents to request verification again.`,
           html: `
               <p>
               Hi,
@@ -130,7 +130,7 @@ export default async function Requests(req, res) {
               <br>
               Regards
               <br>
-              Team Alum
+              Team Nalum
               </p>
               `,
         })

@@ -48,7 +48,7 @@ export default function Login() {
           networking Portal
         </h1>
         <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
-          Welcome to Alum!
+          Welcome to Nalum!
           <br />
           Registered ? Login Now and enjoy the platform.
         </h3>

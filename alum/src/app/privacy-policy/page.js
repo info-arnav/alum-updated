@@ -54,16 +54,16 @@ export default function Privacy() {
     <div className="privacy-page">
       <div className="main-container">
         <div className="container">
-          <div className="title">Alum Privacy Policy</div>
+          <div className="title">Nalum Privacy Policy</div>
           <div className="date">Updated April 5, 2023</div>
           <Image
             src="/logo.png"
             height={200}
             width={200}
-            alt="Alum - NSUT Alumni Network Logo"
+            alt="Nalum - NSUT Alumni Network Logo"
           ></Image>
           <p className="content">
-            Alum is a platform designed to facilitate communication and
+            Nalum is a platform designed to facilitate communication and
             collaboration between the alumni and students of NSUT (Netaji Subhas
             University of Technology).
             <br></br>

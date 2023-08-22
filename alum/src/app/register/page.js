@@ -78,8 +78,8 @@ import "./register.css";
 //         <p className="nsuts-alumni">{`NSUT’s Alumni `}</p>
 //         <p className="nsuts-alumni">networking Portal</p>
 //       </div>
-//       <div className="welcome-to-alum-container">
-//         <p className="nsuts-alumni">{`Welcome to Alum! `}</p>
+//       <div className="welcome-to-Nalum-container">
+//         <p className="nsuts-alumni">{`Welcome to Nalum! `}</p>
 //         <p className="nsuts-alumni">
 //           Be patient, the website is going live soon
 //         </p>
@@ -148,7 +148,7 @@ export default function Register() {
           networking Portal
         </h1>
         <h3 className="z-10 tracking-widest pl-2" style={{ marginLeft: 20 }}>
-          Welcome to Alum!
+          Welcome to Nalum!
           <br />
           Register now to avail its exciting features.
         </h3>

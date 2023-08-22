@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import heroImg from "..//image/hero.png";
 import Gallery from "../home/Gallery";
-export default function Alum({ logged }) {
+export default function Nalum({ logged }) {
   return (
     <main>
       <section
@@ -18,12 +18,12 @@ export default function Alum({ logged }) {
       >
         <div className="hero-container md:h-[85vh] w-[80vw] mx-auto flex flex-col md:flex-row justify-between">
           <div className="hero-content max-w-[550px] md:mt-44">
-            <h1 className="text-6xl font-bold my-2 tracking-wider">ALUM</h1>
+            <h1 className="text-6xl font-bold my-2 tracking-wider">Nalum</h1>
             <h4 className="">The NSUT Networking Site</h4>
             <p className="my-7 text-gray-500">
-              Unlock a world of opportunities and connections at Alum, the
+              Unlock a world of opportunities and connections at Nalum, the
               exclusive cross-platform web application designed to empower both
-              NSUT alumni and students. Seamlessly connecting generations, Alum
+              NSUT alumni and students. Seamlessly connecting generations, Nalum
               redefines networking, knowledge sharing, and career advancement
               within the NSUT community.
             </p>
@@ -71,7 +71,7 @@ export default function Alum({ logged }) {
       >
         <center>
           <div className="feature-content text-white md:max-w-[500px]">
-            <h2 className="text-4xl ">Why Alum ?</h2>
+            <h2 className="text-4xl ">Why Nalum ?</h2>
           </div>
         </center>
       </section>

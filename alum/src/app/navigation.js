@@ -89,12 +89,12 @@ export default function Navigation({ data, keys, LINK }) {
               width={30}
               height={30}
               style={{ minHeight: 30, minWidth: 30 }}
-              alt="Logo of the Alum portal"
+              alt="Logo of the Nalum portal"
             ></Image>
           </a>
           <a href="/">
             <div className="nav-title" style={{ marginLeft: 15 }}>
-              Alum
+              Nalum
             </div>
           </a>
         </div>

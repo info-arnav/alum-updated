@@ -8,36 +8,36 @@ import Update from "./update";
 export const metadata = {
   manifest: `${process.env.LINK}manifest.json`,
   title: {
-    default: "Alum",
-    template: "%s | Alum",
+    default: "Nalum",
+    template: "%s | Nalum",
   },
   description:
-    "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
-  generator: "Alum",
-  applicationName: "Alum",
+    "Welcome to Nalum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
+  generator: "Nalum",
+  applicationName: "Nalum",
   referrer: "origin-when-cross-origin",
-  keywords: ["Alum", "NSUT", "NSIT", "Alumni"],
+  keywords: ["Nalum", "NSUT", "NSIT", "Alumni"],
   openGraph: {
     title: {
-      default: "Alum",
-      template: "%s | Alum",
+      default: "Nalum",
+      template: "%s | Nalum",
     },
     description:
-      "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
+      "Welcome to Nalum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     url: process.env.LINK,
-    siteName: "Alum",
+    siteName: "Nalum",
     images: [
       {
         url: `${process.env.LINK}logo-background.png`,
         width: 250,
         height: 250,
-        alt: "Alum - NSUT Alumni Network Logo",
+        alt: "Nalum - NSUT Alumni Network Logo",
       },
       {
         url: `${process.env.LINK}logo.png`,
         width: 250,
         height: 193,
-        alt: "Alum - NSUT Alumni Network Logo",
+        alt: "Nalum - NSUT Alumni Network Logo",
       },
     ],
     locale: "en-US",
@@ -57,11 +57,11 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: {
-      default: "Alum",
-      template: "%s | Alum",
+      default: "Nalum",
+      template: "%s | Nalum",
     },
     description:
-      "Welcome to Alum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
+      "Welcome to Nalum, the exclusive platform connecting NSUT students and alumni. Discover networking opportunities, mentorship, job offers, internships, and more while staying engaged with the NSUT community.",
     siteId: "1643623396696006658",
     creator: "@alumninet_in",
     creatorId: "1643623396696006658",

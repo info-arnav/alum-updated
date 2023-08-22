@@ -1,6 +1,6 @@
 Copyright (c) 2022 Arnav Gupta
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, and modify the Software solely for personal or educational purposes related to the NSUT alumni portal named "Alum", provided that the following conditions are met:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, and modify the Software solely for personal or educational purposes related to the NSUT alumni portal named "Nalum", provided that the following conditions are met:
 
 1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 

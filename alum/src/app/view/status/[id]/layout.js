@@ -23,28 +23,28 @@ export async function generateMetadata({ params }) {
         ? "Status" + " " + data.comapny + "-" + data.title
         : "Recruitment Status",
     description:
-      "Discover top talent for your internship program on Alum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
+      "Discover top talent for your internship program on Nalum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
     openGraph: {
       title:
         data.title && data.comapny
           ? "Status" + " " + data.comapny + "-" + data.title
           : "Recruitment Status",
       description:
-        "Discover top talent for your internship program on Alum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
+        "Discover top talent for your internship program on Nalum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
       url: `${process.env.LINK}view/status/${params.id}`,
-      siteName: "Alum",
+      siteName: "Nalum",
       images: [
         {
           url: `${process.env.LINK}logo-background.png`,
           width: 250,
           height: 250,
-          alt: "Alum - NSUT Alumni Network Logo",
+          alt: "Nalum - NSUT Alumni Network Logo",
         },
         {
           url: `${process.env.LINK}logo.png`,
           width: 250,
           height: 193,
-          alt: "Alum - NSUT Alumni Network Logo",
+          alt: "Nalum - NSUT Alumni Network Logo",
         },
       ],
       locale: "en-US",
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }) {
           ? "Status" + " " + data.comapny + "-" + data.title
           : "Recruitment Status",
       description:
-        "Discover top talent for your internship program on Alum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
+        "Discover top talent for your internship program on Nalum, the official alumni portal of NSUT. Engage with a pool of skilled applicants as you browse through their profiles and qualifications. Enhance your recruitment strategy with our powerful platform designed to connect you with talented NSUT alumni seeking valuable internship opportunities. Start building meaningful professional relationships today!",
       images: [
         `${process.env.LINK}logo-background.png`,
         `${process.env.LINK}logo.png`,

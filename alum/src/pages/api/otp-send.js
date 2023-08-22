@@ -36,24 +36,24 @@ export default async function sendOTP(req, res) {
     try {
       await transporter
         .sendMail({
-          from: `"Alum" <admin@alumninet.in>`,
+          from: `"Nalum" <admin@alumninet.in>`,
           to: body.email,
-          subject: "OTP for Registeration on Alum",
-          text: `Your OTP to registr at alum is ${OTP}`,
+          subject: "OTP for Registeration on Nalum",
+          text: `Your OTP to registr at Nalum is ${OTP}`,
           html: `
           <p>
           Hi,
           <br>
           <br>
-          We recieved a request to register to alum from this email address. Please use the OTP <b>${OTP}</b> to register. If it wasnt you please ignore this mail.
+          We recieved a request to register to Nalum from this email address. Please use the OTP <b>${OTP}</b> to register. If it wasnt you please ignore this mail.
           <br>
           <br>
-          OTP's are private and you should not share it with people you do not know. Alum or NSUT authorities would not ask you for your OTP's, you should consider any such call as a fraud.
+          OTP's are private and you should not share it with people you do not know. Nalum or NSUT authorities would not ask you for your OTP's, you should consider any such call as a fraud.
           <br>
           <br>
           Regards
           <br>
-          Team Alum
+          Team Nalum
           </p>
           `,
         })

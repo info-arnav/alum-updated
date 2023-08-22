@@ -101,16 +101,16 @@ export default async function sendOTP(req, res) {
           for (i = 0; i < emails.length; i++) {
             try {
               transporter.sendMail({
-                from: `"Alum" <admin@alumninet.in>`,
+                from: `"Nalum" <admin@alumninet.in>`,
                 to: emails[i],
-                subject: "Update on Alum Application",
+                subject: "Update on Nalum Application",
                 text: `We are sorry to inform you that you were rejected from ${body.company} for the post of ${body.position}`,
                 html: `
                 <p>
                 Dear applicant,
                 <br>
                 <br>
-                Alum is sorry to inform you that your application for <b>${body.position}</b> at <b>${body.company}</b> was <b>rejected</b> by the company.
+                Nalum is sorry to inform you that your application for <b>${body.position}</b> at <b>${body.company}</b> was <b>rejected</b> by the company.
                 <br>
                 We hope you understand that the contesting pool was highly eligible for the post. This rejection does not in any way doubt your capabilities.
                 <br>
@@ -120,7 +120,7 @@ export default async function sendOTP(req, res) {
                 <br>
                 Regards
                 <br>
-                Team alum
+                Team Nalum
                 </p>
                 `,
               });
@@ -131,16 +131,16 @@ export default async function sendOTP(req, res) {
           for (i = 0; i < recruited.length; i++) {
             try {
               transporter.sendMail({
-                from: `"Alum" <admin@alumninet.in>`,
+                from: `"Nalum" <admin@alumninet.in>`,
                 to: recruited[i],
-                subject: "Update on Alum Application",
+                subject: "Update on Nalum Application",
                 text: `We are pleased to inform you that you were accepted for the post of ${body.position} by the company ${body.company}`,
                 html: `
                 <p>
                 Dear applicant,
                 <br>
                 <br>
-                Alum is pleased to inform you that your application for <b>${body.position}</b> at <b>${body.company}</b> was <b>accepted</b> by the company. You shall soon be contacted by the company official for more details.
+                Nalum is pleased to inform you that your application for <b>${body.position}</b> at <b>${body.company}</b> was <b>accepted</b> by the company. You shall soon be contacted by the company official for more details.
                 <br>
                 <br>
                 You can contact the recruiter at <b>${body.auth_email}</b> in case of any confusions.
@@ -148,7 +148,7 @@ export default async function sendOTP(req, res) {
                 <br>
                 Regards
                 <br>
-                Team alum
+                Team Nalum
                 </p>
                 `,
               });

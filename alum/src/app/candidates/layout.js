@@ -4,8 +4,8 @@ import LoggedIn from "../loggedIn";
 export async function metadata() {
   const status = LoggedIn();
   let description = status.loggedIn
-    ? "Explore exciting job opportunities on Alum, the NSUT alumni portal. Browse and apply for positions posted by esteemed alumni, and kickstart your career with valuable connections in your professional network."
-    : "Unlock your career potential with Alum, the NSUT alumni portal. Log in to explore job opportunities posted by alumni, apply for positions, and connect with professionals to boost your career growth and network.";
+    ? "Explore exciting job opportunities on Nalum, the NSUT alumni portal. Browse and apply for positions posted by esteemed alumni, and kickstart your career with valuable connections in your professional network."
+    : "Unlock your career potential with Nalum, the NSUT alumni portal. Log in to explore job opportunities posted by alumni, apply for positions, and connect with professionals to boost your career growth and network.";
   return {
     title: "View History",
     description: description,
@@ -13,19 +13,19 @@ export async function metadata() {
       title: "View History",
       description: description,
       url: `${process.env.LINK}candidates`,
-      siteName: "Alum",
+      siteName: "Nalum",
       images: [
         {
           url: `${process.env.LINK}logo-background.png`,
           width: 250,
           height: 250,
-          alt: "Alum - NSUT Alumni Network Logo",
+          alt: "Nalum - NSUT Alumni Network Logo",
         },
         {
           url: `${process.env.LINK}logo.png`,
           width: 250,
           height: 193,
-          alt: "Alum - NSUT Alumni Network Logo",
+          alt: "Nalum - NSUT Alumni Network Logo",
         },
       ],
       locale: "en-US",

@@ -13,7 +13,7 @@ export default function Notify({ message }) {
       <div className="notification-box">
         <header>
           <Image src="/logo.png" height="20" width="20"></Image>
-          <div className="title">Alum</div>
+          <div className="title">Nalum</div>
         </header>
         <hr></hr>
         <div className="content">{message}</div>
