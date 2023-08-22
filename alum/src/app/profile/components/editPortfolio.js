@@ -17,7 +17,7 @@ export default function EditPortfolio({
 }) {
   const type_identifier = {
     occupation: ["Company", "Position", "Duration"],
-    education: ["Intitution", "Course", "Year of Passing"],
+    education: ["institution", "Course", "Year of Passing"],
     projects: ["Title", "Domain", "Duration"],
     honors: ["Title", "Issuing Organisation", "Date of Honor"],
   };
