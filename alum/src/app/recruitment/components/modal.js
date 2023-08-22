@@ -59,6 +59,7 @@ export default function Modal({
       setCompany("");
       setDescription("");
       setStipend("");
+      setDuration("");
       setDeadline("");
       setLink("");
       document.querySelector("body").classList.remove("no-scroll");
@@ -97,6 +98,7 @@ export default function Modal({
       setDescription("");
       setDeadline("");
       setLink("");
+      setDuration("");
       setStipend("");
       document.querySelector("body").classList.remove("no-scroll");
       setShow(false);
