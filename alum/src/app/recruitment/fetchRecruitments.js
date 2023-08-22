@@ -51,9 +51,9 @@ export default function DataFetch({ email }) {
         <Error></Error>
       ) : (
         <>
-          <div className="lg:grid lg:grid-cols-5 lg:divide-x divide-y">
+          <div className="xl:grid xl:grid-cols-5 xl:divide-x divide-y">
             <div
-              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll lg:overflow-x-hidden max-w-screen lg:overflow-y-scroll lg:h-[calc(100vh-80px)] lg:min-h-[400px] lg:block flex flex-row whitespace-nowrap lg:bg-white bg-[#f9f9f9]"
+              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll xl:overflow-x-hidden max-w-screen xl:overflow-y-scroll xl:h-[calc(100vh-80px)] xl:min-h-[400px] xl:block flex flex-row whitespace-nowrap xl:bg-white bg-[#f9f9f9]"
               style={{ marginBottom: 10 }}
             >
               {data.map((e, idx) => {
@@ -68,7 +68,7 @@ export default function DataFetch({ email }) {
                     <div
                       onClick={() => ReadHandler(e, idx)}
                       key={e._id}
-                      className={`recruitment-box m-[20px] lg:py-[20px] lg:px-[25px] p-[15px] rounded-[25px] w-[100%] lg:overflow-hidden border-2 lg:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] lg:w-auto bg-[#ffffff] lg:bg-white 
+                      className={`recruitment-box m-[20px] xl:py-[20px] xl:px-[25px] p-[15px] rounded-[25px] w-[100%] xl:overflow-hidden border-2 xl:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] xl:w-auto bg-[#ffffff] xl:bg-white 
                      ${idx == selected_idx && `border-2 border-black`}`}
                     >
                       <div className="recruitment-box-header">

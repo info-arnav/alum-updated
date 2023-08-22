@@ -75,9 +75,9 @@ export default function DataFetch({ email }) {
               update={setRefresh}
             ></Modal>
           </div>
-          <div className="md:grid md:grid-cols-5 md:divide-x divide-y">
+          <div className="xl:grid xl:grid-cols-5 xl:divide-x divide-y">
             <div
-              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll md:overflow-x-hidden max-w-screen md:overflow-y-scroll md:h-[calc(100vh-80px)] md:min-h-[400px] md:block flex flex-row whitespace-nowrap md:bg-white bg-[#f9f9f9]"
+              className="recruitment-grid mb-[40px] col-span-2 overflow-x-scroll xl:overflow-x-hidden max-w-screen xl:overflow-y-scroll xl:h-[calc(100vh-80px)] xl:min-h-[400px] xl:block flex flex-row whitespace-nowrap xl:bg-white bg-[#f9f9f9]"
               style={{ marginBottom: 10 }}
             >
               {data.map((e, idx) => {
@@ -85,12 +85,12 @@ export default function DataFetch({ email }) {
                   <div
                     onClick={() => ReadHandler(e, idx)}
                     key={e._id}
-                    className={`recruitment-box m-[20px] md:py-[20px] md:px-[25px] p-[15px] rounded-[25px] w-[100%] md:overflow-hidden border-2 md:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] md:w-auto bg-[#ffffff] md:bg-white 
+                    className={`recruitment-box m-[20px] xl:py-[20px] xl:px-[25px] p-[15px] rounded-[25px] w-[100%] xl:overflow-hidden border-2 xl:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] xl:w-auto bg-[#ffffff] xl:bg-white 
                    ${idx == selected_idx && `border-2 border-black`}`}
                   >
                     {/* // <div
                   //   key={e._id}
-                  //   className="recruitment-box m-[20px] md:py-[20px] md:px-[25px] p-[15px] rounded-[25px] w-[100%] md:overflow-hidden border-2 md:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] md:w-auto bg-[#ffffff] md:bg-white "
+                  //   className="recruitment-box m-[20px] xl:py-[20px] xl:px-[25px] p-[15px] rounded-[25px] w-[100%] xl:overflow-hidden border-2 xl:border-[#b8b8b8] border-[#797979] hover:border-[#00183F] xl:w-auto bg-[#ffffff] xl:bg-white "
                   // > */}
                     <div className="recruitment-box-header">
                       {/* {e.title} at {e.company} */}
@@ -251,7 +251,7 @@ export default function DataFetch({ email }) {
 
                     {/* <div className="recruitment-box-body">
                       <p
-                        className=" md:w-[95%]"
+                        className=" xl:w-[95%]"
                         dangerouslySetInnerHTML={{
                           __html: `<p><b>Duration</b>: ${
                             e.duration || "No Duration Provided"
