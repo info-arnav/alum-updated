@@ -81,7 +81,7 @@ export default function Links({ links, path, logout, data, link, buttons }) {
                 maxHeight: 40,
                 maxWidth: 40,
                 minWidth: 40,
-                minWidth: 40,
+                minHeight: 40,
                 borderRadius: "100%",
                 backgroundColor: "gray",
                 cursor: "default",

@@ -4,6 +4,9 @@ import LoggedIn from "./loggedIn";
 import Navigation from "./navigation";
 import Footer from "./footer";
 import Update from "./update";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   manifest: `${process.env.LINK}manifest.json`,
@@ -75,7 +78,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const status = LoggedIn();
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head />
       <body>
         <Navigation

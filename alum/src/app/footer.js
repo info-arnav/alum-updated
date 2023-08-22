@@ -47,7 +47,9 @@ export default function Footer({ data }) {
           <Link href="/">
             <div className="title">Nalum</div>
           </Link>
-          <div className="description">The NSUT networking site</div>
+          <div className="description" style={{ fontSize: 16 }}>
+            <center>The NSUT Alumni Student Networking Platform</center>
+          </div>
           <div className="copyright">Copyright Nalum @ 2023</div>
         </div>
         <div className="small">

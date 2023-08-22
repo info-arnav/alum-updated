@@ -19,7 +19,7 @@ export default function Nalum({ logged }) {
         <div className="hero-container md:h-[85vh] w-[80vw] mx-auto flex flex-col md:flex-row justify-between">
           <div className="hero-content max-w-[550px] md:mt-44">
             <h1 className="text-6xl font-bold my-2 tracking-wider">Nalum</h1>
-            <h4 className="">The NSUT Networking Site</h4>
+            <h4 className="">The NSUT Alumni Student Networking Platform</h4>
             <p className="my-7 text-gray-500">
               Unlock a world of opportunities and connections at Nalum, the
               exclusive cross-platform web application designed to empower both
@@ -42,7 +42,7 @@ export default function Nalum({ logged }) {
       </section>
       {/* Features */}
       <div
-        className="bg-[#1E53CF]"
+        className="bg-[#f0f0f0]"
         style={{
           minHeight: "calc(100vh - 80px)",
           display: "flex",
@@ -52,8 +52,28 @@ export default function Nalum({ logged }) {
       >
         <div className="feature-container flex flex-col justify-around w-[80vw] mx-auto py-4 md:flex md:justify-between">
           <center>
-            <div className="feature-content text-white md:max-w-[500px]">
-              <h2 className="text-4xl ">Mission</h2>
+            <div className="feature-content text-black">
+              <img
+                src="/banner.webp"
+                style={{
+                  width: "100%",
+                  maxWidth: 700,
+                  borderRadius: 20,
+                  marginBottom: 50,
+                }}
+              ></img>
+              <h2 className="text-4xl" style={{ fontWeight: "bold" }}>
+                Our Mission
+              </h2>
+              <br></br>
+              <p>
+                Our mission at NALUM is to create a robust and interconnected
+                platform that bridges the gap between NSUT's alumni and current
+                students. By facilitating meaningful interactions, knowledge
+                exchange, and mentorship, we aim to empower personal and
+                professional growth, fostering a dynamic community that thrives
+                on collaboration and mutual success.
+              </p>
             </div>
           </center>
         </div>
@@ -61,17 +81,84 @@ export default function Nalum({ logged }) {
 
       {/* Slider */}
       <section
-        className="bg-black/50 py-4"
+        className="bg-[#d2e1e7]/80 py-4"
         style={{
           minHeight: "calc(100vh - 80px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          width: "100%",
+          paddingTop: 80,
+          paddingBottom: 80,
         }}
       >
-        <center>
-          <div className="feature-content text-white md:max-w-[500px]">
-            <h2 className="text-4xl ">Why Nalum ?</h2>
+        <center style={{ width: "100%" }}>
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <h2 className="text-4xl " style={{ fontWeight: "bold" }}>
+              Feautres ?
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                marginTop: 53,
+                width: "100%",
+              }}
+            >
+              {[
+                [
+                  "Connected Networking",
+                  "Seamlessly connect with NSUT alumni and students, fostering a vibrant community that thrives on collaboration and shared experiences.",
+                ],
+
+                [
+                  "Profile Transition",
+                  "Effortlessly update your profile status from student to alumni upon graduation, ensuring that your professional journey is accurately reflected.",
+                ],
+
+                [
+                  "Dynamic Opportunities",
+                  "Explore and share a spectrum of internship and job opportunities exclusively within the NSUT network, enabling mutual growth and advancement.",
+                ],
+
+                [
+                  "Knowledge Exchange Hub",
+                  "Engage in illuminating knowledge-sharing sessions led by seasoned alumni experts, offering valuable insights, advice, and inspiration for personal and career development.",
+                ],
+
+                [
+                  "Guided Mentorship",
+                  "Cultivate valuable connections with mentors across various industries and fields, providing guidance and support as you navigate academic and professional milestones.",
+                ],
+              ].map((e) => {
+                return (
+                  <div
+                    style={{
+                      backgroundColor: "white",
+                      width: "80%",
+                      margin: 10,
+                      maxWidth: 900,
+                      borderRadius: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      padding: 50,
+                      flexDirection: "column",
+                    }}
+                  >
+                    <p style={{ fontWeight: "bold" }}>{e[0]}</p>
+                    <br></br>
+                    <p>{e[1]}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </center>
       </section>
