@@ -136,6 +136,7 @@ export default function LoggedIn({ type, keys, link, data }) {
           alignItems: "center",
           justifyContent: "center",
           minHeight: "calc(100vh - 80px)",
+          margin: 10,
         }}
       >
         <p
@@ -148,7 +149,7 @@ export default function LoggedIn({ type, keys, link, data }) {
         >
           Upcoming Events
         </p>
-        <div className="events-courosel" style={{ margin: 10 }}>
+        <div className="events-courosel">
           <main className="gallery-section" id="gallery">
             <Swiper
               effect={"coverflow"}
@@ -176,6 +177,8 @@ export default function LoggedIn({ type, keys, link, data }) {
                   style={{
                     overflow: "hidden",
                     borderRadius: 20,
+                    outline: "3px solid black",
+                    backgroundColor: "white",
                   }}
                 >
                   <div
