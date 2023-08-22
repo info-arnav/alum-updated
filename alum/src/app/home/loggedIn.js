@@ -1,27 +1,29 @@
-"use client";
+'use client';
 
-import algoliasearch from "algoliasearch/lite";
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import Loading from "./loading";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper";
+import algoliasearch from 'algoliasearch/lite';
+import { Hits, InstantSearch, SearchBox } from 'react-instantsearch';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Loading from './loading';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper';
+import Image from 'next/image';
+import headerImg from '..//image/headerImg.png';
 
 // Import Swiper styles
 
-import "swiper/swiper.min.css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/navigation";
+import 'swiper/swiper.min.css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/navigation';
 
 // import "../globals.css";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
 
 // import required modules
-import { EffectCoverflow } from "swiper";
+import { EffectCoverflow } from 'swiper';
 
 export default function LoggedIn({ type, keys, link, data }) {
   const searchClient = algoliasearch(keys[0], keys[1]);
@@ -32,12 +34,12 @@ export default function LoggedIn({ type, keys, link, data }) {
   const [userdata, setUserData] = useState([]);
   const find = async () => {
     let tempData = await fetch(`/api/find-people`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         auth_email: data.data.email,
         num: num,
       }),
-      cache: "no-cache",
+      cache: 'no-cache',
     }).then((e) => e.json());
     setUserData(tempData.data);
     setLoading(false);
@@ -54,11 +56,11 @@ export default function LoggedIn({ type, keys, link, data }) {
           style={{
             paddingTop: 10,
             paddingBottom: 10,
-            borderBottom: "solid gray 0.2px",
+            borderBottom: 'solid gray 0.2px',
           }}
         >
           <a href={`${link}/view/profile/${hit.objectID}`}>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
               <div>
                 <img
                   height={40}
@@ -69,7 +71,7 @@ export default function LoggedIn({ type, keys, link, data }) {
                     maxWidth: 40,
                     minWidth: 40,
                     marginRight: 20,
-                    borderRadius: "100%",
+                    borderRadius: '100%',
                   }}
                   src={`${link}/api/image/${hit.objectID}`}
                 ></img>
@@ -77,15 +79,15 @@ export default function LoggedIn({ type, keys, link, data }) {
               <div>
                 <div
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
+                    display: 'flex',
+                    flexDirection: 'column',
                   }}
                 >
-                  <div style={{ fontWeight: "bold", fontSize: 13 }}>
-                    {hit.name || "No Name"}
+                  <div style={{ fontWeight: 'bold', fontSize: 13 }}>
+                    {hit.name || 'No Name'}
                   </div>
-                  <div style={{ fontSize: 11, color: "grey" }}>
-                    {hit.bio ? hit.bio : "No bio"}
+                  <div style={{ fontSize: 11, color: 'grey' }}>
+                    {hit.bio ? hit.bio : 'No bio'}
                   </div>
                 </div>
               </div>
@@ -99,39 +101,42 @@ export default function LoggedIn({ type, keys, link, data }) {
     <Loading></Loading>
   ) : (
     <>
+      <div className="flex felx-row justify-center">
+        <Image classname="w-[95%] h-[30%] mx-auto" src={headerImg}></Image>
+      </div>
       <center
         style={{
           marginTop: 43,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "calc(100vh - 80px)",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: 'calc(100vh - 80px)',
         }}
       >
         <button
           style={{
-            backgroundColor: "#F5F4F7",
-            color: "#939393",
+            backgroundColor: '#F5F4F7',
+            color: '#939393',
             padding: 15,
             paddingLeft: 20,
             paddingRight: 20,
             borderRadius: 16,
             margin: 20,
-            width: "calc(100% - 40px)",
+            width: 'calc(100% - 40px)',
             maxWidth: 600,
-            textAlign: "left",
+            textAlign: 'left',
           }}
           onClick={(e) => {
             setShow(true);
-            document.querySelector("body").classList.add("no-scroll");
+            document.querySelector('body').classList.add('no-scroll');
           }}
         >
           <p
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <svg
@@ -143,18 +148,18 @@ export default function LoggedIn({ type, keys, link, data }) {
               viewBox="0 0 16 16"
               style={{ marginRight: 10 }}
             >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{" "}
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{' '}
             </svg>
             Search for your batchmates
           </p>
         </button>
-        {type == "student" ? (
+        {type == 'student' ? (
           <div className="logged-in-button" style={{ marginTop: 20 }}>
             <Link
               href="/recruitment"
               className="right-space"
               style={{
-                backgroundColor: "#DFE6F9",
+                backgroundColor: '#DFE6F9',
                 padding: 15,
                 fontSize: 14,
                 paddingLeft: 25,
@@ -173,7 +178,7 @@ export default function LoggedIn({ type, keys, link, data }) {
               href="/recruitment"
               className="right-space"
               style={{
-                backgroundColor: "#DFE6F9",
+                backgroundColor: '#DFE6F9',
                 padding: 15,
                 fontSize: 14,
                 paddingLeft: 25,
@@ -188,7 +193,7 @@ export default function LoggedIn({ type, keys, link, data }) {
             <Link
               href="/candidates"
               style={{
-                backgroundColor: "#DFE6F9",
+                backgroundColor: '#DFE6F9',
                 padding: 15,
                 fontSize: 14,
                 paddingLeft: 25,
@@ -203,7 +208,7 @@ export default function LoggedIn({ type, keys, link, data }) {
         <p
           style={{
             marginTop: 76,
-            fontWeight: "bold",
+            fontWeight: 'bold',
             fontSize: 18,
             marginBottom: 10,
           }}
@@ -214,11 +219,11 @@ export default function LoggedIn({ type, keys, link, data }) {
         <div className="events-courosel">
           <main className="gallery-section" id="gallery">
             <Swiper
-              effect={"coverflow"}
+              effect={'coverflow'}
               grabCursor={true}
               centeredSlides={true}
               loop={true}
-              slidesPerView={"auto"}
+              slidesPerView={'auto'}
               coverflowEffect={{
                 rotate: 0,
                 stretch: 0,
@@ -235,26 +240,26 @@ export default function LoggedIn({ type, keys, link, data }) {
               className="mySwiper"
             >
               {[
-                { index: 0, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 1, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 2, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 3, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 4, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
-                { index: 5, title: "abcd", image: "sdsdsds", desc: "dsdsd" },
+                { index: 0, title: 'abcd', image: 'sdsdsds', desc: 'dsdsd' },
+                { index: 1, title: 'abcd', image: 'sdsdsds', desc: 'dsdsd' },
+                { index: 2, title: 'abcd', image: 'sdsdsds', desc: 'dsdsd' },
+                { index: 3, title: 'abcd', image: 'sdsdsds', desc: 'dsdsd' },
+                { index: 4, title: 'abcd', image: 'sdsdsds', desc: 'dsdsd' },
+                { index: 5, title: 'abcd', image: 'sdsdsds', desc: 'dsdsd' },
               ].map((e) => (
                 <SwiperSlide
                   style={{
-                    overflow: "hidden",
+                    overflow: 'hidden',
                     borderRadius: 20,
                   }}
                 >
                   <div
                     style={{
-                      border: "solid black",
-                      width: "100%",
-                      height: "100%",
-                      color: "black",
-                      backgroundColor: "white",
+                      border: 'solid black',
+                      width: '100%',
+                      height: '100%',
+                      color: 'black',
+                      backgroundColor: 'white',
                       borderRadius: 20,
                     }}
                   >
@@ -269,7 +274,7 @@ export default function LoggedIn({ type, keys, link, data }) {
         <p
           style={{
             marginTop: 53,
-            fontWeight: "bold",
+            fontWeight: 'bold',
             fontSize: 18,
             marginBottom: 10,
           }}
@@ -285,14 +290,14 @@ export default function LoggedIn({ type, keys, link, data }) {
                 style={{
                   paddingTop: 10,
                   paddingBottom: 10,
-                  borderBottom: "solid gray 0.2px",
+                  borderBottom: 'solid gray 0.2px',
                   maxWidth: 900,
                   margin: 10,
-                  width: "calc(100% - 20px)",
+                  width: 'calc(100% - 20px)',
                 }}
               >
                 <a href={`${link}/view/profile/${e._id}`}>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <div>
                       <img
                         height={40}
@@ -305,7 +310,7 @@ export default function LoggedIn({ type, keys, link, data }) {
                           minWidth: 40,
                           minWidth: 40,
                           marginRight: 20,
-                          borderRadius: "100%",
+                          borderRadius: '100%',
                         }}
                         src={`${link}/api/image/${e._id}`}
                       ></img>
@@ -313,16 +318,16 @@ export default function LoggedIn({ type, keys, link, data }) {
                     <div>
                       <div
                         style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          textAlign: "left",
+                          display: 'flex',
+                          flexDirection: 'column',
+                          textAlign: 'left',
                         }}
                       >
-                        <div style={{ fontWeight: "bold", fontSize: 13 }}>
-                          {e.name || "No Name"}
+                        <div style={{ fontWeight: 'bold', fontSize: 13 }}>
+                          {e.name || 'No Name'}
                         </div>
-                        <div style={{ fontSize: 11, color: "grey" }}>
-                          {e.bio ? e.bio : "No bio"}
+                        <div style={{ fontSize: 11, color: 'grey' }}>
+                          {e.bio ? e.bio : 'No bio'}
                         </div>
                       </div>
                     </div>
@@ -340,14 +345,14 @@ export default function LoggedIn({ type, keys, link, data }) {
           }}
           disabled={subloading}
           style={{
-            width: "calc(100% - 20px)",
+            width: 'calc(100% - 20px)',
             margin: 10,
-            backgroundColor: "rgb(223, 230, 249)",
-            padding: "10px",
+            backgroundColor: 'rgb(223, 230, 249)',
+            padding: '10px',
             borderRadius: 18,
           }}
         >
-          {subloading ? "Finding...." : "Load More"}
+          {subloading ? 'Finding....' : 'Load More'}
         </button>
       </center>
       <div style={{ marginBottom: 80 }}></div>
@@ -364,8 +369,8 @@ export default function LoggedIn({ type, keys, link, data }) {
                   className="form-close"
                   onClick={(e) => {
                     document
-                      .querySelector("body")
-                      .classList.remove("no-scroll");
+                      .querySelector('body')
+                      .classList.remove('no-scroll');
                     setShow(false);
                   }}
                 >
