@@ -189,11 +189,11 @@ export default function LoggedIn({ type, keys, link, data }) {
                   style={{
                     overflow: "hidden",
                     borderRadius: 20,
+                    outline: "3px solid black",
                   }}
                 >
                   <div
                     style={{
-                      border: "solid black",
                       height: "100%",
                       color: "black",
                       backgroundColor: "white",
@@ -201,8 +201,28 @@ export default function LoggedIn({ type, keys, link, data }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      flexDirection: "column",
                     }}
-                  ></div>
+                  >
+                    <div
+                      style={{
+                        backgroundImage: "url('/login.webp')",
+                        width: "100%",
+                        height: "50%",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        flex: 1,
+                        backgroundColor: "white",
+                      }}
+                    ></div>
+                    <div style={{ flex: 1, backgroundColor: "white" }}>
+                      <center>
+                        <p>{e.title}</p>
+                        <p>{e.date}</p>
+                        <p>{e.desc}</p>
+                      </center>
+                    </div>
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
