@@ -24,6 +24,36 @@ import "swiper/css/navigation";
 import { EffectCoverflow } from "swiper";
 
 export default function LoggedIn({ type, keys, link, data }) {
+  const [array, setArray] = useState([
+    {
+      title: "Xerocrypt",
+      image: "/events/1.jpg",
+      date: "26th August 2023",
+      desc: "A devcomm society event in collaboration with coding blocks",
+    },
+    {
+      title: "Resonance",
+      image: "/events/2.webp",
+      date: "October",
+      desc: "Intra College NSUT yearly event",
+    },
+    {
+      title: "NSUT-Thon",
+      image: "/events/3.jpg",
+      date: "September",
+      desc: "The annual freshers society interaction event",
+    },
+  ]);
+  useEffect(() => {
+    let len = array.length;
+    if (len <= 6) {
+      let temp = array;
+      for (let x = 0; x < len; x = x + 1) {
+        temp.push(array[x]);
+      }
+      setArray(temp);
+    }
+  }, []);
   const searchClient = algoliasearch(keys[0], keys[1]);
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -141,15 +171,7 @@ export default function LoggedIn({ type, keys, link, data }) {
               modules={[EffectCoverflow, Autoplay, Navigation]}
               className="mySwiper"
             >
-              {[
-                {
-                  index: 0,
-                  title: "abcd",
-                  image: "sdsdsds",
-                  desc: "dsdsd",
-                  date: "dsdsd",
-                },
-              ].map((e) => (
+              {array.map((e) => (
                 <SwiperSlide
                   style={{
                     overflow: "hidden",
@@ -171,15 +193,31 @@ export default function LoggedIn({ type, keys, link, data }) {
                   >
                     <div
                       style={{
-                        backgroundImage: "url('/event.jpg')",
+                        backgroundImage: `url("${e.image}")`,
                         width: "100%",
-                        height: "100%",
+                        height: "50%",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
-                        flex: 1,
+                        flex: 2,
                         backgroundColor: "white",
+                        marginBottom: 20,
                       }}
                     ></div>
+                    <div style={{ flex: 1, backgroundColor: "white" }}>
+                      <center>
+                        <p
+                          style={{
+                            marginBottom: 5,
+                            fontWeight: "bold",
+                            fontSize: 21,
+                          }}
+                        >
+                          {e.title}
+                        </p>
+                        <p style={{ marginBottom: 15 }}>{e.date}</p>
+                        <p>{e.desc}</p>
+                      </center>
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}

@@ -78,6 +78,10 @@ export default function Links({ links, path, logout, data, link, buttons }) {
               width={40}
               src={`${link}api/image/${data ? data.id : "undefined"}`}
               style={{
+                maxHeight: 40,
+                maxWidth: 40,
+                minWidth: 40,
+                minWidth: 40,
                 borderRadius: "100%",
                 backgroundColor: "gray",
                 cursor: "default",

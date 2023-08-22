@@ -41,9 +41,40 @@ export default function Alum({ logged }) {
         </div>
       </section>
       {/* Features */}
+      <div
+        className="bg-[#1E53CF]"
+        style={{
+          minHeight: "calc(100vh - 80px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="feature-container flex flex-col justify-around w-[80vw] mx-auto py-4 md:flex md:justify-between">
+          <center>
+            <div className="feature-content text-white md:max-w-[500px]">
+              <h2 className="text-4xl ">Mission</h2>
+            </div>
+          </center>
+        </div>
+      </div>
 
       {/* Slider */}
-
+      <section
+        className="bg-black/50 py-4"
+        style={{
+          minHeight: "calc(100vh - 80px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <center>
+          <div className="feature-content text-white md:max-w-[500px]">
+            <h2 className="text-4xl ">Why Alum ?</h2>
+          </div>
+        </center>
+      </section>
       <section
         className="bg-white/50 py-4"
         style={{
