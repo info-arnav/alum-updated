@@ -176,7 +176,6 @@ export default function LoggedIn({ type, keys, link, data }) {
                   style={{
                     overflow: "hidden",
                     borderRadius: 20,
-                    outline: "3px solid black",
                   }}
                 >
                   <div
