@@ -15,8 +15,9 @@ export default function OtherUserProfile({ id, link, userData }) {
           <div className="">
             <img
               src={`${link}api/image/${id}`}
-              width={200}
-              height={200}
+              width={150}
+              height={150}
+              style={{ aspectRatio: "1 / 1" }}
               alt="The profile picture"
               id="profile_image_refreshed"
               className="absolute m-auto md:m-0 left-0 right-0 md:left-8 -top-16 border-white border-8 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] w-[150px] md:w-[200px] md:h-[200px]"
@@ -26,13 +27,7 @@ export default function OtherUserProfile({ id, link, userData }) {
                 <p className="m-1 mt-3 font-bold text-2xl">
                   {userData.name || "Name Not Provided"}
                 </p>
-                <p
-                  className="m-1 font-semibold"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
+                <p className="m-1 font-semibold" style={{}}>
                   {userData.batch || "Batch Not Provided"}
                   {userData.instagram && (
                     <a href={userData.instagram}>
