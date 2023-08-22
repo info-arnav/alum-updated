@@ -100,6 +100,7 @@ export default function EditProfile({
     try {
       new Compressor(image, {
         quality: 0.6,
+        convertSize: 2000000,
         success: (compressedResult) => {
           base64Converter(compressedResult);
         },
