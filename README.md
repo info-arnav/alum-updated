@@ -12,7 +12,7 @@ Alum is a powerful and user-friendly platform built using Next.js, designed to c
 git clone https://github.com/your_username/alum.git
 ```
 
-2. Install dependencies
+2. Install dependencies -
 
 ```
 cd alum
