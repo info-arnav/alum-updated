@@ -20,7 +20,7 @@ export default function Nalum({ logged }) {
           <div className="hero-content max-w-[550px] md:mt-44">
             <h1 className="text-6xl font-bold my-2 tracking-wider">Nalum</h1>
             <h4 className="">The NSUT Alumni Student Networking Platform</h4>
-            <p className="my-7 text-gray-500">
+            <p className="my-7 text-gray-500" style={{ color: "red" }}>
               Unlock a world of opportunities and connections at Nalum, the
               exclusive cross-platform web application designed to empower both
               NSUT alumni and students. Seamlessly connecting generations, Nalum
