@@ -74,7 +74,7 @@ export default function Nalum({ logged }) {
                 Our Mission
               </h2>
               <br></br>
-              <p>
+              <p style={{ fontSize: 18 }}>
                 Our mission at NALUM is to create a robust and interconnected
                 platform that bridges the gap between NSUT's alumni and current
                 students. By facilitating meaningful interactions, knowledge
@@ -160,9 +160,9 @@ export default function Nalum({ logged }) {
                       flexDirection: "column",
                     }}
                   >
-                    <p style={{ fontWeight: "bold" }}>{e[0]}</p>
+                    <p style={{ fontWeight: "bold", fontSize: 18 }}>{e[0]}</p>
                     <br></br>
-                    <p>{e[1]}</p>
+                    <p style={{ fontSize: 18 }}>{e[1]}</p>
                   </div>
                 );
               })}
