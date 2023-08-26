@@ -67,6 +67,7 @@ export default async function login(req, res) {
                 key: CryptoJS.AES.encrypt(
                   JSON.stringify({
                     email: body.email,
+                    fingerprint: body.fingerprint,
                     id: data.data.registeration._id,
                     type: data.data.registeration.type,
                     verified: data.data.registeration.verified,

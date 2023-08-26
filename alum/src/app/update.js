@@ -1,9 +1,13 @@
 "use client";
+
 import Cookies from "universal-cookie";
 import { useEffect, useState } from "react";
 import UpdateNotification from "./update-notification";
+import logout from "./logout";
+import getBrowserFingerprint from "./getBrowserFingerPrint";
 
 export default function Update({ email, oldData }) {
+  const fingerprint = getBrowserFingerprint();
   let cookies = new Cookies();
   const [show, setShow] = useState(false);
   const fetchData = async () => {
@@ -18,7 +22,9 @@ export default function Update({ email, oldData }) {
       location.reload();
     } else {
       oldData.verified = `${oldData.verified}`;
-      if (
+      if (oldData.fingerprint != fingerprint) {
+        logout();
+      } else if (
         data.newData.email != oldData.email ||
         data.newData.verified != oldData.verified ||
         data.newData.type != oldData.type

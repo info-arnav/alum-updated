@@ -4,6 +4,7 @@ import Compressor from "compressorjs";
 import Link from "next/link";
 import { useState } from "react";
 import Cookies from "universal-cookie";
+import getBrowserFingerprint from "../getBrowserFingerPrint";
 
 export default function Register({
   type,
@@ -16,6 +17,7 @@ export default function Register({
   workStatus,
   roll,
 }) {
+  const fingerprint = getBrowserFingerprint();
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -47,6 +49,7 @@ export default function Register({
               batch: batch,
               work_status: workStatus,
               roll: roll,
+              fingerprint: fingerprint,
             }),
           })
             .then((e) => e.json())

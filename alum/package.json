@@ -21,6 +21,7 @@
     "draft-js": "^0.11.7",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "get-browser-fingerprint": "^3.0.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "mongoose": "^7.4.5",

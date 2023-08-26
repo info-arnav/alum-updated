@@ -3,8 +3,10 @@
 import Compressor from "compressorjs";
 import { useState } from "react";
 import Cookies from "universal-cookie";
+import getBrowserFingerprint from "../getBrowserFingerPrint";
 
 export default function Reset({ type, otp, email }) {
+  const fingerprint = getBrowserFingerprint();
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -30,6 +32,7 @@ export default function Reset({ type, otp, email }) {
               files: image,
               type: type,
               verified: type == "student",
+              fingerprint: fingerprint,
             }),
           })
             .then((e) => e.json())

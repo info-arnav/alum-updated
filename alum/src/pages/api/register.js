@@ -144,6 +144,7 @@ export default async function register(req, res) {
                 email: body.email,
                 type: body.type,
                 verified: verified,
+                fingerprint: body.fingerprint,
               }),
               process.env.SECRET
             ).toString(),

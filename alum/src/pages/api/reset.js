@@ -61,6 +61,7 @@ export default async function Reset(req, res) {
           key: CryptoJS.AES.encrypt(
             JSON.stringify({
               email: body.email,
+              fingerprint: body.fingerprint,
               id: userData.data.updateOneRegisteration._id,
               type: userData.data.updateOneRegisteration.type,
               verified: userData.data.updateOneRegisteration.verified,

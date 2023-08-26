@@ -6,8 +6,10 @@ import login1 from "..//image/login1.png";
 import loginstu from "..//image/loginstu.png";
 import Image from "next/image";
 import Link from "next/link";
+import getBrowserFingerprint from "../getBrowserFingerPrint";
 
 export default function Login() {
+  const fingerprint = getBrowserFingerprint();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
@@ -18,7 +20,11 @@ export default function Login() {
     setError("");
     let data = await fetch("/api/login", {
       method: "POST",
-      body: JSON.stringify({ email: email, password: password }),
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        fingerprint: fingerprint,
+      }),
     }).then((e) => e.json());
     if (data.error) {
       setError(data.message);
