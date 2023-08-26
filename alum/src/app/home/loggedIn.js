@@ -1,7 +1,5 @@
 "use client";
 
-import algoliasearch from "algoliasearch/lite";
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Loading from "./loading";
@@ -22,6 +20,8 @@ import "swiper/css/navigation";
 
 // import required modules
 import { EffectCoverflow } from "swiper";
+import Algolia from "../search/algolia";
+import MongoSearch from "../search/mongo";
 
 export default function LoggedIn({ type, keys, link, data }) {
   const [array, setArray] = useState([
@@ -54,7 +54,6 @@ export default function LoggedIn({ type, keys, link, data }) {
       setArray(temp);
     }
   }, []);
-  const searchClient = algoliasearch(keys[0], keys[1]);
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
   const [subloading, setSubLoading] = useState(false);
@@ -76,55 +75,6 @@ export default function LoggedIn({ type, keys, link, data }) {
   useEffect(() => {
     find();
   }, [num]);
-  function Hit({ hit }) {
-    if (data.data.id != hit.objectID) {
-      return (
-        <div
-          className="search-hover"
-          style={{
-            paddingTop: 10,
-            paddingBottom: 10,
-            borderBottom: "solid gray 0.2px",
-          }}
-        >
-          <a href={`${link}/view/profile/${hit.objectID}`}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div>
-                <img
-                  height={40}
-                  width={40}
-                  style={{
-                    minHeight: 40,
-                    maxHeight: 40,
-                    maxWidth: 40,
-                    minWidth: 40,
-                    marginRight: 20,
-                    borderRadius: "100%",
-                  }}
-                  src={`${link}/api/image/${hit.objectID}`}
-                ></img>
-              </div>
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div style={{ fontWeight: "bold", fontSize: 13 }}>
-                    {hit.name || "No Name"}
-                  </div>
-                  <div style={{ fontSize: 11, color: "grey" }}>
-                    {hit.bio ? hit.bio : "No bio"}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      );
-    }
-  }
   return loading ? (
     <Loading></Loading>
   ) : (
@@ -421,29 +371,21 @@ export default function LoggedIn({ type, keys, link, data }) {
       {show && (
         <div className="modal">
           <div
-            style={{ marginTop: 10 }}
+            style={{ marginBottom: 20, marginTop: 0 }}
             className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] mx-auto bg-white py-4 custom-search-height"
           >
-            <InstantSearch searchClient={searchClient} indexName="dev_alum">
-              <div className="flex flex-row justify-center">
-                <SearchBox searchAsYouType={true} placeholder="Search..." />
-                <button
-                  className="form-close"
-                  onClick={(e) => {
-                    document
-                      .querySelector("body")
-                      .classList.remove("no-scroll");
-                    setShow(false);
-                  }}
-                >
-                  X
-                </button>
-              </div>
-              {/* <div className="w-[100%] bg-blue-200"> */}
-              <Hits hitComponent={Hit} />
-              {/* </div> */}
-              {/* <SearchPopup/> */}
-            </InstantSearch>
+            {/* <MongoSearch
+              keys={keys}
+              setShow={setShow}
+              data={data}
+              link={link}
+            ></MongoSearch> */}
+            <Algolia
+              keys={keys}
+              setShow={setShow}
+              data={data}
+              link={link}
+            ></Algolia>
           </div>
         </div>
       )}

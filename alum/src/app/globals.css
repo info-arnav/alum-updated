@@ -1143,7 +1143,8 @@ hr {
 }
 
 /* SearchBox */
-.ais-SearchBox {
+.ais-SearchBox,
+.searchbar {
   display: block;
   outline: none !important;
   border: none !important;
@@ -1151,6 +1152,11 @@ hr {
   margin-right: 60px;
   margin-left: 20px;
   height: 50px;
+  margin-bottom: 20px;
+}
+
+.searchbar {
+  margin-right: 0px;
   margin-bottom: 20px;
 }
 
@@ -1174,6 +1180,12 @@ hr {
   background-color: rgb(243, 243, 244);
   margin-right: 3px;
   border-radius: 5px;
+}
+
+.searchbar {
+  background-color: rgb(243, 243, 244);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .modal-content {

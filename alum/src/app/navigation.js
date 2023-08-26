@@ -7,69 +7,13 @@ import Alumni from "./components/alumni";
 import LoggedOut from "./components/logged-out";
 import Pending from "./components/pending";
 import Student from "./components/student";
-import algoliasearch from "algoliasearch/lite";
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
 import { useState } from "react";
+import Algolia from "./search/algolia";
+import MongoSearch from "./search/mongo";
 
 export default function Navigation({ data, keys, LINK }) {
-  const searchClient = algoliasearch(keys[0], keys[1]);
   const [value, setValue] = useState("");
   let path = usePathname().toLowerCase();
-
-  function Hit({ hit }) {
-    if (data.data.id != hit.objectID) {
-      return (
-        <div
-          className="search-hover"
-          style={{
-            paddingTop: 10,
-            paddingBottom: 10,
-            borderBottom: "solid gray 0.2px",
-          }}
-        >
-          <a href={`${LINK}/view/profile/${hit.objectID}`}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <div>
-                <img
-                  height={40}
-                  width={40}
-                  style={{
-                    minHeight: 40,
-                    minHeight: 40,
-                    maxHeight: 40,
-                    maxWidth: 40,
-                    minWidth: 40,
-                    minWidth: 40,
-                    marginRight: 20,
-                    borderRadius: "100%",
-                  }}
-                  src={`${LINK}/api/image/${hit.objectID}`}
-                ></img>
-              </div>
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div style={{ fontWeight: "bold", fontSize: 13 }}>
-                    {hit.name || "No Name"}
-                  </div>
-                  <div style={{ fontSize: 11, color: "grey" }}>
-                    {hit.bio ? hit.bio : "No bio"}
-                  </div>
-                </div>
-              </div>
-              {/* <div style={{ flex: 1, display: "flex", justifyContent: "right" }}>
-              View
-            </div> */}
-            </div>
-          </a>
-        </div>
-      );
-    }
-  }
 
   return (
     <>
@@ -149,29 +93,21 @@ export default function Navigation({ data, keys, LINK }) {
           <div className="modal">
             {" "}
             <div
-              style={{ marginTop: 10 }}
+              style={{ marginBottom: 20, marginTop: 0 }}
               className="card overflow-y-auto rounded-lg border-2 border-black relative w-[calc(100%-20px)] mx-auto bg-white py-4 custom-search-height"
             >
-              <InstantSearch searchClient={searchClient} indexName="dev_alum">
-                <div className="flex flex-row justify-center">
-                  <SearchBox searchAsYouType={true} placeholder="Search..." />
-                  <button
-                    className="form-close"
-                    onClick={(e) => {
-                      document
-                        .querySelector("body")
-                        .classList.remove("no-scroll");
-                      setValue(false);
-                    }}
-                  >
-                    X
-                  </button>
-                </div>
-                {/* <div className="w-[100%] bg-blue-200"> */}
-                <Hits hitComponent={Hit} />
-                {/* </div> */}
-                {/* <SearchPopup/> */}
-              </InstantSearch>
+              {/* <MongoSearch
+                keys={keys}
+                setShow={setValue}
+                data={data}
+                link={link}
+              ></MongoSearch> */}
+              <Algolia
+                keys={keys}
+                setShow={setValue}
+                data={data}
+                link={LINK}
+              ></Algolia>
             </div>
           </div>
         ) : (
