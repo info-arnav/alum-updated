@@ -1,6 +1,7 @@
 import QueryString from "./query-string";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
+import auth from "./auth";
 
 export default async function editPortfolioItem(req, res) {
   let body = JSON.parse(req.body);
@@ -10,13 +11,8 @@ export default async function editPortfolioItem(req, res) {
   delete body.oldData;
   delete body.category;
   delete body.email;
-  const cookies = cookie.parse(req.headers.cookie || "");
   try {
-    const mid_password = CryptoJS.AES.decrypt(
-      cookies.login_token,
-      process.env.SECRET
-    );
-    const password = mid_password.toString(CryptoJS.enc.Utf8);
+    const password = auth(req.headers.cookie);
     const check = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {

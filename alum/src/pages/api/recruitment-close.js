@@ -2,19 +2,14 @@ import nodemailer from "nodemailer";
 import cookie from "cookie";
 import CryptoJS from "crypto-js";
 import QueryString from "./query-string";
+import auth from "./auth";
 
 export default async function sendOTP(req, res) {
   let body = JSON.parse(req.body);
   let emails = body.emails;
   let recruited = body.recruited;
   let recruited_data = "";
-  const cookies = cookie.parse(req.headers.cookie || "");
-  const mid_password = CryptoJS.AES.decrypt(
-    cookies.login_token,
-    process.env.SECRET
-  );
-  const password = mid_password.toString(CryptoJS.enc.Utf8);
-
+  const password = auth(req.headers.cookie);
   await fetch(process.env.GRAPHQL_URI, {
     method: "POST",
     headers: {

@@ -8,13 +8,8 @@ export default async function editRecruitment(req, res) {
   const id = body.id;
   delete body.email;
   delete body.id;
-  const cookies = cookie.parse(req.headers.cookie || "");
   try {
-    const mid_password = CryptoJS.AES.decrypt(
-      cookies.login_token,
-      process.env.SECRET
-    );
-    const password = mid_password.toString(CryptoJS.enc.Utf8);
+    const password = auth(req.headers.cookie);
     const data = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
