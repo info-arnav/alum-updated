@@ -1354,3 +1354,7 @@ button[disabled] {
 .modal {
   z-index: 100;
 }
+
+footer button {
+  background-color: #00183f !important;
+}
