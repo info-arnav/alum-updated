@@ -18,35 +18,52 @@ export default async function sendInvite(req, res) {
     },
   });
   try {
-    const mid_password = CryptoJS.AES.decrypt(
-      cookies.login_token,
-      process.env.SECRET
-    );
-    const password = mid_password.toString(CryptoJS.enc.Utf8);
-    const data = await fetch(process.env.GRAPHQL_URI, {
+    const tempData = await fetch(process.env.GRAPHQL_URI, {
       method: "POST",
       headers: {
-        email: email,
-        password: password,
+        apikey: process.env.GRAPHQL_API,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         query: `
+          query{
+              registeration(query: ${QueryString({ email: body.email })}) {
+                email
+              }
+            }
+        `,
+      }),
+    }).then((e) => e.json());
+    if (tempData.data.registeration == null) {
+      const mid_password = CryptoJS.AES.decrypt(
+        cookies.login_token,
+        process.env.SECRET
+      );
+      const password = mid_password.toString(CryptoJS.enc.Utf8);
+      await fetch(process.env.GRAPHQL_URI, {
+        method: "POST",
+        headers: {
+          email: email,
+          password: password,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
         mutation{
             insertOneVerified(data: ${QueryString(body)}) {
               email
             }
           }
           `,
-      }),
-    }).then(async (e) => {
-      await transporter
-        .sendMail({
-          from: `"Nalum" <admin@alumninet.in>`,
-          to: body.email,
-          subject: "Invitation For Alum",
-          text: `Invitation For Alum`,
-          html: `
+        }),
+      }).then(async (e) => {
+        await transporter
+          .sendMail({
+            from: `"Nalum" <admin@alumninet.in>`,
+            to: body.email,
+            subject: "Invitation For Alum",
+            text: `Invitation For Alum`,
+            html: `
           <p>
           Hi,
           <br>
@@ -65,9 +82,12 @@ export default async function sendInvite(req, res) {
           Team Nalum
           </p>
           `,
-        })
-        .then((e) => res.json({ error: false }));
-    });
+          })
+          .then((e) => res.json({ error: false, message: "Invitation Sent" }));
+      });
+    } else {
+      res.json({ error: true, message: "Already Registered" });
+    }
   } catch {
     res.json({ error: true, message: "Some error occured" });
   }

@@ -57,6 +57,7 @@ export default function LoggedIn({ type, keys, link, data }) {
   const searchClient = algoliasearch(keys[0], keys[1]);
   const [show, setShow] = useState(false);
   const [sent, setSent] = useState(false);
+  const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
   const [subloading, setSubLoading] = useState(false);
@@ -79,7 +80,8 @@ export default function LoggedIn({ type, keys, link, data }) {
   const invite = async () => {
     setSent(false);
     setInviting(true);
-    await fetch(`/api/send-invite`, {
+    setMessage("");
+    let messageData = await fetch(`/api/send-invite`, {
       method: "POST",
       body: JSON.stringify({
         auth_email: data.data.email,
@@ -88,6 +90,7 @@ export default function LoggedIn({ type, keys, link, data }) {
       }),
       cache: "no-cache",
     }).then((e) => e.json());
+    setMessage(messageData.message);
     setSent(true);
     setInviting(false);
   };
@@ -439,7 +442,7 @@ export default function LoggedIn({ type, keys, link, data }) {
             <input
               style={{
                 backgroundColor: "#F5F4F7",
-                color: "#939393",
+                color: "black",
                 padding: 15,
                 paddingLeft: 20,
                 paddingRight: 20,
@@ -473,7 +476,7 @@ export default function LoggedIn({ type, keys, link, data }) {
             >
               {inviting ? "Sending Invite...." : "Invite"}
             </button>
-            {sent && <p style={{ color: "green" }}>Invitation Sent</p>}
+            {sent && message}
           </>
         )}
       </center>

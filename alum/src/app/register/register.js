@@ -141,7 +141,7 @@ export default function Register({
           characters long.
         </center>
         <br></br>
-        {type == "alumni" && (
+        {false && type == "alumni" && (
           <>
             <input
               className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
