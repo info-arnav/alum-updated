@@ -31,7 +31,7 @@ export default function Batch({ type, otp, email }) {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if (course && department && batch && workStatus) {
+            if (batch) {
               setError("");
               setValidated(true);
             } else {
@@ -39,19 +39,6 @@ export default function Batch({ type, otp, email }) {
             }
           }}
         >
-          <div
-            className="m-2 relative mb-6 w-[70%] mx-auto"
-            style={{ textAlign: "left" }}
-          >
-            <input
-              type="text"
-              className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
-              placeholder="Phone Number"
-              required
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            ></input>
-          </div>
           <div
             className="m-2 relative mb-6 w-[70%] mx-auto"
             style={{ textAlign: "left" }}
