@@ -62,7 +62,7 @@ export default function Privacy() {
             width={200}
             alt="Nalum - NSUT Alumni Network Logo"
           ></Image>
-          <p className="content">
+          <p className="content" style={{ marginBottom: 40 }}>
             Nalum is a platform designed to facilitate communication and
             collaboration between the alumni and students of NSUT (Netaji Subhas
             University of Technology).

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import heroImg from "..//image/hero.png";
+import FeatureGallery from "../home/featureGallery";
 import Gallery from "../home/Gallery";
 export default function Nalum({ logged }) {
   return (
@@ -101,17 +102,8 @@ export default function Nalum({ logged }) {
             <h2 className="text-4xl " style={{ fontWeight: "bold" }}>
               Feautres ?
             </h2>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-                marginTop: 53,
-                width: "100%",
-              }}
-            >
-              {[
+            <FeatureGallery
+              data={[
                 [
                   "Connected Networking",
                   "Seamlessly connect with NSUT alumni and students, fostering a vibrant community that thrives on collaboration and shared experiences.",
@@ -136,29 +128,8 @@ export default function Nalum({ logged }) {
                   "Guided Mentorship",
                   "Cultivate valuable connections with mentors across various industries and fields, providing guidance and support as you navigate academic and professional milestones.",
                 ],
-              ].map((e) => {
-                return (
-                  <div
-                    style={{
-                      backgroundColor: "white",
-                      width: "80%",
-                      margin: 10,
-                      maxWidth: 900,
-                      borderRadius: 20,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      padding: 50,
-                      flexDirection: "column",
-                    }}
-                  >
-                    <p style={{ fontWeight: "bold" }}>{e[0]}</p>
-                    <br></br>
-                    <p>{e[1]}</p>
-                  </div>
-                );
-              })}
-            </div>
+              ]}
+            ></FeatureGallery>
           </div>
         </center>
       </section>
@@ -173,7 +144,9 @@ export default function Nalum({ logged }) {
       >
         <center style={{ margin: 10 }}>
           <div className="feature-content text-black md:max-w-[500px]">
-            <h2 className="text-4xl ">Gallery</h2>
+            <h2 className="text-4xl " style={{ fontWeight: "bold" }}>
+              Gallery
+            </h2>
           </div>
           <Gallery></Gallery>
         </center>

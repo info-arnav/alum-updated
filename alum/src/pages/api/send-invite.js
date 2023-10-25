@@ -61,20 +61,20 @@ export default async function sendInvite(req, res) {
           .sendMail({
             from: `"Nalum" <admin@alumninet.in>`,
             to: body.email,
-            subject: "Invitation For Alum",
-            text: `Invitation For Alum`,
+            subject: "Invitation For Nalum",
+            text: `Invitation For Nalum`,
             html: `
           <p>
           Hi,
           <br>
           <br>
-          You were invited to Alum by one of the alumni of NSUT, Delhi.
+          You were invited to Nalum by one of the alumni of NSUT, Delhi.
           <br>
           <br>
           You can register now at Nalum <a href="${process.env.LINK}register">here</a>.
           <br>
           <br>
-          The invitation will help you escape from all the hassle of verification on the portal.
+          Unlock a world of opportunities and connections at Nalum, the exclusive cross-platform web application designed to empower both NSUT alumni and students. Seamlessly connecting generations, Nalum redefines networking, knowledge sharing, and career advancement within the NSUT community.
           </br>
           <br>
           Regards
