@@ -56,8 +56,34 @@ export default async function register(req, res) {
           verified = "true";
           type = "student";
         } else {
-          verified = "false";
-          type = "alumni";
+          const verifiedData = await fetch(process.env.GRAPHQL_URI, {
+            method: "POST",
+            headers: {
+              apikey: process.env.GRAPHQL_API,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              query: `
+            query{
+              verified(query: ${QueryString({ email: body.email })}) {
+                email
+              }
+            }
+            `,
+            }),
+          }).then((e) => e.json());
+          try {
+            if (verifiedData.data.verified.email == body.email) {
+              verified = "true";
+              type = "alumni";
+            } else {
+              verified = "false";
+              type = "alumni";
+            }
+          } catch {
+            verified = "false";
+            type = "alumni";
+          }
         }
         let registeredUser = await fetch(process.env.GRAPHQL_URI, {
           method: "POST",

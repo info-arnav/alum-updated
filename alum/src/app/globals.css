@@ -9,7 +9,7 @@
 }
 
 * {
-  font-family: "__Inter_0ec1f4", "__Inter_Fallback_0ec1f4";
+  font-family: var(--font-inter);
   font-style: normal;
   margin: 0;
   padding: 0;

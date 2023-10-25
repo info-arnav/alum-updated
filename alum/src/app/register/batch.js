@@ -52,15 +52,6 @@ export default function Batch({ type, otp, email }) {
               onChange={(e) => setPhone(e.target.value)}
             ></input>
           </div>
-          <div className="m-2 relative mb-6 w-[70%] mx-auto">
-            <input
-              type="text"
-              className="bg-[#DFE6F9] pl-10 text-lg text-gray-900  rounded-xl w-full p-2.5 "
-              placeholder="Roll Number - Optional"
-              value={roll}
-              onChange={(e) => setRoll(e.target.value)}
-            ></input>
-          </div>
           <div
             className="m-2 relative mb-6 w-[70%] mx-auto"
             style={{ textAlign: "left" }}
@@ -127,91 +118,6 @@ export default function Batch({ type, otp, email }) {
                 "2025",
                 "2026",
                 "2027",
-              ].map((e) => (
-                <option className="text-gray-900">{e}</option>
-              ))}
-            </select>
-          </div>
-          <div
-            className="m-2 relative mb-6 w-[70%] mx-auto"
-            style={{ textAlign: "left" }}
-          >
-            <select
-              placeholder="Course"
-              style={{ marginTop: 10 }}
-              required
-              onChange={(e) => setCourse(e.target.value)}
-              className={
-                "bg-[#DFE6F9] pl-10 text-lg rounded-xl w-full p-2.5 " +
-                (course == "" ? "text-gray-400" : "text-gray-900")
-              }
-            >
-              <option disabled={true} selected={true} hidden={true}>
-                Course
-              </option>
-              {["Undergraduate", "Masters", "Doctorate"].map((e) => (
-                <option className="text-gray-900">{e}</option>
-              ))}
-            </select>
-          </div>
-          <div
-            className="m-2 relative mb-6 w-[70%] mx-auto"
-            style={{ textAlign: "left" }}
-          >
-            <select
-              placeholder="Department"
-              style={{ marginTop: 10 }}
-              required
-              onChange={(e) => setDepartment(e.target.value)}
-              className={
-                "bg-[#DFE6F9] pl-10 text-lg rounded-xl w-full p-2.5 " +
-                (department == "" ? "text-gray-400" : "text-gray-900")
-              }
-            >
-              <option disabled={true} selected={true} hidden={true}>
-                Department
-              </option>
-              {[
-                "Computer Science",
-                "Information Technology",
-                "Electronics and Communication",
-                "Electrical and Electronics",
-                "Mechanical",
-                "Civil",
-                "Chemical",
-                "Biotech",
-                "BBA",
-                "B.Arch",
-                "B.Design",
-                "Other/M.Sc/PHD",
-              ].map((e) => (
-                <option className="text-gray-900">{e}</option>
-              ))}
-            </select>
-          </div>
-          <div
-            className="m-2 relative mb-6 w-[70%] mx-auto"
-            style={{ textAlign: "left" }}
-          >
-            <select
-              placeholder="Occupation Status"
-              style={{ marginTop: 10 }}
-              required
-              onChange={(e) => setWorkStatus(e.target.value)}
-              className={
-                "bg-[#DFE6F9] pl-10 text-lg rounded-xl w-full p-2.5 " +
-                (workStatus == "" ? "text-gray-400" : "text-gray-900")
-              }
-            >
-              <option disabled={true} selected={true} hidden={true}>
-                Occupation Status
-              </option>
-              {[
-                "Pursuing Degree",
-                "Working",
-                "Higher Studies",
-                "Buisiness",
-                "Other",
               ].map((e) => (
                 <option className="text-gray-900">{e}</option>
               ))}

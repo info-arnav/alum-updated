@@ -56,8 +56,11 @@ export default function LoggedIn({ type, keys, link, data }) {
   }, []);
   const searchClient = algoliasearch(keys[0], keys[1]);
   const [show, setShow] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
   const [subloading, setSubLoading] = useState(false);
+  const [inviting, setInviting] = useState(false);
   const [num, setNum] = useState(10);
   const [userdata, setUserData] = useState([]);
   const find = async () => {
@@ -72,6 +75,21 @@ export default function LoggedIn({ type, keys, link, data }) {
     setUserData(tempData.data);
     setLoading(false);
     setSubLoading(false);
+  };
+  const invite = async () => {
+    setSent(false);
+    setInviting(true);
+    await fetch(`/api/send-invite`, {
+      method: "POST",
+      body: JSON.stringify({
+        auth_email: data.data.email,
+        email: email,
+        verifier: data.data.email,
+      }),
+      cache: "no-cache",
+    }).then((e) => e.json());
+    setSent(true);
+    setInviting(false);
   };
   useEffect(() => {
     find();
@@ -416,7 +434,50 @@ export default function LoggedIn({ type, keys, link, data }) {
         >
           {subloading ? "Finding...." : "Load More"}
         </button>
+        {type == "alumni" && (
+          <>
+            <input
+              style={{
+                backgroundColor: "#F5F4F7",
+                color: "#939393",
+                padding: 15,
+                paddingLeft: 20,
+                paddingRight: 20,
+                borderRadius: 16,
+                margin: 20,
+                width: "calc(100% - 20px)",
+                textAlign: "left",
+                maxWidth: 900,
+              }}
+              placeholder="Enter E-Mail"
+              required={true}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+            <p style={{ marginBottom: 0, paddingTop: 10 }}>
+              Can't find your friends ?
+            </p>
+            <button
+              className="hoveryat"
+              onClick={invite}
+              disabled={inviting}
+              style={{
+                width: "calc(100% - 20px)",
+                margin: 10,
+                marginTop: 0,
+                backgroundColor: "rgb(223, 230, 249)",
+                padding: "10px",
+                borderRadius: 18,
+              }}
+            >
+              {inviting ? "Sending Invite...." : "Invite"}
+            </button>
+            {sent && <p style={{ color: "green" }}>Invitation Sent</p>}
+          </>
+        )}
       </center>
+
       <div style={{ marginBottom: 80 }}></div>
       {show && (
         <div className="modal">
