@@ -410,6 +410,10 @@ footer button:disabled {
   footer .section-title {
     margin-top: 53px;
   }
+  footer .row {
+    margin: 10px !important;
+    padding: 50px !important;
+  }
 }
 
 /* Dropdown Privacy Policy */

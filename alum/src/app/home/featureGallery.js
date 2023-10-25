@@ -65,10 +65,23 @@ export default function FeatureGallery({ data }) {
                 overflowY: "auto",
               }}
             >
-              <p style={{ marginBottom: 20, fontWeight: "bold", fontSize: 20 }}>
+              <p
+                style={{
+                  marginBottom: 20,
+                  fontWeight: "bold",
+                  fontSize: 20,
+                  maxWidth: "calc(100vw - 20px)",
+                }}
+              >
                 {e[0]}
               </p>
-              <p>{e[1]}</p>
+              <p
+                style={{
+                  maxWidth: "calc(100vw - 100px)",
+                }}
+              >
+                {e[1]}
+              </p>
             </div>
           </SwiperSlide>
         ))}
