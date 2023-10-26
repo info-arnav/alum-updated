@@ -289,6 +289,7 @@ footer .large {
 footer hr {
   border-top: solid 1px rgb(176, 175, 175);
   margin: 40px;
+  max-width: 80vw;
 }
 
 .footer-img {
@@ -359,7 +360,7 @@ footer form {
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 20px;
+  border-radius: 15px;
   color: black;
   border: none;
   margin-bottom: 10px;
@@ -377,6 +378,10 @@ footer form {
   display: none;
 }
 
+footer input {
+  border-radius: 15px !important;
+}
+
 footer .error {
   width: 90%;
   color: white;
@@ -388,7 +393,7 @@ footer button {
   padding-left: 15px;
   padding-right: 15px;
   width: 90%;
-  border-radius: 20px;
+  border-radius: 15px;
   font-weight: bold;
   margin-top: 10px;
   cursor: pointer;
