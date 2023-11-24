@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Press+Start+2P&display=swap");
+
+.forum_all {
+  height: 80vh !important;
+}
+
+.forum_header {
+  background-color: #00183f;
+  height: 50px;
+  color: #ffffff;
+  display: flex;
+}
+.forum_header_trending {
+  display: flex;
+  justify-content: center;
+  flex: 30;
+  align-items: center;
+}
+.tagline_trending {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.forum_header_right {
+  display: flex;
+  flex: 70;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.forum_header_right_tagline {
+  display: flex;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.forum_header_right_search {
+  left: 20px;
+  padding-right: 20px;
+}
+
+body {
+  background: #d1d5db;
+}
+.height {
+  height: 100vh;
+}
+
+.form {
+  position: relative;
+}
+
+.form-input {
+  height: 40px;
+  text-indent: 30px;
+  border-radius: 10px;
+  width: 100%;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.form-input:focus {
+  box-shadow: none;
+  border: none;
+}
+.filter-svg-white {
+  filter: invert(99%) sepia(70%) saturate(255%) hue-rotate(205deg)
+    brightness(118%) contrast(100%);
+}
+
+/* main css */
+
+.forum_main {
+  display: flex;
+  width: 100%;
+  height: 82vh;
+}
+.forum_left_pane {
+  flex: 28;
+  background-color: white;
+  width: auto;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+.left_pane_up {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+}
+.left_pane_down {
+    border: 1px solid #e5e5e5;
+    overflow: auto; /* Enable scrolling */
+    scrollbar-width: thin; /* Set scrollbar width to a minimum */
+    scrollbar-color: transparent transparent; /* Set scrollbar color */
+  }
+  
+  /* Style the thumb and track of the scrollbar */
+  .left_pane_down::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .left_pane_down::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 4px; /* Round the thumb */
+  }
+  
+  .left_pane_down::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color of the thumb on hover */
+  }
+  
+  .left_pane_down::-webkit-scrollbar-track {
+    background-color: transparent; /* Color of the track */
+  }
+  
+  .left_pane_down::-webkit-scrollbar-track:hover {
+    background-color: #f2f2f2; /* Color of the track on hover */
+  }
+  
+.forum_right_pane {
+  flex: 72;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  height: 82vh;
+  
+}
+.forum_trending_txt {
+  color: #6a6a6a;
+  font-family: "Montserrat", sans-serif;
+}
+.forum_trending_txt:hover {
+  color: #000;
+  font-size: larger;
+  font-weight: bold;
+}
+.comments_container {
+    background-color: white;
+  height: 100%;
+}
+.thoughts_container {
+  display: flex;
+  background-color: #00183f;
+  height: 80px;
+  align-items: center;
+  z-index: 2;
+  margin-top: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.thoughts_container > input {
+  height: 40px;
+}
+
+/* direct messages css */
+
+.forum_header_dm {
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  position:absolute;
+  width:28%;
+  flex :30;
+  margin-bottom: 10px;
+  
+
+}
+
+.profile_cards {
+    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  columns: 3;
+  height: 100%;
+  z-index: -1;
+}
+
+.profile_card_data {
+  height: 50px;
+}
+
+.profile_card_data {
+  text-align: center;
+  max-width: 20rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #fff;
+  transition: all 100ms ease-in-out;
+}
+
+.profile_card_data > img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+/* comments css */
+
+.text_montserrat{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+.text_montserrat_400{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+
