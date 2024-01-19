@@ -5,6 +5,7 @@ import Navigation from "./navigation";
 import Footer from "./footer";
 import Update from "./update";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -86,6 +87,14 @@ export default function RootLayout({ children }) {
           keys={[process.env.ALGOLIA_MAIN, process.env.ALGOLIA_SEARCH]}
           LINK={process.env.LINK}
         ></Navigation>
+        <div className="notification-box">
+          <header>
+            <Image src="/logo.png" height="20" width="20"></Image>
+            <div className="title">Nalum</div>
+          </header>
+          <hr></hr>
+          <div className="content">Site under mantainance break for 2 Days</div>
+        </div>
         <div className="nav-gap"></div>
         <Analytics />
         {status.loggedIn && (
