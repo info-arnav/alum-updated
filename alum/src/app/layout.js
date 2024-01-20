@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
           keys={[process.env.ALGOLIA_MAIN, process.env.ALGOLIA_SEARCH]}
           LINK={process.env.LINK}
         ></Navigation>
-        <div className="notification-box">
+        <div className="notification-box" style={{ zIndex: 111 }}>
           <header>
             <Image src="/logo.png" height="20" width="20"></Image>
             <div className="title">Nalum</div>
